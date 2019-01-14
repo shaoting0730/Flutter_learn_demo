@@ -2,7 +2,19 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+
 class MyApp extends StatelessWidget {
+  /*
+   * 
+   * Stack({
+   *  this.alignment = AlignmentDirectional.topStart,
+   *  this.textDirection,
+   *  this.fit = StackFit.loose,
+   *  this.overflow = Overflow.clip,
+   *  List<Widget> children = const <Widget>[],
+   *  })
+   */
+
   var stack = Center(
     child: new Stack(
     alignment: const FractionalOffset(0.5, 0.5),
