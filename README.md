@@ -37,9 +37,9 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/gradwidget_demo/%20result.png) <br/>
 ### gridview
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/gridview_demo/%20result.png) <br/>
-### positionwidget
+### positionwidget  ps:这里我朋友的Android自带模拟器是好的,而我的是跑偏的....
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/positionwidget/%20result.png) <br/>
-### stackwidget
+### stackwidget   ps:这里我朋友的Android自带模拟器是好的,而我的是跑偏的....
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/stackwidget/%20result.png) <br/>
 ### push
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/push_demo/%20result.png) <br/>
