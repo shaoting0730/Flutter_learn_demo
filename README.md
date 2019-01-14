@@ -29,10 +29,6 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/listview_demo3/%20result.png) <br/>
 ### container
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/container/%20result.png) <br/>
-### rowwidget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/rowwidget_demo/%20result.png) <br/>
-### columnwidget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/columnwidget_demo/%20result.png) <br/>
 ### gradwidget
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/gradwidget_demo/%20result.png) <br/>
 ### gridview
@@ -46,6 +42,10 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/push_param_demo/%20result.png) <br/>
 
 ## 布局widget
+### rowwidget
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/rowwidget_demo/%20result.png) <br/>
+### columnwidget
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/columnwidget_demo/%20result.png) <br/>
 
 
 
