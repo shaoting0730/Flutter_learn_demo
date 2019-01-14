@@ -52,6 +52,10 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/wrap_flow/%20result.png) <br/>
 
 ## 容器widget
+### Padding
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/padding_demo/result.png) <br/>
+### constrainedbox sizedbox UnconstrainedBox
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/constrainedbox_sizedbox_demo/result.png) <br/>
 
 
 
