@@ -10,7 +10,7 @@
 > To save a screenshot to flutter.png, press "s".  <br/>
 > To repeat this help message, press "h". To detach, press "d"; to quit, press "q".  <br/>
 
-## 基本widget
+## 基础widget
 ### button 
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/button_demo/%20result.png) <br/>
 ### text
@@ -50,6 +50,8 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/flex_expanded_demo/%20result.png) <br/>
 ### wrap flow
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/wrap_flow/%20result.png) <br/>
+
+## 容器widget
 
 
 
