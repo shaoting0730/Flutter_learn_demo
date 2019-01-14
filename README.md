@@ -12,5 +12,5 @@
 
 ## 基本widget
 ### button 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/button_demo/%20result.png width="500" hegiht="313" align=center) 
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/button_demo/%20result.png) 
 
