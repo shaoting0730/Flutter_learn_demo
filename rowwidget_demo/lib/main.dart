@@ -3,6 +3,17 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  /**
+   * Row({
+   *  ...  
+   *  TextDirection textDirection,    
+   *  MainAxisSize mainAxisSize = MainAxisSize.max,    
+   *  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+   *  VerticalDirection verticalDirection = VerticalDirection.down,  
+   *  CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+   *  List<Widget> children = const <Widget>[],
+   *   })
+   */
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
