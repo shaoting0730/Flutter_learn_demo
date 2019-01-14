@@ -46,8 +46,10 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/rowwidget_demo/%20result.png) <br/>
 ### columnwidget
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/columnwidget_demo/%20result.png) <br/>
-
-
+### flex expanded
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/flex_expanded_demo/%20result.png) <br/>
+### wrap flow
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/wrap_flow/%20result.png) <br/>
 
 
 
