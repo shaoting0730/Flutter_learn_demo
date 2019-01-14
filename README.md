@@ -56,6 +56,8 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/padding_demo/result.png) <br/>
 ### constrainedbox sizedbox UnconstrainedBox
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/constrainedbox_sizedbox_demo/result.png) <br/>
+### decoratedbox
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/decoratedbox_demo/result.png) <br/>
 
 
 
