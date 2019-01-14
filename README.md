@@ -11,3 +11,6 @@
 > To repeat this help message, press "h". To detach, press "d"; to quit, press "q".  <br/>
 
 ## 基本widget
+### button 
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/button_demo/%20result.png width="500" hegiht="313" align=center) 
+
