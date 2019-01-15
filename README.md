@@ -35,13 +35,13 @@
 
 ## 布局widget
 ### rowwidget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/rowwidget_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/rowwidget_demo/%20result.png) <br/>
 ### columnwidget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/columnwidget_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/columnwidget_demo/%20result.png) <br/>
 ### flex expanded
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/flex_expanded_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/flex_expanded_demo/%20result.png) <br/>
 ### wrap flow
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/wrap_flow/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/wrap_flow/%20result.png) <br/>
 
 ## 容器widget
 ### Padding
