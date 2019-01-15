@@ -12,26 +12,26 @@
 
 ## 基础widget
 ### button 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/button_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/button_demo/%20result.png) <br/>
 ### text
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/text_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/text_demo/%20result.png) <br/>
 ### textfield
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/textfield_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/textfield_demo/%20result.png) <br/>
 ### form
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/form_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/form_demo/%20result.png) <br/>
 ### image
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/image_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/image_demo/%20result.png) <br/>
 ### switch checkbox
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/switch_checkbox_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/switch_checkbox_demo/%20result.png) <br/>
 ### gradwidget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/gradwidget_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/gradwidget_demo/%20result.png) <br/>
 ### positionwidget  ps:这里我朋友的Android自带模拟器是好的,而我的是跑偏的....
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/positionwidget/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/positionwidget/%20result.png) <br/>
 ### stackwidget   ps:这里我朋友的Android自带模拟器是好的,而我的是跑偏的....
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/stackwidget/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/stackwidget/%20result.png) <br/>
 ### push
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/push_demo/%20result.png) <br/>
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/push_param_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/push_demo/%20result.png) <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/push_param_demo/%20result.png) <br/>
 
 ## 布局widget
 ### rowwidget
