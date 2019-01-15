@@ -50,8 +50,6 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/constrainedbox_sizedbox_demo/result.png) <br/>
 ### decoratedbox
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/decoratedbox_demo/result.png) <br/>
-### decoratedbox
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/decoratedbox_demo/result.png) <br/>
 ### transform
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/transform_demo/result.png) <br/>
 ### container
