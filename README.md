@@ -71,3 +71,6 @@
 ### scrollcontroller_demo 2
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1/result.gif) <br/>
 
+## 功能Widget
+> Android双击物理键退出app 主体Theme学习
+
