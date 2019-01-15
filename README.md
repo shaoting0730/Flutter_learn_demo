@@ -62,3 +62,12 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo3/%20result.png) <br/>
 ### gridview
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/gridview_demo/%20result.png) <br/>
+### customscrollview
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/customscrollview_demo/result.png) <br/>
+### scroll
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scroll_widget/result.png) <br/>
+### scrollcontroller_demo 1
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo/result.gif)<br/>
+### scrollcontroller_demo 2
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1/result.gif) <br/>
+
