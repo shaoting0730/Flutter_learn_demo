@@ -4,6 +4,21 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  /*
+   * Container({
+   * this.alignment,
+   * this.padding, //容器内补白，属于decoration的装饰范围
+   * Color color, // 背景色
+   * Decoration decoration, // 背景装饰
+   * Decoration foregroundDecoration, //前景装饰
+   * double width,//容器的宽度
+   * double height, //容器的高度
+   * BoxConstraints constraints, //容器大小的限制条件
+   * this.margin,//容器外补白，不属于decoration的装饰范围
+   * this.transform, //变换
+   * this.child,
+   * })
+   */
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
