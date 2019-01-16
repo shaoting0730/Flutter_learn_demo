@@ -74,3 +74,7 @@
 ## 功能Widget
 > Android双击物理键退出app 主体Theme学习
 
+## 其他
+> 事件与通知  手势
+
+
