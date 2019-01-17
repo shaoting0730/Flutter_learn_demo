@@ -72,10 +72,21 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1/result.gif) <br/>
 
 ## 功能Widget
-> Android双击物理键退出app 主体Theme学习
+>   [ Android双击物理键退出app 主体Theme学习 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/functional_module/lib/main.dart )    <br/>
 
 ## 其他
-> 事件与通知
-> 手势
+>  [通知 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/notification/lib/main.dart )    <br/>
+>  [ 事件 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/pointer/lib/main.dart )    <br/>
+>  [ 手势 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%89%8B%E5%8A%BF/destruedetector/lib/main.dart )    <br/>
+
+### 组合Widget 示例1
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E8%87%AA%E5%AE%9A%E4%B9%89Widget/%E7%BB%84%E5%90%88Widget/composite_widget/result.png) <br/>
+### 组合Widget 示例2
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E8%87%AA%E5%AE%9A%E4%B9%89Widget/%E7%BB%84%E5%90%88Widget/turnbox/result.png) <br/>
+### custompaint_canvas 示例1
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E8%87%AA%E5%AE%9A%E4%B9%89Widget/CustomPaint%E4%B8%8ECanvas/custompaint_canvas/result.png) <br/>
+### custompaint_canvas 示例2
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E8%87%AA%E5%AE%9A%E4%B9%89Widget/CustomPaint%E4%B8%8ECanvas/progressbar/result.png) <br/>
+
 
 
