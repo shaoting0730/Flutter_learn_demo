@@ -1,4 +1,4 @@
-package com.example.tabbardemo1;
+package com.example.tabbardemo;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
