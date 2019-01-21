@@ -1,4 +1,4 @@
-name: tabbar_demo
+name: tabbar_demo1
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -37,15 +37,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-   - images/tab/home.png
-   - images/tab/home_select.png
-
-   - images/tab/show.png
-   - images/tab/show_select.png
-
-   - images/tab/mine.png
-   - images/tab/mine_select.png
+  # assets:
+  #  - images/a_dot_burr.jpeg
+  #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

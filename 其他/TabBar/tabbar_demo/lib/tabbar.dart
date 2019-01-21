@@ -3,56 +3,104 @@ import 'package:tabbar_demo/pages/homepage.dart';
 import 'package:tabbar_demo/pages/showpage.dart';
 import 'package:tabbar_demo/pages/minepage.dart';
 
-class Tabbar extends StatefulWidget {
-  _Tabbar createState() => _Tabbar();
-}
-
-class _Tabbar extends State<Tabbar> {
-  final _tabbarColor = Colors.blue;
-  int _currentIndex = 0;
-  List<Widget> tablist = List();
-
-  @override
-  void initState() {
-    tablist..add(Homepage())..add(Showpage())..add(Minepage());
-    super.initState();
-  }
-
+ 
+class Tabbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return new MaterialApp(
+        debugShowCheckedModeBanner: false, home: new MainPageWidget());
+  }
+}
+ 
+class MainPageWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return new MainPageState();
+  }
+}
+ 
+class MainPageState extends State<MainPageWidget> {
+  int _tabIndex = 0;
+  var tabImages;
+  var appBarTitles = ['首页', '发现', '我的'];
+  /*
+   * 存放三个页面，跟fragmentList一样
+   */
+  var _pageList;
+ 
+  /*
+   * 根据选择获得对应的normal或是press的icon
+   */
+  Image getTabIcon(int curIndex) {
+    if (curIndex == _tabIndex) {
+      return tabImages[curIndex][1];
+    }
+    return tabImages[curIndex][0];
+  }
+  /*
+   * 获取bottomTab的颜色和文字
+   */
+  Text getTabTitle(int curIndex) {
+    if (curIndex == _tabIndex) {
+      return new Text(appBarTitles[curIndex],
+          style: new TextStyle(fontSize: 14.0, color: const Color(0xff1296db)));
+    } else {
+      return new Text(appBarTitles[curIndex],
+          style: new TextStyle(fontSize: 14.0, color: const Color(0xff515151)));
+    }
+  }
+  /*
+   * 根据image路径获取图片
+   */
+  Image getTabImage(path) {
+    return new Image.asset(path, width: 24.0, height: 24.0);
+  }
+ 
+ 
+  void initData() {
+    /*
+     * 初始化选中和未选中的icon
+     */
+    tabImages = [
+      [getTabImage('images/tab/home.png'), getTabImage('images/tab//home_select.png')],
+      [getTabImage('images/tab/show.png'), getTabImage('images/tab//show_select.png')],
+      [getTabImage('images/tab/mine.png'), getTabImage('images/tab//mine_select.png')]
+    ];
+    /*
+     * 三个子界面
+     */
+    _pageList = [
+      new Homepage(),
+      new Showpage(),
+      new Minepage(),
+    ];
+  }
+ 
+  @override
+  Widget build(BuildContext context) {
+    //初始化数据
+    initData();
     return Scaffold(
-      body: tablist[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: _tabbarColor),
-            title: Text(
-              '首页',
-              style: TextStyle(color: _tabbarColor),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.hotel, color: _tabbarColor),
-            title: Text(
-              '展示',
-              style: TextStyle(color: _tabbarColor),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.info, color: _tabbarColor),
-            title: Text(
-              '个人中心',
-              style: TextStyle(color: _tabbarColor),
-            ),
-          )
-        ],
-        currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
-    );
+        body: _pageList[_tabIndex],
+        bottomNavigationBar: new BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            new BottomNavigationBarItem(
+                icon: getTabIcon(0), title: getTabTitle(0)),
+            new BottomNavigationBarItem(
+                icon: getTabIcon(1), title: getTabTitle(1)),
+            new BottomNavigationBarItem(
+                icon: getTabIcon(2), title: getTabTitle(2)),
+          ],
+          type: BottomNavigationBarType.fixed,
+          //默认选中首页
+          currentIndex: _tabIndex,
+          iconSize: 24.0,
+          //点击事件
+          onTap: (index) {
+            setState(() {
+              _tabIndex = index;
+            });
+          },
+        ));
   }
 }
