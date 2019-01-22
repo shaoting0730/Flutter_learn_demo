@@ -101,3 +101,6 @@
 ### 路由过渡动画
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo/result.gif
 ) <br/>
+### 案例1
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case1/result.gif) <br/>
+
