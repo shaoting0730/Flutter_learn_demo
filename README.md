@@ -121,6 +121,9 @@
 ### 案例5 启动屏类实例
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case5/result.png
 ) <br/>
->  [ 左滑返回上一页 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case6/lib/right_back_demo.dart )    <br/>
+>  [ 案例6:左滑返回上一页 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case6/lib/right_back_demo.dart )    <br/>
+###  案例7 Draggable相关学习
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case7/result.gif
+) <br/>
 
 
