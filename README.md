@@ -130,5 +130,7 @@
 ###  案例7 Draggable相关学习
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case7/result.gif
 ) <br/>
+###  案例8 侧滑
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case8/%E4%BE%A7%E8%BE%B9%E6%A0%8Fresult.png) <br/>
 
 
