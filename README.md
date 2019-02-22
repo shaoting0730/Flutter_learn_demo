@@ -106,6 +106,8 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo1/result.png) <br/>
 ### tabBar2
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo2/result.png) <br/>
+### tabBar3:类今日头条上方tabbar
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/TabBar/top_tabbars_demo/topBar_result.png) <br/>
 ### 路由过渡动画
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo/result.gif
 ) <br/>
