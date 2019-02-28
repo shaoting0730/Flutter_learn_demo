@@ -25,10 +25,10 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/switch_checkbox_demo/%20result.png) <br/>
 ### gradwidget
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/gradwidget_demo/%20result.png) <br/>
-### positionwidget  ps:这里我朋友的Android自带模拟器是好的,而我的是跑偏的....
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/positionwidget/%20result.png) <br/>
-### stackwidget   ps:这里我朋友的Android自带模拟器是好的,而我的是跑偏的....
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/stackwidget/%20result.png) <br/>
+### positionwidget  
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/positionwidget/result.png) <br/>
+### stackwidget   
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/stackwidget/result.png) <br/>
 ### push
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/push_demo/%20result.png) <br/>
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/push_param_demo/%20result.png) <br/>
@@ -122,7 +122,7 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case2/result.png) <br/>
 ### 案例3
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case3/result.png) <br/>
-### 案例4 贝塞尔曲线 ps:Android为何出不来
+### 案例4 
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case4/result1.png) <br/>
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case4/result2.png) <br/>
 ### 案例5 启动屏类实例
