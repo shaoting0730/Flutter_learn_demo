@@ -35,8 +35,8 @@ class HomePage extends StatelessWidget {
     return Column(
       children: <Widget>[
         ClipPath(
-          clipper: BottomClipper(),
-          // clipper: BottomClipperTest(),
+          // clipper: BottomClipper(),
+          clipper: BottomClipperTest(),
           child: Container(
             color: Colors.deepOrangeAccent,
             height: 200.0,
