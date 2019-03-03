@@ -116,6 +116,8 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/scoped_model_demo/result.gif) <br/>
 ###     [ redux学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) 
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/redux_demo/flutter_redux_result.gif) <br/>
+###     [ provide学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) 
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/provide_demo/result.gif) <br/>
 ### 案例1
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case1/result.gif) <br/>
 ### 案例2
