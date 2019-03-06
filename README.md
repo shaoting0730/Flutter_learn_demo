@@ -105,8 +105,6 @@
 >  [ json转实体类:json_serializable库学习 ]( https://pheromone.github.io/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/ )    <br/>
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/json_demo/json_serializable_result.png) <br/>
 
-https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/json_demo/json_serializable_result.png
-
 ### tabBar
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo/result.png) <br/>
 ### tabBar1
