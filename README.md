@@ -125,7 +125,8 @@
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/provide_demo/result.gif) <br/>
 ###     [ flutter_bloc学习 ]( https://pheromone.github.io/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/) 
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/flutter_bloc_demo/flutter_bloc_demo_result.gif) <br/>
-### [ fish redux pdf ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86
+### fish redux 
+[ fish redux pdf ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86
 ) 
 [ 阿里fish redux视频 ](https://alivideolive.taobao.com/h5/liveDetail/ff36146a-b106-48f0-8cff-246fa0b62d50) 
 
