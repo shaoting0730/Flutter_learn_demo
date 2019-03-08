@@ -39,7 +39,8 @@
 ###  [ 切圆形图片的5个方法 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/border_radius_demo/lib/main.dart )    
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/border_radius_demo/border_radius_demo_result.png
 ) <br/>
-
+###  [ 使用自定义字体 安卓去除状态栏灰层 渐变色导航栏 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/custom_font_demo/lib/main.dart )    
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/custom_font_demo/result.png) <br/>
 
 ## 布局widget
 ### rowwidget
