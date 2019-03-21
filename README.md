@@ -152,5 +152,11 @@
 ) <br/>
 ###  案例8 侧滑
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case8/%E4%BE%A7%E8%BE%B9%E6%A0%8Fresult.png) <br/>
+###  案例9  Sliver全家桶学习
+>  [ SliverAppBar ](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case9/lib/widgets/SliverAppBarDemo.dart)    <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case9/SliverAppBar.gif) <br/>
+
+>  [ NestedScrollView ](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case9/lib/widgets/NestedScrollViewDemo.dart)    <br/>
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case9/NestedScrollView.gif) <br/>
 
 
