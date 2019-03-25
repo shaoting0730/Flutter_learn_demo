@@ -33,7 +33,6 @@
 > [ flex expanded ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%B8%83%E5%B1%80Widget/flex_expanded_demo )<br/>
 > [ wrap_flow ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%B8%83%E5%B1%80Widget/wrap_flow )<br/>
 
-
 ## 容器widget
 > [ Padding ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/padding_demo )<br/>
 > [ constrainedbox sizedbox UnconstrainedBox ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/constrainedbox_sizedbox_demo )<br/>
@@ -51,16 +50,10 @@
 > [ scroll 滚动控制1 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo )<br/>
 > [ container 滚动控制2 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1 )<br/>
 
-
-
 ## 功能Widget
 >   [ Android双击物理键退出app 主体Theme学习 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/functional_module/lib/main.dart )    <br/>
-### 模糊效果:filter_widget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/filter_widget/result.png
-) <br/>
-### 轻提示
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/tool_tips/result.png
-) <br/>
+> [ 模糊效果:filter_widget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/filter_widget )<br/>
+> [ 轻提示 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/tool_tips )<br/>
 
 ## 其他
 >  [通知 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/notification/lib/main.dart )    <br/>
