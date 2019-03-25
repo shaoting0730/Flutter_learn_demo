@@ -12,72 +12,46 @@
 
 ## 基础widget
 ### [ button ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/button_demo )   <br/>
-### text
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/text_demo/%20result.png) <br/>
-### textfield
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/textfield_demo/%20result.png) <br/>
-### form
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/form_demo/%20result.png) <br/>
-### image
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/image_demo/%20result.png) <br/>
-### switch checkbox
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/switch_checkbox_demo/%20result.png) <br/>
-### gradwidget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/gradwidget_demo/%20result.png) <br/>
-### positionwidget  
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/positionwidget/result.png) <br/>
-### stackwidget   
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/stackwidget/result.png) <br/>
-### push
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/push_demo/%20result.png) <br/>
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/push_param_demo/%20result.png) <br/>
-### ExpansionTile
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/expansion_tile/result.png) <br/>
-### ExpansionPaneList
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/expansionpanelist/result.png) <br/>
-###  [ 切圆形图片的5个方法 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/border_radius_demo/lib/main.dart )    
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/border_radius_demo/border_radius_demo_result.png
-) <br/>
-###  [ 使用自定义字体 安卓去除状态栏灰层 渐变色导航栏 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/custom_font_demo/lib/main.dart )    
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/custom_font_demo/result.png) <br/>
+### [ text ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/button_demo )   <br/>
+### [ textfield ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/textfield_demo  )   <br/>
+### [ form ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/form_demo  )   <br/>
+### [ image ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/image_demo  )   <br/>
+### [ switch checkbox ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/switch_checkbox_demo )<br/>
+### [ gradwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/switch_checkbox_demo )<br/>
+### [ positionwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/positionwidget )<br/>
+### [ stackwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/stackwidget )<br/>
+### [ push ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/push_demo )<br/>
+### [ push传参 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/push_param_demo )<br/>
+### [ ExpansionTile ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/expansion_tile )<br/>
+### [ ExpansionPaneList ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/expansionpanelist )<br/>
+###  [ 切圆形图片的5个方法 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/border_radius_demo )    
+###  [ 使用自定义字体 安卓去除状态栏灰层 渐变色导航栏 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/custom_font_demo )    
 
-## 布局widget
-### rowwidget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/rowwidget_demo/%20result.png) <br/>
-### columnwidget
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/columnwidget_demo/%20result.png) <br/>
-### flex expanded
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/flex_expanded_demo/%20result.png) <br/>
-### wrap flow
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/wrap_flow/%20result.png) <br/>
+## 布局widget  
+### [ rowwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%B8%83%E5%B1%80Widget/rowwidget_demo )<br/>
+### [ columnwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%B8%83%E5%B1%80Widget/columnwidget_demo )<br/>
+### [ flex expanded ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%B8%83%E5%B1%80Widget/flex_expanded_demo )<br/>
+### [ wrap_flow ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%B8%83%E5%B1%80Widget/wrap_flow )<br/>
+
 
 ## 容器widget
-### Padding
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/padding_demo/result.png) <br/>
-### constrainedbox sizedbox UnconstrainedBox
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/constrainedbox_sizedbox_demo/result.png) <br/>
-### decoratedbox
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/decoratedbox_demo/result.png) <br/>
-### transform
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/transform_demo/result.png) <br/>
-### container
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/container/%20result.png) <br/>
+### [ Padding ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/padding_demo )<br/>
+### [ constrainedbox sizedbox UnconstrainedBox ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/constrainedbox_sizedbox_demo )<br/>
+### [ decoratedbox ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/decoratedbox_demo )<br/>
+### [ transform ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/transform_demo )<br/>
+### [ container ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/container )<br/>
 
 ## 滚动widget
-### listview
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo/%20result.png) <br/>
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo2/%20result.png) <br/>
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo3/%20result.png) <br/>
-### gridview
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/gridview_demo/%20result.png) <br/>
-### customscrollview
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/customscrollview_demo/result.png) <br/>
-### scroll
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scroll_widget/result.png) <br/>
-### scrollcontroller_demo 1
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo/result.gif)<br/>
-### scrollcontroller_demo 2
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1/result.gif) <br/>
+### [ listview1 竖向 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo )<br/>
+### [ listview2 横向]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo2 )<br/>
+### [ listview3 动态数据]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo3 )<br/>
+### [ gridview ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/gridview_demo )<br/>
+### [ customscrollview ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/customscrollview_demo )<br/>
+### [ scroll ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scroll_widget )<br/>
+### [ scroll 滚动控制1 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo )<br/>
+### [ container 滚动控制2 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1 )<br/>
+
+
 
 ## 功能Widget
 >   [ Android双击物理键退出app 主体Theme学习 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/functional_module/lib/main.dart )    <br/>
