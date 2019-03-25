@@ -67,32 +67,19 @@
 >  [ HttpClient ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/HttpClient/httpclient_demo/lib/main.dart )    <br/>
 >  [ dio库 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/DioPackage/dio_package_demo/lib/main.dart )    <br/>
 >  [ SQLite:sqflite库简单学习 ]( https://pheromone.github.io/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E4%B8%AD%E7%9A%84sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/ )    <br/>
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/sqflite_demo/sqflite-demo-result.gif) <br/>
 >  [ json转实体类:json_serializable库学习 ]( https://pheromone.github.io/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/ )    <br/>
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/json_demo/json_serializable_result.png) <br/>
+> [ tabBar ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo )<br/>
+> [ tabBar1 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo1 )<br/>
+> [ tabBar2 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo2 )<br/>
+> [ tabBar3:类今日头条上方tabbar ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/top_tabbars_demo )<br/>
+> [ 路由过渡动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo )<br/>
 
-### tabBar
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo/result.png) <br/>
-### tabBar1
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo1/result.png) <br/>
-### tabBar2
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo2/result.png) <br/>
-### tabBar3:类今日头条上方tabbar
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/TabBar/top_tabbars_demo/topBar_result.png) <br/>
-### 路由过渡动画
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo/result.gif
-) <br/>
 ## state管理
-###     [ scoped_model学习 ](https://pheromone.github.io/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20scoped_model%E5%AD%A6%E4%B9%A0/ )    
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/scoped_model_demo/result.gif) <br/>
-###     [ redux学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/redux_demo/flutter_redux_result.gif) <br/>
-###     [ provide学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/provide_demo/result.gif) <br/>
-###     [ flutter_bloc学习 ]( https://pheromone.github.io/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/) 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/flutter_bloc_demo/flutter_bloc_demo_result.gif) <br/>
-### fish redux 
-[ fish redux pdf ](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/Flutter%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6Fish%20Redux.pdf)  <br/>
+> [ scoped_model学习 ](https://pheromone.github.io/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20scoped_model%E5%AD%A6%E4%B9%A0/ )    
+> [ redux学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) 
+> [ provide学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) 
+> [ flutter_bloc学习 ]( https://pheromone.github.io/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/) 
+> [ fish redux pdf ](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/Flutter%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6Fish%20Redux.pdf)  <br/>
 [ 阿里fish redux视频 ](https://alivideolive.taobao.com/h5/liveDetail/ff36146a-b106-48f0-8cff-246fa0b62d50) 
 
 ### 案例1
