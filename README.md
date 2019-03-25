@@ -75,7 +75,7 @@
 > [ 路由过渡动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo )<br/>
 
 ## state管理
-> [ scoped_model学习 ](https://pheromone.github.io/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20scoped_model%E5%AD%A6%E4%B9%A0/ ) <br/>   
+> [ scoped_model学习 ](https://pheromone.github.io/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20scoped_model%E5%AD%A6%E4%B9%A0/ ) <br/> 
 > [ redux学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) <br/>
 > [ provide学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) <br/>
 > [ flutter_bloc学习 ]( https://pheromone.github.io/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/) <br/>
