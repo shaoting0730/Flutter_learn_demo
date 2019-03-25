@@ -1,5 +1,8 @@
 # border_radius_demo
 
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/border_radius_demo/border_radius_demo_result.png
+) <br/>
+
 A new Flutter project.
 
 ## Getting Started
