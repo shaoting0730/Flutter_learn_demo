@@ -1,5 +1,5 @@
 # custompaint_canvas
-
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E8%87%AA%E5%AE%9A%E4%B9%89Widget/CustomPaint%E4%B8%8ECanvas/custompaint_canvas/result.png) <br/>
 A new Flutter project.
 
 ## Getting Started
