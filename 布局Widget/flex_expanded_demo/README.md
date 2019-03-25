@@ -1,5 +1,8 @@
 # flex_expanded_demo
 
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/flex_expanded_demo/%20result.png) <br/>
+
+
 A new Flutter project.
 
 ## Getting Started
