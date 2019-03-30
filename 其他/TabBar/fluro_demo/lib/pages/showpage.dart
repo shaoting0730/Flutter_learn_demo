@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
+import '../routers/application.dart';
 
 class Showpage extends StatelessWidget {
   @override
@@ -6,7 +8,12 @@ class Showpage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('SHOW')),
       body: Center(
-        child: Text('SHOW'),
+        child: RaisedButton(
+          onPressed: (){
+              Application.router.navigateTo(context, "./other", transition: TransitionType.nativeModal);
+          },
+          child: Text('跳转'),
+        ),
       ),
     );
   }
