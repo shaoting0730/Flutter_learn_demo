@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import './widgets/SliverAppBarDemo.dart';
 import './widgets/NestedScrollViewDemo.dart';
-
+import './widgets/SliverGridDemo.dart';
+import './widgets/SliverListDemo.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -40,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         builder: (context) => SliverAppBarDemo(),
                       ));
                 },
-                child: Text('SliverAppBar'),
+                child: Text('SliverAppBar + SliverFixedExtentList'),
               ),
               InkWell(
                 onTap: () {
@@ -50,7 +51,27 @@ class _MyHomePageState extends State<MyHomePage> {
                         builder: (context) => NestedScrollViewDemo(),
                       ));
                 },
-                child: Text('NestedScrollView'),
+                child: Text('NestedScrollView + SliverOverlapAbsorber'),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SliverGridDemo(),
+                      ));
+                },
+                child: Text('SliverGrid + SliverPadding + SliverSafeArea '),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SliverListDemo(),
+                      ));
+                },
+                child: Text('SliverList'),
               )
             ],
           ),
