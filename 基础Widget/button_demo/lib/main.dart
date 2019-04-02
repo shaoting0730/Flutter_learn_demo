@@ -43,8 +43,58 @@ class MyApp extends StatelessWidget {
                 },
               ),
               // 自定义按钮外观 FlatButton为例
-              /**
-               *  
+              FlatButton(
+                child: Text('自定义按钮外观'),
+                color: Colors.pink,
+                highlightColor: Colors.red[700],
+                splashColor: Colors.black,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.00)),
+                onPressed: () {
+                  print('自定义样式外观');
+                },
+              ),
+              MenuBtn()
+              
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+class MenuBtn extends StatefulWidget {
+  @override
+  _MenuBtnState createState() => _MenuBtnState();
+}
+
+class _MenuBtnState extends State<MenuBtn> {
+  String _value = '萝莉';
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Text(_value),
+        PopupMenuButton(
+                initialValue: '萝莉',
+                onCanceled: () {},
+                onSelected: (value) {
+                    setState(() {
+                      _value = value;
+                    });
+                },
+                itemBuilder: (BuildContext context) => [
+                      PopupMenuItem(value: '萝莉', child: Text('萝莉')),
+                      PopupMenuItem(value: '大屌萝莉', child: Text('大屌萝莉')),
+                      PopupMenuItem(value: '大胸萝莉', child: Text('大胸萝莉')),
+                    ],
+              )
+      ],
+    );
+  }
+}
+/**       
+               *  FlatButton
                *  @required this.onPressed, //按钮点击回调
                *  this.textColor, //按钮文字颜色
                *  this.disabledTextColor, //按钮禁用时的文字颜色
@@ -57,21 +107,4 @@ class MyApp extends StatelessWidget {
                * this.shape, //外形
                * @required this.child, //按钮的内容
                */
-              FlatButton(
-                child: Text('自定义按钮外观'),
-                color: Colors.pink,
-                highlightColor: Colors.red[700],
-                splashColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4.00)),
-                onPressed: () {
-                  print('自定义样式外观');
-                },
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+              
