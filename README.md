@@ -83,7 +83,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ tabBar1 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo1 )<br/>
 > [ tabBar2 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo2 )<br/>
 > [ tabBar3:类今日头条上方tabbar ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/top_tabbars_demo )<br/>
-> [ 路由管理库fluro学习 ]( https://pheromone.github.io/2019/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86%E5%BA%93fluro%E5%AD%A6%E4%B9%A0/ ) <br/>
+> [ 路由管理库fluro学习 ]( https://pheromone.github.io/2019/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86%E5%BA%93fluro%E5%AD%A6%E4%B9%A0/ ) <br/>
 > [ 路由过渡动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo )<br/>
 
 ## state管理
