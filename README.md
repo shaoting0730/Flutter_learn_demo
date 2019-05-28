@@ -87,10 +87,10 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 路由过渡动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo )<br/>
 
 ## state管理
-> [ scoped_model学习 ](https://pheromone.github.io/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20scoped_model%E5%AD%A6%E4%B9%A0/ ) <br/> 
-> [ redux学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) <br/>
-> [ provide学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20redux%E5%AD%A6%E4%B9%A0/ ) <br/>
-> [ flutter_bloc学习 ]( https://pheromone.github.io/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%20flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/) <br/>
+> [ scoped_model学习 ]( https://pheromone.github.io/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/ ) <br/> 
+> [ redux学习 ](https://pheromone.github.io/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~redux%E5%AD%A6%E4%B9%A0/ ) <br/>
+> [ provide学习 ](https://pheromone.github.io/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/ ) <br/>
+> [ flutter_bloc学习 ]( https://pheromone.github.io/2019/03/07/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~flutter_bloc%E5%BA%93%E5%AD%A6%E4%B9%A0/ ) <br/>
 > [ fish redux pdf ](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/Flutter%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6Fish%20Redux.pdf)  <br/>
 > [ 阿里fish redux视频 ](https://alivideolive.taobao.com/h5/liveDetail/ff36146a-b106-48f0-8cff-246fa0b62d50) <br/>
 
