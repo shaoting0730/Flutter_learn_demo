@@ -9,4 +9,4 @@ PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
-#include "/Users/shaotingzhou/Desktop/Flutter/混合开发/NativeAddFlutter/flutter_module/.ios/Flutter/Generated.xcconfig"
+#include "/Users/shaotingzhou/Desktop/Flutter/混合开发/flutter_module/.ios/Flutter/Generated.xcconfig"

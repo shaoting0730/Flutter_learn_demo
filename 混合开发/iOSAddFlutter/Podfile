@@ -10,6 +10,7 @@ target 'iOSAddFlutter' do
   flutter_application_path = '../flutter_module/'
   eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
 
+
   target 'iOSAddFlutterTests' do
     inherit! :search_paths
     # Pods for testing

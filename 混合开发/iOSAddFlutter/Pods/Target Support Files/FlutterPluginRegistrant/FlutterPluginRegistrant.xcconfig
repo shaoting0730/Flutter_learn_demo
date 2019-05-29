@@ -8,5 +8,5 @@ PODS_ROOT = ${SRCROOT}
 PODS_TARGET_SRCROOT = ${PODS_ROOT}/../../flutter_module/.ios/Flutter/FlutterPluginRegistrant
 PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
 SKIP_INSTALL = YES
-#include "/Users/shaotingzhou/Desktop/Flutter/混合开发/NativeAddFlutter/flutter_module/.ios/Flutter/Generated.xcconfig"
-#include "/Users/shaotingzhou/Desktop/Flutter/混合开发/NativeAddFlutter/flutter_module/.ios/Flutter/Generated.xcconfig"
+#include "/Users/shaotingzhou/Desktop/Flutter/混合开发/flutter_module/.ios/Flutter/Generated.xcconfig"
+#include "/Users/shaotingzhou/Desktop/Flutter/混合开发/flutter_module/.ios/Flutter/Generated.xcconfig"
