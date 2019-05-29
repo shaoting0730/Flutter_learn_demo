@@ -49,6 +49,8 @@ class MyApp extends StatelessWidget {
               color: Colors.blue,
               colorBlendMode: BlendMode.difference,
             ),
+            // 占位图
+            
           ],
         ),
       ),

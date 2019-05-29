@@ -9,6 +9,8 @@
 > To display the performance overlay (WidgetsApp.showPerformanceOverlay), press "P".  <br/>
 > To save a screenshot to flutter.png, press "s".  <br/>
 > To repeat this help message, press "h". To detach, press "d"; to quit, press "q".  <br/>
+> vim ~/.bash_profile
+> source ~/.bash_profile
 
 ### 下载单个项目,复制单个项目url到下面网址即可.
 > [ DownGit ]( https://minhaskamal.github.io/DownGit/#/home )   <br/>
