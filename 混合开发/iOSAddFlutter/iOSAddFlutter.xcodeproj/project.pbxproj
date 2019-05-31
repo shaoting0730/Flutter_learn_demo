@@ -179,8 +179,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CAECB0E229E52D30032EC7F /* Build configuration list for PBXNativeTarget "iOSAddFlutter" */;
 			buildPhases = (
-				DD9097B39CA86508B6C3C1D4 /* [CP] Check Pods Manifest.lock */,
 				6CAECB17229E53830032EC7F /* ShellScript */,
+				DD9097B39CA86508B6C3C1D4 /* [CP] Check Pods Manifest.lock */,
 				6CAECADE229E52D20032EC7F /* Sources */,
 				6CAECADF229E52D20032EC7F /* Frameworks */,
 				6CAECAE0229E52D20032EC7F /* Resources */,
