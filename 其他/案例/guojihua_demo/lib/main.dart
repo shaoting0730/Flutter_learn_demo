@@ -46,6 +46,15 @@ class _MyAppState extends State<MyApp> {
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: applic.supportedLocales(),
+      localeResolutionCallback: (deviceLocale, supportedLocales) {
+       if(deviceLocale.toString() == 'en_CN'||deviceLocale.toString() == 'zh_CN'){
+              applic.shouldReload = true;
+              applic.onLocaleChanged(new Locale('zh',''));
+        } else {
+             applic.shouldReload = true;
+              applic.onLocaleChanged(new Locale('en',''));
+        }
+      }
     );
   }
 }
