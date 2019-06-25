@@ -1,5 +1,5 @@
 >  打开模拟器  运行  1.cd 根目录  2.flutter run -d all 或者 flutter run  => ps:flutter packages get 获取三方库 <br/>
-> 调试: r: 运行 R:重新运行 p:显示网格 P:显示性能 o:切换模拟器 s:保存截图  h:显示帮助信息 q:退出. 3.切换版本: flutter channels  && flutter channels XXX 打开dubug开启真热更新 You can dump the widget hierarchy of the app (debugDumpApp) by pressing "w". <br/>
+> 调试: r: 运行 R:重新运行 p:显示网格 P:显示性能 o:切换模拟器 s:保存截图  h:显示帮助信息 q:退出. 3.切换版本: flutter channels  && flutter channels XXX 之后 flutter upgrade即可 打开dubug开启真热更新 You can dump the widget hierarchy of the app (debugDumpApp) by pressing "w". <br/>
 > To dump the rendering tree of the app (debugDumpRenderTree), press "t". <br/>
 > For layers (debugDumpLayerTree), use "L"; for accessibility  <br/>
 > (debugDumpSemantics), use "S" (for traversal order) or "U" (for inverse hit test order).  <br/>
