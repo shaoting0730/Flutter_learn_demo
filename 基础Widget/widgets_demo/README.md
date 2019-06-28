@@ -24,7 +24,7 @@
    ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/DatePicker2.png) <br/>
    
  ## 滚动监听
-   [ DatePicker ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/notification_scroll.dart )    <br/>
+   [ 滚动监听 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/notification_scroll.dart )    <br/>
    ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/%E6%BB%9A%E5%8A%A8%E7%9B%91%E5%90%AC.png) <br/>
    
    
