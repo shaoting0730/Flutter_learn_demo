@@ -27,6 +27,16 @@
    [ 滚动监听 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/notification_scroll.dart )    <br/>
    ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/%E6%BB%9A%E5%8A%A8%E7%9B%91%E5%90%AC.png) <br/>
    
+   ## 雨滴动画
+   [ 原文 ]( https://cloud.tencent.com/developer/article/1374663 )    <br/>
+   [ 源码 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/rain_drop.dart )    <br/>
+   ![image](    https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/%E9%9B%A8%E6%BB%B4%E5%8A%A8%E7%94%BB.gif
+ ) <br/>
+ 
+   ## 密码输入框
+   [ 原文 ](https://juejin.im/post/5c10ef31e51d452e2c698673#heading-0 )    <br/>
+   [ 源码 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/Keyboard )    <br/>
+   ![image]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/%E5%AF%86%E7%A0%81%E8%BE%93%E5%85%A5.gif ) <br/>
    
    
    
