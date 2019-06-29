@@ -8,6 +8,9 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  /*
+   *  获取本地化值
+   */
   Future<int> get() async {
     int guide = 0;
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -43,6 +46,7 @@ class GuidePage extends StatefulWidget {
 }
 
 class _GuidePageState extends State<GuidePage> {
+  SwiperController _controller;
   @override
   Widget build(BuildContext context) {
     List swiperDateList = ['guide1.jpg', 'guide2.jpg', 'guide3.jpg'];
@@ -63,19 +67,9 @@ class _GuidePageState extends State<GuidePage> {
                           Image.asset('images/guide3.jpg',
                               width: MediaQuery.of(context).size.width,
                               height: MediaQuery.of(context).size.height,
-                              fit: BoxFit.cover),
+                              fit: BoxFit.cover),    
                           InkWell(
-                            onTap: () async {
-                              // 存标志
-                              SharedPreferences prefs =
-                                  await SharedPreferences.getInstance();
-                              prefs.setInt('guide', 1);
-                              // 跳转页面
-                              Navigator.of(context).pushAndRemoveUntil(
-                                  MaterialPageRoute(
-                                      builder: (context) => TopBar()),
-                                  (route) => route == null);
-                            },
+                            onTap: _endGuideView,
                             child: Text(
                               '开始体验',
                               style:
@@ -89,8 +83,22 @@ class _GuidePageState extends State<GuidePage> {
           },
           itemCount: swiperDateList.length,
           pagination: SwiperPagination(),
+          controller: _controller,
           autoplay: false,
           loop: false),
     );
+  }
+  /*
+   * 结束浏览页面
+   * 存标志位 跳转页面
+   */
+  _endGuideView() async {
+    // 存标志
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setInt('guide', 1);
+    // 跳转页面
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => MyApp()),
+        (route) => route == null);
   }
 }

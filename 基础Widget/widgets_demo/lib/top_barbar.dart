@@ -5,6 +5,7 @@ import './widgets//bottomsheet_widget.dart';
 import './widgets/dialog_widget.dart';
 import './widgets/stepper_widget.dart';
 import './widgets/notification_scroll.dart';
+import './widgets/rain_drop.dart';
 
 class TopBar extends StatefulWidget {
   _TopBarState createState() => _TopBarState();
@@ -40,7 +41,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
             Tab(text: 'Dialog'),
             Tab(text: 'Stepper'),
             Tab(text: '滚动监听'),
-            Tab(text: '柒'),
+            Tab(text: '雨滴动画'),
             Tab(text: '捌'),
             Tab(text: '玖'),
             Tab(icon:Icon(Icons.business_center)),
@@ -56,8 +57,8 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
           DialogWidget(),
           StepperWidget(),
           NotificationListenerScroll(),
-          Text('77'),
-          Text('88'),
+          Center(child: RainDropWidget(width: 300, height: 400,)),   
+          Text('88'),  
           Text('99'),
           Text('100'),
         ],
