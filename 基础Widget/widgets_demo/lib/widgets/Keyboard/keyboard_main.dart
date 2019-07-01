@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import './CustomJPasswordFieldWidget.dart';
 import './keyboard_widget.dart';
 import './pay_password.dart';
 
-/// 支付密码  +  自定义键盘
+/// 支付密码  +  自定义键盘 
 
 class MainKoard extends StatefulWidget {
   static final String sName = "enter";
@@ -51,12 +53,6 @@ class KeyboardState extends State<MainKoard> {
             ),
           ),
           Text('密码是$pwdData'), 
-          ///密码框
-          new Padding(
-            padding: const EdgeInsets.only(top: 15.0),
-            child: _buildPwd(pwdData),
-          ),
-
 //          new Padding(
 //            padding: const EdgeInsets.only(top: 20.0),
 //            child: new Text(
@@ -64,7 +60,6 @@ class KeyboardState extends State<MainKoard> {
 //              style: new TextStyle(fontSize: 12.0, color: Color(0xff999999)),
 //            ),
 //          ),
-
 //          new Padding(
 //            padding: const EdgeInsets.only(top: 30.0), //0xffff0303
 //            child: new Text(

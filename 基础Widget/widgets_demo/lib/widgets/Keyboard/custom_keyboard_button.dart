@@ -33,7 +33,7 @@ class ButtonState extends State<CustomKbBtn> {
         height:50.0,
         width: _screenWidth / 3,
         child: new OutlineButton(
-          // 直角
+          // 直角 
           shape: new RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(0.0)),
           // 边框颜色

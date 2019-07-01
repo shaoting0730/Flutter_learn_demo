@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widgets/Keyboard/keyboard_main.dart';
 import './widgets/appbar_widget.dart';
 import './widgets/datepicker_widget.dart';
 import './widgets//bottomsheet_widget.dart';
@@ -6,7 +7,8 @@ import './widgets/dialog_widget.dart';
 import './widgets/stepper_widget.dart';
 import './widgets/notification_scroll.dart';
 import './widgets/rain_drop.dart';
-import './widgets/Keyboard/keyboard_main.dart';
+import './widgets/webview_message.dart';
+
 class TopBar extends StatefulWidget {
   _TopBarState createState() => _TopBarState();
 }
@@ -43,7 +45,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
             Tab(text: '滚动监听'),
             Tab(text: '雨滴动画'),
             Tab(text: '密码输入框'),
-            Tab(text: '玖'),
+            Tab(text: '与webView交互'),
             Tab(icon:Icon(Icons.business_center)),
           ],
         ),
@@ -59,7 +61,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
           NotificationListenerScroll(),
           Center(child: RainDropWidget(width: 300, height: 400,)),   
           MainKoard(),  
-          Text('99'),
+          WebViewPage(),
           Text('100'),
         ],
       ),
