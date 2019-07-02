@@ -1,0 +1,410 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">搭建 Flutter 开发环境</h1>
+<p>搭建 Flutter 开发环境，有两部分：</p>
+<h3 class="heading" data-id="heading-1">1. Flutter SDK</h3>
+<p>Flutter 开发需要安装 Flutter SDK，这里会分别介绍 Flutter SDK 在 Windows、MacOS、Linux 三个平台上的安装过程。</p>
+<h3 class="heading" data-id="heading-2">2. Flutter IDE</h3>
+<p>安装完 Flutter SDK 后，想要开发 Flutter，还需要 IDE ，可以开发 Flutter 的 IDE 有两个：</p>
+<ul>
+<li>Android Studio</li>
+<li>VS Code</li>
+</ul>
+<p>这两个 IDE，你可以根据自己的习惯选择一个。但是推荐使用 VS Code，因为其运行不会占用太多的内存，小巧方便，功能强大。</p>
+<h2 class="heading" data-id="heading-3">配置 Flutter 中国镜像</h2>
+<p>在搭建 Flutter 环境之前，因为众所周知的原因，有可能被墙，所以需要先为 Flutter 配置中国镜像。</p>
+<h3 class="heading" data-id="heading-4">中国镜像地址</h3>
+<p>国内有两个镜像可以用，一个就是官方 Flutter 社区的国内镜像，另一个是上海交通大学 Linux 用户组的镜像，建议用官方 Flutter 社区的国内镜像。</p>
+<ul>
+<li>
+<p>Flutter 社区</p>
+<p>FLUTTER_STORAGE_BASE_URL: <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fstorage.flutter-io.cn" rel="nofollow noopener noreferrer">storage.flutter-io.cn</a></p>
+<p>PUB_HOSTED_URL: <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fpub.flutter-io.cn" rel="nofollow noopener noreferrer">pub.flutter-io.cn</a></p>
+</li>
+<li>
+<p>上海交通大学 Linux 用户组</p>
+<p>FLUTTER_STORAGE_BASE_URL: <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fmirrors.sjtug.sjtu.edu.cn" rel="nofollow noopener noreferrer">mirrors.sjtug.sjtu.edu.cn</a></p>
+<p>PUB_HOSTED_URL: <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdart-pub.mirrors.sjtug.sjtu.edu.cn" rel="nofollow noopener noreferrer">dart-pub.mirrors.sjtug.sjtu.edu.cn</a></p>
+</li>
+</ul>
+<h3 class="heading" data-id="heading-5">配置方法</h3>
+<p>需要设置两个环境变量：<code>PUB_HOSTED_URL</code> 和 <code>FLUTTER_STORAGE_BASE_URL</code>。</p>
+<h4 class="heading" data-id="heading-6">Windows</h4>
+<ol>
+<li>
+<p><code>计算机</code> -&gt; <code>属性</code> -&gt; <code>高级系统设置</code> -&gt; <code>环境变量</code>，打开环境变量设置框。</p>
+</li>
+<li>
+<p>在用户变量下，选择<code>新建环境变量</code>，添加如下的两个环境变量和值：</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FLUTTER_STORAGE_BASE_URL</td>
+<td><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fstorage.flutter-io.cn" rel="nofollow noopener noreferrer">storage.flutter-io.cn</a></td>
+</tr>
+<tr>
+<td>PUB_HOSTED_URL</td>
+<td><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fpub.flutter-io.cn" rel="nofollow noopener noreferrer">pub.flutter-io.cn</a></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h4 class="heading" data-id="heading-7">Linux</h4>
+<p>打开 <code>~/.bashrc</code>:</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-variable">$vim</span> ~/.bashrc
+</code></pre><p>将镜像加入环境变量：</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-built_in">export</span> PUB_HOSTED_URL=https://pub.flutter-io.cn
+<span class="hljs-built_in">export</span> FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+</code></pre><p>保存后，在运行</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-variable">$source</span> ~/.bashrc
+</code></pre><h4 class="heading" data-id="heading-8">MacOS</h4>
+<p>在 <code>~/.bash_profile</code> 上添加：</p>
+<pre><code class="hljs shell" lang="shell">export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+</code></pre><p>保存文件后，在运行</p>
+<pre><code class="hljs shell" lang="shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">source</span> ~/.bash_profile</span>
+</code></pre><h2 class="heading" data-id="heading-9">Flutter SDK 安装 —  Windows</h2>
+<h3 class="heading" data-id="heading-10">系统要求</h3>
+<p>开发环境必须满足以下最低要求：</p>
+<ul>
+<li>操作系统： Windows 7 SP1（64位）及以上</li>
+<li>硬盘空间：400M（不包括 IDE 或工具的磁盘空间）</li>
+<li>依赖工具：Flutter 依赖如下的工具：
+<ul>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fpowershell%2Fscripting%2Fsetup%2Finstalling-windows-powershell" rel="nofollow noopener noreferrer">Windows PowerShell 5.0</a></li>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fgit-scm.com%2Fdownload%2Fwin" rel="nofollow noopener noreferrer">Git for Windows 2.x</a></li>
+</ul>
+</li>
+</ul>
+<h4 class="heading" data-id="heading-11">Windows PowerShell 5.0</h4>
+<p>Powershell 从 Windows7 时代开始内置于 Windows 系统当中，可以看作是微软对 cmd 的大升级，随着微软对 Win10 系统的不断升级，内置的默认命令行工具也逐渐从 cmd 迁移到了 PowerShell。</p>
+<p>PowerShell 相对于 cmd 来说：</p>
+<ul>
+<li>界面更美观</li>
+<li>不仅完美支持传统 Windows 命令和 .net 库中的命令，也支持部分常用的 Linux 命令，功能更强大。</li>
+</ul>
+<p>经过验证，可以不使用 PowerShell ，也不用升级 PowerShell 的版本，使用 cmd 完全没问题。</p>
+<p>如果你想升级 PowerShell 到 5.0，可以自行搜索升级方法。</p>
+<h3 class="heading" data-id="heading-12">安装 Git</h3>
+<p>从<a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fgit-scm.com%2Fdownloads" rel="nofollow noopener noreferrer">这里下载</a> Git 的安装包安装。</p>
+<p>安装完后，打开 cmd 验证，输入：</p>
+<pre><code class="hljs shell" lang="shell">git --version
+</code></pre><p>看到：</p>
+<pre><code class="hljs shell" lang="shell">C:\Users\Administrator&gt;git --version
+2.13.0.windows.1
+</code></pre><p>说明 Git 安装成功，Git 用于管理 Flutter 的源码。</p>
+<h3 class="heading" data-id="heading-13">搭建 Android 开发环境</h3>
+<p>为了 Flutter 可以编译成 Android APK，和运行在 Android 模拟器上，需要搭建 Android 开发环境。</p>
+<ol>
+<li>安装 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdeveloper.android.com%2Fstudio" rel="nofollow noopener noreferrer">Android Studio</a>，Android Studio 安装成功后，会自带 Android SDK。</li>
+</ol>
+<h3 class="heading" data-id="heading-14">下载 Flutter SDK</h3>
+<ol>
+<li>你可以在 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fflutter.dev%2Fdocs%2Fdevelopment%2Ftools%2Fsdk%2Farchive%3Ftab%3Dwindows" rel="nofollow noopener noreferrer">Flutter SDK</a> 的下载页面，选择你想要的版本，一般选择稳定版的，目前最新的稳定版是 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fstorage.googleapis.com%2Fflutter_infra%2Freleases%2Fstable%2Fwindows%2Fflutter_windows_v1.5.4-hotfix.2-stable.zip" rel="nofollow noopener noreferrer">v1.5.4-hotfix.2</a>。</li>
+<li>将 Flutter SDK 的 zip 包解压到一个目录下，例如   <code>E:\src\flutter</code>（目录随意，但是不要放在需要权限的目录下，例如 <code>C:\Program Files\</code> ）</li>
+</ol>
+<h3 class="heading" data-id="heading-15">设置 Flutter SDK 的环境变量</h3>
+<ol>
+<li>
+<p><code>计算机</code> -&gt; <code>属性</code> -&gt; <code>高级系统设置</code> -&gt; <code>环境变量</code>，打开环境变量设置框。</p>
+</li>
+<li>
+<p>在用户变量下，选择 <code>Path</code>，点击编辑：</p>
+<ul>
+<li>如果已经存在 <code>Path</code>变量，则在原有的值后面先加 <code>;</code>，然后将 Flutter SDK 的完整路径 <code>E:\src\flutter\bin</code> 添加上。</li>
+<li>如果没有 <code>Path</code> 变量，则新建一个名为 <code>Path</code> 的用户变量，然后将 Flutter SDK 的完整路径 <code>E:\src\flutter\bin</code> 添加上。</li>
+</ul>
+<p>编辑完成后，点击确定。</p>
+</li>
+</ol>
+<h3 class="heading" data-id="heading-16">运行 flutter doctor</h3>
+<p>为了验证 Flutter 是否安装成功，在 cmd 运行：</p>
+<pre><code class="hljs shell" lang="shell">flutter doctor
+</code></pre><p>如果看到输出如下的结果：</p>
+<pre><code class="hljs shell" lang="shell">C:\Users\Administrator&gt;flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, v1.5.4-hotfix.2, on Microsoft Windows [Version 6.1.7601], locale zh-CN)
+[✓] Android toolchain - develop for Android devices (Android SDK 27.0.3)
+[✓] Android Studio (version 3.1)
+[!] Connected device 
+    ! No devices available
+
+! Doctor found issues in 1 categories.
+</code></pre><p>说明，Flutter SDK 已经安装成功。但是也可能遇到 Flutter 的报错，请按照报错的提示修复，例如：</p>
+<ul>
+<li>
+<p>Some Android licenses not accepted（Android证书的问题）</p>
+<p>运行 <code>flutter doctor --android-licenses</code> 修复</p>
+</li>
+</ul>
+<h2 class="heading" data-id="heading-17">Flutter SDK 安装 —  Linux</h2>
+<p>这里以 Ubuntu 为例。</p>
+<h3 class="heading" data-id="heading-18">系统要求</h3>
+<p>开发环境必须满足以下最低要求：</p>
+<ul>
+<li>操作系统：Linux （64位）</li>
+<li>硬盘空间：600M（不包括 IDE 或工具的磁盘空间）</li>
+<li>工具：Flutter需要用到如下的命令行（Linux 自带，无需额外安装）：
+<ul>
+<li>bash</li>
+<li>curl</li>
+<li>git 2.x</li>
+<li>mkdir</li>
+<li>rm</li>
+<li>unzip</li>
+<li>which</li>
+<li>xz-utils</li>
+</ul>
+</li>
+<li>共享库：Flutter test的命令需要用到如下的库（Linux 自带，无需额外安装）：
+<ul>
+<li>libGLU.so.1</li>
+</ul>
+</li>
+</ul>
+<p>这些工具 Ubuntu 默认已经安装，无需在进行操作。</p>
+<h3 class="heading" data-id="heading-19">安装 Android 开发环境</h3>
+<p>为了 Flutter 可以编译成 Android APK，和运行在 Android 模拟器上，需要搭建 Android 开发环境。</p>
+<ol>
+<li>安装 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdeveloper.android.com%2Fstudio" rel="nofollow noopener noreferrer">Android Studio</a>，Android Studio 安装成功后，会自带 Android SDK。</li>
+</ol>
+<h3 class="heading" data-id="heading-20">下载 Flutter SDK</h3>
+<ol>
+<li>你可以在 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fflutter.dev%2Fdocs%2Fdevelopment%2Ftools%2Fsdk%2Farchive%3Ftab%3Dlinux" rel="nofollow noopener noreferrer">Flutter SDK</a> 的下载页面，选择你想要的版本，一般选择稳定版的，最新的稳定版是 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fstorage.googleapis.com%2Fflutter_infra%2Freleases%2Fstable%2Flinux%2Fflutter_linux_v1.5.4-hotfix.2-stable.tar.xz" rel="nofollow noopener noreferrer">v1.5.4-hotfix.2</a>。</li>
+<li>选择一个目录，解压缩 Flutter SDK 的 zip 包，例如：<pre><code class="hljs shell" lang="shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> ~/development</span>
+<span class="hljs-meta">$</span><span class="bash"> tar xf ~/Downloads/flutter_linux_v1.0.0-stable.tar.xz</span>
+</code></pre></li>
+</ol>
+<h3 class="heading" data-id="heading-21">设置 Flutter SDK 的环境变量</h3>
+<p>打开 <code>~/.bashrc</code>:</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-variable">$vim</span> ~/.bashrc
+</code></pre><p>将 Flutter SDK 的完整路径加入环境变量，添加：</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:~/development/flutter/bin
+</code></pre><p>保存后，在运行</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-variable">$source</span> ~/.bashrc
+</code></pre><h3 class="heading" data-id="heading-22">运行 flutter doctor</h3>
+<p>为了验证 Flutter 是否安装成功，运行：</p>
+<pre><code class="hljs shell" lang="shell"><span class="hljs-meta">$</span><span class="bash"> flutter doctor</span>
+</code></pre><p>如果看到输出如下的结果：</p>
+<pre><code class="hljs shell" lang="shell">Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, v1.5.4-hotfix.2, on Linux, locale zh_CN.UTF-8)
+[✓] Android toolchain - develop for Android devices (Android SDK 27.0.3)
+[✓] Android Studio (version 3.1)
+[!] Connected device 
+    ! No devices available
+
+! Doctor found issues in 1 categories.
+</code></pre><p>说明，Flutter SDK 已经安装成功。但是也可能遇到 Flutter 的报错，请按照报错的提示修复，例如：</p>
+<ul>
+<li>
+<p>Some Android licenses not accepted（Android 证书的问题）</p>
+<p>运行 <code>flutter doctor --android-licenses</code> 修复</p>
+</li>
+</ul>
+<h2 class="heading" data-id="heading-23">Flutter SDK 安装 —  MacOS</h2>
+<h3 class="heading" data-id="heading-24">系统要求</h3>
+<p>开发环境必须满足以下最低要求：</p>
+<ul>
+<li>操作系统： macOS （64位）</li>
+<li>硬盘空间：700M（不包括 IDE 或工具的磁盘空间）</li>
+<li>依赖工具：Flutter需要用到如下的命令行（MacOS 自带，无需额外安装）：
+<ul>
+<li>bash</li>
+<li>curl</li>
+<li>git 2.x</li>
+<li>mkdir</li>
+<li>rm</li>
+<li>unzip</li>
+<li>which</li>
+</ul>
+</li>
+</ul>
+<p>这些工具 MacOS 默认已经安装，无需在进行操作。</p>
+<h3 class="heading" data-id="heading-25">安装 Android 开发环境</h3>
+<p>为了 Flutter 可以编译成 Android APK，和运行在 Android 模拟器上，需要搭建 Android 开发环境。</p>
+<ol>
+<li>安装 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdeveloper.android.com%2Fstudio" rel="nofollow noopener noreferrer">Android Studio</a>，Android Studio 安装成功后，会自带 Android SDK。</li>
+</ol>
+<h3 class="heading" data-id="heading-26">安装 iOS 开发环境</h3>
+<p>为了 Flutter 可以编译成 iOS 安装包，和运行在 iOS 模拟器上，需要搭建 iOS 开发环境。</p>
+<p>在 MacOS 需要先安装 Xcode：</p>
+<ol>
+<li>
+<p>Xcode 版本需要 9.0 及以上（下载地址 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdeveloper.apple.com%2Fxcode%2F" rel="nofollow noopener noreferrer">web download</a> 或者 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fxcode%2Fid497799835" rel="nofollow noopener noreferrer">Mac App Store</a>）。</p>
+</li>
+<li>
+<p>在 Terminal 运行：</p>
+<pre><code class="hljs shell" lang="shell"><span class="hljs-meta">$</span><span class="bash">  sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer</span>
+</code></pre><p>目的是使用最新版的 Xcode。</p>
+</li>
+<li>
+<p>先打开 Xcode，同意 Xcode 的许可协议</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/8/169fc4f9ec134730?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1204" data-height="908" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1204&quot; height=&quot;908&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>然后在命令行运行：</p>
+<pre><code class="hljs shell" lang="shell"><span class="hljs-meta">$</span><span class="bash"> sudo xcodebuild -license</span>
+</code></pre><p>会看到如下的内容</p>
+<pre><code class="hljs bash" lang="bash">....
+By typing <span class="hljs-string">'agree'</span> you are agreeing to the terms of the software license agreements. Type <span class="hljs-string">'print'</span> to <span class="hljs-built_in">print</span> them or anything <span class="hljs-keyword">else</span> to cancel, [agree, <span class="hljs-built_in">print</span>, cancel]
+</code></pre><p>然后输入 <code>agree</code> 回车。</p>
+<p>然后 Xcode 的协议就签署成功了。</p>
+</li>
+</ol>
+<p>安装完 Xcode 之后，就可以将 Flutter 编译成 iOS 安装包了，电脑上也能运行 iOS 的模拟器。</p>
+<h3 class="heading" data-id="heading-27">下载 Flutter SDK</h3>
+<ol>
+<li>
+<p>你可以在 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fflutter.dev%2Fdocs%2Fdevelopment%2Ftools%2Fsdk%2Farchive%3Ftab%3Dmacos" rel="nofollow noopener noreferrer">Flutter SDK</a> 的下载页面，选择你想要的版本，一般选择稳定版的，最新的稳定版是 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fstorage.googleapis.com%2Fflutter_infra%2Freleases%2Fstable%2Fmacos%2Fflutter_macos_v1.5.4-hotfix.2-stable.zip" rel="nofollow noopener noreferrer">v1.5.4-hotfix.2</a>。</p>
+</li>
+<li>
+<p>选一个路径来存放 Flutter SDK ，例如 <code>/Users/kk/sdk</code>， 在这个位置下解压缩 Flutter SDK 的 zip 包：</p>
+<pre><code class="hljs shell" lang="shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> /Users/kk/sdk</span>
+<span class="hljs-meta">$</span><span class="bash"> unzip ~/Downloads/flutter_macos_v1.0.0-stable.zip</span>
+</code></pre></li>
+</ol>
+<h3 class="heading" data-id="heading-28">设置 Flutter SDK 的环境变量</h3>
+<p>在 <code>~/.bash_profile</code> 上添加（没有 .bash_profile ,可以新建一个）：</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-built_in">export</span> FLUTTER_HOME=/Users/kk/sdk
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$FLUTTER_HOME</span>/bin
+</code></pre><p>保存文件后，在运行</p>
+<pre><code class="hljs shell" lang="shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">source</span> ~/.bash_profile</span>
+</code></pre><h3 class="heading" data-id="heading-29">运行 flutter doctor</h3>
+<p>为了验证 Flutter 是否安装成功，运行：</p>
+<pre><code class="hljs shell" lang="shell"><span class="hljs-meta">$</span><span class="bash"> flutter doctor</span>
+</code></pre><p>如果看到输出如下的结果：</p>
+<pre><code class="hljs shell" lang="shell">Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, v1.5.4-hotfix.2, on Mac OS X 10.13.6 17G2208, locale zh-Hans-CN)
+[!] Android toolchain - develop for Android devices (Android SDK 28.0.3)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+[!] iOS toolchain - develop for iOS devices (Xcode 10.1)
+    ✗ Verify that all connected devices have been paired with this computer in Xcode.
+      If all devices have been paired, libimobiledevice and ideviceinstaller may require updating.
+      To update with Brew, run:
+        brew update
+        brew uninstall --ignore-dependencies libimobiledevice
+        brew uninstall --ignore-dependencies usbmuxd
+        brew install --HEAD usbmuxd
+        brew unlink usbmuxd
+        brew link usbmuxd
+        brew install --HEAD libimobiledevice
+        brew install ideviceinstaller
+[✓] Android Studio (version 3.1)
+[✓] VS Code (version 1.30.2)
+[✓] Connected device (1 available)
+
+! Doctor found issues in 2 categories.
+</code></pre><p>说明，Flutter SDK 已经安装成功。但是也可以看到 flutter 的报错，请按照报错的提示修复，例如：</p>
+<ul>
+<li>
+<p>Android toolchain - develop for Android devices（Android证书的问题）</p>
+<p>运行<code>flutter doctor --android-licenses</code>修复</p>
+</li>
+<li>
+<p>iOS toolchain - develop for iOS devices（iOS的问题）</p>
+<pre><code class="hljs bash" lang="bash">[!] iOS toolchain - develop <span class="hljs-keyword">for</span> iOS devices (Xcode 10.2)
+  ✗ libimobiledevice and ideviceinstaller are not installed. To install with Brew, run:
+      brew update
+      brew install --HEAD usbmuxd
+      brew link usbmuxd
+      brew install --HEAD libimobiledevice
+      brew install ideviceinstaller
+  ✗ ios-deploy not installed. To install:
+      brew install ios-deploy
+  ✗ CocoaPods not installed.
+      CocoaPods is used to retrieve the iOS platform side<span class="hljs-string">'s plugin code that responds to your plugin usage on the Dart side.
+      Without resolving iOS dependencies with CocoaPods, plugins will not work on iOS.
+      For more info, see https://flutter.io/platform-plugins
+    To install:
+      brew install cocoapods
+      pod setup
+</span></code></pre><p>这里列出了出现的问题，并且给出了解决方案，需要你按照提示运行相应的命令。</p>
+</li>
+</ul>
+<h2 class="heading" data-id="heading-30">Flutter IDE</h2>
+<h3 class="heading" data-id="heading-31">Android Studio</h3>
+<p>我们知道 Android Studio 是用来开发 Android 的，但是也可以开发 Flutter。</p>
+<h4 class="heading" data-id="heading-32">安装 Android Studio</h4>
+<p>版本要求：</p>
+<ul>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdeveloper.android.com%2Fstudio" rel="nofollow noopener noreferrer">Android Studio</a> 3.0 及以后</li>
+</ul>
+<h4 class="heading" data-id="heading-33">安装 Flutter 插件</h4>
+<ol>
+<li>打开 Android Studio</li>
+<li>打开 plugin preferences (MacOS 是：<strong>Android Studio &gt; Preferences &gt; Plugins</strong> ,Windows 和 Linux 是： <strong>File &gt; Settings &gt; Plugins</strong> )。如下图：</li>
+</ol>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f41b6ffb5de6a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="911" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;911&quot;></svg>"><figcaption></figcaption></figure>
+3. 点击 <strong>Browse repositories</strong>, 搜索 <strong>Flutter</strong> ,如下图<p></p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f41e4a19f2401?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1080" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;1080&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<ol start="4">
+<li>
+<p>选中 Flutter 插件并点击 <strong>Install</strong> 安装。</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/1699368972105e96?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1055" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;1055&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>安装完之后，点击 <strong>Restart Android Studio</strong> ，重启 Android Studio 。</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/16993695f8f1b4c2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1055" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;1055&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>Android Studio 重启后，点击 <strong>File &gt; New</strong> ，如果看到了 <strong>New Flutter Project..</strong> ，说明 Flutter 插件已经安装完成。</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169936afe968d07b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="252" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;252&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+</ol>
+<h3 class="heading" data-id="heading-34">VS Code</h3>
+<p>VS Code 是一个轻量级编辑器，支持 Flutter 的开发。</p>
+<h4 class="heading" data-id="heading-35">安装 VS Code</h4>
+<p>版本要求：</p>
+<ul>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fcode.visualstudio.com%2F" rel="nofollow noopener noreferrer">VS Code</a> 最新稳定版</li>
+</ul>
+<h4 class="heading" data-id="heading-36">安装 Flutter 插件</h4>
+<ol>
+<li>
+<p>打开 VS Code。</p>
+</li>
+<li>
+<p>点击 <strong>View &gt; Command Palette…</strong> 或者快捷键 <strong>Shift+cmd+P</strong>(MacOS) /<strong>Ctrl+Shift+P</strong>(Windows、Linux)，打开命令面板。</p>
+</li>
+<li>
+<p>输入 <strong>install</strong>, 选择 <strong>Extensions: Install Extensions</strong>，如下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f4317aa5711ce?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="800" data-height="600" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;800&quot; height=&quot;600&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>在 <strong>Extensions</strong> 的搜索框里输入 <strong>Flutter</strong>,如下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f442d0a5c25f8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="800" data-height="600" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;800&quot; height=&quot;600&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>选择 <strong>Flutter</strong> 并点击 <strong>Install</strong>。</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169936fdfca764a7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="800" data-height="600" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;800&quot; height=&quot;600&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>安装完后，在点击 <strong>Reload</strong>，重启 VS Code，如下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/1699370e89aea497?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="800" data-height="600" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;800&quot; height=&quot;600&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>点击 <strong>View &gt; Command Palette…</strong>，或者快捷键 <strong>Shift+cmd+P</strong>(MacOS) /<strong>Ctrl+Shift+P</strong>(Windows、Linux)，打开命令面板。输入 <strong>Flutter</strong> ，如果看到如下图的 Flutter 命令，说明安装成功：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f449300e52630?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="800" data-height="600" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;800&quot; height=&quot;600&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+</ol>
+<blockquote class="warning"><p>本小册中的 Flutter 代码都是使用 VS Code 开发的。而且本小册在使用 VS Code 的过程中都会对 VS Code 的功能进行说明，所以不用担心自己不会使用 VS Code。
+</p></blockquote></div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><li data-v-1ec4f85b="" class="item"><div data-v-56cf99ad="" data-v-1ec4f85b="" class="comment"><div data-v-78fb71d8="" data-v-56cf99ad="" st:block="userPopover" st:state="5b6281186fb9a04fe6379dd1" class="user-popover-box"><!----><a data-v-56cf99ad="" href="/user/5b6281186fb9a04fe6379dd1" target="_blank" rel="" data-v-78fb71d8=""><div data-v-59f839d2="" data-v-1074dbe6="" data-v-56cf99ad="" data-src="https://mirror-gold-cdn.xitu.io/168e092c19f31773f65?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar" style="background-image: none;"></div></a></div><div data-v-56cf99ad="" class="content-box"><div data-v-56cf99ad="" class="header"><div data-v-56cf99ad="" class="user-info"><div data-v-78fb71d8="" data-v-56cf99ad="" st:block="userPopover" st:state="5b6281186fb9a04fe6379dd1" class="user-popover-box"><!----><a data-v-07b45902="" data-v-56cf99ad="" href="/user/5b6281186fb9a04fe6379dd1" target="_blank" rel="" class="username" data-v-78fb71d8="">力主道<!----></a></div><div data-v-56cf99ad="" class="position">JAVA工程师 @ 重庆新标</div></div></div><div data-v-56cf99ad="" class="content"><!----><span data-v-56cf99ad="" class="content-html">有的链接是打不开的</span><!----></div><div data-v-56cf99ad="" class="footer"><button data-v-56cf99ad="" class="like-btn"><i data-v-56cf99ad="" class="collection-arrow-ion ion-arrow-up-b"></i><span data-v-56cf99ad="">0</span></button><span data-v-56cf99ad="" class="sub-comment-btn text-pointer"><span data-v-56cf99ad="" class="title">1条评论</span><div data-v-56cf99ad="" class="sub-comment--arrow" style="display: none;"></div></span><span data-v-56cf99ad="" class="date">8小时前</span><!----></div><!----></div><!----></div></li><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

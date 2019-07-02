@@ -1,0 +1,786 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 基础 Widget —— 文本框</h1>
+<p>本节讲 Flutter 文本框的使用。</p>
+<p>在 Flutter 中，文本框相关的 Widget 总共有三个:</p>
+<ol>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FText-class.html" rel="nofollow noopener noreferrer">Text</a></li>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FRichText-class.html" rel="nofollow noopener noreferrer">RichText</a></li>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FDefaultTextStyle-class.html" rel="nofollow noopener noreferrer">DefaultTextStyle</a></li>
+</ol>
+<p>接下来会依次讲每一个 Widget 的使用。</p>
+<h1 class="heading" data-id="heading-1"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FText-class.html" rel="nofollow noopener noreferrer">1. Text</a></h1>
+<p>Text 就是显示文本的 Widget。</p>
+<h2 class="heading" data-id="heading-2">代码所在位置</h2>
+<p>flutter_widget_demo/lib/text/TextWidget.dart</p>
+<h4 class="heading" data-id="heading-3">Text 快速上手</h4>
+<p>Text 的最简单使用方式就是在 Text 里传入要显示的文字：</p>
+<pre><code class="hljs bash" lang="bash">Text(<span class="hljs-string">"Hello Flutter"</span>);// Text 里传入要显示的文字
+</code></pre><p>把 Text 写到一个页面里显示的完整 Demo 代码如下，Text 是 Scaffold 的 body：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(TextWidget());
+
+class TextWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI基础Widget -- 文本"</span>)),
+        body: Text(<span class="hljs-string">"Hello Flutter"</span>)
+      ),
+    );
+  }
+}
+</code></pre><p>运行后的效果为：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/3/9/16961317c48d2398?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="849" data-height="346" src="https://user-gold-cdn.xitu.io/2019/3/9/16961317c48d2398?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>这是最简单的 Text 使用方法，如果需要更复杂的效果，就需要了解 Text 的各种参数的使用。</p>
+<h2 class="heading" data-id="heading-4">Text 的构造函数及参数说明</h2>
+<p>我们可以在 Text 的构造函数里找到 Text 的所有参数，所以我们先来看一下 Text 的构造函数：</p>
+<pre><code class="hljs bash" lang="bash">class Text extends StatelessWidget {
+
+  const Text(this.data, {
+    Key key,
+    this.style,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticsLabel,
+  }) : assert(data != null),
+       textSpan = null,
+       super(key: key);
+    
+    ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>String</td>
+<td>要显示的文字</td>
+<td>必选</td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td>TextStyle</td>
+<td>文本样式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>strutStyle</code></td>
+<td>StrutStyle</td>
+<td>设置每行的最小行高</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>textAlign</code></td>
+<td>TextAlign</td>
+<td>文本的对齐方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>textDirection</code></td>
+<td>TextDirection</td>
+<td>文字方向</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>locale</code></td>
+<td>Locale</td>
+<td>用于选择用户语言和格式设置首选项的标识符</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>softWrap</code></td>
+<td>bool</td>
+<td>是否支持软换行符<br>如果是 false 的话，这个文本只有一行，水平方向是无限的</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>overflow</code></td>
+<td>TextOverflow</td>
+<td>文本的截断方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>textScaleFactor</code></td>
+<td>double</td>
+<td>代表文本相对于当前字体大小的缩放因子<br>默认值为1.0</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>maxLines</code></td>
+<td>int</td>
+<td>显示的最大行数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td><code>semanticsLabel</code></td>
+<td>String</td>
+<td>给文本加上一个语义标签<br>没有实际用处</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p>可以看到只有 data 是必选参数，其余都是可选参数。</p>
+<ul>
+<li>
+<p><code>style</code>：用于指定文本显示的样式如颜色、字体、粗细、背景等</p>
+<p><code>style</code> 的类型是 TextStyle，用于指定文本显示的样式如颜色、字体、粗细、背景等，接下来我们详细讲解一下。</p>
+</li>
+<li>
+<p><code>textAlign</code>：文本的对齐方式</p>
+<p>文本的对齐方式，有六种：</p>
+<ol>
+<li>TextAlign.left：左对齐</li>
+<li>TextAlign.right：右对齐</li>
+<li>TextAlign.center：居中对齐</li>
+<li>TextAlign.start：从文字开始的那个方向对齐，如果文字方向从左到右，就左对齐，否则是右对齐。</li>
+<li>TextAlign.end：从文字开始的相反方向对齐，如果文字方向从左到右，就右对齐，否则是左对齐。</li>
+<li>TextAlign.justify</li>
+</ol>
+</li>
+<li>
+<p><code>textDirection</code>：文字方向</p>
+<p>文字方向有两种:</p>
+<ol>
+<li>TextDirection.ltr：文字方向从左到右</li>
+<li>TextDirection.ltr：文字方向从右到左</li>
+</ol>
+</li>
+<li>
+<p><code>overflow</code>：文本的截断方式</p>
+<p>当要显示的内容超了之后，文本的截断方式有三种：</p>
+<ol>
+<li>TextOverflow.ellipsis：多余文本截断后以省略符“...”表示</li>
+<li>TextOverflow.clip：剪切多余文本，多余文本不显示</li>
+<li>TextOverflow.fade：将多余的文本设为透明</li>
+</ol>
+</li>
+</ul>
+<h3 class="heading" data-id="heading-5">TextStyle：自定义 Text 的样式</h3>
+<p>要自定义 Text 显示的样式，需要用 Text 的参数 style，style 的类型是 TextStyle</p>
+<h4 class="heading" data-id="heading-6">TextStyle 快速上手</h4>
+<p>这里有一个 TextStyle 的 Demo:</p>
+<pre><code class="hljs bash" lang="bash">Text(
+    <span class="hljs-string">"Hello Flutter"</span>,
+    style: TextStyle(
+        color: Colors.red,
+        fontSize: 20.0,
+        background: new Paint()..color = Colors.yellow,
+        ),
+    )
+</code></pre><p>TextStyle 定义了 字体颜色、大小和背景，运行后的效果为：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/1696150d014f9483?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="847" data-height="299" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;847&quot; height=&quot;299&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>如果要使用更多的效果，就需要了解 TextStyle 的各种参数和使用方法。</p>
+<h4 class="heading" data-id="heading-7">TextStyle 的构造参数及参数说明</h4>
+<p>先看 TextStyle 的构造参数：</p>
+<pre><code class="hljs bash" lang="bash">class TextStyle extends Diagnosticable {
+
+  const TextStyle({
+    this.inherit = <span class="hljs-literal">true</span>,
+    this.color,
+    this.fontSize,
+    this.fontWeight,
+    this.fontStyle,
+    this.letterSpacing,
+    this.wordSpacing,
+    this.textBaseline,
+    this.height,
+    this.locale,
+    this.foreground,
+    this.background,
+    this.shadows,
+    this.decoration,
+    this.decorationColor,
+    this.decorationStyle,
+    this.debugLabel,
+    String fontFamily,
+    List&lt;String&gt; fontFamilyFallback,
+    String package,
+  }) : fontFamily = package == null ? fontFamily : <span class="hljs-string">'packages/$package/$fontFamily'</span>,
+       _fontFamilyFallback = fontFamilyFallback,
+       _package = package,
+       assert(inherit != null),
+       assert(color == null || foreground == null, _kColorForegroundWarning);
+       
+    ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inherit</td>
+<td>bool</td>
+<td>是否继承父 Text 的样式，默认为 true<br>如果为false，且样式没有设置具体的值，则采用默认值：白色、字体大小 10px、sans-serif 字体</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Color</td>
+<td>文字的颜色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>fontSize</td>
+<td>double</td>
+<td>文字的大小</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>fontWeight</td>
+<td>FontWeight</td>
+<td>字体粗细</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>fontStyle</td>
+<td>FontStyle</td>
+<td>是否在字体中倾斜字形</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>letterSpacing</td>
+<td>double</td>
+<td>字母之间的间隔</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>wordSpacing</td>
+<td>double</td>
+<td>单词之间的间隔</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textBaseline</td>
+<td>TextBaseline</td>
+<td>用于对齐文本的水平线</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>height</td>
+<td>double</td>
+<td>文本的高度<br>但它并不是一个绝对值，而是一个因子，具体的行高等于fontSize*height。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>Locale</td>
+<td>用于选择用户语言和格式设置首选项的标识符</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>foreground</td>
+<td>Paint</td>
+<td>文本的前景色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>background</td>
+<td>Paint</td>
+<td>文本的背景色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>List&lt; ui.Shadow&gt;</td>
+<td>在文本下方绘制阴影</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>decoration</td>
+<td>TextDecoration</td>
+<td>文本的线条</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>decorationColor</td>
+<td>Color</td>
+<td>TextDecoration 线条的颜色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>decorationStyle</td>
+<td>TextDecorationStyle</td>
+<td>TextDecoration 线条的样式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>debugLabel</td>
+<td>String</td>
+<td>文本样式的描述<br>无实际用处</td>
+<td>可读</td>
+</tr>
+<tr>
+<td>fontFamily</td>
+<td>String</td>
+<td>用于设置使用哪种自定义字体</td>
+<td>可读</td>
+</tr>
+<tr>
+<td>fontFamilyFallback</td>
+<td>String</td>
+<td>字体列表，当前面的字体找不到时，会在这个列表里依次查找</td>
+<td>可读</td>
+</tr>
+<tr>
+<td>package</td>
+<td>String</td>
+<td>用于设置使用哪种自定义字体</td>
+<td>可读</td>
+</tr>
+</tbody>
+</table>
+<p>可以看到 TextStyle 只有可选参数，没有必选参数。</p>
+<ul>
+<li>
+<p>TextDecoration：文本的线条</p>
+<p>文本的线条，包含四种：</p>
+<ol>
+<li>TextDecoration.underline：下划线</li>
+<li>TextDecoration.overline：上划线</li>
+<li>TextDecoration.lineThrough：中划线</li>
+<li>TextDecoration.none：不划线</li>
+</ol>
+</li>
+<li>
+<p>decorationStyle：文本线条的种类</p>
+<p>文本线条的种类，包含有五中：</p>
+<ol>
+<li>
+<p>TextDecorationStyle.solid：实线</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/16/16a2675503be3e75?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="280" data-height="88" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;280&quot; height=&quot;88&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>TextDecorationStyle.double：两条线</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/16/16a26757e9577102?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="390" data-height="130" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;390&quot; height=&quot;130&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>TextDecorationStyle.dotted：点虚线</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/169616473a977a44?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="308" data-height="120" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;308&quot; height=&quot;120&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>TextDecorationStyle.dashed：间隔虚线（比点要长）</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/1696164a2eb25def?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="286" data-height="94" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;286&quot; height=&quot;94&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>TextDecorationStyle.wave：波浪线</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/1696164ed165f9a3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="278" data-height="102" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;278&quot; height=&quot;102&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 class="heading" data-id="heading-8">Text.rich()</h2>
+<p>Text 除了默认的构造函数外，还有命名构造函数：<code>Text.rich()</code>，<code>Text.rich()</code> 的定义为：</p>
+<pre><code class="hljs bash" lang="bash">/// Creates a text widget with a [TextSpan].
+  const Text.rich(this.textSpan, {
+    Key key,
+    this.style,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticsLabel,
+  }) 
+</code></pre><p><code>Text.rich()</code> 需要传入 TextSpan，可以显示多种样式的 text，具体使用可以查看下面介绍的 RichText，使用方法是一样的。</p>
+<h1 class="heading" data-id="heading-9"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FRichText-class.html" rel="nofollow noopener noreferrer">2. RichText</a></h1>
+<p>一个富文本 Text，可以显示多种样式的 text。</p>
+<h2 class="heading" data-id="heading-10">代码所在位置</h2>
+<p>flutter_widget_demo/lib/text/RichTextWidget.dart</p>
+<h4 class="heading" data-id="heading-11">RichText 快速上手</h4>
+<p>RichText 要传入 TextSpan 数组，每个 TextSpan 是一个独立的文本，可以定义自己的 Style，使用如下：</p>
+<pre><code class="hljs bash" lang="bash">RichText(
+    text: TextSpan(children: [
+      TextSpan(text: <span class="hljs-string">"Hello"</span>, style: TextStyle(color: Colors.blue)),
+      TextSpan(text: <span class="hljs-string">"Flutter"</span>, style: TextStyle(color: Colors.red))
+    ]),
+  )
+</code></pre><p>把 RichText 使用 TextSpan 放到一个页面的完整 Demo 如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(RichTextWidget());
+
+class RichTextWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI基础Widget -- 文本"</span>)),
+          body: RichText(
+            text: TextSpan(children: [
+              TextSpan(text: <span class="hljs-string">"Hello"</span>, style: TextStyle(color: Colors.blue)),
+              TextSpan(text: <span class="hljs-string">"Flutter"</span>, style: TextStyle(color: Colors.red))
+            ]),
+          )),
+    );
+  }
+}
+</code></pre><p>运行效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/169616d0c55b31ea?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="214" data-height="66" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;214&quot; height=&quot;66&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-12">RichText 的构造函数及参数说明</h2>
+<p>RichText 的构造函数：</p>
+<pre><code class="hljs bash" lang="bash">class RichText extends LeafRenderObjectWidget {
+
+  const RichText({
+    Key key,
+    @required this.text,
+    this.textAlign = TextAlign.start,
+    this.textDirection,
+    this.softWrap = <span class="hljs-literal">true</span>,
+    this.overflow = TextOverflow.clip,
+    this.textScaleFactor = 1.0,
+    this.maxLines,
+    this.locale,
+    this.strutStyle,
+  }) : assert(text != null),
+  ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>text</td>
+<td>TextSpan</td>
+<td>文字片段</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>textAlign</td>
+<td>TextAlign</td>
+<td>文本的对齐方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textDirection</td>
+<td>TextDirection</td>
+<td>文字方向</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>softWrap</td>
+<td>bool</td>
+<td>是否支持软换行符<br>如果是 false 的话，这个文本只有一行，水平方向是无限的</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>overflow</td>
+<td>TextOverflow</td>
+<td>文本的截断方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textScaleFactor</td>
+<td>double</td>
+<td>代表文本相对于当前字体大小的缩放因子<br>默认值为1.0</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>maxLines</td>
+<td>int</td>
+<td>显示的最大行数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>Locale</td>
+<td>用于选择用户语言和格式设置首选项的标识符</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>strutStyle</td>
+<td>StrutStyle</td>
+<td>设置每行的最小行高</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p>可以看到 RichText 的必须参数是 text，text 的类型是 TextSpan，除了 text 参数, RichText 的大部分参数和 Text 一样。</p>
+<h3 class="heading" data-id="heading-13">TextSpan</h3>
+<p>如果我们需要对一个 Text 内容的不同部分按照不同的样式显示，这时就可以使用 TextSpan，它代表文本的一个片段，然后把不同的 TextSpan 组合起来。</p>
+<h4 class="heading" data-id="heading-14">TextSpan 的构造函数及参数说明</h4>
+<p>TextSpan 的构造函数如下：</p>
+<pre><code class="hljs bash" lang="bash">class TextSpan extends DiagnosticableTree {
+  const TextSpan({
+    this.style,
+    this.text,
+    this.children,
+    this.recognizer,
+  });
+  ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>style</td>
+<td>TextStyle</td>
+<td>文本样式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>要显示的文字</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>children</td>
+<td>List&lt; TextSpan&gt;</td>
+<td>子 TextSpan</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>recognizer</td>
+<td>GestureRecognizer</td>
+<td>一个手势识别器，它将接收到达此文本范围的事件。</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<h1 class="heading" data-id="heading-15"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FDefaultTextStyle-class.html" rel="nofollow noopener noreferrer">3. DefaultTextStyle</a></h1>
+<p>DefaultTextStyle 可以将自己的样式都用在自己的子 Text Widget。</p>
+<h2 class="heading" data-id="heading-16">代码所在位置</h2>
+<p>flutter_widget_demo/lib/text/DefaultTextStyleWidget.dart</p>
+<h4 class="heading" data-id="heading-17">DefaultTextStyle 快速上手</h4>
+<p>DefaultTextStyle 使用的例子：</p>
+<pre><code class="hljs bash" lang="bash">DefaultTextStyle(
+    style: TextStyle(
+      color: Colors.red,
+      fontSize: 20.0,
+      decoration: TextDecoration.lineThrough
+    ),
+    child: Column(
+      children: &lt;Widget&gt;[
+        Text(<span class="hljs-string">"Hello Flutter"</span>),
+        Text(<span class="hljs-string">"Hello World"</span>)
+      ],
+    ),
+)
+</code></pre><p>DefaultTextStyle 使用的完整 Demo：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(DefaultTextStyleWidget());
+
+class DefaultTextStyleWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI基础Widget -- 文本"</span>)),
+          body: DefaultTextStyle(
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 20.0,
+              decoration: TextDecoration.lineThrough
+            ),
+            child: Column(
+              children: &lt;Widget&gt;[
+                Text(<span class="hljs-string">"Hello Flutter"</span>),
+                Text(<span class="hljs-string">"Hello World"</span>)
+              ],
+            ),
+          )),
+    );
+  }
+}
+</code></pre><p>运行效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/16961f8f2c26b610?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="850" data-height="315" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;850&quot; height=&quot;315&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>上面代码中，我们新建了一个 DefaultTextStyle，并给 DefaultTextStyle 设置了一个默认的文本样式，即字体为20像素、颜色为红色、decoration 为 lineThrough。DefaultTextStyle 的 child 是一个包含两个 Text 的 Column，这样一来 Column 的所有 子Text 默认都会继承 DefaultTextStyle 的样式。</p>
+<h2 class="heading" data-id="heading-18">DefaultTextStyle 的构造函数及参数说明</h2>
+<p>DefaultTextStyle 的构造函数如下：</p>
+<pre><code class="hljs bash" lang="bash">class DefaultTextStyle extends InheritedWidget {
+
+  const DefaultTextStyle({
+    Key key,
+    @required this.style,
+    this.textAlign,
+    this.softWrap = <span class="hljs-literal">true</span>,
+    this.overflow = TextOverflow.clip,
+    this.maxLines,
+    @required Widget child,
+  }) : assert(style != null),
+       assert(softWrap != null),
+       assert(overflow != null),
+       assert(maxLines == null || maxLines &gt; 0),
+       assert(child != null),
+       super(key: key, child: child);
+       
+    ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>style</td>
+<td>TextStyle</td>
+<td>文本样式</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>textAlign</td>
+<td>TextAlign</td>
+<td>文本的对齐方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>softWrap</td>
+<td>bool</td>
+<td>是否支持软换行符<br>如果是 false 的话，这个文本只有一行，水平方向是无限的</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>overflow</td>
+<td>TextOverflow</td>
+<td>文本的截断方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>maxLines</td>
+<td>int</td>
+<td>显示的最大行数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>child</td>
+<td>Widget</td>
+<td>DefaultTextStyle 的 子Widget</td>
+<td>必选</td>
+</tr>
+</tbody>
+</table>
+<h1 class="heading" data-id="heading-19">Flutter 使用自定义字体</h1>
+<p>可以在 Flutter 中使用不同的字体。例如，我们可能会使用设计人员创建的自定义字体，或者其它第三方的字体，如 Google Fonts 中的字体。本节将介绍如何为 Flutter 应用配置字体，并在渲染文本时使用它们。</p>
+<p>在 Flutter中 使用字体分两步完成：</p>
+<ol>
+<li>首先在 pubspec.yaml 中声明它们，以确保它们会打包到应用程序中。</li>
+<li>然后通过 TextStyle 属性使用字体。</li>
+</ol>
+<h2 class="heading" data-id="heading-20">在 pubspec.yaml 中声明</h2>
+<p>要将字体打文件打包到应用中，和使用其它资源一样，要先在 pubspec.yaml 中声明它。然后将字体文件复制到在 pubspec.yaml 中指定的位置。如：</p>
+<pre><code class="hljs bash" lang="bash">flutter:
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-Regular.ttf
+        - asset: assets/fonts/Raleway-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Raleway-SemiBold.ttf
+          weight: 600
+    - family: AbrilFatface
+      fonts:
+        - asset: assets/fonts/abrilfatface/AbrilFatface-Regular.ttf
+</code></pre><h2 class="heading" data-id="heading-21">使用字体</h2>
+<pre><code class="hljs bash" lang="bash">// 声明文本样式
+const textStyle = const TextStyle(
+  fontFamily: <span class="hljs-string">'Raleway'</span>,
+);
+
+// 使用文本样式
+var buttonText = const Text(
+  <span class="hljs-string">"Use the font for this text"</span>,
+  style: textStyle,
+);
+</code></pre><h4 class="heading" data-id="heading-22">Package 中的字体</h4>
+<p>要使用 Package 中定义的字体，必须提供 package 参数。例如，假设上面的字体声明位于 my_package 包中。然后创建 TextStyle 的过程如下：</p>
+<pre><code class="hljs bash" lang="bash">const textStyle = const TextStyle(
+  fontFamily: <span class="hljs-string">'Raleway'</span>,
+  package: <span class="hljs-string">'my_package'</span>, //指定包名
+);
+</code></pre><p>如果在 package 包内部使用它自己定义的字体，也应该在创建文本样式时指定 package 参数，如上例所示。</p>
+<p>一个包也可以只提供字体文件而不需要在 pubspec.yaml 中声明。 这些文件应该存放在包的 lib/ 文件夹中。字体文件不会自动绑定到应用程序中，应用程序可以在声明字体时有选择地使用这些字体。假设一个名为 my_package 的包中有一个字体文件：</p>
+<pre><code class="hljs bash" lang="bash">lib/fonts/Raleway-Medium.ttf
+</code></pre><p>然后，应用程序可以声明一个字体，如下面的示例所示：</p>
+<pre><code class="hljs bash" lang="bash"> flutter:
+   fonts:
+     - family: Raleway
+       fonts:
+         - asset: assets/fonts/Raleway-Regular.ttf
+         - asset: packages/my_package/fonts/Raleway-Medium.ttf
+           weight: 500
+</code></pre><p>lib/ 是隐含的，所以它不应该包含在 asset 路径中。</p>
+<p>在这种情况下，由于应用程序本地定义了字体，所以在创建 TextStyle 时可以不指定 package 参数：</p>
+<pre><code class="hljs bash" lang="bash">const textStyle = const TextStyle(
+  fontFamily: <span class="hljs-string">'Raleway'</span>,
+);
+</code></pre></div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+</body>
+</html>

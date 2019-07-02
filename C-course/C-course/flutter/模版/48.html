@@ -1,0 +1,309 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter APP 的打包</h1>
+<p>在写完 Flutter APP 之后，接下来最重要的一步就是讲 APP 打包发布，那么 Flutter 的 APP 该如何打包呢？</p>
+<h2 class="heading" data-id="heading-1">Flutter APP 的构建模式及构建方法</h2>
+<p>Flutter 编译 APP 的时候总共有三种构建模式：</p>
+<ol>
+<li>Debug</li>
+<li>Release</li>
+<li>Profile</li>
+</ol>
+<p>本节将告诉你每个模式的适用场景。</p>
+<h2 class="heading" data-id="heading-2">1. Debug</h2>
+<p>Debug 模式，顾名思义，就是在开发调试时使用的模式。Flutter APP 在 Debug 模式下运行，会在 App 的右上角看到一个 Debug 的标志，如下图：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/3/2/1693eff591e728d7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="944" data-height="227" src="https://user-gold-cdn.xitu.io/2019/3/2/1693eff591e728d7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>前面讲 Hot Reload 的时候说到，Hot Reload 只能在 Debug 模式下使用。</p>
+<p>Release 模式下没有没有这个标志。</p>
+<p>在 Debug 模式下，为了方便调试，Flutter 增加了很多方便调试的功能：</p>
+<ol>
+<li>Flutter 的断言（Assertions）功能是开的</li>
+<li>Flutter 的 Dart Observatory 是开的，Dart  Observatory 是用于分析和调试 Dart 代码的工具，可以 debugger，也可以检测性能等，后面会详细介绍 Dart  Observatory 的使用。</li>
+<li>Flutter 的一些扩展功能是开启的，例如监控性能的浮层等。</li>
+<li>Dart 代码采用 JIT 编译，因此可以使用 Hot Reload，方便快速开发。</li>
+</ol>
+<p>可以看到，在 Debug 模式下，一方面 Flutter 采用的是 JIT 编译，另一方面 开启了很多额外功能，因此性能会差一些，所以 Debug 模式只能用在开发阶段。</p>
+<p>当 Flutter APP 已 Debug 模式运行时， 既可以运行在真机上，也可以运行在模拟器上。</p>
+<h4 class="heading" data-id="heading-3">Debug 构建方法</h4>
+<ol>
+<li>
+<p>IDE</p>
+<ul>
+<li>
+<p>Android Stuido:
+</p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f532e178ccf19?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="994" data-height="162" src="https://user-gold-cdn.xitu.io/2019/2/16/168f532e178ccf19?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>VS Code:</p>
+<p>点击 <strong>Debug &gt; Start Debugging</strong> 或 <strong>Debug &gt; Start Without Debugging</strong>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>命令行:</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-variable">$flutter</span> run
+</code></pre></li>
+</ol>
+<h2 class="heading" data-id="heading-4">2. Release</h2>
+<p>Release 模式，顾名思义，就是在发布 APP 时使用的模式。使用 Release 模式部署应用程序，可以达到最高的性能和最小的安装包大小。</p>
+<p>在 Release 模式下，为了提高运行性能：</p>
+<ol>
+<li>断言（Assertions）功能关闭</li>
+<li>没有 Debugging 的信息</li>
+<li>Debugging 的功能关闭</li>
+<li>Dart 代码采用 AOT 编译。使用 AOT 编译成 Native  Arm Code，不仅可以使 Flutter APP 因更快速的启动，更快速的执行，而且使用 AOT 编译生成的 Native  Arm Code 的产物的大小也会小很多。</li>
+<li>一些扩展功能被关闭</li>
+</ol>
+<p>所以，当你的 APP 要发布的时候，一定要使用 Release 模式。</p>
+<p>Release 模式只能运行在真机上，不能运行在模拟器上。</p>
+<h4 class="heading" data-id="heading-5">Release 构建方法</h4>
+<p>要想构建 Release 包，首先得连接真机，因为 Release 模式只能运行在真机上。</p>
+<ol>
+<li>
+<p>IDE</p>
+<ul>
+<li>
+<p>Android Studio
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918bff11eb5328?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1007" data-height="257" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1007&quot; height=&quot;257&quot;></svg>"><figcaption></figcaption></figure>
+打开 <strong>Edit Configurations...</strong>，如下图：
+<figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918c1a3aa8d965?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="331" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;331&quot;></svg>"><figcaption></figcaption></figure>
+在 Additional arguments 这里加上  <code>--release</code>，构建出来的就是 Release 模式，为空的话，就是 Debug 模式。<p></p>
+<p>或者，直接运行 <strong>Run</strong> -&gt; <strong>Flutter Run 'main.dart' in Release Mode</strong>：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918e2b0a0565e3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="678" data-height="754" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;678&quot; height=&quot;754&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>VS Code
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918c546b814f8a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="540" data-height="342" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;540&quot; height=&quot;342&quot;></svg>"><figcaption></figcaption></figure>
+选择 <strong>Debug</strong> ，点击 <strong>Open Configurations</strong> ，打开 <strong>launch.json</strong> ，如下：
+<figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918cbf12861837?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="523" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;523&quot;></svg>"><figcaption></figcaption></figure>
+增加下面这一行：<p></p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-string">"flutterMode"</span>: <span class="hljs-string">"release"</span>
+</code></pre><p>完整的 <strong>launch.json</strong>  为：</p>
+<pre><code class="hljs bash" lang="bash">{
+// Use IntelliSense to learn about possible attributes.
+// Hover to view descriptions of existing attributes.
+// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+<span class="hljs-string">"version"</span>: <span class="hljs-string">"0.2.0"</span>,
+<span class="hljs-string">"configurations"</span>: [
+
+        {
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"Flutter"</span>,
+            <span class="hljs-string">"request"</span>: <span class="hljs-string">"launch"</span>,
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"dart"</span>,
+            <span class="hljs-string">"flutterMode"</span>: <span class="hljs-string">"release"</span>
+        }
+    ]
+}
+</code></pre><p>然后在点击 <strong>Debug &gt; Start Without Debugging</strong>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>用命令行:</p>
+</li>
+</ol>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-variable">$flutter</span> run --release
+</code></pre><p>或者</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-variable">$flutter</span> build apk //构建Android Release包
+<span class="hljs-variable">$flutter</span> build ios //构建iOS Release包
+</code></pre><p>如果你没有连真机，而是连的模拟器，则会报如下的错误：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/16996ace287f1bb4?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="914" data-height="182" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;914&quot; height=&quot;182&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-6">3. Profile</h2>
+<p>Profile 模式是专门监控性能的模式，在 Debug 模式下，开启了很多额外的功能，因此不能实际反应应用的性能，但在 Release 模式下，也没有监控的功能，所以就有了 Profile 模式。Profile 模式是 Debug 模式和 Release 模式的结合。</p>
+<p>Profile 模式和 Release 模式更接近，都采用了 AOT 编译，所以都不能用 Hot Reload，但是 Profile 相对于 Release，保留了一定的调试能力，足以分析 Flutter 的性能：</p>
+<ol>
+<li>一些扩展的服务功能是打开的，例如监控性能的浮层等。</li>
+<li>Tracing 是打开的，而且 Dart Observatory 也可以连接到进程。</li>
+</ol>
+<p>而且为了更加准确的反应 Flutter 在真机上的运行性能，Profile 模式只能跑在真机上，不能运行在模拟器上。</p>
+<h4 class="heading" data-id="heading-7">Profile 构建方法</h4>
+<p>要想构建 Profile 包，首先得连接真机，因为 Profile 模式只能运行在真机上。</p>
+<ol>
+<li>
+<p>IDE</p>
+<ul>
+<li>
+<p>Android Studio
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918d8054dce65e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="300" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;300&quot;></svg>"><figcaption></figcaption></figure>
+按照 Release 的方法，这里参数改为 <code>--profile</code><p></p>
+<p>或者，直接运行 <strong>Run</strong> -&gt; <strong>Flutter Run 'main.dart' in Profile Mode</strong>：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/20/16996b1f02e5f4ae?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="834" data-height="826" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;834&quot; height=&quot;826&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>VS Code
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918c546b814f8a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="540" data-height="342" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;540&quot; height=&quot;342&quot;></svg>"><figcaption></figcaption></figure>
+选择 <strong>Debug</strong> ，点击 <strong>Open Configurations</strong>，打开 <strong>launch.json</strong>，如下：
+<figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918de333d2e438?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="578" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;578&quot;></svg>"><figcaption></figcaption></figure>
+增加下面这一行：<p></p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-string">"flutterMode"</span>: <span class="hljs-string">"profile"</span>
+</code></pre><p>完整的 <strong>launch.json</strong>  为：</p>
+<pre><code class="hljs bash" lang="bash">{
+// Use IntelliSense to learn about possible attributes.
+// Hover to view descriptions of existing attributes.
+// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+<span class="hljs-string">"version"</span>: <span class="hljs-string">"0.2.0"</span>,
+<span class="hljs-string">"configurations"</span>: [
+
+        {
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"Flutter"</span>,
+            <span class="hljs-string">"request"</span>: <span class="hljs-string">"launch"</span>,
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"dart"</span>,
+            <span class="hljs-string">"flutterMode"</span>: <span class="hljs-string">"profile"</span>
+        }
+    ]
+}
+</code></pre><p>然后在点击 <strong>Debug &gt; Start Without Debugging</strong>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>用命令行:</p>
+</li>
+</ol>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-variable">$flutter</span> run --profile
+</code></pre><h1 class="heading" data-id="heading-8">Flutter Android/iOS 安装包分析</h1>
+<h2 class="heading" data-id="heading-9">Flutter Android Debug 安装包分析</h2>
+<p>如果前面你连接了 Android 虚拟机或真机，并且按照前面几节的操作运行了 Flutter APP，那么在 Flutter 目录下，找到 <code>build/app/outputs/apk/debug/app-debug.apk</code> ,就是 Android 的 Debug 安装包，安装包里的内容如下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918f02ccf3485c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="175" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;175&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-10">lib目录下的 Flutter Engine so</h4>
+<p>lib 目录下是 Flutter Engine的so：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918f13e87cba03?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="156" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;156&quot;></svg>"><figcaption></figcaption></figure>
+总共有三个平台的 so：<p></p>
+<ul>
+<li>x86_64</li>
+<li>x86</li>
+<li>arm64-v8a</li>
+</ul>
+<ol>
+<li>
+<p>so 的大小问题</p>
+<p>总大小是17.8M，占到整个apk安装包的71.4%，你可能会觉得好大，但是不用担心，因为Debug模式需要运行在模拟器上，所以才打入了x86_64和x86两个平台的so，所以会比较大，在Release模式下是不会打入x86_64和x86的，而且Google也在不断优化Flutter Engine的so大小。</p>
+</li>
+<li>
+<p>assets 目录</p>
+<p>assets 目录下的都是 Flutter 生成的产物。
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/16918f96d1aa0eca?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="246" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;246&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>flutter_assets 目录</p>
+<ul>
+<li>kernel_blob.bin：由Flutter代码生成</li>
+<li>vm_snapshot_data：VM虚拟机数据段</li>
+<li>isolate_snapshot_data：应用程序数据段</li>
+<li>fonts：字体库</li>
+<li>packages：Flutter资源库</li>
+<li>FontManifest.json：字体的Manifest</li>
+<li>AssetManifest.json：资源的Manifest</li>
+</ul>
+</li>
+<li>
+<p>flutter_shared 目录</p>
+<p>icudtl.dat：该文件的作用是告诉Flutter如何使用unicode进行国际文本处理，用于国际化的。</p>
+</li>
+</ol>
+<h4 class="heading" data-id="heading-11">classes.dex</h4>
+<p>Flutter 的 Android 代码编译成的 classes.dex。</p>
+<h4 class="heading" data-id="heading-12">res 目录</h4>
+<p>Flutter 的 Android 工程的资源文件。</p>
+<h2 class="heading" data-id="heading-13">Flutter Android Release 安装包分析</h2>
+<p>连接了 Android 真机，构建 Release 模式，在 Flutter 目录下，找到 <code>build/app/outputs/apk/release/app-release.apk</code> ,就是 Android 的 Release 安装包，安装包里的内容如下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/1691a66c1541e605?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="160" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;160&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-14">lib 目录下的 Flutter Engine so</h4>
+<p>lib 目录下是 Flutter Engine 的 so：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/1691a6778d20ff7b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="119" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;119&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>总共有两个平台的 so：</p>
+<ul>
+<li>arm64-v8a</li>
+<li>armeabi-v7a</li>
+</ul>
+<p><em><strong>大小问题：</strong></em></p>
+<p>总大小是 5.9M ，占到整个 apk 安装包的 75.3%，如果想要继续优化 so 的大小，可以只用 areabi-v7a 的 so。</p>
+<h4 class="heading" data-id="heading-15">assets 目录</h4>
+<p>assets 目录下的都是 Flutter 生成的产物。</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/1691a6a01ba9d4e1?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="303" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;303&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<ul>
+<li>isolate_snapshot_data：应用程序数据段</li>
+<li>isolate_snapshot_instr： 应用程序指令段</li>
+<li>vm_snapshot_data：VM虚拟机数据段</li>
+<li>vm_snapshot_data： VM虚拟机数据段</li>
+</ul>
+<ol>
+<li>
+<p>flutter_assets 目录</p>
+<ul>
+<li>fonts：字体库</li>
+<li>packages：Flutter资源库</li>
+<li>FontManifest.json：字体的Manifest</li>
+<li>AssetManifest.json：资源的Manifest</li>
+</ul>
+</li>
+<li>
+<p>flutter_shared 目录</p>
+<p>icudtl.dat：该文件的作用是告诉Flutter如何使用unicode进行国际文本处理，用于国际化的。</p>
+</li>
+</ol>
+<h4 class="heading" data-id="heading-16">classes.dex</h4>
+<p>Flutter 的 Android 代码编译成的 classes.dex。</p>
+<h4 class="heading" data-id="heading-17">res 目录</h4>
+<p>Flutter 的 Android 工程的资源文件。</p>
+<h2 class="heading" data-id="heading-18">Flutter iOS Debug 安装包分析</h2>
+<p>如果前面你连接了 iOS 模拟器或真机，并且按照前面几节的操作运行了 Flutter APP，那么在 Flutter 目录下，找到 <code>build/Debug-iphonesimulator/Runner</code> 或者 <code>build/iphonesimulator/Runner</code> ,就是 iOS 的 Debug 安装包，安装包里的内容如下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/1691a723771e601b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1248" data-height="1102" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1248&quot; height=&quot;1102&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-19">Frameworks 目录</h4>
+<p>Frameworks 目录下的 framework 有：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/1691a743146eec59?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="498" data-height="116" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;498&quot; height=&quot;116&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<ul>
+<li>
+<p>App.frmework</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/1691a84a00b152d1?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1242" data-height="196" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1242&quot; height=&quot;196&quot;></svg>"><figcaption></figcaption></figure>
+Flutter 的 iOS 代码编译成的 framework。<p></p>
+<p>用 file 命令查看 App.frmework 支持的架构:</p>
+<pre><code class="hljs bash" lang="bash">$ file Runner.app/Frameworks/App.framework/App
+Runner.app/Frameworks/App.framework/App: Mach-O 64-bit dynamically linked shared library x86_64
+</code></pre><p>只支持 x86_64 一种架构。</p>
+</li>
+<li>
+<p>Flutter.frmework</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/1691a85156968e8f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1192" data-height="218" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1192&quot; height=&quot;218&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>Flutter 的库和引擎。</p>
+<p>用 file 命令查看 Flutter.frmework 支持的架构:</p>
+<pre><code class="hljs bash" lang="bash">$ file Runner.app/Frameworks/Flutter.framework/Flutter
+Runner.app/Frameworks/Flutter.framework/Flutter: Mach-O universal binary with 1 architecture: [x86_64:Mach-O 64-bit dynamically linked shared library x86_64]
+Runner.app/Frameworks/Flutter.framework/Flutter (<span class="hljs-keyword">for</span> architecture x86_64):	Mach-O 64-bit dynamically linked shared library x86_64
+</code></pre><p>只支持 x86_64 一种架构。</p>
+<ul>
+<li>
+<p>Flutter.framework 还有 icudtl.dat</p>
+<p>icudtl.dat：该文件的作用是告诉Flutter如何使用unicode进行国际文本处理，用于国际化的。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>大小问题：</strong></em></p>
+<p>App.framework 总大小 26k，Flutter.framework 的总大小为 25.7M。Debug 模式下的大小没有参考意义，因为 Debug 不会是正式发布的包。</p>
+<h4 class="heading" data-id="heading-20">flutter_assets 目录</h4>
+<p>assets 目录下的都是 Flutter 生成的产物。</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/23/1691a82520a0f293?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1262" data-height="358" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1262&quot; height=&quot;358&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>这里的产物是 iOS 和 Android 是一样的，只是路径有些不同。</p>
+<ul>
+<li>kernel_blob.bin：由Flutter代码生成</li>
+<li>vm_snapshot_data：VM虚拟机数据段</li>
+<li>isolate_snapshot_data：应用程序数据段</li>
+<li>fonts：字体库</li>
+<li>packages：Flutter资源库</li>
+<li>FontManifest.json：字体的Manifest</li>
+<li>AssetManifest.json：资源的Manifest</li>
+</ul>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div>
+
+
+</body>
+</html>

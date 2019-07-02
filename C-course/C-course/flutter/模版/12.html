@@ -1,0 +1,94 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 写 UI 的方式 —— 声明式</h1>
+<p>Flutter 采用了一种新的方式来写 UI，这种方式就是声明式，刚开始你可能会不适应，但用过之后你就会发现它非常好用。</p>
+<h2 class="heading" data-id="heading-1">Android 、iOS 的 UI 布局的写法</h2>
+<p>在讲如何写 Flutter UI 之前，首先我们回顾一下 Android 和 iOS 的是如何布局的：</p>
+<ul>
+<li>
+<p>Androoid：XML</p>
+<p>Android 中，通过 XML 来写布局。</p>
+</li>
+<li>
+<p>Android：代码</p>
+<p>代码以 <code>命令式</code> 的方法来写布局</p>
+</li>
+<li>
+<p>iOS：Storyboard</p>
+<p>使用 Storyboard 来组织视图和设置约束。</p>
+</li>
+<li>
+<p>iOS：代码</p>
+<p>可以在 ViewController 中以 <code>命令式</code> 的编程方式设置约束。</p>
+</li>
+</ul>
+<p>在 Android 中通常使用 XML 来写 UI，XML 也是一种声明式，但使用 XML 写 UI，是不能在代码里直接操作 UI，还需要一步 findViewById 的步骤；在 iOS 中通常使用 <code>命令式</code> 的代码来写 UI ，<code>命令式</code> 可以直接在代码里操作 UI，但是要写复杂的界面的时候，就会很痛苦。</p>
+<h2 class="heading" data-id="heading-2">Flutter 布局方式和 Android/iOS 的不同之处</h2>
+<p>Flutter 的布局和 Android/iOS 的布局明显不同：</p>
+<ol>
+<li>Flutter 只能用代码来写 UI</li>
+<li>而且 Flutter 用代码写 UI 的方式是声明式的，其他平台用代码来写 UI 布局都是用的命令式。</li>
+</ol>
+<p>Flutter 这种通过代码声明式写 UI 的方式叫 <code>声明式</code>。</p>
+<h2 class="heading" data-id="heading-3">命令式 VS 声明式</h2>
+<p>假设要实现一个下面的界面：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/4/21/16a40728166289c9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="298" data-height="448" src="https://user-gold-cdn.xitu.io/2019/4/21/16a40728166289c9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-4">使用命令式实现</h4>
+<p>如果用命令式的代码来实现，那么代码就会是这样子的（）：</p>
+<pre><code class="hljs bash" lang="bash">// 分别实现各个view
+ViewA a = new ViewA(...)
+ViewB b = new ViewB(...)
+ViewC c1 = new ViewC(...)
+ViewC c2 = New ViewC(...)
+// 然后将子view 添加到容器中
+a.add(b)
+b.add(c1)
+b.add(c2)
+</code></pre><p>你首先要通过 View 的构造函数创建 View 的实例，然后在组织 View 的层级，这样的实现就叫做 <code>代码命令式</code>。</p>
+<h4 class="heading" data-id="heading-5">使用代码声明式实现</h4>
+<p>如果是用 Flutter 实现，那么 Flutter <code>代码声明式</code> 的代码就是这样的：</p>
+<pre><code class="hljs bash" lang="bash">Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> ViewA{
+        child: ViewB{
+            color: yellow,
+            children: [
+                ViewC(...),
+                ViewC(...)
+            ]
+        }
+    }
+}
+</code></pre><p>这种方式写 UI，有点类似于 Android 的 XML，声明了 UI 元素之间的关系和嵌套层次，但是是用代码实现的，所以少了 XML 解析的步骤，使 Flutter UI 构建的效率更高，这样的就叫做<code>代码声明式</code>。</p>
+<h2 class="heading" data-id="heading-6">Flutter 写 UI</h2>
+<p>在看之前创建的 Flutter 工程里，用来写 UI 的 代码：</p>
+<pre><code class="hljs bash" lang="bash">Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+        title: <span class="hljs-string">'Flutter Demo'</span>,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+          body: Center(
+              child: GestureDetector(
+                child: Text(widget.content),
+                onTap: increment,
+              )
+          ),
+        )
+    );
+  }
+</code></pre><p>用代码来写 UI，同时也表现出了 UI 的层级:</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/3/16941ff8b01ea72c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="960" data-height="720" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;960&quot; height=&quot;720&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

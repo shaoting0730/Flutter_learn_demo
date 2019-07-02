@@ -1,0 +1,290 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+ <div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">信息流 ListView 的实现</h1>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/4/13/16a14dc2d60ec4f3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="449" data-height="768" src="https://user-gold-cdn.xitu.io/2019/4/13/16a14dc2d60ec4f3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>上图是显示的是正在热映的电影的信息流，本节要实现这个信息流。</p>
+<h2 class="heading" data-id="heading-1">正在热映的信息流页面</h2>
+<h4 class="heading" data-id="heading-2">将信息流页面在单独的类里实现</h4>
+<p>因为信息流页面的实现比较复杂，所以为了使代码结构清晰，又需要对原来的代码进行重构，这次将信息流页面的代码提取出来，在单独的类里实现。</p>
+<p>新建一个文件 HotMoviesListWidget.dart,代码为：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+class HotMoviesListWidget extends StatefulWidget {
+  @override
+  State&lt;StatefulWidget&gt; <span class="hljs-function"><span class="hljs-title">createState</span></span>() {
+    // TODO: implement createState
+    <span class="hljs-built_in">return</span> HotMoviesListWidgetState();
+  }
+}
+
+class HotMoviesListWidgetState extends State&lt;HotMoviesListWidget&gt; {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> Center(
+      child: Text(<span class="hljs-string">'正在热映'</span>),
+    );
+  }
+}
+</code></pre><p>然后将 HotWidget.dart 里正在热映的代码从：</p>
+<pre><code class="hljs bash" lang="bash">children: &lt;Widget&gt;[
+      Center(
+        child: Text(<span class="hljs-string">'正在热映'</span>),
+      ),
+      Center(
+        child: Text(<span class="hljs-string">'即将上映'</span>),
+      )
+    ]
+</code></pre><p>改为:</p>
+<pre><code class="hljs bash" lang="bash">children: &lt;Widget&gt;[
+      HotMoviesListWidget(),
+      Center(
+        child: Text(<span class="hljs-string">'即将上映'</span>),
+      )
+    ]
+</code></pre><h4 class="heading" data-id="heading-3">使用 ListView 实现信息流</h4>
+<p>很明显，要实现信息流，需要用到 ListView。</p>
+<h4 class="heading" data-id="heading-4">HotMovieData：上映电影的信息</h4>
+<p>新建一个文件 HotMovieData.dart，在这个文件里创建存储上映电影信息的类 HotMovieData：</p>
+<pre><code class="hljs bash" lang="bash">class HotMovieData{
+  String title;
+  double rating;
+  String directors;
+  String casts;
+  int watchedPeople;
+  String images;
+
+  HotMovieData(this.title,this.rating,this.directors,this.casts,this.watchedPeople,this.images);
+}
+</code></pre><h4 class="heading" data-id="heading-5">HotMovieItemWidget：ListView 里 item 的布局</h4>
+<p>新建一个文件 HotMovieItemWidget.dart 用来实现信息流 ListView 里 item 的布局。</p>
+<p>item 的布局解析之后如下：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/13/16a154e59bd0a633?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1018" data-height="334" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1018&quot; height=&quot;334&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>而且 item 里要显示数据，所以要在 item 里传入 HotMovieData 的数据，加到 HotMovieItemWidget 的构造函数里：</p>
+<pre><code class="hljs bash" lang="bash">class HotMovieItemWidget extends StatefulWidget {
+  HotMovieData hotMovieData;
+
+  HotMovieItemWidget(this.hotMovieData);
+
+  @override
+  State&lt;StatefulWidget&gt; <span class="hljs-function"><span class="hljs-title">createState</span></span>() {
+    // TODO: implement createState
+    <span class="hljs-built_in">return</span> HotMovieItemWidgetState();
+  }
+}
+</code></pre><p>最后实现的代码为：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+import <span class="hljs-string">'package:flutter_doubanmovie/HotMovieData.dart'</span>;
+
+class HotMovieItemWidget extends StatefulWidget {
+  HotMovieData hotMovieData;
+
+  HotMovieItemWidget(this.hotMovieData);
+
+  @override
+  State&lt;StatefulWidget&gt; <span class="hljs-function"><span class="hljs-title">createState</span></span>() {
+    // TODO: implement createState
+    <span class="hljs-built_in">return</span> HotMovieItemWidgetState();
+  }
+}
+
+class HotMovieItemWidgetState extends State&lt;HotMovieItemWidget&gt; {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> Container(
+      height: 160,
+      padding: EdgeInsets.all(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: &lt;Widget&gt;[
+          Image.network(
+            widget.hotMovieData.images,
+            width: 80,
+            height: 120,
+            fit: BoxFit.cover,
+          ),
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: &lt;Widget&gt;[
+                  Text(
+                    widget.hotMovieData.title,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    widget.hotMovieData.rating.toString(),
+                    style: TextStyle(fontSize: 14, color: Colors.black54),
+                  ),
+                  Text(<span class="hljs-string">'导演: '</span> + widget.hotMovieData.directors,
+                      style: TextStyle(fontSize: 14, color: Colors.black54)),
+                  Text(<span class="hljs-string">'主演: '</span> + widget.hotMovieData.casts,
+                      style: TextStyle(fontSize: 14, color: Colors.black54)),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            width: 100,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: &lt;Widget&gt;[
+                Text(widget.hotMovieData.watchedPeople.toString()+<span class="hljs-string">'人看过'</span>,style: TextStyle(color: Colors.red,fontSize: 14),),
+                OutlineButton(
+                  child: Text(<span class="hljs-string">'购票'</span>,style: TextStyle(fontSize: 16),),
+                  color: Colors.red,
+                  textColor: Colors.red,
+                  highlightedBorderColor: Colors.red,
+                  borderSide: BorderSide(
+                    color: Colors.red
+                  ),
+                  onPressed: () {},
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+</code></pre><h4 class="heading" data-id="heading-6">ListView：信息流实现</h4>
+<p>在 HotMoviesListWidget.dart 文件里加入 ListView 了。</p>
+<ul>
+<li>
+<p>首先加入数据</p>
+<p>在 HotMoviesListWidgetState 里，增加一个变量 hotMovies：</p>
+<pre><code class="hljs bash" lang="bash">List&lt;HotMovieData&gt; hotMovies = new List&lt;HotMovieData&gt;();
+</code></pre><p>在 HotMoviesListWidgetState 的 initState() 生命周期里为 hotMovies 赋值：</p>
+<pre><code class="hljs bash" lang="bash">@override
+  void <span class="hljs-function"><span class="hljs-title">initState</span></span>() {
+    // TODO: implement initState
+    super.initState();
+    var data = HotMovieData(<span class="hljs-string">'反贪风暴4'</span>, 6.3, <span class="hljs-string">'林德禄'</span>, <span class="hljs-string">'古天乐/郑嘉颖/林峯'</span>, 29013,
+        <span class="hljs-string">'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551353482.webp'</span>);
+    <span class="hljs-built_in">set</span>State(() {
+      hotMovies.add(data);
+      hotMovies.add(data);
+      hotMovies.add(data);
+      hotMovies.add(data);
+      hotMovies.add(data);
+      hotMovies.add(data);
+    });
+  }
+</code></pre></li>
+<li>
+<p>ListView</p>
+<p>然后使用 ListView：</p>
+<pre><code class="hljs bash" lang="bash">  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> ListView.separated(
+        itemCount: hotMovies.length,
+        itemBuilder: (context, index) {
+          <span class="hljs-built_in">return</span> HotMovieItemWidget(hotMovies[index]);
+        },
+        separatorBuilder: (context, index) {
+          <span class="hljs-built_in">return</span> Divider(
+            height: 1,
+            color: Colors.black26,
+          );
+        },
+      );
+  }
+</code></pre><p>运行后的效果为：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/13/16a155bbb4d57106?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="413" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;413&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>然后会发现 ListView 的头部有一段空白区域，是因为当 ListView 没有和 AppBar 一起使用的时候，头部就会有一个 padding，为了去掉 padding ,可以使用 MediaQuery.removePadding:</p>
+<pre><code class="hljs bash" lang="bash">  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> MediaQuery.removePadding(
+      removeTop: <span class="hljs-literal">true</span>,
+      context: context,
+      child: ListView.separated(
+        itemCount: hotMovies.length,
+        itemBuilder: (context, index) {
+          <span class="hljs-built_in">return</span> HotMovieItemWidget(hotMovies[index]);
+        },
+        separatorBuilder: (context, index) {
+          <span class="hljs-built_in">return</span> Divider(
+            height: 1,
+            color: Colors.black26,
+          );
+        },
+      ),
+    );
+  }
+</code></pre><p>然后，运行的效果就会正常：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/13/16a155f0b70e2954?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="413" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;413&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+</ul>
+<p>最后 HotMoviesListWidget.dart 里的代码会改成：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+import <span class="hljs-string">'package:flutter_doubanmovie/HotMovieData.dart'</span>;
+import <span class="hljs-string">'package:flutter_doubanmovie/HotMovieItemWidget.dart'</span>;
+
+class HotMoviesListWidget extends StatefulWidget {
+  @override
+  State&lt;StatefulWidget&gt; <span class="hljs-function"><span class="hljs-title">createState</span></span>() {
+    // TODO: implement createState
+    <span class="hljs-built_in">return</span> HotMoviesListWidgetState();
+  }
+}
+
+class HotMoviesListWidgetState extends State&lt;HotMoviesListWidget&gt; {
+  List&lt;HotMovieData&gt; hotMovies = new List&lt;HotMovieData&gt;();
+
+  @override
+  void <span class="hljs-function"><span class="hljs-title">initState</span></span>() {
+    // TODO: implement initState
+    super.initState();
+    var data = HotMovieData(<span class="hljs-string">'反贪风暴4'</span>, 6.3, <span class="hljs-string">'林德禄'</span>, <span class="hljs-string">'古天乐/郑嘉颖/林峯'</span>, 29013,
+        <span class="hljs-string">'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551353482.webp'</span>);
+    <span class="hljs-built_in">set</span>State(() {
+      hotMovies.add(data);
+      hotMovies.add(data);
+      hotMovies.add(data);
+      hotMovies.add(data);
+      hotMovies.add(data);
+      hotMovies.add(data);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> MediaQuery.removePadding(
+      removeTop: <span class="hljs-literal">true</span>,
+      context: context,
+      child: ListView.separated(
+        itemCount: hotMovies.length,
+        itemBuilder: (context, index) {
+          <span class="hljs-built_in">return</span> HotMovieItemWidget(hotMovies[index]);
+        },
+        separatorBuilder: (context, index) {
+          <span class="hljs-built_in">return</span> Divider(
+            height: 1,
+            color: Colors.black26,
+          );
+        },
+      ),
+    );
+  }
+}
+</code></pre></div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>                   
+
+
+
+</body>
+</html>

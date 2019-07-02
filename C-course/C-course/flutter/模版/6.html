@@ -1,0 +1,168 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 开发利器 —— Hot Reload</h1>
+<p>前面已经将 Flutter 运行起来了，然后打开 main.dart ，看到如下的代码：</p>
+<pre><code class="hljs bash" lang="bash">class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">'Flutter Demo'</span>,
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with <span class="hljs-string">"flutter run"</span>. You<span class="hljs-string">'ll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn'</span>t reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: <span class="hljs-string">'Flutter Demo Home Page'</span>),
+    );
+  }
+}
+</code></pre><p>找到下面的代码：</p>
+<pre><code class="hljs Dart" lang="Dart">home: MyHomePage(title: <span class="hljs-string">'Flutter Demo Home Page'</span>),
+</code></pre><p>将这行代码改为：</p>
+<pre><code class="hljs Dart" lang="Dart">home: MyHomePage(title: <span class="hljs-string">'Hello World'</span>),
+</code></pre><p>使用快捷键 <strong>ctrl+s</strong>（Windows、Linux）或者 <strong>cmd+s</strong>（MacOS），这个快捷键其实是保存代码，但是可以触发 Hot Reload；</p>
+<p>或者点击 <strong>Hot Reload</strong> 的按钮：</p>
+<ul>
+<li>
+<p>Android Studio 的 <strong>Hot Reload</strong> 按钮：
+</p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/20/1690b3ec2bfd35bb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1050" data-height="88" src="https://user-gold-cdn.xitu.io/2019/2/20/1690b3ec2bfd35bb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>VS Code 的 <strong>Hot Reload</strong> 按钮：
+</p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/20/1690b3fb4170c0a2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="458" data-height="102" src="https://user-gold-cdn.xitu.io/2019/2/20/1690b3fb4170c0a2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+</li>
+</ul>
+<p>就可以看到运行的 Flutter APP 的 TitleBar 的内容发生了变化：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/4/9/169ffee0086d64b8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="292" data-height="524" src="https://user-gold-cdn.xitu.io/2019/4/9/169ffee0086d64b8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>是不是很神奇，不需要重新编译，就能实时看到代码的变更，这个功能就是 Flutter 的 Hot Reload。</p>
+<p>Flutter 的 Hot Reload 功能可以帮助开发者方便快速的调试代码，构建 UI，添加功能和修复 bug。</p>
+<h2 class="heading" data-id="heading-1">使用 Hot Reload 的步骤</h2>
+<p>1.连接真机或虚拟机，运行 Flutter APP，且必须以 Debug 模式启动。因为只有 Debug 模式才能使用 Hot Reload。</p>
+<p>2.修改 Flutter APP 工程里的 Dart 代码，但并不是所有 Dart 代码的修改都可以使用 Hot Reload，有一些情况下 Hot Reload 并不能生效，只能使用 Hot Restart（重新启动）。</p>
+<p>3.然后使用快捷键 <strong>ctrl+s</strong>（Windows、Linux）或者 <strong>cmd+s</strong>（MacOS），或者点击 Hot Reload 的按钮。就完成了 Hot Reload 的操作，Hot Reload 成功后，会在 Debug Consol 中看到输出如下类似的消息：</p>
+<pre><code class="hljs bash" lang="bash">Reloaded 1 of 419 libraries <span class="hljs-keyword">in</span> 1,165ms.
+</code></pre><p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169962124fc8cc37?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="235" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;235&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-2">Hot Reload 的工作原理</h2>
+<p>Hot Reload 只能在 Debug 模式下使用，是因为 Debug 模式下，Flutter 采用的是 JIT 动态编译，代码是运行在 Dart VM 上，JIT 将 Dart 编译成可以运行在 Dart VM 上的 Dart Kernel，Dart Kernel 可以动态更新，所以就实现了代码的实时更新功能。</p>
+<p>当调用 Hot Reload 时：</p>
+<ol>
+<li>首先会扫描代码，找到上次编译之后有变化的 Dart 代码。</li>
+<li>在将这些变化的 Dart 代码转化为增量的 Dart Kernel 文件。</li>
+<li>将增量的 Dart Kernel 文件发送到正在移动设备上运行的 Dart VM。</li>
+<li>Dart VM 会将发来的增量 Dart Kernel 文件和原有的 Dart Kernel 文件合并，然后重新加载全新的 Dart Kernel。</li>
+<li>这个时候，虽然重新加载了 Dart Kernel，<strong>却不会重新执行代码</strong>，而是通知 Flutter Framework 重建 Widget。</li>
+</ol>
+<p>所以 Flutter 的 Hot Reload 并不会重新执行一遍代码，而是触发 Flutter 重新绘制，并且会保留 Flutter 之前的状态，所以 Hot Reload 也被称为有状态的热重载。</p>
+<p>这里你可能会有点难以理解，什么是重建 Widget？什么是状态？没有关系，后面都会讲到，你可以继续往下看。</p>
+<h2 class="heading" data-id="heading-3">不能使用 Hot Reload 的场景</h2>
+<p>在理解了 Hot Reload 的原理之后，可以看到 Hot Reload 的使用场景是有一些限制的，接下来我们在看一下不能使用 Hot Reload的 场景（这里可能会有你不太理解的内容，那你可以大致看一下，有个印象，等你看完后面的内容，在来看这部分内容，就会好理解了）：</p>
+<h4 class="heading" data-id="heading-4">1. 代码出现编译错误的不能使用 Hot Reload</h4>
+<p>当代码更改引入编译错误时，肯定不能使用 Hot Reload。</p>
+<p>所以要先解决编译错误，在使用 Hot Reload。</p>
+<h4 class="heading" data-id="heading-5">2. 代码更改会影响 APP 状态的不能使用 Hot Reload</h4>
+<p>如果你的代码更改会影响 APP 的状态，使得代码更改之后的状态和代码更改之前的状态不一样，那么 Hot Reload 就不会生效，例如：</p>
+<pre><code class="hljs Dart" lang="Dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> GestureDetector(onTap: () =&gt; <span class="hljs-built_in">print</span>(<span class="hljs-string">'T'</span>));
+  }
+}
+</code></pre><p>这段代码，运行 App 之后，将 <strong>StatelessWidget</strong> 改为 <strong>StatefulWidget</strong>：</p>
+<pre><code class="hljs Dart" lang="Dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatefulWidget</span> </span>{
+  <span class="hljs-meta">@override</span>
+  State&lt;MyWidget&gt; createState() =&gt; MyWidgetState();
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyWidgetState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">State</span>&lt;<span class="hljs-title">MyWidget</span>&gt; </span>{ <span class="hljs-comment">/*...*/</span> }
+</code></pre><p>因为 Hot Reload 会保留状态，在代码更改之前，<code>MyWidget</code> 是 <strong>StatelessWidget</strong> ，将 <strong>StatelessWidget</strong> 改为 <strong>StatefulWidget</strong> ，如果 Hot Reload 成功，那么 <code>MyWidget</code> 会变成 <strong>StatefulWidget</strong> ，与它之前的状态就会不兼容的，所以 Hot Reload 是不会成功的。</p>
+<h4 class="heading" data-id="heading-6">3. 全局变量（ global variables）和静态字段（static fields）的更改不能使用 Hot Reload</h4>
+<p>在 Flutter 中，全局变量和静态字段被视为状态，因此在 Hot Reload 期间不会重新初始化。</p>
+<p>如下的代码：</p>
+<pre><code class="hljs Dart" lang="Dart"><span class="hljs-keyword">final</span> sampleTable = [
+  Table(<span class="hljs-string">"T1"</span>),
+  Table(<span class="hljs-string">"T2"</span>),
+  Table(<span class="hljs-string">"T3"</span>),
+  Table(<span class="hljs-string">"T4"</span>),
+];
+</code></pre><p>运行 App 之后，如果做了如下的更改：</p>
+<pre><code class="hljs Dart" lang="Dart"><span class="hljs-keyword">final</span> sampleTable = [
+  Table(<span class="hljs-string">"T1"</span>),
+  Table(<span class="hljs-string">"T2"</span>),
+  Table(<span class="hljs-string">"T3"</span>),
+  Table(<span class="hljs-string">"T10"</span>),    <span class="hljs-comment">// 修改这里的值</span>
+];
+</code></pre><p>运行 Hot Reload，是不会成功的，所以全局变量和静态字段不能使用 Hot Reload。</p>
+<h4 class="heading" data-id="heading-7">4. main() 方法里的更改不能使用 Hot Reload</h4>
+<p>因为 <code>main()</code> 方法不会因重建窗口小部件树而重新执行，所以更改 <code>main()</code> 方法里的代码，不会在 Hot Reload 之后看到效果。</p>
+<p>例如，如下的代码：</p>
+<pre><code class="hljs Dart" lang="Dart"><span class="hljs-keyword">import</span> <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+<span class="hljs-keyword">void</span> main() {
+  runApp(MyApp());
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> GestureDetector(onTap: () =&gt; <span class="hljs-built_in">print</span>(<span class="hljs-string">'tapped'</span>));
+  }
+}
+</code></pre><p>在运行App后，更改如下：</p>
+<pre><code class="hljs Dart" lang="Dart"><span class="hljs-keyword">import</span> <span class="hljs-string">'package:flutter/widgets.dart'</span>;
+
+<span class="hljs-keyword">void</span> main() {
+  runApp(<span class="hljs-keyword">const</span> Center(
+      child: <span class="hljs-keyword">const</span> Text(<span class="hljs-string">'Hello'</span>, textDirection: TextDirection.ltr)));
+}
+</code></pre><p>Hot Reload 之后，不会看到任何变化。</p>
+<h4 class="heading" data-id="heading-8">5. 枚举类型更改为常规的类或者常规的类变为枚举类型也不能使用 HotReload</h4>
+<p>例如，如下的例子：</p>
+<pre><code class="hljs bash" lang="bash">enum Color {
+  red,
+  green,
+  blue
+}
+</code></pre><p>改为:</p>
+<pre><code class="hljs bash" lang="bash">class Color {
+  Color(this.i, this.j);
+  final int i;
+  final int j;
+  }
+</code></pre><h4 class="heading" data-id="heading-9">6. 修改通用类型声明也不能使用 HotReload</h4>
+<p>例如，如下的例子：</p>
+<pre><code class="hljs bash" lang="bash">class A&lt;T&gt; {
+  T i;
+}
+</code></pre><p>改为:</p>
+<pre><code class="hljs bash" lang="bash">class A&lt;T, V&gt; {
+  T i;
+  V v;
+}
+</code></pre><h2 class="heading" data-id="heading-10"><code>Hot Reload</code> VS <code>Hot Restart</code></h2>
+<p>针对上面不能使用 Hot Reload 的情况，就需要使用 Hot Restart。</p>
+<p>Hot Restart 可以完全重启您的应用程序，但却不用结束调试会话。</p>
+<h4 class="heading" data-id="heading-11">Android Studio 里执行 Hot Restart</h4>
+<p>在 Android Studio 里，无需 stop，在 run 一下，就是 Hot Restart。</p>
+<h4 class="heading" data-id="heading-12">VS Code 里执行 Hot Restart</h4>
+<p>在 VS Code 里，打开命令面板，输入 **Flutter: Hot Restart ** 或者 直接快捷键 Ctrl+F5，就可以使用 Hot Restart。</p>
+<h2 class="heading" data-id="heading-13">总结</h2>
+<p>最适合 Hot Reload 的场景就是写布局的时候，如果是其他场景，尤其是写业务逻辑的时候，一不小心就会碰到无法使用 Hot Reload 的场景，所以当你发现 Hot Reload 不生效的时候，就使用 Hot Restart 吧，Hot Restart 也一样很快。</p>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+</body>
+</html>

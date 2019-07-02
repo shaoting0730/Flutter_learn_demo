@@ -1,0 +1,388 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">创建第一个 Flutter APP</h1>
+<p>在安装完 Flutter 的开发环境之后，本章会分别使用 Android Studio 和 VS Code 创建你的第一个 Flutter APP 。</p>
+<h2 class="heading" data-id="heading-1">使用 Android Studio 创建第一个 Flutter APP</h2>
+<p>这里使用 Android Studio 带你创建第一个 Flutter APP。</p>
+<h3 class="heading" data-id="heading-2">创建 Flutter 项目</h3>
+<p>在 Android Studio 中，选择 <strong>File &gt; New &gt; New Flutter Project</strong> ，会出现下图的框：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f5247b8ff54be?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1060" src="https://user-gold-cdn.xitu.io/2019/2/16/168f5247b8ff54be?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>选择 <strong>Flutter Application</strong>，然后点击 <strong>Next</strong>，出现如下图的框：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f5271f4ccf00a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1100" src="https://user-gold-cdn.xitu.io/2019/2/16/168f5271f4ccf00a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<ul>
+<li>Project name：工程的名字</li>
+<li>Flutter SDK path：Flutter SDK 的路径（选择前面 Flutter SDK 所在的路径）</li>
+<li>Project location：工程的路径</li>
+<li>Description：工程的描述</li>
+</ul>
+<p>其中 <strong>Flutter SDK path</strong> 必须是 Flutter SDK 所在的路径，填完这些后，点击 <strong>Next</strong>，出现如下图的框：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f52967574e41f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1100" src="https://user-gold-cdn.xitu.io/2019/2/16/168f52967574e41f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>这个是设置 Android 代码的包名。</p>
+<p>下面的两个选项：</p>
+<ul>
+<li>Include Kotlin support for Android code（使用 Kotlin 开发）</li>
+<li>Include Swift support for iOS code（使用 Swift 开发）</li>
+</ul>
+<p>如果想用 Kotlin 开发 Android 或者用 Swift 开发 iOS 的话，就选上 ，如果不选的话，Android 默认使用 Java 开发，iOS 默认使用 Objective-C 开发。可以根据自己的需要来选择。</p>
+<p>最后点击 <strong>Finish</strong>，第一个 Flutter APP 就创建完成了，创建完的 Flutter APP 里有默认实现的代码。</p>
+<h3 class="heading" data-id="heading-3">运行 Flutter APP</h3>
+<p>创建完 Flutter APP 的工程后，工程里面有默认的实现，我们可以直接运行 Flutter APP，但在运行 Flutter APP 之前，首先要打开模拟器，或者连接真机。</p>
+<h4 class="heading" data-id="heading-4">打开 Android/iOS 模拟器</h4>
+<p>在 Android Studio 的工具栏里会看到如下图：
+</p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f53040a6f722e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1046" data-height="230" src="https://user-gold-cdn.xitu.io/2019/2/16/168f53040a6f722e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure>
+选择一个，打开模拟器。<p></p>
+<p>在 MacOS 上，可以选择 iOS 模拟器，也可以选择 Android 模拟器。
+在 Windows 和 Linux 上，只能选择 Android 模拟器。</p>
+<h4 class="heading" data-id="heading-5">运行 Flutter APP</h4>
+<p>点击如下的按钮运行 Flutter APP：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f532e178ccf19?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="994" data-height="162" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;994&quot; height=&quot;162&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>运行的效果如下图：</p>
+<p>iOS 模拟器：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/169ffe6cbef3d738?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="292" data-height="524" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;292&quot; height=&quot;524&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>Android 模拟器：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/169ffe84125dcfbd?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="235" data-height="424" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;235&quot; height=&quot;424&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>可以看到 iOS 里的 TitleBar 的文字是居中的，Android 里的 TitleBar 的文字是居左的，运行的是同一份代码，Flutter UI 可以自动根据平台来适配，完全不用我们担心适配的问题。</p>
+<h2 class="heading" data-id="heading-6">使用  VS Code 创建第一个 Flutter APP</h2>
+<p>这里使用 VS Code 带你创建第一个 Flutter APP。</p>
+<h3 class="heading" data-id="heading-7">创建 Flutter 项目</h3>
+<p>在 VS Code 中，点击 <strong>View &gt; Command Palette…</strong>，或者快捷键 <strong>Shift+cmd+P</strong>(MacOS) /<strong>Ctrl+Shift+P</strong>(Windows、Linux)，打开命令面板,输入 <strong>Flutter</strong></p>
+<p>会出现下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f5368f5ecc67b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1202" data-height="574" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1202&quot; height=&quot;574&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>选择 <strong>Flutter: New Project</strong>,会弹出如下的框：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/1699452f3795bd0d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="169" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;169&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>然你输入 Flutter 工程的名字，你可以自己起一个，例如： <code>hello_world</code>。输入 Flutter 工程的名字后，回车，会弹出如下的框：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/1699455c6581d44d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="521" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;521&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>选择好工程的路径，点击右下角的 <strong>Select a folder to create the project in</strong>，第一个 Flutter APP 就创建完成了，创建完的 Flutter APP 里有默认实现的代码。</p>
+<p>这里相比 Android Studio 少了设置 Android 包名的步骤，所以用 VS Code 创建的 Flutter APP 的 Android 包名用的是默认的。</p>
+<blockquote class="warning"><p>VS Code 实质是一款代码编辑器，如果你用过 Sublime 的话，应该就很熟悉，最重要的是记住命令面板 的快捷键：Shift+cmd+P(MacOS) /Ctrl+Shift+P(Windows、Linux)，很多功能需要在命令面板中使用。
+</p></blockquote><h3 class="heading" data-id="heading-8">运行 Flutter APP</h3>
+<p>创建完 Flutter APP 的工程后，工程里面有默认的实现，我们可以直接运行 Flutter APP，但在运行 Flutter APP 之前，首先要打开模拟器，或者连接真机。</p>
+<h4 class="heading" data-id="heading-9">打开 Android/iOS 模拟器</h4>
+<p>在 VS Code 的底部工具栏里会看到如下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f542daf2ad352?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1078" data-height="202" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1078&quot; height=&quot;202&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>点击红框内的 <strong>No Devices</strong> ，会看到如下图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f54431aeee666?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1204" data-height="270" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1204&quot; height=&quot;270&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>选择一个，打开模拟器。</p>
+<p>在 MacOS 上，可以选择 iOS 模拟器，也可以选择 Android 模拟器。
+在 Windows 和 Linux 上，只能选择 Android 模拟器。</p>
+<h4 class="heading" data-id="heading-10">运行Flutter APP</h4>
+<p>VS Code 有两种方式运行 Flutter APP：</p>
+<ul>
+<li>Start Debugging</li>
+<li>Start Without Debugging</li>
+</ul>
+<h4 class="heading" data-id="heading-11">Start Debugging</h4>
+<p>点击 <strong>Debug &gt; Start Debugging</strong>。</p>
+<p>这个模式下加了调试器，如果有断点，可以跟进调试代码。</p>
+<h4 class="heading" data-id="heading-12">Start Without Debugging</h4>
+<p>点击 <strong>Debug &gt; Start Without Debugging</strong>。</p>
+<p>这个模式下没有调试器，就是启动已经编译好的程序。</p>
+<p>运行的效果如下图：</p>
+<p>iOS模拟器：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/169ffe6cbef3d738?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="292" data-height="524" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;292&quot; height=&quot;524&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>Android 模拟器：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/169ffe84125dcfbd?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="235" data-height="424" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;235&quot; height=&quot;424&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>可以看到 iOS 里的 TitleBar 的文字是居中的，Android 里的 TitleBar 的文字是居左的，运行的是同一份代码，Flutter UI 可以自动根据平台来适配，完全不用我们担心适配的问题。</p>
+<h3 class="heading" data-id="heading-13">Flutter 的调试信息</h3>
+<p>Flutter 运行之后，可以在 VS Code 的下方看到调试信息：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169960db66608ec6?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="469" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;469&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-14">VS Code 简单使用说明</h2>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/16995c14820c38aa?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="750" data-height="500" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;750&quot; height=&quot;500&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>VS Code 有一个简单直观的布局，它的用户界面分为五个方面：</p>
+<ul>
+<li>(A) 视图工具栏：位于最左边的视图栏，包括文件目录、搜索等功能。</li>
+<li>(B) 侧边框：包含不同的管理器，可以打开不同的功能。</li>
+<li>(C) 编辑区域：来编辑你的文件，可以同时打开三个文件编辑。</li>
+<li>(D) 面板：在编辑区下面有不同的面板，面板有输入或调试信息，错误和警告或一个集成终端。</li>
+<li>(E) 状态栏：显示打开的项目和编辑的文件的相关信息。</li>
+</ul>
+<h4 class="heading" data-id="heading-15">面板</h4>
+<p>点击侧边栏的</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169960ecbfbe09c3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="497" data-height="108" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;497&quot; height=&quot;108&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>红色部分，可以打开、隐藏面板。</p>
+<p>面板里有四个 tab：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169961051964189f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="366" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;366&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>我们主要使用如下的三个：</p>
+<ol>
+<li>
+<p>PROBLEMS</p>
+<p>查看代码错误的地方：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/1699611dee9363e0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="914" data-height="432" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;914&quot; height=&quot;432&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>DEBUG CONSOLE</p>
+<p>查看调试信息和日志输出的地方：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169961a15de7fba8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="582" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;582&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>TERMINAL</p>
+<p>终端：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169961bf14fb28bb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="233" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;233&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+</ol>
+<h2 class="heading" data-id="heading-16">Flutter 入口文件</h2>
+<p>在创建完 Flutter APP 之后，就可以开始 Flutter 的开发了，那么代码应该写在哪里，APP 是从哪里开始运行的呢？</p>
+<p>所以我们有必要先看一下 Flutter 代码的入口文件及入口函数。</p>
+<p>Flutter 入口文件是 <code>main.dart</code>，入口文件的名字必须是 <code>main.dart</code>，不能更改，在 Flutter 工程的 lib 目录下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/169959e359383e2b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="798" data-height="852" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;798&quot; height=&quot;852&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h3 class="heading" data-id="heading-17">Flutter 入口函数</h3>
+<p>打开 <code>main.dart</code> ：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/19/16995a6d0f3a3e12?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="973" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;973&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>这里的 <code>main()</code> 函数就是 Flutter 的入口函数。</p>
+<p>在 <code>main()</code> 函数里要运行 <code>runApp()</code> 函数，<code>runApp()</code>函数的参数类型是 Widget 类型。使用的方法如下：</p>
+<pre><code class="hljs bash" lang="bash">void main() =&gt; runApp(MyApp());
+</code></pre><p>这个使用方法是固定的。</p>
+<h2 class="heading" data-id="heading-18">Flutter 工程类型介绍</h2>
+<p>前面用 Android Studio 创建 Flutter 工程的时候，让选 Flutter 工程类型：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f58665abf6bd0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1060" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;1060&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>可以见到 Flutter 有四种工程类型，这四种工程类型有不同的应用场景。</p>
+<h3 class="heading" data-id="heading-19">1. Flutter Application</h3>
+<p>如果想让 Flutter 直接运行在 Android 或 iOS 上给用户使用，就用 Application 类型。</p>
+<p>本小册里的所有 Flutter 示例都是 Application 类型的。</p>
+<h3 class="heading" data-id="heading-20">2. Flutter Plugin</h3>
+<p>如果你想让 Flutter 调用 Android 或 iOS 的 API，并想将这个功能封装其起来供第三方使用，那么就用 Plugin 类型。</p>
+<p>Plugin 是 Flutter 的一个插件包，例如，在 Android 上有播放音乐的功能，为了在 Flutter 中使用，就可以使用 Plugin 的模式：播放音乐的功能在 Android 上用 Java 实现，然后 Flutter 的代码通过 PlatformChannel 使用 Android 的播放音乐的功能，这就是一个完整的插件包，提供了播放音乐的功能。其他 Flutter APP 想要使用播放音乐的功能，就可以依赖这个插件包。</p>
+<p>Flutter 想要使用 Android 或 iOS 的功能，都可以使用 Plugin 的模式。</p>
+<h3 class="heading" data-id="heading-21">3. Flutter Package</h3>
+<p>Flutter Package 是纯 Dart 模块，只能实现 Flutter 的相关功能，例如实现一个 Widget，然后给第三方使用。</p>
+<h3 class="heading" data-id="heading-22">4. Flutter Module</h3>
+<p>如果要将 Flutter 添加到 Android APP 或 iOS APP 中，实现 Flutter 和 Native 的混合开发，就使用 Module 类型。</p>
+<p>Flutter 的混合开发模式就采用的这种类型，在 Android 上打包成 aar，在 iOS 上打包成 Framework，可以很方便的集成进原有的 Native 工程里，实现 Flutter 和 Native 的混合开发。</p>
+<h3 class="heading" data-id="heading-23">Plugin 和 Package</h3>
+<p>Flutter 的 Plugin 和 Package 可以用于组件化开发。</p>
+<p>可以在 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fpub.dartlang.org%2F" rel="nofollow noopener noreferrer">pub.dartlang.org/</a> 网站上看到所有的 Flutter 库。</p>
+<p>或者在国内镜像 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fpub.flutter-io.cn%2F" rel="nofollow noopener noreferrer">pub.flutter-io.cn/</a> 上查看 Flutter 库。</p>
+<h2 class="heading" data-id="heading-24">Flutter 不同工程的代码目录结构介绍</h2>
+<h3 class="heading" data-id="heading-25">1. Flutter Application 目录结构</h3>
+<p>如下图是前面创建的 Flutter APP 的目录截图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/17/168f8e99fcf00652?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="614" data-height="634" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;614&quot; height=&quot;634&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<ul>
+<li>
+<p>android 目录</p>
+<p>这个目录下是一个完整的 Android APP 工程的代码。可以理解成 Flutter 在 Android 上的壳子。这个目录里的代码都会被打包进 Flutter 的 Android 安装包里。</p>
+</li>
+<li>
+<p>ios 目录</p>
+<p>这个目录下是一个完整的 iOS APP 工程的代码。可以理解成 Flutter 在 iOS 上的壳子。这个目录里的代码都会被打包进 Flutter 的 iOS 安装包里。</p>
+</li>
+<li>
+<p>lib 目录</p>
+<p>这里是 Flutter 的代码，使用 Dart 语言编写。<code>main.dart</code> 是 Flutter 的入口文件。</p>
+</li>
+<li>
+<p>test 目录</p>
+<p>这里是 Flutter 的测试代码，使用 Dart 语言编写。</p>
+</li>
+<li>
+<p>pubspec.yaml 文件</p>
+<p>这个是 Flutter 的配置文件，声明了 Flutter APP 的名称、版本、作者等的元数据文件，还有声明的依赖库，和指定的本地资源（图片、字体、音频、视频等）。</p>
+<blockquote class="warning"><p>pubspec.yaml 是 Flutter 的配置，是 Flutter 里的重要部分。
+</p></blockquote></li>
+</ul>
+<p>Flutter Application 包含 Dart 代码、Android 代码和 iOS 代码，可以直接生成 Android 安装包和 iOS 安装包。</p>
+<h3 class="heading" data-id="heading-26">2. Flutter Plugin 目录结构</h3>
+<p>如下图是 Flutter Plugin 的目录截图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f666c61833b1e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="575" data-height="661" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;575&quot; height=&quot;661&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<ul>
+<li>
+<p>android 目录</p>
+<p>这个目录下是一个 Android Module 工程的代码。这个目录里的代码都会被打包进 Flutter Plugin。</p>
+</li>
+<li>
+<p>ios 目录</p>
+<p>这个目录下是一个 iOS 静态库的代码。这个目录里的代码都会被打包进 Flutter Plugin。</p>
+</li>
+<li>
+<p>example 目录</p>
+<p>这个目录下是一个完整的 Flutter APP 的应用代码，是为了方便 Plugin 代码的开发，在开发时 Plugin 的代码是运行在这个  Flutter APP 上的，但当打包的时候，example 下的代码并不会打包进 Plugin。</p>
+</li>
+<li>
+<p>lib 目录</p>
+<p>这里是 Flutter 的代码，使用 Dart 语言编写。<code>main.dart</code> 是 Flutter 的入口文件。</p>
+</li>
+<li>
+<p>pubspec.yaml 文件</p>
+<p>这个是 Flutter 的配置文件，声明了 Flutter APP的名称、版本、作者等的元数据文件，还有声明的依赖库，和指定的本地资源（图片、字体、音频、视频等）。</p>
+</li>
+</ul>
+<p>Flutter Plugin 里既有 Dart 代码， 也有 Android 的代码，和 iOS 的代码。</p>
+<h3 class="heading" data-id="heading-27">3. Flutter Package 目录结构</h3>
+<p>如下图是 Flutter Package 的目录截图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f677e15630fbc?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="583" data-height="565" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;583&quot; height=&quot;565&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<ul>
+<li>
+<p>lib 目录</p>
+<p>这里是 Flutter 的代码，使用 Dart 语言编写。<code>main.dart</code> 是 Flutter 的入口文件。</p>
+</li>
+<li>
+<p>test 目录</p>
+<p>这里是 Flutter 的测试代码，使用 Dart 语言编写。</p>
+</li>
+<li>
+<p>pubspec.yaml 文件</p>
+<p>这个是 Flutter 的配置文件，声明了 Flutter APP 的名称、版本、作者等的元数据文件，还有声明的依赖库，和指定的本地资源（图片、字体、音频、视频等）。</p>
+</li>
+</ul>
+<h3 class="heading" data-id="heading-28">4. Flutter Module 目录结构</h3>
+<p>如下图是 Flutter Module 的目录截图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/16/168f67b5467ddc8c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="594" data-height="642" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;594&quot; height=&quot;642&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<ul>
+<li>
+<p>.android 目录</p>
+<p>这个目录下是一个完整的 Android APP 工程的代码，具体如下图：</p>
+</li>
+</ul>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/17/168f8d24eca7aadd?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="497" data-height="475" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;497&quot; height=&quot;475&quot;></svg>"><figcaption></figcaption></figure>
+这个目录下的 Android APP 工程是为了方便开发和调试，因为 Flutter Module 打包生成的是 aar，没办法运行，所以加了 .android 目录，使 Flutter Module在开发的时候可以运行在 APP 上，但打包的时候 只有Flutter目录下的Android代码才会被打包进aar。<p></p>
+<ul>
+<li>
+<p>.ios 目录</p>
+<p>这个目录下是一个完整的iOS APP工程的代码。具体如下图：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/17/168f8d63bf849df8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="552" data-height="258" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;552&quot; height=&quot;258&quot;></svg>"><figcaption></figcaption></figure>
+.ios 目录和 .android 目录的功能是一样的，最终打包的时候只有 Flutter 目录下的 iOS 代码才会被打包进 Framework。<p></p>
+</li>
+<li>
+<p>lib 目录</p>
+<p>这里是 Flutter 的代码，使用 Dart 语言编写。<code>main.dart</code> 是 Flutter 的入口文件。</p>
+</li>
+<li>
+<p>test 目录</p>
+<p>这里是 Flutter 的测试代码，使用 Dart 语言编写。</p>
+</li>
+<li>
+<p>pubspec.yaml 文件</p>
+<p>这个是 Flutter 的配置文件，声明了 Flutter APP 的名称、版本、作者等的元数据文件，还有声明的依赖库，和指定的本地资源（图片、字体、音频、视频等）。</p>
+</li>
+</ul>
+<p>Flutter Module 中既包含 Dart 代码，也有 Android 的代码和 iOS 的代码。</p>
+<h2 class="heading" data-id="heading-29">pubspec.yaml 介绍</h2>
+<p>pubspec.yaml 是 Flutter 工程的配置文件，使用 <code>YAML</code> 语言来写，下面是一个 Flutter 工程的 pubspec.yaml :</p>
+<pre><code class="hljs bash" lang="bash">name: flutter_doubanmovie
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+authors:
+- Natalie Weizenbaum &lt;nweiz@google.com&gt;
+- Bob Nystrom &lt;rnystrom@google.com&gt;
+
+homepage: https://flutter.dev/
+
+environment:
+  sdk: <span class="hljs-string">"&gt;=2.1.0 &lt;3.0.0"</span>
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.2
+  http: ^0.12.0+2
+  shared_preferences: ^0.5.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: <span class="hljs-literal">true</span>
+</code></pre><p>下表是 pubspec.yaml 支持的字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>含义</th>
+<th>可选/必选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>工程的名字</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>description</td>
+<td>工程的描述</td>
+<td>想要发布到 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fpub.dev%2F" rel="nofollow noopener noreferrer">Pub</a> 上，就是必须的</td>
+</tr>
+<tr>
+<td>version</td>
+<td>工程的版本号</td>
+<td>想要发布到 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fpub.dev%2F" rel="nofollow noopener noreferrer">Pub</a> 上，就是必须的</td>
+</tr>
+<tr>
+<td>author or authors</td>
+<td>作者名字</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>homepage</td>
+<td>主页</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>environment</td>
+<td>指定 Dart 的版本，因为 随着时间的推移，Dart 不断发展，一个软件包可能只适用于某些版本的平台。</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>repository</td>
+<td>指向工程的源代码的地址</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>issue_tracker</td>
+<td>指向跟踪工程issue的地址</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>documentation</td>
+<td>指向工程文档的地址</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>dependencies</td>
+<td>依赖的开发库</td>
+<td>如果你的工程没有依赖的话，可以省略</td>
+</tr>
+<tr>
+<td>dev_dependencies</td>
+<td>依赖的测试库</td>
+<td>如果你的工程没有依赖的话，可以省略</td>
+</tr>
+<tr>
+<td>dependency_overrides</td>
+<td>在开发过程中，您可能需要暂时覆盖依赖项。</td>
+<td>如果你的工程不需要要覆盖依赖的话，可以省略</td>
+</tr>
+<tr>
+<td>executables</td>
+<td>用于将包的可执行文件放在PATH上：可以将其一个或多个脚本公开为可以直接从命令行运行的可执行文件。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>publish_to</td>
+<td>指定发布包的位置，默认是 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fpub.dev%2F" rel="nofollow noopener noreferrer">Pub</a></td>
+<td>可选</td>
+</tr>
+<tr>
+<td>flutter</td>
+<td>flutter 资源相关的配置，包括图片、字体等，后面会有具体场景</td>
+<td>必选</td>
+</tr>
+</tbody>
+</table>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

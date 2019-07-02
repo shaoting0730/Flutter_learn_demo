@@ -1,0 +1,492 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 基础 Widget —— 图片和Icon</h1>
+<p>本节讲 Flutter 图片和Icon的使用。</p>
+<p>在 Flutter 中，和图片、Icon 相关的 Widget 有两个:</p>
+<ol>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FImage-class.html" rel="nofollow noopener noreferrer">Image</a></li>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FIcon-class.html" rel="nofollow noopener noreferrer">Icon</a></li>
+</ol>
+<h1 class="heading" data-id="heading-1"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FImage-class.html" rel="nofollow noopener noreferrer">1.Image</a></h1>
+<p>Image 是显示图片的 Widget。</p>
+<h2 class="heading" data-id="heading-2">代码所在位置</h2>
+<p>flutter_widget_demo/lib/image/ImageWidget.dart</p>
+<h2 class="heading" data-id="heading-3">Image.asset 的快速上手</h2>
+<p>Image.asset() 使用有些特殊，因为这里涉及到如何把本地图片资源添加到 Flutter APP 里。</p>
+<h3 class="heading" data-id="heading-4">将本地图片资源添加到 Flutter APP</h3>
+<ol>
+<li>在 Flutter 工程的根目录下创建一个 <code>images</code> 目录（名字随便取），然后将一张 flutter.png 的图片拷贝到该目录，如下图：</li>
+</ol>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/3/9/1696267866d98457?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="428" data-height="340" src="https://user-gold-cdn.xitu.io/2019/3/9/1696267866d98457?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure>
+2. 打开 <code>pubspec.yml</code> ,在 <code>flutter</code> 中添加图片的配置信息：
+如果只添加一张图片：<p></p>
+<pre><code class="hljs bash" lang="bash">flutter:
+  uses-material-design: <span class="hljs-literal">true</span>
+    
+  assets:
+    - images/flutter.png
+</code></pre><p>或者可以把整个目录配置上，就不用一张张图片添加了：</p>
+<pre><code class="hljs bash" lang="bash">flutter:
+  uses-material-design: <span class="hljs-literal">true</span>
+    
+  assets:
+    - images/
+</code></pre><ol start="3">
+<li>使用的时候，需要传入图片的路径：</li>
+</ol>
+<pre><code class="hljs bash" lang="bash">Image.asset(<span class="hljs-string">"images/flutter.png"</span>),
+</code></pre><h3 class="heading" data-id="heading-5">Image.asset 的使用</h3>
+<p>Image.asset 的最简单使用方式就是传入图片路径:</p>
+<pre><code class="hljs bash" lang="bash">Image.asset(<span class="hljs-string">"images/flutter.png"</span>),
+</code></pre><p>Image.asset 写到一个页面的完整 Demo代码如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(ImageWidget());
+
+class ImageWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI基础Widget -- 图片和Icon"</span>)),
+        body: Image.asset(<span class="hljs-string">"images/flutter.png"</span>,fit: BoxFit.cover,),
+      ),
+    );
+  }
+}
+</code></pre><p>运行的效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/1696271cbc0b539e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="846" data-height="678" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;846&quot; height=&quot;678&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-6">Image.network 的快速上手</h2>
+<p>Image.network 的最简单使用方式就是传入图片 URL:</p>
+<pre><code class="hljs bash" lang="bash">Image.network(<span class="hljs-string">"https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1557781801455&amp;di=17f9f2fc3ded4efb7214d2d8314e8426&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2.mukewang.com%2F5b4c075b000198c216000586.jpg"</span>),
+</code></pre><p>Image.network 写到一个页面的完整 Demo 代码如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(ImageWidget());
+
+class ImageWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI基础Widget -- 图片和Icon"</span>)),
+        body: Image.network(<span class="hljs-string">"https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1557781801455&amp;di=17f9f2fc3ded4efb7214d2d8314e8426&amp;imgtype=0&amp;src=http%3A%2F%2Fimg2.mukewang.com%2F5b4c075b000198c216000586.jpg"</span>),
+      ),
+    );
+  }
+}
+</code></pre><p>运行的效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/5/14/16ab26f3f7b69109?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="842" data-height="628" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;842&quot; height=&quot;628&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-7">Image 的构造函数及参数说明</h2>
+<p>Image 总共有 5 个构造函数，除了默认的构造函数，还有四种命名构造函数：</p>
+<pre><code class="hljs bash" lang="bash">class Image extends StatefulWidget {
+
+    const Image({
+        @required this.image,
+        ...
+    })
+    
+    Image.network(String src,{
+        ...
+    })
+    
+    Image.file(File file, {
+        ...
+    })
+    
+    Image.asset(String name, {
+        ...
+    })
+    
+    Image.memory(Uint8List bytes, {
+        ...
+    })
+
+}
+</code></pre><p>我们一般使用四种命名构造函数，而这四种命名构造函数也表示了图片的不同来源：</p>
+<ol>
+<li>
+<p>Image.network(url)：从网络加载显示图片</p>
+<p>这里需要传入图片的url，</p>
+</li>
+<li>
+<p>Image.file(file)：从本地文件加载显示图片</p>
+<p>这里需要传入图片的本地地址</p>
+</li>
+<li>
+<p>Image.asset(name)：从Flutter APP的资源文件里加载显示图片</p>
+<p>这里需要传入Flutter APP图片资源文件的路径及图片名字</p>
+</li>
+<li>
+<p>Image.memory(bytes)：从内存加载显示图片</p>
+<p>这里需要传入图片的bytes数据，类型是Uint8List</p>
+</li>
+</ol>
+<p>Image 的五个构造函数的参数都有所不同，这里讲一下共同都有的参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>double</td>
+<td>图形显示的比例</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>semanticsLabel</td>
+<td>String</td>
+<td>给 Image 加上一个语义标签<br>没有实际用处</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>width</td>
+<td>double</td>
+<td>图片的宽<br>如果为null的话，则图像将选择最佳大小显示，而且会保留其固有宽高比的大小</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>height</td>
+<td>double</td>
+<td>图片的高<br>如果为null的话，则图像将选择最佳大小显示，而且会保留其固有宽高比的大小</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Color</td>
+<td>图片的混合色值</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>colorBlendMode</td>
+<td>BlendMode</td>
+<td>图片与颜色的混合模式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>fit</td>
+<td>BoxFit</td>
+<td>用于在图片的显示空间和图片本身大小不同时指定图片的适应模式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>alignment</td>
+<td>Alignment</td>
+<td>图片的对齐方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>ImageRepeat</td>
+<td>当图片本身大小小于显示空间时，指定图片的重复规则</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>centerSlice</td>
+<td>Rect</td>
+<td>在这个矩形范围内的图片会被当成.9的图片</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>matchTextDirection</td>
+<td>bool</td>
+<td>图片的绘制方向<br>true:从左往右<br>false:从右往左</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>gaplessPlayback</td>
+<td>bool</td>
+<td>当图像提供者更改时<br>true：继续显示旧图像<br>false：简单地显示任何内容</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>filterQuality</td>
+<td>FilterQuality</td>
+<td>设置图片的过滤质量</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>fit：BoxFit，用于在图片的显示空间和图片本身大小不同时指定图片的适应模式。</p>
+<table>
+<thead>
+<tr>
+<th>BoxFit的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BoxFit.fill</td>
+<td>会拉伸填充满显示空间，图片本身长宽比会发生变化，图片会变形。</td>
+</tr>
+<tr>
+<td>BoxFit.contain</td>
+<td>会按图片的长宽比放大后居中填满显示空间，图片不会变形，超出显示空间部分会被剪裁。</td>
+</tr>
+<tr>
+<td>BoxFit.cover</td>
+<td>这是图片的默认适应规则，图片会在保证图片本身长宽比不变的情况下缩放以适应当前显示空间，图片不会变形。</td>
+</tr>
+<tr>
+<td>BoxFit.fitWidth</td>
+<td>图片的宽度会缩放到显示空间的宽度，高度会按比例缩放，然后居中显示，图片不会变形，超出显示空间部分会被剪裁。</td>
+</tr>
+<tr>
+<td>BoxFit.fitHeight</td>
+<td>图片的高度会缩放到显示空间的高度，宽度会按比例缩放，然后居中显示，图片不会变形，超出显示空间部分会被剪裁。</td>
+</tr>
+<tr>
+<td>BoxFit.scaleDown</td>
+<td>对齐目标框内的源（默认情况下，居中），并在必要时缩小源以确保源适合框内。这与<code>contains</code>相同，如果这会缩小图像，否则它与<code>none</code>相同。</td>
+</tr>
+<tr>
+<td>BoxFit.none</td>
+<td>图片没有适应策略，会在显示空间内显示图片，如果图片比显示空间大，则显示空间只会显示图片中间部分</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>alignment：Alignment，图片的对齐方式</p>
+<table>
+<thead>
+<tr>
+<th>Alignment的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alignment.topLeft</td>
+<td>左上对齐</td>
+</tr>
+<tr>
+<td>Alignment.topCenter</td>
+<td>上部居中对齐</td>
+</tr>
+<tr>
+<td>Alignment.topRight</td>
+<td>右上对齐</td>
+</tr>
+<tr>
+<td>Alignment.centerLeft</td>
+<td>中间居左对齐</td>
+</tr>
+<tr>
+<td>Alignment.center</td>
+<td>中间对齐</td>
+</tr>
+<tr>
+<td>Alignment.centerRight</td>
+<td>中间居右对齐</td>
+</tr>
+<tr>
+<td>Alignment.bottomLeft</td>
+<td>左下对齐</td>
+</tr>
+<tr>
+<td>Alignment.bottomCenter</td>
+<td>底部居中对齐</td>
+</tr>
+<tr>
+<td>Alignment.bottomRight</td>
+<td>右下对齐</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>repeat：ImageRepeat,当图片本身大小小于显示空间时，指定图片的重复规则。</p>
+<table>
+<thead>
+<tr>
+<th>ImageRepeat的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ImageRepeat.repeat</td>
+<td>在x和y轴上重复图像，直到填充满空间。</td>
+</tr>
+<tr>
+<td>ImageRepeat.repeatX</td>
+<td>在x轴上重复图像，直到填充满空间。</td>
+</tr>
+<tr>
+<td>ImageRepeat.repeatY</td>
+<td>在y轴上重复图像，直到填充满空间。</td>
+</tr>
+<tr>
+<td>ImageRepeat.noRepeat</td>
+<td>不重复</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>filterQuality：FilterQuality，设置图片的过滤质量</p>
+<table>
+<thead>
+<tr>
+<th>FilterQuality的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FilterQuality.none</td>
+<td>最快的过滤。</td>
+</tr>
+<tr>
+<td>FilterQuality.low</td>
+<td>比none的过滤质量好，但是比none的时间要长。</td>
+</tr>
+<tr>
+<td>FilterQuality.medium</td>
+<td>比low的过滤质量好，但是也比low的时间要长</td>
+</tr>
+<tr>
+<td>FilterQuality.high</td>
+<td>过滤质量最高，但也最慢</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h1 class="heading" data-id="heading-8"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FIcon-class.html" rel="nofollow noopener noreferrer">2.Icon</a></h1>
+<p>Flutter 中，可以像 web 开发一样使用 iconfont，iconfont 即“字体图标”，它是将图标做成字体文件，然后通过指定不同的字符而显示不同的图片。用于显示 iconfont 的就是 Icon Widget。</p>
+<p>iconfont 和图片相比有如下优势：</p>
+<ol>
+<li>体积小：可以减小安装包大小。</li>
+<li>矢量的：iconfont 都是矢量图标，放大不会影响其清晰度。</li>
+<li>可以应用文本样式：可以像文本一样改变字体图标的颜色、大小对齐等。</li>
+<li>可以通过 TextSpan 和文本混用。</li>
+</ol>
+<h2 class="heading" data-id="heading-9">代码所在位置</h2>
+<p>flutter_widget_demo/lib/image/IconWidget.dart</p>
+<h2 class="heading" data-id="heading-10">Icon 的快速上手</h2>
+<p>Icon 的使用：</p>
+<pre><code class="hljs bash" lang="bash">Icon(
+  Icons.android,
+  size: 50.0,
+  color: Colors.green,
+)
+</code></pre><p>Icon 写到一个页面的完整 Demo 代码如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(IconWidget());
+
+class IconWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI基础Widget -- 图片和Icon"</span>)),
+        body: Icon(
+          Icons.android,
+          size: 50.0,
+          color: Colors.green,
+        ),
+      ),
+    );
+  }
+}
+</code></pre><p>运行效果：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/16962a5ea77f29f9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="850" data-height="380" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;850&quot; height=&quot;380&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-11">Icon 的构造函数及参数说明</h2>
+<p>Icon 的构造函数为:</p>
+<pre><code class="hljs bash" lang="bash">class Icon extends StatelessWidget {
+
+  const Icon(this.icon, {
+    Key key,
+    this.size,
+    this.color,
+    this.semanticLabel,
+    this.textDirection,
+  }) : super(key: key);
+  
+  ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>color</td>
+<td>double</td>
+<td>icon的大小</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Color</td>
+<td>icon的颜色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>semanticsLabel</td>
+<td>String</td>
+<td>给 Image 加上一个语义标签<br>没有实际用处</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textDirection</td>
+<td>TextDirection</td>
+<td>Icon的绘制方向</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

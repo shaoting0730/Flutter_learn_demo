@@ -1,0 +1,246 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter Isolate</h1>
+<p>Flutter 的代码都是默认跑在 root Isolate 上的,那么 Flutter 中能不能自己创建一个 Isolate 呢？当然可以！，接下来我们就自己创建一个 Isolate！</p>
+<h1 class="heading" data-id="heading-1">创建自己的 Isolate</h1>
+<h2 class="heading" data-id="heading-2">dart:isolate</h2>
+<p>有关 Isolate 的代码，都在<code>isolate.dart</code>文件中，里面有一个生成 Isolate的方法：</p>
+<pre><code class="hljs bash" lang="bash">  external static Future&lt;Isolate&gt; spawn&lt;T&gt;(
+      void entryPoint(T message), T message,
+      {bool paused: <span class="hljs-literal">false</span>,
+      bool errorsAreFatal,
+      SendPort onExit,
+      SendPort onError});
+</code></pre><p><code>spawn</code> 方法，必传参数有两个，函数 entryPoint 和参数 message,其中</p>
+<ol>
+<li>
+<p>函数</p>
+<p>函数必须是顶级函数或静态方法</p>
+</li>
+<li>
+<p>参数</p>
+<p>参数里必须包含 <code>SendPort</code></p>
+</li>
+</ol>
+<h2 class="heading" data-id="heading-3">开始动手写</h2>
+<p>创建的步骤，写在代码的注释里</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'dart:async'</span>;
+import <span class="hljs-string">'dart:io'</span>;
+import <span class="hljs-string">'dart:isolate'</span>;
+
+import <span class="hljs-string">'package:flutter/foundation.dart'</span>;
+import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+//一个普普通通的Flutter应用的入口
+//main函数这里有async关键字，是因为创建的isolate是异步的
+void main() async{
+  runApp(MyApp());
+  
+  //asyncFibonacci函数里会创建一个isolate，并返回运行结果
+  <span class="hljs-built_in">print</span>(await asyncFibonacci(20));
+}
+
+//这里以计算斐波那契数列为例，返回的值是Future，因为是异步的
+Future&lt;dynamic&gt; asyncFibonacci(int n) async{
+  //首先创建一个ReceivePort，为什么要创建这个？
+  //因为创建isolate所需的参数，必须要有SendPort，SendPort需要ReceivePort来创建
+  final response = new ReceivePort();
+  //开始创建isolate,Isolate.spawn函数是isolate.dart里的代码,_isolate是我们自己实现的函数
+  //_isolate是创建isolate必须要的参数。
+  await Isolate.spawn(_isolate,response.sendPort);
+  //获取sendPort来发送数据
+  final sendPort = await response.first as SendPort;
+  //接收消息的ReceivePort
+  final answer = new ReceivePort();
+  //发送数据
+  sendPort.send([n,answer.sendPort]);
+  //获得数据并返回
+  <span class="hljs-built_in">return</span> answer.first;
+}
+
+//创建isolate必须要的参数
+void _isolate(SendPort initialReplyTo){
+  final port = new ReceivePort();
+  //绑定
+  initialReplyTo.send(port.sendPort);
+  //监听
+  port.listen((message){
+    //获取数据并解析
+    final data = message[0] as int;
+    final send = message[1] as SendPort;
+    //返回结果
+    send.send(syncFibonacci(data));
+  });
+}
+
+int syncFibonacci(int n){
+  <span class="hljs-built_in">return</span> n &lt; 2 ? n : syncFibonacci(n-2) + syncFibonacci(n-1);
+}
+</code></pre><h2 class="heading" data-id="heading-4">运行结果</h2>
+<p>直接运行程序就会在log里看到如下的打印：</p>
+<pre><code class="hljs bash" lang="bash">flutter: 6765
+</code></pre><h2 class="heading" data-id="heading-5">Isolate有什么用？</h2>
+<p>说了这么久，为什么要创建自己的 Isolate？有什么用？</p>
+<p>因为 Root Isolate 会负责渲染，还有 UI 交互，如果我们有一个很耗时的操作呢？前面知道 Isolate 里是一个 Event loop（事件循环），如果一个很耗时的 task 一直在运行，那么后面的UI操作都被阻塞了，所以如果我们有耗时的操作，就应该放在 Isolate 里！</p>
+<h1 class="heading" data-id="heading-6">使用 Compute 写 isolate</h1>
+<p>前面讲了如何创建 Isolate，但那种方式使用起来比较麻烦，属于低级 API，本节讲用高级 API 来创建 Isolate 。</p>
+<h2 class="heading" data-id="heading-7">使用 Isolates 的方法</h2>
+<p>使用 Isolates 的方法种：</p>
+<ol>
+<li>高级API：Compute 函数 (用起来方便)</li>
+<li>低级API：ReceivePort</li>
+</ol>
+<h2 class="heading" data-id="heading-8">Compute 函数</h2>
+<p>Compute 函数对 Isolate 的创建和底层的消息传递进行了封装，使得我们不必关系底层的实现，只需要关注功能实现。</p>
+<p>首先我们需要：</p>
+<ol>
+<li>一个函数：必须是顶级函数或静态函数</li>
+<li>一个参数：这个参数是上面的函数定义入参（函数没有参数的话就没有）</li>
+</ol>
+<p>比如，还是计算斐波那契数列：</p>
+<pre><code class="hljs bash" lang="bash">void main() async{
+  //调用compute函数，compute函数的参数就是想要在isolate里运行的函数，和这个函数需要的参数
+  <span class="hljs-built_in">print</span>( await compute(syncFibonacci, 20));
+  runApp(MyApp());
+}
+
+int syncFibonacci(int n){
+  <span class="hljs-built_in">return</span> n &lt; 2 ? n : syncFibonacci(n-2) + syncFibonacci(n-1);
+}
+</code></pre><p>运行后的结果如下：</p>
+<pre><code class="hljs bash" lang="bash">flutter: 6765
+</code></pre><p>是不是很简单，接下来看下 <code>compute</code> 函数的源码，这里的代码有点复杂，会把分析的添加到代码的注释里，首先介绍一个 <code>compute</code> 函数里用到的函数别名：</p>
+<p><code>ComputeCallback&lt;Q, R&gt;</code> 定义如下:</p>
+<pre><code class="hljs bash" lang="bash">// Q R是泛型，ComputeCallback是一个有参数Q，返回值为R的函数
+typedef ComputeCallback&lt;Q, R&gt; = R Function(Q message);
+</code></pre><p>正式看源码：</p>
+<pre><code class="hljs bash" lang="bash">//compute函数 必选参数两个，已经讲过了
+Future&lt;R&gt; compute&lt;Q, R&gt;(ComputeCallback&lt;Q, R&gt; callback, Q message, { String debugLabel }) async {
+  //如果是在profile模式下,debugLabel为空的话，就取callback.toString()
+  profile(() { debugLabel ??= callback.toString(); });
+  final Flow flow = Flow.begin();
+  Timeline.startSync(<span class="hljs-string">'$debugLabel: start'</span>, flow: flow);
+  final ReceivePort resultPort = ReceivePort();
+  Timeline.finishSync();
+  //创建isolate,这个和前面讲的创建isolate的方法一致
+  //还有一个，这里传过去的参数是用_IsolateConfiguration封装的类
+  final Isolate isolate = await Isolate.spawn&lt;_IsolateConfiguration&lt;Q, R&gt;&gt;(
+    _spawn,
+    _IsolateConfiguration&lt;Q, R&gt;(
+      callback,
+      message,
+      resultPort.sendPort,
+      debugLabel,
+      flow.id,
+    ),
+    errorsAreFatal: <span class="hljs-literal">true</span>,
+    onExit: resultPort.sendPort,
+  );
+  final R result = await resultPort.first;
+  Timeline.startSync(<span class="hljs-string">'$debugLabel: end'</span>, flow: Flow.end(flow.id));
+  resultPort.close();
+  isolate.kill();
+  Timeline.finishSync();
+  <span class="hljs-built_in">return</span> result;
+}
+
+@immutable
+class _IsolateConfiguration&lt;Q, R&gt; {
+  const _IsolateConfiguration(
+    this.callback,
+    this.message,
+    this.resultPort,
+    this.debugLabel,
+    this.flowId,
+  );
+  final ComputeCallback&lt;Q, R&gt; callback;
+  final Q message;
+  final SendPort resultPort;
+  final String debugLabel;
+  final int flowId;
+
+  R apply() =&gt; callback(message);
+}
+
+void _spawn&lt;Q, R&gt;(_IsolateConfiguration&lt;Q, R&gt; configuration) {
+  R result;
+  Timeline.timeSync(
+    <span class="hljs-string">'${configuration.debugLabel}'</span>,
+    () {
+      result = configuration.apply();
+    },
+    flow: Flow.step(configuration.flowId),
+  );
+  Timeline.timeSync(
+    <span class="hljs-string">'${configuration.debugLabel}: returning result'</span>,
+    () { configuration.resultPort.send(result); },
+    flow: Flow.step(configuration.flowId),
+  );
+}
+
+</code></pre><h2 class="heading" data-id="heading-9">ReceivePort</h2>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'dart:async'</span>;
+import <span class="hljs-string">'dart:io'</span>;
+import <span class="hljs-string">'dart:isolate'</span>;
+
+import <span class="hljs-string">'package:flutter/foundation.dart'</span>;
+import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+//一个普普通通的Flutter应用的入口
+//main函数这里有async关键字，是因为创建的isolate是异步的
+void main() async{
+  runApp(MyApp());
+  
+  //asyncFibonacci函数里会创建一个isolate，并返回运行结果
+  <span class="hljs-built_in">print</span>(await asyncFibonacci(20));
+}
+
+//这里以计算斐波那契数列为例，返回的值是Future，因为是异步的
+Future&lt;dynamic&gt; asyncFibonacci(int n) async{
+  //首先创建一个ReceivePort，为什么要创建这个？
+  //因为创建isolate所需的参数，必须要有SendPort，SendPort需要ReceivePort来创建
+  final response = new ReceivePort();
+  //开始创建isolate,Isolate.spawn函数是isolate.dart里的代码,_isolate是我们自己实现的函数
+  //_isolate是创建isolate必须要的参数。
+  await Isolate.spawn(_isolate,response.sendPort);
+  //获取sendPort来发送数据
+  final sendPort = await response.first as SendPort;
+  //接收消息的ReceivePort
+  final answer = new ReceivePort();
+  //发送数据
+  sendPort.send([n,answer.sendPort]);
+  //获得数据并返回
+  <span class="hljs-built_in">return</span> answer.first;
+}
+
+//创建isolate必须要的参数
+void _isolate(SendPort initialReplyTo){
+  final port = new ReceivePort();
+  //绑定
+  initialReplyTo.send(port.sendPort);
+  //监听
+  port.listen((message){
+    //获取数据并解析
+    final data = message[0] as int;
+    final send = message[1] as SendPort;
+    //返回结果
+    send.send(syncFibonacci(data));
+  });
+}
+
+int syncFibonacci(int n){
+  <span class="hljs-built_in">return</span> n &lt; 2 ? n : syncFibonacci(n-2) + syncFibonacci(n-1);
+}
+</code></pre></div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div>
+
+
+</body>
+</html>

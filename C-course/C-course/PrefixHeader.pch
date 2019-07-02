@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  C-course
+//
+//  Created by mac on 16/6/11.
+//  Copyright © 2016年 mac. All rights reserved.
+// 
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define MainPage @"http://tutorial.jiangedev.com/api/course/c/list"
+#define ContentUrlString @"http://tutorial.jiangedev.com/html-data/c/html/%@"
+
+
+
+#endif /* PrefixHeader_pch */

@@ -1,0 +1,325 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 功能类 Widget</h1>
+<p>功能类Widget 指的是 非UI Widget，具有一定功能的 Widget。Flutter 中功能类Widget 有很多，本节主要讲如下的功能类Widget：</p>
+<ul>
+<li>Theme</li>
+<li>MediaQuery</li>
+<li>Navigator</li>
+<li>InheritedWidget</li>
+</ul>
+<h1 class="heading" data-id="heading-1">Theme</h1>
+<p>Theme Widget 的功能是为 MaterialApp 定义主题数据，如导航栏颜色、标题字体、Icon样式。</p>
+<h2 class="heading" data-id="heading-2">Theme 在 MaterialApp 中的位置</h2>
+<p>在看代码的时候，你可能没有看到 Theme 的使用，实际上是在使用 MaterialApp 时，会自动将 Theme Widget 加上去：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/4/23/16a491ba82426b99?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="433" data-height="289" src="https://user-gold-cdn.xitu.io/2019/4/23/16a491ba82426b99?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>Theme 会嵌套 MaterialApp。</p>
+<h2 class="heading" data-id="heading-3">在 Flutter 中获取 Theme 的实例</h2>
+<p>要想在 Flutter 中获取 Theme 的实例，首先 根Widget 必须是 MaterialApp，然后在 MaterialApp 的 子Widget 里运行：</p>
+<pre><code class="hljs bash" lang="bash">Theme.of(context);
+</code></pre><p>返回的类型是 ThemeData ，Theme 的所有数据都存储在 ThemeData 里。</p>
+<h3 class="heading" data-id="heading-4">ThemeData 说明</h3>
+<p>ThemeData 的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">factory ThemeData({
+    Brightness brightness,
+    MaterialColor primarySwatch,
+    Color primaryColor,
+    Brightness primaryColorBrightness,
+    Color primaryColorLight,
+    Color primaryColorDark,
+    Color accentColor,
+    Brightness accentColorBrightness,
+    Color canvasColor,
+    Color scaffoldBackgroundColor,
+    Color bottomAppBarColor,
+    Color cardColor,
+    Color dividerColor,
+    Color highlightColor,
+    Color splashColor,
+    InteractiveInkFeatureFactory splashFactory,
+    Color selectedRowColor,
+    Color unselectedWidgetColor,
+    Color disabledColor,
+    Color buttonColor,
+    ButtonThemeData buttonTheme,
+    Color secondaryHeaderColor,
+    Color textSelectionColor,
+    Color cursorColor,
+    Color textSelectionHandleColor,
+    Color backgroundColor,
+    Color dialogBackgroundColor,
+    Color indicatorColor,
+    Color hintColor,
+    Color errorColor,
+    Color toggleableActiveColor,
+    String fontFamily,
+    TextTheme textTheme,
+    TextTheme primaryTextTheme,
+    TextTheme accentTextTheme,
+    InputDecorationTheme inputDecorationTheme,
+    IconThemeData iconTheme,
+    IconThemeData primaryIconTheme,
+    IconThemeData accentIconTheme,
+    SliderThemeData sliderTheme,
+    TabBarTheme tabBarTheme,
+    CardTheme cardTheme,
+    ChipThemeData chipTheme,
+    TargetPlatform platform,
+    MaterialTapTargetSize materialTapTargetSize,
+    PageTransitionsTheme pageTransitionsTheme,
+    AppBarTheme appBarTheme,
+    BottomAppBarTheme bottomAppBarTheme,
+    ColorScheme colorScheme,
+    DialogTheme dialogTheme,
+    Typography typography,
+    CupertinoThemeData cupertinoOverrideTheme
+  }) {
+  ...
+ }
+</code></pre><h3 class="heading" data-id="heading-5">ThemeData 的使用</h3>
+<p>ThemeData 的数据是通过 MaterialApp 的 theme 参数来使用的，如：</p>
+<pre><code class="hljs bash" lang="bash">MaterialApp(
+    title: <span class="hljs-string">"Flutter Demo"</span>,
+    theme: ThemeData(
+        primaryColor: Colors.blue,
+    ),
+    ...
+}
+</code></pre><h3 class="heading" data-id="heading-6">Theme.of(context) 的使用</h3>
+<p>Theme.of(context) 会获得 MaterialApp 的主题数据 ThemeData，这些数据都是 final 的，所以是只读的，不能修改。</p>
+<p>这里写一个例子，读取 MaterialApp 的 primaryColor 用于 Text 的 颜色。</p>
+<h4 class="heading" data-id="heading-7">代码所在位置</h4>
+<p>flutter_widget_demo/lib/features/ThemeFeatureWidget.dart</p>
+<h4 class="heading" data-id="heading-8">完整代码</h4>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(ThemeFeatureWidget());
+
+class ThemeFeatureWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.red,
+      ),
+      home: Scaffold(
+          appBar: AppBar(title: Text(<span class="hljs-string">"Flutter 功能类Widget -- Theme"</span>)),
+          body: ChildText()),
+    );
+  }
+}
+
+class ChildText extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> Text(<span class="hljs-string">"Hello Flutter"</span>,
+        style: TextStyle(color: Theme.of(context).primaryColor));
+  }
+}
+</code></pre><p>运行效果为：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/23/16a493271ae7fb83?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="848" data-height="324" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;848&quot; height=&quot;324&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h1 class="heading" data-id="heading-9">MediaQuery</h1>
+<p>MediaQuery Widget 的功能是查询一些数据，例如整个屏幕的宽度、高度、设备像素比等数据</p>
+<h2 class="heading" data-id="heading-10">MediaQuery 在 MaterialApp 中的位置</h2>
+<p>MediaQuery 同 Theme 一样，只看代码，你可能没有看到 MediaQuery 的使用，但实际上在使用 MaterialApp 时，会自动将 MediaQuery Widget 加上去：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/23/16a494b6cfdc3ae3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="433" data-height="289" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;433&quot; height=&quot;289&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>MediaQuery 会嵌套 MaterialApp。</p>
+<h2 class="heading" data-id="heading-11">在 Flutter 中获取 MediaQuery 的实例</h2>
+<p>要想在 Flutter 中获取 MediaQuery 的实例，首先 根Widget 必须是 MaterialApp，然后在 MaterialApp 的 子Widget 里运行：</p>
+<pre><code class="hljs bash" lang="bash">MediaQuery.of(context);
+</code></pre><p>返回的类型是 MediaQueryData。</p>
+<h3 class="heading" data-id="heading-12">MediaQueryData 说明</h3>
+<p>MediaQueryData 的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">class MediaQueryData {
+  const MediaQueryData({
+    this.size = Size.zero,
+    this.devicePixelRatio = 1.0,
+    this.textScaleFactor = 1.0,
+    this.platformBrightness = Brightness.light,
+    this.padding = EdgeInsets.zero,
+    this.viewInsets = EdgeInsets.zero,
+    this.alwaysUse24HourFormat = <span class="hljs-literal">false</span>,
+    this.accessibleNavigation = <span class="hljs-literal">false</span>,
+    this.invertColors = <span class="hljs-literal">false</span>,
+    this.disableAnimations = <span class="hljs-literal">false</span>,
+    this.boldText = <span class="hljs-literal">false</span>,
+  });
+  ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td>Size</td>
+<td>屏幕的逻辑像素大小<br>size.width：屏幕的宽度（逻辑像素）<br>size.height：屏幕的高度（逻辑像素）</td>
+</tr>
+<tr>
+<td>devicePixelRatio</td>
+<td>double</td>
+<td>像素比：每个逻辑像素代表的设备像素数</td>
+</tr>
+<tr>
+<td>textScaleFactor</td>
+<td>double</td>
+<td>每个逻辑像素代表的字体像素数</td>
+</tr>
+<tr>
+<td>platformBrightness</td>
+<td>Brightness</td>
+<td>平台的亮度模式,有两种模式:light和dark<br>默认为light</td>
+</tr>
+<tr>
+<td>padding</td>
+<td>EdgeInsets</td>
+<td>表示系统状态栏或者刘海屏的padding</td>
+</tr>
+<tr>
+<td>viewInsets</td>
+<td>EdgeInsets</td>
+<td>表示设备键盘的padding</td>
+</tr>
+<tr>
+<td>alwaysUse24HourFormat</td>
+<td>bool</td>
+<td>格式化时间时是否使用24小时格式</td>
+</tr>
+<tr>
+<td>accessibleNavigation</td>
+<td>bool</td>
+<td>是否使用TalkBack或 VoiceOver等辅助功能服务与应用程序进行交互</td>
+</tr>
+<tr>
+<td>invertColors</td>
+<td>bool</td>
+<td>设备是否反转平台的颜色。<br>现在只能在 iOS 上使用</td>
+</tr>
+<tr>
+<td>disableAnimations</td>
+<td>bool</td>
+<td>平台是否要求禁用动画</td>
+</tr>
+<tr>
+<td>boldText</td>
+<td>bool</td>
+<td>平台是否请求使用粗体来绘制文本。</td>
+</tr>
+</tbody>
+</table>
+<h3 class="heading" data-id="heading-13">MediaQuery.of(context) 的使用</h3>
+<p>MediaQuery.of(context) 获得的 MediaQueryData 数据里，我们一般关心的是 ：</p>
+<ul>
+<li>Size</li>
+<li>devicePixelRatio</li>
+</ul>
+<h4 class="heading" data-id="heading-14">Size</h4>
+<p>Size 是整个屏幕的宽高数据，不管你在哪里调用 MediaQuery.of(context) ，获得的都是整个屏幕的 Size。</p>
+<h4 class="heading" data-id="heading-15">devicePixelRatio</h4>
+<p>devicePixelRatio 表示的是 每个逻辑像素代表的设备像素数。</p>
+<p>设备像素数 = 逻辑像素数 * devicePixelRatio</p>
+<h3 class="heading" data-id="heading-16">获取 子Widget 的宽高</h3>
+<p>要想获取 子Widget 的宽高，就不能使用 MediaQuery.of(context) ,这个时候要用到 GlobalKey。</p>
+<p>为 子Widget 设置 GlobalKey，然后通过 GlobalKey 获取 子Widget 的宽高。</p>
+<p>这里写一个例子，获取屏幕的宽高和子Widget的宽高。</p>
+<h4 class="heading" data-id="heading-17">代码所在位置</h4>
+<p>flutter_widget_demo/lib/features/MediaQueryFeatureWidget.dart</p>
+<h4 class="heading" data-id="heading-18">完整代码</h4>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(MediaQueryFeatureWidget());
+
+GlobalKey _globalKey = GlobalKey();
+
+class MediaQueryFeatureWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(title: Text(<span class="hljs-string">"Flutter 功能类Widget -- MediaQuery"</span>)),
+          body: BodyWidget()),
+    );
+  }
+}
+
+class BodyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> Column(
+      children: &lt;Widget&gt;[
+        Text(
+          <span class="hljs-string">"Hello Flutter"</span>,
+          key: _globalKey,
+        ),
+        RaisedButton(
+          child: Text(<span class="hljs-string">'getSize'</span>),
+          onPressed: () {
+            //获取屏幕的宽高
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">"Screen width:"</span> +
+                MediaQuery.of(context).size.width.toString() +
+                <span class="hljs-string">" Screen height:"</span> +
+                MediaQuery.of(context).size.height.toString());
+            //获取子Widget 的宽高
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">"Ttext width:"</span> +
+                _globalKey.currentContext.size.width.toString() +
+                <span class="hljs-string">" Screen height:"</span> +
+                _globalKey.currentContext.size.height.toString());
+          },
+        )
+      ],
+    );
+  }
+}
+</code></pre><h1 class="heading" data-id="heading-19">Navigator</h1>
+<p>Navigator 是用来管理页面显示的 Widget，这些页面以堆栈的数据结构存储，当有新页面显示时，就会把上一个页面压入栈，所以栈底是最初的页面，栈顶是当前的页面。</p>
+<h2 class="heading" data-id="heading-20">Navigator 在 MaterialApp 中的位置</h2>
+<p>Navigator 同 Theme 一样，只看代码，你可能没有看到 Navigator 的使用，但实际上在使用 MaterialApp 时，会自动将 Navigator Widget 加上去：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/23/16a4ad20fc2c8e45?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="433" data-height="289" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;433&quot; height=&quot;289&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>Navigator 会嵌套 MaterialApp。</p>
+<h2 class="heading" data-id="heading-21">Routes（路由）</h2>
+<p>移动应用将全屏幕显示的叫做 “screens” 或者 “pages”，在 Flutter 里叫做Routes（路由），Navigator 就是用来管理 Routes 显示的 Widget。</p>
+<h2 class="heading" data-id="heading-22">Navigator 的说明</h2>
+<p>Navigator提供了操作 Routes 的两种方法： <code>Navigator.push</code> 和 <code>Navigator.pop</code>。</p>
+<h3 class="heading" data-id="heading-23">在 Flutter 中获取 Navigator 的实例</h3>
+<p>在 Flutter 中除了 MaterialApp 提供的 Navigator，也可以实现自定义的 Navigator,但是大部分情况下还是使用的 MaterialApp 提供的 Navigator。</p>
+<p>首先 根Widget 必须是 MaterialApp，然后在 MaterialApp 的 子Widget 里运行：</p>
+<pre><code class="hljs bash" lang="bash">Navigator.of(context);
+</code></pre><p>返回的类型是 NavigatorState，是 Navigator Widget 的 State 类。</p>
+<h3 class="heading" data-id="heading-24">NavigatorState 说明</h3>
+<p>以下是 NavigatorState 类的图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/24/16a4af6aca3d4aa4?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1199" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;1199&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>以下是 Navigator 类的图：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/24/16a4af6fa3e9a512?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="782" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;782&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>可以看到 Navigator 类里的方法和 NavigatorState 类的方法都一样，所以 也可以直接使用 Navigator ，而不是 <code>Navigator.of(context)</code>。</p>
+<p>这里 Navigator 就简单介绍完了， 具体使用会在后面介绍。</p>
+<h1 class="heading" data-id="heading-25">InheritedWidget</h1>
+<p>InheritedWidget 可以高效的将数据在 Widget树 中向下传递，通常用来共享数据，Flutter中非常重要的一个功能 Widget。</p>
+<p>前面介绍的 Theme 和 MediaQuery 之所以可以在 子Widget 内访问到数据，就是使用到了 InheritedWidget。</p>
+<p>大家应该都有这样的经历，从 A 页面跳转到 B 页面，但 B 页面需要用到 A 页面的一些数据，这时候该怎么做呢？</p>
+<p>通常做法是，A 页面打开 B 页面的时候，把数据从 A 页面传递给 B 页面，但这样做，会使 A 页面的数据和 B 页面的数据产生割裂，如果又要求 B 页面产生的结果又返回给 A 页面呢？这使得我们要用很大的精力去处理数据传输的问题。</p>
+<p>InheritedWidget 的目的就是处理数据问题，可以将共享的数据在 InheritedWidget 里实现，这样 A页面和 B 页面都可以直接访问数据并修改，数据一旦修改，就会触发依赖这个数据的 UI 的刷新。InheritedWidget 在 Flutter 开发中有很大的作用。</p>
+<p>这里 InheritedWidget 就简单介绍完了， 具体使用会在后面介绍。</p>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

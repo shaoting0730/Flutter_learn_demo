@@ -1,0 +1,272 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 基础 Widget —— SnackBar 和 Builder 的使用</h1>
+<p>本文讲 Flutter 的 SnackBar 及 Builder。</p>
+<p>SnackBar 是 Flutter 的底部消息提示，在使用 SnackBar 的时候，需要用到 Builder ，Builder 也是 Widget，Builder 可以用闭包的方式创建 子Widget，使得 子Widget 可以使用 父Widget 的上下文，这里你可能还不太好理解，下面看具体的案例。</p>
+<h1 class="heading" data-id="heading-1"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fmaterial%2FSnackBar-class.html" rel="nofollow noopener noreferrer">SnackBar</a></h1>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/26/1692a75eadbc4ff0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="1280" src="https://user-gold-cdn.xitu.io/2019/2/26/1692a75eadbc4ff0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure>
+SnackBar 是具有可选操作的轻量级消息提示，在屏幕的底部显示。<p></p>
+<h2 class="heading" data-id="heading-2">SnackBar 的快速上手</h2>
+<p>SnackBar 需要用 <code>Scaffold.of(context).showSnackBar()</code> 来显示，使用方式如下：</p>
+<pre><code class="hljs bash" lang="bash">Scaffold.of(context).showSnackBar(SnackBar(
+    content: Text(<span class="hljs-string">'SnackBar'</span>), duration: Duration(seconds: 5)));
+</code></pre><p>完整代码如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/cupertino.dart'</span>;
+import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(SnackBarBuilderWidget());
+
+class SnackBarBuilderWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI Widget -- SnackBar 及 Builder"</span>)),
+        body: RaisedButton(
+          child: Text(<span class="hljs-string">'Show SnackBar'</span>),
+          onPressed: () {
+            Scaffold.of(context).showSnackBar(SnackBar(
+                content: Text(<span class="hljs-string">'SnackBar'</span>), duration: Duration(seconds: 5)));
+          },
+        ),
+      ),
+    );
+  }
+}
+</code></pre><p>运行后，会报如下的错误：</p>
+<pre><code class="hljs bash" lang="bash">I/flutter ( 8385): ══╡ EXCEPTION CAUGHT BY GESTURE ╞═══════════════════════════════════════════════════════════════════
+I/flutter ( 8385): The following assertion was thrown <span class="hljs-keyword">while</span> handling a gesture:
+I/flutter ( 8385): Scaffold.of() called with a context that does not contain a Scaffold.
+I/flutter ( 8385): No Scaffold ancestor could be found starting from the context that was passed to Scaffold.of(). This
+I/flutter ( 8385): usually happens when the context provided is from the same StatefulWidget as that whose build
+I/flutter ( 8385): <span class="hljs-keyword">function</span> actually creates the Scaffold widget being sought.
+I/flutter ( 8385): There are several ways to avoid this problem. The simplest is to use a Builder to get a context that
+I/flutter ( 8385): is <span class="hljs-string">"under"</span> the Scaffold. For an example of this, please see the documentation <span class="hljs-keyword">for</span> Scaffold.of():
+I/flutter ( 8385):   https://docs.flutter.io/flutter/material/Scaffold/of.html
+I/flutter ( 8385): A more efficient solution is to split your build <span class="hljs-keyword">function</span> into several widgets. This introduces a
+I/flutter ( 8385): new context from <span class="hljs-built_in">which</span> you can obtain the Scaffold. In this solution, you would have an outer widget
+I/flutter ( 8385): that creates the Scaffold populated by instances of your new inner widgets, and <span class="hljs-keyword">then</span> <span class="hljs-keyword">in</span> these inner
+I/flutter ( 8385): widgets you would use Scaffold.of().
+I/flutter ( 8385): A less elegant but more expedient solution is assign a GlobalKey to the Scaffold, <span class="hljs-keyword">then</span> use the
+I/flutter ( 8385): key.currentState property to obtain the ScaffoldState rather than using the Scaffold.of() function.
+</code></pre><p>提示 Scaffold.of(context) 里的 context 没有 Scaffold，找不到 Scaffold，所以报错了，为什么会出现这个问题？</p>
+<p>首先，看一下 context 是从哪里来的，context 是从 build 函数里传过来的：</p>
+<pre><code class="hljs bash" lang="bash">Widget build(BuildContext context) {
+    ...
+}
+</code></pre><p>build 函数里传来的 context 是 父Widget(MyApp) 的 context，而 父Widget，也就是 MyApp 的 context 里当然没有 Scaffold，Scaffold 是在 MaterialApp 里，所以 Scaffold.of(context) 里的 context 没有 Scaffold。 那么怎么解决这个问题呢？有两个方法：</p>
+<ol>
+<li>使用 Builder Widget</li>
+<li>将使用 SnackBar 的 Widget 拆分出来</li>
+</ol>
+<h2 class="heading" data-id="heading-3">1. 使用 Builder</h2>
+<h4 class="heading" data-id="heading-4">代码所在位置</h4>
+<p>flutter_widget_demo/lib/snackbar/SnackBarBuilderWidget.dart</p>
+<h4 class="heading" data-id="heading-5">Builder 的构造函数及参数说明</h4>
+<p>Builder 的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">class Builder extends StatelessWidget {
+  const Builder({
+    Key key,
+    @required this.builder
+  }) : assert(builder != null),
+       super(key: key);
+    ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>builder</td>
+<td>WidgetBuilder</td>
+<td>创建 子Widget</td>
+<td>必选</td>
+</tr>
+</tbody>
+</table>
+<p>Builder 的必选参数是 WidgetBuilder，接下里介绍一下 WidgetBuilder 的使用。</p>
+<h4 class="heading" data-id="heading-6">WidgetBuilder</h4>
+<p>WidgetBuilder 是一个函数，定义为：</p>
+<pre><code class="hljs bash" lang="bash">typedef WidgetBuilder = Widget Function(BuildContext context);
+</code></pre><p>应该说 WidgetBuilder 函数实现了 Builder Widget 的核心功能，Builder 只是 WidgetBuilder 的封装，在有的地方，其实是直接使用 WidgetBuilder 的。</p>
+<h4 class="heading" data-id="heading-7">Builer 的使用</h4>
+<p>Builder 的使用方法如下：</p>
+<pre><code class="hljs bash" lang="bash">home: Scaffold(
+    appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI Widget -- SnackBar 及 Builder"</span>)),
+    body: Builder(
+      builder: (context) =&gt; RaisedButton(
+        child: Text(<span class="hljs-string">'Show SnackBar'</span>),
+        onPressed: () {
+          Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text(<span class="hljs-string">'SnackBar'</span>),
+              duration: Duration(seconds: 5)));
+        },
+      ),
+    ),
+),
+</code></pre><p>Builder 使用 WidgetBuilder 来创建子 Widget。例如上面的例子，使用 Builder，Builder 是一个闭包，将 Scaffold 的 context 传递给 子Widget，这样 SnackBar 使用的 context 就是 Scaffold 的 context。</p>
+<p>完整代码如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/cupertino.dart'</span>;
+import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(SnackBarBuilderWidget());
+
+class SnackBarBuilderWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI Widget -- SnackBar 及 Builder"</span>)),
+        body: Builder(
+          builder: (context) =&gt; RaisedButton(
+                child: Text(<span class="hljs-string">'Show SnackBar'</span>),
+                onPressed: () {
+                  Scaffold.of(context).showSnackBar(SnackBar(
+                      content: Text(<span class="hljs-string">'SnackBar'</span>),
+                      duration: Duration(seconds: 5)));
+                },
+              ),
+        ),
+      ),
+    );
+  }
+}
+</code></pre><p>运行效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a000385b379abf?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="428" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;428&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-8">2. 将使用 SnackBar 的 Widget 拆分出来</h2>
+<h4 class="heading" data-id="heading-9">代码所在位置</h4>
+<p>flutter_widget_demo/lib/snackbar/SnackBarNoBuilerWidget.dart</p>
+<h4 class="heading" data-id="heading-10">拆分方法</h4>
+<p>将使用 SnackBar 的 Widget 拆分出来后，SnackBar 的 Widget 使用的 context 就是 Scaffold 的 context。</p>
+<p>代码如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/cupertino.dart'</span>;
+import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(SnackBarNoBuilerWidget());
+
+class SnackBarNoBuilerWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI基础Widget -- SnackBar"</span>)),
+          body: SnackBarWidget()),
+    );
+  }
+}
+
+class SnackBarWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> RaisedButton(
+      child: Text(<span class="hljs-string">'Show SnackBar'</span>),
+      onPressed: () {
+        Scaffold.of(context).showSnackBar(SnackBar(
+            content: Text(<span class="hljs-string">'SnackBar'</span>), duration: Duration(seconds: 5)));
+      },
+    );
+  }
+}
+</code></pre><h2 class="heading" data-id="heading-11">总结</h2>
+<p>两种方式，使用 Builder Widget，或者将 SnackBar 拆分出来，都可以实现底部消息提示，但是建议使用 Builder。</p>
+<h2 class="heading" data-id="heading-12">SnackBar 的构造函数及参数说明</h2>
+<p>SnackBar 的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">class SnackBar extends StatelessWidget {
+  const SnackBar({
+    Key key,
+    @required this.content,
+    this.backgroundColor,
+    this.action,
+    this.duration = _kSnackBarDisplayDuration,
+    this.animation,
+  }) : assert(content != null),
+       assert(duration != null),
+       super(key: key);
+    ...   
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>content</td>
+<td>Widget</td>
+<td>SnackBar 显示的主要内容</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>Color</td>
+<td>SnackBar 的背景色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>action</td>
+<td>SnackBarAction</td>
+<td>SnackBar 的按钮</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>Duration</td>
+<td>SnackBar 显示的时间<br>默认是4.0s</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>animation</td>
+<td>Animation</td>
+<td>SnackBar 显示和消失的动画</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+</body>
+</html>

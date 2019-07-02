@@ -1,0 +1,130 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+
+
+
+</head>
+<body>
+                    
+<div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 架构深度解析</h1>
+<p>Flutter 框架是一个多层架构，每层构建在前一层之上，下图展示了 Flutter架构的各个部分：</p>
+<p></p><figure><img alt="Flutter Architecture Diagram" class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/11/168dc4556a12d7b9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="960" data-height="540" src="https://user-gold-cdn.xitu.io/2019/2/11/168dc4556a12d7b9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>总共有三层，从下到上依次为：</p>
+<ol>
+<li>
+<p>Embedder</p>
+<p>Embedder 是平台指定的语言实现，主要处理平台相关的操作，是为了 Flutter 能适配各种平台的嵌入层。Embedder 有 Android 的实现，也有 iOS 的实现，也有 Linux、MacOS、Windows 的实现。</p>
+</li>
+<li>
+<p>Engine</p>
+<p>Engine 层由 C/C++ 实现，Flutter Engine 为 Flutter 应用提供了运行环境，是 Flutter 的核心。</p>
+</li>
+<li>
+<p>Framework</p>
+<p>Framework 层由 Dart 实现，是 Flutter 开发的框架，开发 Flutter 的 APP ，大部分时间都是和这一层打交道。</p>
+</li>
+</ol>
+<h1 class="heading" data-id="heading-1">Flutter 架构 -- Engine</h1>
+<p>Engine 层由 C/C++ 实现，Flutter Engine 为 Flutter 应用提供了运行环境，是 Flutter 的核心。</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/2/14/168eaaf6df4e900b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="214" src="https://user-gold-cdn.xitu.io/2019/2/14/168eaaf6df4e900b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>上图是 Engine 层的截图，Engine 下面标了 C/C++，表示了 Engine 层由 C/C++ 实现，而且可以看到 Engine 层包含了很多的功能，我把它归纳如下：</p>
+<ul>
+<li>渲染相关：Composition 、 Rendering 、 Frame Scheduling 、 Frame Pipelining</li>
+<li>Dart 相关：Service Protocol 、 Dart Isolate Setup 、 Dart VM Managemnt</li>
+<li>平台通道：Platform Channels</li>
+<li>系统事件：System Events</li>
+<li>资源解析：Asset Resolution</li>
+<li>文字渲染：Text Layout</li>
+</ul>
+<p>其中的核心功能，包括动画和图形渲染，文件和网络 I/O，Platform Channels ，插件体系结构，以及 Dart 的运行时环境和编译工具链等。想要深入了解 Flutter Engine 的话，可以在  <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fflutter%2Fengine" rel="nofollow noopener noreferrer">Github</a> 上查看源码。</p>
+<p>接下来介绍一些核心的东西。</p>
+<h4 class="heading" data-id="heading-2">渲染引擎：Skia</h4>
+<p>Skia 是 Flutter 的图形引擎，是 Flutter 渲染过程中的重要一环。</p>
+<p>Skia 是 Google 的跨平台 2D 向量图形库，而且已经发展的很成熟：在 2005 年被 Google 收购后，已经成为 Google Chrome，Chrome OS，Android, Mozilla Firefox, Firefox OS 等众多产品的图形引擎，支持的平台包括 Windows7+,macOS 10.5+,iOS8+,Android4.1+,Ubuntu14.04+ 等，并且 Skia 发展的已经很稳定了。</p>
+<p>Android 是自带 Skia，所以 Android 端 Flutter 不需要打包 Skia，所以在 Android端，Flutter 的包大小会小一些；而 iOS 不带 Skia，所以 iOS 的 Flutter 包会大一些。</p>
+<h4 class="heading" data-id="heading-3">Dart 运行时环境</h4>
+<p>Dart 运行时环境包括 Dart VM 及其他 Dart 运行所需要的库。</p>
+<ul>
+<li>
+<p>Dart VM</p>
+<p>Dart VM 除了实现普通 Dart 的核心库之外，还增加了一个 <code>dart:ui</code> 库，这个库是专门为 Flutter 定制的，提供 Skia 和 Shell 功能的低级 API。</p>
+<p>而且在 Flutter Debug 模式中，Flutter Engine 使用的是 Dart VM ，而 Dart VM 支持 JIT（即时编译），从而使 Flutter 在 Debug 阶段有 Hot Reload 的功能。</p>
+</li>
+<li>
+<p>Dart 相关库</p>
+<p>在 Release 模式下，Flutter 不会带 Dart VM，因为 Flutter 使用的是 AOT（静态编译），会编译成 Native Arm Code，所以不在需要 Dart VM，但是运行 Native Arm Code 也需要其他 Dart 相关库，例如 Garbage Collection (GC，垃圾回收) 等，这些库不包含在 Dart VM 里。</p>
+</li>
+</ul>
+<p>讲到这里，我有一个问题： 为什么 Dart 可以运行在不同的平台上？</p>
+<blockquote class="warning"><p>是因为 Dart 并不是直接运行在平台上，而是运行在 Flutter Engine 上，Flutter Engine 为 Dart 提供了运行环境。
+</p></blockquote><h4 class="heading" data-id="heading-4">Platform Channel</h4>
+<p>Platform Channel 是平台通道，用于 Flutter 与 Native 通信：</p>
+<ul>
+<li>
+<p>应用的 Flutter 部分通过平台通道（platform channel）将消息发送到 Native（iOS 或 Android）。</p>
+</li>
+<li>
+<p>Native 接收消息，然后调用 Native 的 代码处理， 然后将响应发送回 Flutter 。</p>
+</li>
+</ul>
+<p>Platform Channel 是一个很重要的功能，尤其是 Flutter 与 Native 混合开发的时候，后面会具体讲到怎么使用。</p>
+<h1 class="heading" data-id="heading-5">Flutter 架构 -- Embedder</h1>
+<p>Embedder 是平台指定的语言实现，主要处理平台相关的操作，是为了 Flutter 能适配各种平台的嵌入层。Embedder 有 Android 的实现，也有 iOS 的实现，也有 Linux、MacOS、Windows 的实现。</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/14/168e96377454197e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="129" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;129&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>上图是 Embedder 层的截图，Embedder 下面标了 Platform Specific，表示 Embedder 是基于平台实现的，包含的功能有：</p>
+<ul>
+<li>Render Surface Setup ：渲染设置</li>
+<li>Native Plugins ：平台的插件</li>
+<li>Packaging ：包装 Flutter AOT 的产物 ：Native Arm Code，使 Native Arm Code 在平台上运行。</li>
+<li>Thread Setup ：Flutter 运行线程设置</li>
+<li>Event Loop Interop ：Flutter 事件循环</li>
+</ul>
+<p>可以看到主要都是底层的机制，而且都是和平台相关的实现，除此之外 Embedder 还有另一个很重要的功能，就是 Embedder 是 Flutter Engine 和 Platform（平台）之间交互的桥梁。</p>
+<h2 class="heading" data-id="heading-6">Embedder API ：交互的桥梁</h2>
+<p>Flutter Engine 和 Platform（平台）靠什么交互呢？</p>
+<p>就是 <strong>Embedder API</strong>。</p>
+<p>在 Flutter Engine 和 Platform 中间有一层 API，就是 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fflutter%2Fengine%2Ftree%2Fmaster%2Fshell%2Fplatform%2Fembedder" rel="nofollow noopener noreferrer">Embedder API</a>。</p>
+<p>Flutter Engine 通过这些 Embedder API 调用平台的能力，而平台通过实现这些 Embedder API，就可以在不同的平台上运行 Flutter Engine。</p>
+<h2 class="heading" data-id="heading-7">Shell ：Embedder API的实现</h2>
+<p>实现 Embedder API 的叫做 <strong>Shell</strong>，Google 为 Flutter 实现了不同平台的 Shell，比如就有 Android Shell 和 iOS Shell ，也有 Linux Shell、MacOS Shell、Windows Shell，这些 Shell 在不同平台上，用平台指定的语言实现，并提供相关 IME（例如：屏幕）和系统应用程序声明周期事件的通信、渲染、插件、线程创建和管理、事件循环等。</p>
+<h1 class="heading" data-id="heading-8">Flutter 架构 -- Framework</h1>
+<p>Framework 层由 Dart 实现，是 Flutter 开发的框架，开发 Flutter 的 APP ，大部分时间都是和这一层打交道。所以之后的章节大部分讲的都是  Framework 层的内容。</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/2/14/168eb1ddc1f9a6c0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="286" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1280&quot; height=&quot;286&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>上图是 Framework 层的截图，Framework 下面标了 Dart，表示了 Framework 层由 Dart 语言实现，Frameworl 层也是一个多层架构，从上到下分别是：</p>
+<ol>
+<li>
+<p>Foundation（基础库层）</p>
+<p>Foundation 库即是 <code>dart:ui</code> 库，为 Flutter 提供了基本的类和函数，包括处理与 Flutter Engine 层的通信，以及用于 Flutter 框架的最低级别服务，例如驱动输入、图形文本、布局和渲染等。</p>
+<p>使用这一层的功能也能构建 Flutter APP,但是因为这一层没有封装，你只能手动计算布局坐标，手动捕捉用户输入和混合动画，用 Foundation 去写 APP 将非常复杂，成本也很大。所以需要对 Foundation 层进行封装。</p>
+<p>如果想要知道 Foundation 层提供的类和函数的可以查看 [这里] (<a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Ffoundation%2Ffoundation-library.html" rel="nofollow noopener noreferrer">docs.flutter.io/flutter/fou…</a>)。</p>
+</li>
+<li>
+<p>Rendering（渲染层）</p>
+<p>渲染层包括 Rendering、Animation、Painting、Gestures，是 Foundation 之上的第一个抽象层，是对 Foundation 层的封装。</p>
+<p>这一层主要是完成 UI 的布局和绘制，为了优化这一复杂的过程，采用了智能的算法去缓存那些昂贵的计算，使得每次的迭代量最小，可以提高渲染和绘制的性能。</p>
+</li>
+<li>
+<p>Widget（组件层）</p>
+<p>Widget 就是 Flutter UI 的基本元素，提供了可以在 Flutter 中使用的 UI 组件，是我们实际开发中最常用的元素，所有的 Widget 可以分成以下四类：</p>
+<ol>
+<li>Structural Widget（布局组件），例如 Column 和 Row 等，控制布局的。</li>
+<li>Visual Widget（绘制组件），例如 Text 和 Image 等,在屏幕上显示内容的。</li>
+<li>Interaction Widget（交互组件），例如 GestureDetector 等，处理用户手势的。</li>
+<li>Platform Widget（平台组件），例如 AndroidView 等，将平台的 View 嵌入到 Flutter 中使用的</li>
+</ol>
+<p>我们也可以用这些组件实现自己的组件，但是是通过组合的方式，因为在 Flutter 中，组合大于继承。</p>
+</li>
+<li>
+<p>Material 和 Cupertino 风格的组件</p>
+<p>Flutter 为了减轻开发人员的工作量，实现了两种不同风格的组件：Material 和 Cupertino 。Material 用于 Android，Cupertino 用于 iOS。有了这些组件，开发人员不需要再做额外的工作，就可以让 Flutter 的 UI 风格适应不同的平台，让 Flutter UI 获得和 Native UI 一样的使用体验。</p>
+</li>
+</ol>
+<p>总之，层级越高，更易于处理，但低层级的可以提供更复杂的细粒度的控制。</p>
+<p>想阅读 Framework 的源码，可以阅读 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2Fflutter%2Fflutter%2Ftree%2Fmaster%2Fpackages%2Fflutter%2Flib" rel="nofollow noopener noreferrer">Github</a> 上的源码。</p>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div>
+
+
+</body>
+</html>

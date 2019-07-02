@@ -1,0 +1,84 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+
+<div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">存取本地数据</h1>
+<p>本节要实现一个功能：打开 APP 的时候是上次选择的城市。</p>
+<p>所以需要把选择的城市的数据保存起来，这个时候需要用到第三方库：<code>shared_preferences</code>。</p>
+<h2 class="heading" data-id="heading-1">添加第三方库</h2>
+<p>在 <code>pubspec.yaml</code> 里添加：</p>
+<pre><code class="hljs bash" lang="bash">dependencies:
+  shared_preferences: ^0.5.2
+</code></pre><p>然后运行：</p>
+<pre><code class="hljs bash" lang="bash">flutter packages get
+</code></pre><h2 class="heading" data-id="heading-2">读取数据</h2>
+<p>在 HotWidgetState 的 initState() 里增加一个读取数据的方法 initData(),注意这里读取数据是异步的，所以 initData() 方法要加 async：</p>
+<pre><code class="hljs bash" lang="bash">class HotWidgetState extends State&lt;HotWidget&gt; {
+  String curCity;
+
+  @override
+  void <span class="hljs-function"><span class="hljs-title">initState</span></span>() {
+    // TODO: implement initState
+    super.initState();
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'HotWidgetState initState'</span>);
+    initData();
+  }
+
+  void initData() async {
+    final prefs = await SharedPreferences.getInstance();//获取 prefs
+
+    String city = prefs.getString(<span class="hljs-string">'curCity'</span>);//获取 key 为 curCity 的值
+
+    <span class="hljs-keyword">if</span> (city != null &amp;&amp; city.isNotEmpty) { //如果有值
+      <span class="hljs-built_in">set</span>State((){
+        curCity = city;
+      });
+    } <span class="hljs-keyword">else</span> {//如果没有值，则使用默认值
+      <span class="hljs-built_in">set</span>State((){
+        curCity = <span class="hljs-string">'深圳'</span>;
+      });
+    }
+  }
+  ...
+}
+</code></pre><h2 class="heading" data-id="heading-3">UI 改造</h2>
+<p>因为读取数据是异步的，在 build Widget 的时候  curCity 可能就是空的，这样会导致拉取不到数据，所以 UI 这里要加一个逻辑，如果 curCity 不为空，就返回电影的UI,否则返回刷新界面：</p>
+<pre><code class="hljs bash" lang="bash">Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-keyword">if</span> (curCity != null &amp;&amp; curCity.isNotEmpty) {//如果 curCity 不为空
+      <span class="hljs-built_in">return</span> Column(
+        ...
+      );
+    } <span class="hljs-keyword">else</span> {//如果 curCity 为空
+      <span class="hljs-built_in">return</span> Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+  }
+</code></pre><p>效果为：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/29/16a68264bd5fd0b2?imageslim" data-width="480" data-height="960" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;480&quot; height=&quot;960&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-4">存取数据</h2>
+<p>在 _jumpToCitysWidget 里增加存取数据的代码:</p>
+<pre><code class="hljs bash" lang="bash">  void _jumpToCitysWidget() async {
+    var selectCity =
+        await Navigator.pushNamed(context, <span class="hljs-string">'/Citys'</span>, arguments: curCity);
+    <span class="hljs-keyword">if</span> (selectCity == null) <span class="hljs-built_in">return</span>;
+
+    final prefs = await SharedPreferences.getInstance(); 
+    prefs.setString(<span class="hljs-string">'curCity'</span>, selectCity); //存取数据
+
+    <span class="hljs-built_in">set</span>State(() {
+      curCity = selectCity;
+    });
+  }
+</code></pre></div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div>
+
+</body>
+</html>

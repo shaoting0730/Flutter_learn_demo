@@ -1,0 +1,555 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 基础 Widget —— 输入框</h1>
+<p>本节讲 Flutter 输入框及表单的使用。</p>
+<p>在 Flutter 中，输入框及表单相关的 Widget 有如下三个:</p>
+<ol>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fmaterial%2FTextField-class.html" rel="nofollow noopener noreferrer">TextField</a></li>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FFormField-class.html" rel="nofollow noopener noreferrer">FormField</a></li>
+<li><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FForm-class.html" rel="nofollow noopener noreferrer">Form</a></li>
+</ol>
+<h1 class="heading" data-id="heading-1"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fmaterial%2FTextField-class.html" rel="nofollow noopener noreferrer">1. TextField</a></h1>
+<p>TextField 是文本输入框。</p>
+<h2 class="heading" data-id="heading-2">代码所在位置</h2>
+<p>flutter_widget_demo/lib/textfield/TextFieldWidget.dart</p>
+<h2 class="heading" data-id="heading-3">TextFiled 的快速上手</h2>
+<p>TextFile 的简单使用：</p>
+<pre><code class="hljs bash" lang="bash">TextField();
+</code></pre><p>TextField 写到一个页面的完整 Demo 代码如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(TextFieldWidget());
+
+class TextFieldWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+          appBar: AppBar(title: Text(<span class="hljs-string">"Flutter UI基础Widget -- 文本"</span>)),
+          body: TextField()),
+    );
+  }
+}
+</code></pre><p>运行效果为：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/3/9/16961758744cb5c0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="842" data-height="334" src="https://user-gold-cdn.xitu.io/2019/3/9/16961758744cb5c0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>可以在文本框里输入文字。</p>
+<h3 class="heading" data-id="heading-4">获取 TextField 的内容</h3>
+<p>获取 TextField 的内容有两种方式：</p>
+<ol>
+<li>onChanged</li>
+<li>TextEditingController</li>
+</ol>
+<h4 class="heading" data-id="heading-5">onChanged</h4>
+<p>当用户输入，TextField 的内容发生变化，TextField 就会调用它的 onChanged 回调。 因此 onChanged 可以实时查看 TextField 的内容变化。</p>
+<p>使用代码如下：</p>
+<pre><code class="hljs bash" lang="bash">TextField(
+    onChanged: (String data) {
+      //实时获取
+      <span class="hljs-built_in">print</span>(data);
+    },
+  )
+</code></pre><h4 class="heading" data-id="heading-6">TextEditingController</h4>
+<p>TextEditingController 可以控制 TextField 的编辑，是 TextField 的 controller 属性，我们可以为 TextField 赋值自己创建的 TextEditingController 来控制 TextField。
+使用代码如下：</p>
+<pre><code class="hljs bash" lang="bash">
+class TextFieldWidget extends StatelessWidget {
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> 
+        ...
+        TextField(
+            controller: _controller,
+        ),
+        ...
+    );
+  }
+}
+</code></pre><p>然后使用 <code>_controller.text</code> 来访问 TextField 里的内容。</p>
+<h2 class="heading" data-id="heading-7">TextField 的构造函数及参数说明</h2>
+<p>TextField 的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">class TextField extends StatefulWidget {
+ 
+  const TextField({
+    Key key,
+    this.controller,
+    this.focusNode,
+    this.decoration = const InputDecoration(),
+    TextInputType keyboardType,
+    this.textInputAction,
+    this.textCapitalization = TextCapitalization.none,
+    this.style,
+    this.textAlign = TextAlign.start,
+    this.textDirection,
+    this.autofocus = <span class="hljs-literal">false</span>,
+    this.obscureText = <span class="hljs-literal">false</span>,
+    this.autocorrect = <span class="hljs-literal">true</span>,
+    this.maxLines = 1,
+    this.maxLength,
+    this.maxLengthEnforced = <span class="hljs-literal">true</span>,
+    this.onChanged,
+    this.onEditingComplete,
+    this.onSubmitted,
+    this.inputFormatters,
+    this.enabled,
+    this.cursorWidth = 2.0,
+    this.cursorRadius,
+    this.cursorColor,
+    this.keyboardAppearance,
+    this.scrollPadding = const EdgeInsets.all(20.0),
+    this.dragStartBehavior = DragStartBehavior.down,
+    this.enableInteractiveSelection,
+    this.onTap,
+    this.buildCounter,
+  }) : assert(textAlign != null),
+       assert(autofocus != null),
+       assert(obscureText != null),
+       assert(autocorrect != null),
+       assert(maxLengthEnforced != null),
+       assert(scrollPadding != null),
+       assert(dragStartBehavior != null),
+       assert(maxLines == null || maxLines &gt; 0),
+       assert(maxLength == null || maxLength == TextField.noMaxLength || maxLength &gt; 0),
+       keyboardType = keyboardType ?? (maxLines == 1 ? TextInputType.text : TextInputType.multiline),
+       super(key: key);
+
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>controller</td>
+<td>TextEditingController</td>
+<td>控制 TextField 的编辑，如果没有设置，会有默认值</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>focusNode</td>
+<td>FocusNode</td>
+<td>用于控制TextField是否占有当前键盘的输入焦点<br>它是我们和键盘交互的一个handle</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>decoration</td>
+<td>InputDecoration</td>
+<td>用于控制TextField的外观显示，如提示文本、背景颜色、边框等</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textAlign</td>
+<td>TextAlign</td>
+<td>文本的对齐方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textDirection</td>
+<td>TextDirection</td>
+<td>文字方向</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>keyboardType</td>
+<td>TextInputType</td>
+<td>用于设置该输入框默认的键盘输入类型</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textInputAction</td>
+<td>TextInputAction</td>
+<td>键盘动作按钮图标(即回车键位图标)</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textCapitalization</td>
+<td>TextCapitalization</td>
+<td>定义文本的大写格式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>style</td>
+<td>TextStyle</td>
+<td>文本样式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textAlign</td>
+<td>TextAlign</td>
+<td>文本的对齐方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textDirection</td>
+<td>TextDirection</td>
+<td>文字方向</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>autofocus</td>
+<td>bool</td>
+<td>是否自动获取焦点<br>默认为false</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>obscureText</td>
+<td>bool</td>
+<td>是否隐藏正在编辑的文本，如用于输入密码的场景等，文本内容会用“•”替换<br>默认为false</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>autocorrect</td>
+<td>bool</td>
+<td><br>默认为true</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>maxLines</td>
+<td>int</td>
+<td>显示的最大行数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>maxLength</td>
+<td>int</td>
+<td>输入框中允许的最大字符数</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>maxLengthEnforced</td>
+<td>bool</td>
+<td>是否强制限制最大字符数，默认为true<br>true：强制限制最大字符数<br>false：不限制最大字符数，即使设置了maxLength也不生效</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>ValueChanged</td>
+<td>输入框内容改变时的回调函数；注：内容改变事件也可以通过controller来监听</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onEditingComplete</td>
+<td>VoidCallback</td>
+<td>输入框输入完成时触发，但是onEditingComplete没有参数，不会返回内容</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onSubmitted</td>
+<td>ValueChanged</td>
+<td>输入框输入完成时触发，但是onSubmitted有参数，会返回内容</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>inputFormatters</td>
+<td>List&lt; TextInputFormatter&gt;</td>
+<td>用于指定输入格式；当用户输入内容改变时，会根据指定的格式来校验。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>bool</td>
+<td>输入框是否禁用<br> 如果为false，则输入框会被禁用，禁用状态不接收输入和事件，同时显示禁用态样式（在其decoration中定义）。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>cursorWidth</td>
+<td>double</td>
+<td>自定义输入框光标宽度</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>cursorRadius</td>
+<td>Radius</td>
+<td>自定义输入框光标圆角</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>cursorColor</td>
+<td>Color</td>
+<td>自定义输入框光标颜色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>keyboardAppearance</td>
+<td>Brightness</td>
+<td>设置键盘的亮度模式<br> 只能在iOS上使用，有两种：Brightness.dart和Brightness.light</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>scrollPadding</td>
+<td>EdgeInsets</td>
+<td>文本框滑动时的间距</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>dragStartBehavior</td>
+<td>DragStartBehavior</td>
+<td>设置确定当用户启动拖动时拖动正式开始的时间</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>enableInteractiveSelection</td>
+<td>bool</td>
+<td>是否启用交互式选择<br>true：长按将会选中文字，并且弹出 cut/copy/paste 的菜单</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onTap</td>
+<td>GestureTapCallback</td>
+<td>TextField的点击事件</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>buildCounter</td>
+<td>InputCounterWidgetBuilder</td>
+<td>生成自定义 InputDecorator.counter 小部件的回调</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>keyboardType：类型为TextInputType，用于设置该输入框默认的键盘输入类型。</p>
+<table>
+<thead>
+<tr>
+<th>TextInputType的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TextInputType.text</td>
+<td>文本输入键盘</td>
+</tr>
+<tr>
+<td>TextInputType.multiline</td>
+<td>多行文本，需和maxLines配合使用(设为null或大于1)</td>
+</tr>
+<tr>
+<td>TextInputType.number</td>
+<td>数字；会弹出数字键盘</td>
+</tr>
+<tr>
+<td>TextInputType.phone</td>
+<td>优化后的电话号码输入键盘；会弹出数字键盘并显示"* #"</td>
+</tr>
+<tr>
+<td>TextInputType.datetime</td>
+<td>优化后的日期输入键盘；Android上会显示“: -”</td>
+</tr>
+<tr>
+<td>TextInputType.emailAddress</td>
+<td>优化后的电子邮件地址；会显示“@ .”</td>
+</tr>
+<tr>
+<td>TextInputType.url</td>
+<td>优化后的url输入键盘； 会显示“/ .”</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>textInputAction：类型为TextInputAction，键盘动作按钮图标(即回车键位图标)。</p>
+<p>就是键盘右下角的那一个块图标。
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/9/1696212b0d8fe836?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="747" data-height="1280" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;747&quot; height=&quot;1280&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>textCapitalization：类型为TextCapitalization，定义文本的大写格式。</p>
+<table>
+<thead>
+<tr>
+<th>TextCapitalization的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TextCapitalization.none</td>
+<td>全部小写</td>
+</tr>
+<tr>
+<td>TextCapitalization.words</td>
+<td>每个单词的首字母大写</td>
+</tr>
+<tr>
+<td>TextCapitalization.sentences</td>
+<td>每个句子的首字母大写</td>
+</tr>
+<tr>
+<td>TextCapitalization.characters</td>
+<td>每个字每大写</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h1 class="heading" data-id="heading-8"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FFormField-class.html" rel="nofollow noopener noreferrer">2. FormField</a></h1>
+<p>FormField 是单个表单字段 Widget。此 Widget 维护表单字段的当前状态，以便在 UI 中直观地反映更新和验证错误。</p>
+<h2 class="heading" data-id="heading-9">FormField 的构造函数及参数说明</h2>
+<p>FormField 的构造函数如下：</p>
+<pre><code class="hljs bash" lang="bash">class FormField&lt;T&gt; extends StatefulWidget {
+  
+  const FormField({
+    Key key,
+    @required this.builder,
+    this.onSaved,
+    this.validator,
+    this.initialValue,
+    this.autovalidate = <span class="hljs-literal">false</span>,
+    this.enabled = <span class="hljs-literal">true</span>,
+  }) : assert(builder != null),
+       super(key: key);
+    ...
+}
+const FormField({
+  ...
+  FormFieldSetter&lt;T&gt; onSaved, //保存回调
+  FormFieldValidator&lt;T&gt;  validator, //验证回调
+  T initialValue, //初始值
+  bool autovalidate = <span class="hljs-literal">false</span>, //是否自动校验。
+})
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>builder</td>
+<td>FormFieldBuilder</td>
+<td>返回表示此表单字段的 Widget 的函数</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>onSaved</td>
+<td>FormFieldSetter</td>
+<td>保存表单时使用最终值调用的方法</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>validator</td>
+<td>FormFieldValidator</td>
+<td>验证输入的方法</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>autovalidate</td>
+<td>bool</td>
+<td>是否自动验证，默认为 false<br>true：每次输入有变动都会验证<br>false：只有调用 FormFieldState.validate 才会验证</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>bool</td>
+<td>表单是否能够接收用户输入。默认为ture。</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p>Flutter 提供了一个 TextFormField Widget，它继承自 FormField 类，也是 TextField 的一个包装类，所以除了 FormField 定义的属性之外，它还包括 TextField 的属性。</p>
+<h1 class="heading" data-id="heading-10"><a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FForm-class.html" rel="nofollow noopener noreferrer">3. Form</a></h1>
+<p>Form 是将多个 表单Widget  组合起来的一个容器。Form继承自StatefulWidget对象，它对应的状态类为FormState。</p>
+<p>每个单独的表单字段都应该包装在 FormField 小部件中，并将 Form 小部件作为所有这些小部件的共同祖先。调用FormState上的方法来保存、重置或验证 Form 的每个 子FormField。要获取 FormState，可以使用 Form.of 或者 GlobalKey.currentState。Form 的子孙元素必须是 FormField 类型。</p>
+<h2 class="heading" data-id="heading-11">Form 的构造函数及参数说明</h2>
+<p>先看一下看 Form 的构造函数：</p>
+<pre><code class="hljs bash" lang="bash">class Form extends StatefulWidget {
+
+  const Form({
+    Key key,
+    @required this.child,
+    this.autovalidate = <span class="hljs-literal">false</span>,
+    this.onWillPop,
+    this.onChanged,
+  }) : assert(child != null),
+       super(key: key);
+    ...   
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>child</td>
+<td>Widget</td>
+<td>Form 的子 Widget</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>autovalidate</td>
+<td>bool</td>
+<td>是否自动验证，默认为 false<br>true：每次输入有变动都会验证<br>false：只有调用 FormFieldState.validate 才会验证</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onWillPop</td>
+<td>WillPopCallback</td>
+<td>决定 Form 所在的路由是否可以直接返回（如点击返回按钮），该回调返回一个 Future 对象，如果 Future 的最终结果是 false，则当前路由不会返回；如果为 true，则会返回到上一个路由。此属性通常用于拦截返回按钮。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onChanged</td>
+<td>VoidCallback</td>
+<td>Form 的任意一个 子FormField 内容发生变化时会触发此回调</td>
+<td>必选</td>
+</tr>
+</tbody>
+</table>
+<h4 class="heading" data-id="heading-12">FormState</h4>
+<p>FormState 为 Form 的 State 类，可以通过 Form.of() 或 GlobalKey 获得。我们可以通过它来对 Form 的子孙 FormField 进行统一操作。我们看看其常用的三个方法：</p>
+<ul>
+<li>FormState.validate()：调用此方法后，会调用 Form 子孙FormField 的 validate 回调，如果有一个校验失败，则返回 false，所有校验失败项都会返回用户返回的错误提示。</li>
+<li>FormState.save()：调用此方法后，会调用 Form 子孙FormField 的 save 回调，用于保存表单内容</li>
+<li>FormState.reset()：调用此方法后，会将 子孙FormField 的内容清空。</li>
+</ul>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><li data-v-1ec4f85b="" class="item"><div data-v-56cf99ad="" data-v-1ec4f85b="" class="comment"><div data-v-78fb71d8="" data-v-56cf99ad="" st:block="userPopover" st:state="5b0829b951882538b72c7f14" class="user-popover-box"><!----><a data-v-56cf99ad="" href="/user/5b0829b951882538b72c7f14" target="_blank" rel="" data-v-78fb71d8=""><div data-v-59f839d2="" data-v-1074dbe6="" data-v-56cf99ad="" data-src="https://mirror-gold-cdn.xitu.io/168e0906698264ba573?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar" style="background-image: none;"></div></a></div><div data-v-56cf99ad="" class="content-box"><div data-v-56cf99ad="" class="header"><div data-v-56cf99ad="" class="user-info"><div data-v-78fb71d8="" data-v-56cf99ad="" st:block="userPopover" st:state="5b0829b951882538b72c7f14" class="user-popover-box"><!----><a data-v-07b45902="" data-v-56cf99ad="" href="/user/5b0829b951882538b72c7f14" target="_blank" rel="" class="username" data-v-78fb71d8="">loongwind<!----></a></div><div data-v-56cf99ad="" class="position">Android开发工程师</div></div></div><div data-v-56cf99ad="" class="content"><!----><span data-v-56cf99ad="" class="content-html">`FormField` 和 `Form` 建议也举个使用例子 便于理解</span><!----></div><div data-v-56cf99ad="" class="footer"><button data-v-56cf99ad="" class="like-btn"><i data-v-56cf99ad="" class="collection-arrow-ion ion-arrow-up-b"></i><span data-v-56cf99ad="">1</span></button><span data-v-56cf99ad="" class="sub-comment-btn text-pointer"><span data-v-56cf99ad="" class="title">评论</span><div data-v-56cf99ad="" class="sub-comment--arrow" style="display: none;"></div></span><span data-v-56cf99ad="" class="date">7小时前</span><!----></div><!----></div><!----></div></li><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

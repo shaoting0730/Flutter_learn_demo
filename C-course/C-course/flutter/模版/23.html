@@ -1,0 +1,283 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 布局 —— 理解 BoxConstraint（盒约束）布局模型</h1>
+<p>前面讲了 Flutter 一些 UI Widget 的使用，但实际开发中，我们还需要将这些 Widget 按照一定的布局组合起来，Flutter 的布局和 Android、iOS、WEB 的布局有相似之处，也有不同之处。</p>
+<p>所以这节，主要讲一下 Flutter 的布局原理：BoxConstraints（盒约束）。</p>
+<h2 class="heading" data-id="heading-1">什么是 BoxConstraints（盒约束）？</h2>
+<p>BoxConstraints 翻译过来是 盒约束，用于指定 Widget 大小的约束。</p>
+<p>Flutter 的 Widget 都是通过 BoxConstraints 来约束大小的。</p>
+<h2 class="heading" data-id="heading-2">BoxConstraints 如何来约束Widget的大小？</h2>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/3/3/169442e4e9aeaab7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="550" data-height="331" src="https://user-gold-cdn.xitu.io/2019/3/3/169442e4e9aeaab7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>如上图，以左上角为原点，在 X轴 和 Y轴 上设置最小值和最大值,就对应了 BoxConstraints 的四个属性：</p>
+<ol>
+<li>minWidth</li>
+<li>maxWidth</li>
+<li>minHeight</li>
+<li>maxHeight</li>
+</ol>
+<p>这四个属性可以确定如下的关系：</p>
+<p>0.0 &lt;= minWidth &lt;= Widget宽度的实际大小 &lt;= maxWidth &lt;= double.infinity</p>
+<p>0.0 &lt;= minHeight &lt;= Widget高度的实际大小 &lt;= maxHeight &lt;= double.infinity</p>
+<p>这样就会形成一个矩形的范围：不小于黄色的矩形，不大于绿色的矩形，这样就确定了一个 Widget 的大小范围，</p>
+<p>Flutter 采用 BoxConstraints 是为了更好的适配多种平台。</p>
+<h2 class="heading" data-id="heading-3">Flutter 如何确定 Widget 的大小？</h2>
+<p>前面讲的 BoxConstraints，只能确定 Widget 大小的一个范围，并不能知道 Widget 的确切大小，这样是无法绘制的，那么 Flutter 是如何确定 Widget 大小的呢？</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/3/3/1694414ab4da9231?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="768" data-height="480" src="https://user-gold-cdn.xitu.io/2019/3/3/1694414ab4da9231?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>这是一个Widget树的结构，为了确定 Widget 的大小：</p>
+<ol>
+<li>父Widget 会将自己的 BoxConstraints 传递给自己的 子Widget，直到传到树的叶节点（没有子节点了），因此树的叶节点会拥有所有父节点的 BoxConstraints，这些 BoxConstraints 会相互影响。</li>
+<li>叶节点的Widget 会根据这些 BoxConstraints 和自己的 BoxConstraints 计算出自己的大小，并将自己的大小返回给父 Widget。</li>
+<li>父Widget 得到 子Widget 的大小后，根据 子Widget 的大小、前面 父Widget 们传递的 BoxConstraints 和自己的 BoxConstraints，同样可以计算出自己的大小，这样依次往上传递至 根Widget。</li>
+</ol>
+<p><code>所以 Widget 的大小是受其 父Widget 的约束和自己 子Widget 的大小共同影响的</code></p>
+<h2 class="heading" data-id="heading-4">BoxConstraints 的种类</h2>
+<p>对 BoxConstraints 的四个属性赋不同的值，会有不同的约束效果，为了更直观的了解这些约束效果，写了一个简单的 demo：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(MyApp(<span class="hljs-string">"Hello World"</span>));
+
+class MyApp extends StatefulWidget {
+  // This widget is the root of your application.
+
+  String content;
+
+  MyApp(this.content);
+
+  @override
+  State&lt;StatefulWidget&gt; <span class="hljs-function"><span class="hljs-title">createState</span></span>() {
+    // TODO: implement createState
+    <span class="hljs-built_in">return</span> MyAppState();
+  }
+}
+
+class MyAppState extends State&lt;MyApp&gt; {
+  void <span class="hljs-function"><span class="hljs-title">increment</span></span>() {
+    <span class="hljs-built_in">set</span>State(() {
+      widget.content += <span class="hljs-string">"d"</span>;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Paint paint = Paint();
+    paint.color = Colors.green;
+    <span class="hljs-built_in">return</span> MaterialApp(
+        title: <span class="hljs-string">'Flutter Demo'</span>,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text(<span class="hljs-string">"Box Constraints"</span>),
+            ),
+            body: Container(
+                color: Colors.red,
+                child: Text(
+                  <span class="hljs-string">"HelloWorld"</span>,
+                  style: TextStyle(background: paint),
+                ))));
+  }
+}
+</code></pre><p>运行的效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/4/169494d5f5b57f29?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="843" data-height="311" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;843&quot; height=&quot;311&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>这个例子里有两个 Widget：Container 和 Text，绿色代表的是 Text 所占的位置，Text 下面还有一层红色，是 Container 所在的位置,这里不太明显，因为 Container 的大小和 Text 的大小是一样的。</p>
+<p>下面对 Text 和 Container 设置不同的 BoxConstraints 来研究 BoxConstraints：</p>
+<ul>
+<li>Tightly Constraints（严格约束）</li>
+<li>Loose Constraints（松散约束）</li>
+<li>Bounded Constraints（有界约束）</li>
+<li>Unbounded Constraints（无界约束）</li>
+<li>Infinite Constraints（无限约束）</li>
+</ul>
+<h4 class="heading" data-id="heading-5">Tightly Constraints（严格约束）</h4>
+<p>当某一轴上的最小值和最大值相同时，那么这个轴上的值就确定了，就是 Tightly Constraints（严格约束）。</p>
+<ul>
+<li>当 minWidth = maxWidth 时，Widget 的宽就确定了</li>
+<li>当 minHeiget = maxHeight 时，Widget 的高度就确定了</li>
+<li>当 minWidth = maxWidth 且 minHeiget = maxHeight，Widget 的宽高就都确定了。</li>
+</ul>
+<p>新建一个 Tightly Constraints，使用如下的方法：</p>
+<pre><code class="hljs bash" lang="bash">BoxConstraints.tight(Size(width, height))
+</code></pre><p>给 Container 加一个 Tightly Constraints：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+    constraints: BoxConstraints.tight(Size(100, 100)), //添加 Tightly Constraints
+    color: Colors.red,
+    child: Text(
+      <span class="hljs-string">"HelloWorld"</span>,
+      style: TextStyle(background: paint),
+    ))));
+</code></pre><p>运行结果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/4/16949568016d2c49?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="847" data-height="425" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;847&quot; height=&quot;425&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>代表 Container 的红色就是固定大小。</p>
+<blockquote class="warning"><p>当 Widget 是 Tightly Constraints 时，它的宽或高是固定的。
+</p></blockquote><h4 class="heading" data-id="heading-6">Loose Constraints（松散约束）</h4>
+<p>当某一轴上的最小值为 0 时，就是 Loose Constraints（松散约束）。</p>
+<p>这时候就有两种情况：</p>
+<ol>
+<li>
+<p>最大值是确定的值</p>
+<ul>
+<li>
+<p>Container 的 X 轴最小值是 0，假设最大值是 100，那么你想一下，红色矩形的宽度会比绿色的宽吗？</p>
+<p>答案是不会，因为 Container 的宽度最小为 0，最大为 100，如果 子Widget 的宽度大于 100，那么 Container 的宽度最高只能为 100，如果 子Widget的宽度小于 100，那么 Container 的宽度就和 子Widget 的宽度一样。</p>
+<p>为了验证结果，新建一个最大值是确定值的松散约束：</p>
+<pre><code class="hljs bash" lang="bash">BoxConstraints.loose(Size(width, height))
+</code></pre><p>代码是：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+        constraints: BoxConstraints.loose(Size(100, 100)), //添加 Loose Constraints
+        color: Colors.red,
+        child: Text(
+          <span class="hljs-string">"HelloWorld"</span>,
+          style: TextStyle(background: paint),
+        ))));
+</code></pre><p>运行结果如下：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/4/16949685b5121654?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="834" data-height="264" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;834&quot; height=&quot;264&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>接着上一个假设，给 Container 设定了最大值是确定值的松散约束，但是 Container 没有 子Widget，红色矩形又是怎么显示的呢？</p>
+<p>代码如下：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+        constraints: BoxConstraints.loose(Size(100, 100)), //添加 Loose Constraints
+        color: Colors.red,)));
+</code></pre><p>运行效果如下：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/5/1694975e056b24e0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="838" data-height="411" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;838&quot; height=&quot;411&quot;></svg>"><figcaption></figcaption></figure>
+这时候 Container 显示的是最大宽度。<p></p>
+</li>
+</ul>
+</li>
+<li>
+<p>最大值是是 Infinite(无限值)</p>
+<ul>
+<li>
+<p>Container 的 X 轴最小值是 0，假设最大值是 Infinite(无限值)，红色矩形和绿色矩形又是什么关系呢？</p>
+<p>新建一个最大值是是无限值的松散约束：</p>
+<pre><code class="hljs bash" lang="bash">BoxConstraints.tightFor()
+</code></pre><p>代码如下：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+    constraints: BoxConstraints.tightFor(), //添加 Loose Constraints
+    color: Colors.red,
+    child: Text(
+      <span class="hljs-string">"HelloWorld"</span>,
+      style: TextStyle(background: paint),
+    ))));
+</code></pre><p>运行效果如下：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/4/16949685b5121654?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="834" data-height="264" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;834&quot; height=&quot;264&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>接着上一个，如果 Container 没有 子Widget 呢？</p>
+<p>代码如下：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+    constraints: BoxConstraints.tightFor(), //添加 Loose Constraints
+    color: Colors.red,)));
+</code></pre><p>运行效果如下：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a000e9b260a699?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="428" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;428&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure>
+Container 铺满了全屏<p></p>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote class="warning"><p>当 Widget 是 Loose Constraints 时，无论最大值是确定值还是无限制，如果有 子Widget，那么 Widget 的大小就是 子Widget 的大小，相当于 wrap_content，如果没有 子Widget，那么 Widget 就是最大值，如果这个最大值是 Infinite,就相当于 match_parent
+</p></blockquote><h4 class="heading" data-id="heading-7">Bounded Constraints（有界约束）</h4>
+<p>当某一轴上的最大值是确定的值时，就是 Bounded Constraints（有界约束）。</p>
+<p>新建一个 Bounded Constraints,maxWidth和maxHeight必须为固定值：</p>
+<pre><code class="hljs bash" lang="bash">constraints: BoxConstraints(minWidth,maxWidth,minHeight,maxHeight), //添加 Bounded Constraints
+</code></pre><p>然后考虑如下的情形：</p>
+<ul>
+<li>
+<p>如果 minWidth 大于子 Widget 的宽</p>
+<p>如下代码：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+    constraints: BoxConstraints(minWidth: 100,maxWidth: 300,minHeight: 0,maxHeight: 300), //添加 Bounded Constraints
+    color: Colors.red,
+    child: Text(
+      <span class="hljs-string">"HelloWorld"</span>,
+      style: TextStyle(background: paint),
+    ))));
+</code></pre><p>运行效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/5/169499ac775e9600?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="831" data-height="271" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;831&quot; height=&quot;271&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>Container 的宽度取的是最小值 100，而不是最大值 300</p>
+</li>
+<li>
+<p>如果 Container 没有 子Widget 呢？</p>
+<p>如下的代码：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+    constraints: BoxConstraints(minWidth: 100,maxWidth: 300,minHeight: 0,maxHeight: 300), //添加 Bounded Constraints
+    color: Colors.red,)));
+</code></pre><p>运行效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/5/169499dad2331e94?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="837" data-height="831" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;837&quot; height=&quot;831&quot;></svg>"><figcaption></figcaption></figure>
+这时候 Container 显示的是最大值。<p></p>
+</li>
+</ul>
+<blockquote class="warning"><p>当 Widget 是 Bounded Constraints 时,如果有 子Widget，子Widget 的大小小于有界约束的最小值，则显示的是有界约束的最小值，而当 子Widget 的大小大于有界约束的最小值，小于有界约束的最大值，则显示的是 子Widget 的大小，否则显示的是有界约束的最大值；如果没有 子Widget 就显示有界约束的最大值
+</p></blockquote><h4 class="heading" data-id="heading-8">Unbounded Constraints（无界约束）</h4>
+<p>当某一轴上的最大值是 Infinite(无限值) 时，就是 Unbounded Constraints（无界约束）。</p>
+<p>新建一个 Unbounded Constraints,maxWidth 和 maxHeight 必须为 double.infinity：</p>
+<pre><code class="hljs bash" lang="bash">constraints: BoxConstraints(minWidth,maxWidth,minHeight,maxHeight), //添加 Bounded Constraints
+</code></pre><p>然后考虑如下的情形：</p>
+<ul>
+<li>
+<p>当 子Widget 的宽小于 minWidth</p>
+<p>红色矩形显示的宽度肯定是 minWidth。</p>
+<p>代码如下：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+    constraints: BoxConstraints(minWidth: 100,maxWidth: double.infinity,minHeight: 100,maxHeight: double.infinity), //添加 Unbounded Constraints
+    color: Colors.red,
+    child: Text(
+      <span class="hljs-string">"HelloWorld"</span>,
+      style: TextStyle(background: paint),
+    ))));
+</code></pre><p>运行效果如下：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/4/16949568016d2c49?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="847" data-height="425" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;847&quot; height=&quot;425&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>当 子Widget 的宽大于 minWidth</p>
+<p>红色矩形显示的宽度肯定是 子Widget 的宽度。</p>
+<p>代码如下：</p>
+<pre><code class="hljs bash" lang="bash">    body: Container(
+    constraints: BoxConstraints(minWidth: 10,maxWidth: double.infinity,minHeight: 100,maxHeight: double.infinity), //添加 Unbounded Constraints
+    color: Colors.red,
+    child: Text(
+      <span class="hljs-string">"HelloWorld"</span>,
+      style: TextStyle(background: paint),
+    ))));
+</code></pre><p>运行效果如下:
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/5/16949b19eb4ac152?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="851" data-height="459" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;851&quot; height=&quot;459&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</li>
+<li>
+<p>如果 Container 没有 子Widget 呢？</p>
+<p>如下的代码：</p>
+<pre><code class="hljs bash" lang="bash">    body: Container(
+    constraints: BoxConstraints(minWidth: 10,maxWidth: double.infinity,minHeight: 100,maxHeight: double.infinity), //添加 Unbounded Constraints
+    color: Colors.red,))));
+</code></pre><p>运行效果如下：
+</p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a000e9b260a699?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="428" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;428&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure>
+Container 铺满了全屏<p></p>
+</li>
+</ul>
+<pre><code class="hljs bash" lang="bash">其实 Unbounded Constraints 很像 Loose Constraints。当 Unbounded Constraints  有 子Widget 时，若 子Widget 的大小小于 Unbounded Constraints 的最小值时，则 Widget 显示 Unbounded Constraints 的最小值，若 子Widget 的大小大于 Unbounded Constraints 的最小值时，则显示 子Widge t的大小；若没有 子Widget，就相当于 match_parent
+</code></pre><h4 class="heading" data-id="heading-9">Infinite Constraints（无限约束）</h4>
+<p>当某一轴上的最大值和最小值都是 Infinite(无限值) 时，就是 Infinite Constraints（无限约束）。</p>
+<p>新建一个 Infinite Constraints（无限约束）：</p>
+<pre><code class="hljs bash" lang="bash">body: Container(
+    constraints: BoxConstraints.expand(), //添加 Infinite Constraints
+    color: Colors.red,
+    child: Text(
+      <span class="hljs-string">"HelloWorld"</span>,
+      style: TextStyle(background: paint),
+    ))));
+</code></pre><p>运行效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a0010b333c574b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="387" data-height="767" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;387&quot; height=&quot;767&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<blockquote class="warning"><p>Infinite Constraints 就相当于 match_parent
+</p></blockquote></div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

@@ -1,0 +1,549 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 实战篇：仿豆瓣电影APP</h1>
+<p>现在开始 Flutter 实战，我们的目的是仿写一个豆瓣电影APP。</p>
+<p>在仿写的过程中，我们将学会：</p>
+<ul>
+<li>如何写UI和布局</li>
+<li>如何添加第三方库</li>
+<li>如何发起请求并解析数据</li>
+<li>如何异步编程</li>
+<li>页面之间如何跳转及如何传递参数</li>
+</ul>
+<h1 class="heading" data-id="heading-1">Widget 布局的实现</h1>
+<p>本节用 Flutter 实现豆瓣电影APP的节目。从这里你会学到如何使用 Flutter 的 Widget 去布局，以及遇到问题时如何解决。</p>
+<h2 class="heading" data-id="heading-2">创建 Flutter 工程</h2>
+<p>在 VS Code 中创建 Flutter 工程，工程名字为：flutter_doubanmovie。</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/4/9/169ff68a681cb61e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1280" data-height="219" src="https://user-gold-cdn.xitu.io/2019/4/9/169ff68a681cb61e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>创建完成后，首先要对工程里的默认代码进行修改。</p>
+<ul>
+<li>
+<p>将 title 改为 豆瓣电影</p>
+<p>在类 MyApp 里改为：</p>
+<pre><code class="hljs bash" lang="bash">home: MyHomePage(title: <span class="hljs-string">'豆瓣电影'</span>),
+</code></pre></li>
+<li>
+<p>_MyHomePageState</p>
+<p>_MyHomePageState 里的 UI 代码要删掉，而且因为豆瓣电影没有 AppBar，所以 AppBar 也要删除 ，除删除之后的 _MyHomePageState 为：</p>
+<pre><code class="hljs bash" lang="bash">class _MyHomePageState extends State&lt;MyHomePage&gt; {
+
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> Scaffold(
+      body: Center(
+      ), 
+    );
+  }
+}
+</code></pre></li>
+</ul>
+<p>做完这些操作之后，在运行 flutter_doubanmovie，得到的是一个空页面。</p>
+<h2 class="heading" data-id="heading-3">仿写豆瓣电影APP界面</h2>
+<p>写界面的正常流程应该是按照设计稿来实现，但是因为我们没有设计稿，所以我们按照豆瓣电影APP界面的截图来仿写。</p>
+<p>首先分析豆瓣电影APP的界面：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a0290e7e46ab37?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="496" data-height="848" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;496&quot; height=&quot;848&quot;></svg>"><figcaption></figcaption></figure>
+可以看到 豆瓣电影APP 的界面主要有两部分组成：<p></p>
+<ol>
+<li>底部的 Navigation Bar</li>
+<li>上面显示的内容页面，包括：热映、找片、我的</li>
+</ol>
+<p>所以，接下来我们先实现底部的 Navigation Bar，然后在实现要显示的内容页面。</p>
+<h2 class="heading" data-id="heading-4">实现底部 Navigation Bar</h2>
+<p>底部的 Navigation Bar 使用 Flutter 的 BottomNavigationBar 来实现，BottomNavigationBar 这个 Widget 前面没有介绍过，但是没有关系，我们通过查看 BottomNavigationBar 的构造函数就可以知道如何使用。</p>
+<h4 class="heading" data-id="heading-5">使用 Scaffold 的 bottomNavigationBar 属性</h4>
+<p>首先给 Scaffold 的 bottomNavigationBar 属性赋值：</p>
+<pre><code class="hljs bash" lang="bash"><span class="hljs-built_in">return</span> Scaffold(
+    ...
+    bottomNavigationBar: BottomNavigationBar(
+        ...
+    ),
+    ...
+)
+</code></pre><h4 class="heading" data-id="heading-6">然后在实现 BottomNavigationBar</h4>
+<p>为了使用 BottomNavigationBar，先看 BottomNavigationBar 的构造函数：</p>
+<pre><code class="hljs bash" lang="bash">class BottomNavigationBar extends StatefulWidget {
+  BottomNavigationBar({
+    Key key,
+    @required this.items,
+    this.onTap,
+    this.currentIndex = 0,
+    BottomNavigationBarType <span class="hljs-built_in">type</span>,
+    this.fixedColor,
+    this.iconSize = 24.0,
+  }) 
+  ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>items</td>
+<td>List&lt;BottomNavigationBarItem&gt;</td>
+<td>底部导航栏的选项，是一个List，每个选项的类型是 BottomNavigationBarItem</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>onTap</td>
+<td>ValueChanged&lt;int&gt;</td>
+<td>底部导航栏选项的点击事件，返回的值是选项的 index</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>currentIndex</td>
+<td>int</td>
+<td>当前选中的选项的 index</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>type</td>
+<td>BottomNavigationBarType</td>
+<td>定义底部导航栏的选项如何显示，有两个值：<br>BottomNavigationBarType.fix：当选项少于4个时，默认为这个类型，如果 fixedColor 不为空，则选项选中时的颜色就是 fixedColor，否则是  ThemeData.primaryColor，导航栏背景颜色是 ThemeData.canvasColor<br>BottomNavigationBarType.shifting：当选项不小于4个时，默认为这个类型，所有的选项都会被渲染为白色，但是导航栏的背景色是当前选中的选项的背景色</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>fixedColor</td>
+<td>Key</td>
+<td>当 BottomNavigationBarType 的 type 是 fix 时，选中的选项的颜色就是 fixdColor</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>iconSize</td>
+<td>double</td>
+<td>BottomNavigationBarItem 的 icon 的大小</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<h4 class="heading" data-id="heading-7">BottomNavigationBarItem</h4>
+<p>这里还有一个新的 Widget：BottomNavigationBarItem，我们在看一下 BottomNavigationBarItem 如何使用，它的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">class BottomNavigationBarItem {
+  const BottomNavigationBarItem({
+    @required this.icon,
+    this.title,
+    Widget activeIcon,
+    this.backgroundColor,
+  })
+  ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>icon</td>
+<td>Widget</td>
+<td>选项的 Icon</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Widget</td>
+<td>选项的 标题</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>activeIcon</td>
+<td>Widget</td>
+<td>当选项选中时显示 activeIcon，但如果 activeIcon 没有设置的话，选中的时候会显示 icon</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>Color</td>
+<td>当 BottomNavigationBarType 的 type 是 shifting 时才有用，选中时会成为导航栏的背景色</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p>所以为 BottomNavigationBar 添加 BottomNavigationBarItem 就可以写成：</p>
+<pre><code class="hljs bash" lang="bash">@override
+Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> Scaffold(
+        body: Center(
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+            items: [
+                BottomNavigationBarItem(icon: Icon(Icons.school), title: Text(<span class="hljs-string">'热映'</span>)),
+                BottomNavigationBarItem(icon: Icon(Icons.panorama_fish_eye), title: Text(<span class="hljs-string">'找片'</span>)),
+                BottomNavigationBarItem(icon: Icon(Icons.people), title: Text(<span class="hljs-string">'我的'</span>))
+            ],//BottomNavigationBarItem 的 icon 用的是 Icon Widget实现的，这里是随便找的图标，先实现功能，后续在改成和 豆瓣电影 的一样
+            currentIndex: 0,//默认选中的 index
+            fixedColor: Colors.black, //选中时颜色变为黑色
+            <span class="hljs-built_in">type</span>: BottomNavigationBarType.fixed,//类型为 fixed
+            onTap: _onItemTapped,
+        ),
+    );
+}
+    
+void _onItemTapped(int index) {
+}
+</code></pre><p>写到这里，底部导航栏就已经实现了，但是显示的页面还没有实现。</p>
+<h4 class="heading" data-id="heading-8">实现内容页面</h4>
+<p>这里要实现内容页面，包括：热映、找片、我的，这里先用 Text 简单实现一下，并用 _widgetItems 的数组保存，接下来就要让 _widgetItems 和 当前选中的选项建立联系，这时候就需要用到 _onItemTapped 事件。</p>
+<p>用 _selectedIndex 表示当前选中的是哪个选项，显示的页面就是 _widgetItems[_selectedIndex]，_selectedIndex 默认为 0，当选中的选项卡变化时，会触发 _onItemTapped 事件，然后刷新页面，实现的代码如下：</p>
+<pre><code class="hljs bash" lang="bash">int _selectedIndex = 0;
+
+final _widgetItems = [Text(<span class="hljs-string">'热映'</span>), Text(<span class="hljs-string">'找片'</span>), Text(<span class="hljs-string">'我的'</span>)];
+    
+@override
+Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> Scaffold(
+        body: Center(
+            child: _widgetItems[_selectedIndex],//选中不同的选项显示不同的界面
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+            items: [
+                BottomNavigationBarItem(icon: Icon(Icons.school), title: Text(<span class="hljs-string">'热映'</span>)),
+                BottomNavigationBarItem(icon: Icon(Icons.panorama_fish_eye), title: Text(<span class="hljs-string">'找片'</span>)),
+                BottomNavigationBarItem(icon: Icon(Icons.people), title: Text(<span class="hljs-string">'我的'</span>))
+            ],//BottomNavigationBarItem 的 icon 用的是 Icon Widget实现的，这里是随便找的图标，先实现功能，后续在改成和 豆瓣电影 的一样
+            currentIndex: _selectedIndex,//默认选中的 index
+            fixedColor: Colors.black, //选中时颜色变为黑色
+            <span class="hljs-built_in">type</span>: BottomNavigationBarType.fixed,//类型为 fixed
+            onTap: _onItemTapped,
+        ),
+    );
+}
+    
+void _onItemTapped(int index) {
+    <span class="hljs-built_in">set</span>State(() {
+      _selectedIndex = index;//刷新界面
+    });
+}
+</code></pre><p>运行后的效果为：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a0298ec3b8c43c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="413" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;413&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-9">将内容页面提取出来在单独的类里实现</h4>
+<p>前面的内容页面都是用 Text 实现，而且存储在 main.dart 里，当内容页面的内容变得越来越复杂，势必会造成 main.dart 里的代码越来越多，不好管理，所以现在要把内容页面单独提取出一个文件来实现。</p>
+<ol>
+<li>
+<p>热映页面</p>
+<p>在 lib 目录下，右击，选择 <code>New File</code>,输入 <code>HotWidget.dart</code>，新建一个文件 HotWidget.dart，在这个文件里实现类 HotWidget</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+class HotWidget extends StatefulWidget {
+  @override
+  State&lt;StatefulWidget&gt; <span class="hljs-function"><span class="hljs-title">createState</span></span>() {
+    // TODO: implement createState
+    <span class="hljs-built_in">return</span> HotWidgetState();
+  }
+}
+
+class HotWidgetState extends State&lt;HotWidget&gt; {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> Center(
+      child: Text(<span class="hljs-string">'热映'</span>),
+    );
+  }
+}
+</code></pre></li>
+<li>
+<p>找片页面</p>
+<p>在 lib 目录下，新建一个文件 MoviesWidget.dart，在这个文件里实现类 MoviesWidget:</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+class MoviesWidget extends StatefulWidget {
+  @override
+  State&lt;StatefulWidget&gt; <span class="hljs-function"><span class="hljs-title">createState</span></span>() {
+    // TODO: implement createState
+    <span class="hljs-built_in">return</span> MoviesWidgetState();
+  }
+}
+
+class MoviesWidgetState extends State&lt;MoviesWidget&gt; {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> Center(
+      child: Text(<span class="hljs-string">'找片'</span>),
+    );
+  }
+}
+</code></pre></li>
+<li>
+<p>我的页面</p>
+<p>在 lib 目录下，新建一个文件 MineWidget.dart，在这个文件里实现类 MineWidget:</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+class MineWidget extends StatefulWidget {
+  @override
+  State&lt;StatefulWidget&gt; <span class="hljs-function"><span class="hljs-title">createState</span></span>() {
+    // TODO: implement createState
+    <span class="hljs-built_in">return</span> MineWidgetState();
+  }
+}
+
+class MineWidgetState extends State&lt;MineWidget&gt; {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> Center(
+      child: Text(<span class="hljs-string">'我的'</span>),
+    );
+  }
+}
+</code></pre></li>
+<li>
+<p>改造 main.dart
+将页面独立分开之后，还需要改造 main.dart，首先将 _widgetItems 改造为：</p>
+<pre><code class="hljs bash" lang="bash">final _widgetItems = [HotWidget(), MoviesWidget(), MineWidget()];
+</code></pre><p>同时 Scaffold 的 body 改为：</p>
+<pre><code class="hljs bash" lang="bash">body: _widgetItems[_selectedIndex], //选中不同的选项显示不同的界面,
+</code></pre></li>
+</ol>
+<h2 class="heading" data-id="heading-10">实现热映页面</h2>
+<p>因为热映页面现在是用 Text 来代替，所以现在开始实现热映页面。</p>
+<h4 class="heading" data-id="heading-11">热映页面分析</h4>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/10/16a0520b629d326a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="500" data-height="836" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;500&quot; height=&quot;836&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>可以看到热映页面在垂直方向上有两个部分：</p>
+<ol>
+<li>搜索栏</li>
+<li>TabBar 与 TabBarView</li>
+</ol>
+<p>所以，这里可以用 Column 来实现。</p>
+<p>在看搜索栏：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/10/16a052d0f6a788db?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="1024" data-height="122" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;1024&quot; height=&quot;122&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>在水平方向上有三个部分，所以可以用 Row 来实现</p>
+<p>在 TabBar 里的数据流内容可以用 ListView 来实现。</p>
+<h4 class="heading" data-id="heading-12">搜索栏实现</h4>
+<p>搜索栏在水平方向上的3个部分，可以用 Text、Icon、TextField 这3个 Widget 来实现，你可能会这么写：</p>
+<pre><code class="hljs bash" lang="bash">Row(
+    children: &lt;Widget&gt;[
+      Text(
+        <span class="hljs-string">'深圳'</span>,
+        style: TextStyle(fontSize: 16),
+      ),
+      Icon(Icons.arrow_drop_down),
+      TextField()
+    ],
+ )
+</code></pre><p>但是这样写会报错：</p>
+<pre><code class="hljs bash" lang="bash">flutter: ══╡ EXCEPTION CAUGHT BY RENDERING LIBRARY ╞═════════════════════════════════════════════════════════
+flutter: The following assertion was thrown during performLayout():
+flutter: BoxConstraints forces an infinite width.
+flutter: These invalid constraints were provided to RenderRepaintBoundary<span class="hljs-string">'s layout() function by the
+flutter: following function, which probably computed the invalid constraints in question:
+flutter:   _RenderDecoration._layout.layoutLineBox (package:flutter/src/material/input_decorator.dart:819:11)
+flutter: The offending constraints were:
+flutter:   BoxConstraints(w=Infinity, 0.0&lt;=h&lt;=80.0)
+</span></code></pre><p>因为 Row 要求它的 非flexible的子Widget 必须要有明确的宽度，为了给 flexible的子Widget 分配大小，但是 TextField 没有明确的大小，TextField 是 match_parent 的，所以这里需要用 Expanded 来嵌套 TextField，使用方式如下：</p>
+<pre><code class="hljs bash" lang="bash">Row(
+    children: &lt;Widget&gt;[
+      Text(
+        <span class="hljs-string">'深圳'</span>,
+        style: TextStyle(fontSize: 16),
+      ),
+      Icon(Icons.arrow_drop_down),
+      Expanded(
+        flex: 1,
+        child: TextField(),
+      )
+    ],
+)
+</code></pre><p>运行后的效果为：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/12/16a0faede55d1c5d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="824" data-height="106" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;824&quot; height=&quot;106&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>可以看到 TextField 的样式不符合要求，所以还要在设置 TextField 的样式，使用 InputDecoration 来设置 TextField 的样式：</p>
+<pre><code class="hljs bash" lang="bash">TextField(
+  textAlign: TextAlign.center,
+  style: TextStyle(fontSize: 16),
+  decoration: InputDecoration(
+      hintText: <span class="hljs-string">'\uE8b6 电影 / 电视剧 / 影人'</span>,
+      hintStyle: TextStyle(fontFamily: <span class="hljs-string">'MaterialIcons'</span>, fontSize: 16),
+      contentPadding: EdgeInsets.only(top: 8, bottom: 8),
+      border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+              ),
+      filled: <span class="hljs-literal">true</span>,
+      fillColor: Colors.black12
+    ),
+)
+</code></pre><p>最后搜索栏就是这样子：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/12/16a0fb87f14ec29a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="824" data-height="112" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;824&quot; height=&quot;112&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>因为 hintText 是 String 类型，为了显示搜索的 icon ，使用了 Unicode 字符，并且设置 MaterialIcons 的字体库，就可以用 Unicode 来表示 icon。要查看特定 icon 的 Unicode 字符，可以在 Icons 里找到，然后看它的值就能找到它的 Unicode 字符，例如这个搜索 icon，它是 Icons.search ，值为：</p>
+<pre><code class="hljs bash" lang="bash">static const IconData search = IconData(0xe8b6, fontFamily: <span class="hljs-string">'MaterialIcons'</span>);
+</code></pre><p>所以搜索的 Unicode 字符为: <code>e8b6</code>，在字符串里用 <code>\uE8B6</code> 表示。</p>
+<h4 class="heading" data-id="heading-13">TabBar 与 TabBarView 的实现</h4>
+<p>TabBar 与 TabBarView 用 DefaultTabController 来实现，DefaultTabController 的 children 里面包含了 TabBar 和 TabBarView，同时 DefaultTabController 为了占用剩下的空间，也需要用 Expanded 来嵌套，最后完整的代码如下：</p>
+<pre><code class="hljs bash" lang="bash">class HotWidgetState extends State&lt;HotWidget&gt; {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: &lt;Widget&gt;[
+        Container(
+          height: 80,
+          alignment: Alignment.bottomCenter,
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: Row(
+            children: &lt;Widget&gt;[
+              Text(
+                <span class="hljs-string">'深圳'</span>,
+                style: TextStyle(fontSize: 16),
+              ),
+              Icon(Icons.search),
+              Expanded(
+                flex: 1,
+                child: TextField(
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16),
+                  decoration: InputDecoration(
+                      hintText: <span class="hljs-string">'\uE8b6 电影 / 电视剧 / 影人'</span>,
+                      hintStyle:
+                          TextStyle(fontFamily: <span class="hljs-string">'MaterialIcons'</span>, fontSize: 16),
+                      contentPadding: EdgeInsets.only(top: 8, bottom: 8),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                      ),
+                      filled: <span class="hljs-literal">true</span>,
+                      fillColor: Colors.black12),
+                ),
+              )
+            ],
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: DefaultTabController(
+              length: 2,
+              child: Column(
+                children: &lt;Widget&gt;[
+                  Container(
+                    constraints: BoxConstraints.expand(height: 50),
+                    child: TabBar(
+                        unselectedLabelColor: Colors.black12,
+                        labelColor: Colors.black87,
+                        indicatorColor: Colors.black87,
+                        tabs: &lt;Widget&gt;[Tab(text: <span class="hljs-string">'正在热映'</span>), Tab(text: <span class="hljs-string">'即将上映'</span>)]),
+                  ),
+                  Expanded(
+                    child: Container(
+                      child: TabBarView(
+                        children: &lt;Widget&gt;[
+                          Center(
+                            child: Text(<span class="hljs-string">'正在热映'</span>),
+                          ),
+                          Center(
+                            child: Text(<span class="hljs-string">'即将上映'</span>),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )),
+        )
+      ],
+    );
+  }
+}
+</code></pre><p>运行的效果为：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/12/16a109526a0d2cf1?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="413" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;413&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-14">实现找片页面</h2>
+<h4 class="heading" data-id="heading-15">找片页面分析</h4>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/12/16a10968a31fb413?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="444" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;444&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>找片页面在垂直方向上也是有两个部分：</p>
+<ol>
+<li>搜索栏</li>
+<li>TabBar 与 TabBarView</li>
+</ol>
+<p>找片页面按照热映页面来实现就好了。</p>
+<h4 class="heading" data-id="heading-16">页面实现</h4>
+<p>在 MoviesWidget.dart 里修改：</p>
+<pre><code class="hljs bash" lang="bash">class MoviesWidgetState extends State&lt;MoviesWidget&gt; {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    <span class="hljs-built_in">return</span> Column(
+      children: &lt;Widget&gt;[
+        Container(
+          height: 80,
+          alignment: Alignment.bottomCenter,
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: TextField(
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 16),
+            decoration: InputDecoration(
+                hintText: <span class="hljs-string">'\uE8b6 电影 / 电视剧 / 影人'</span>,
+                hintStyle: TextStyle(fontFamily: <span class="hljs-string">'MaterialIcons'</span>, fontSize: 16),
+                contentPadding: EdgeInsets.only(top: 8, bottom: 8),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                ),
+                filled: <span class="hljs-literal">true</span>,
+                fillColor: Colors.black12),
+          ),
+        ),
+        Expanded(
+          flex: 1,
+          child: DefaultTabController(
+              length: 2,
+              child: Column(
+                children: &lt;Widget&gt;[
+                  Container(
+                    constraints: BoxConstraints.expand(height: 50),
+                    child: TabBar(
+                        unselectedLabelColor: Colors.black12,
+                        labelColor: Colors.black87,
+                        indicatorColor: Colors.black87,
+                        tabs: &lt;Widget&gt;[Tab(text: <span class="hljs-string">'电影'</span>), Tab(text: <span class="hljs-string">'电视'</span>)]),
+                  ),
+                  Expanded(
+                    child: Container(
+                      child: TabBarView(
+                        children: &lt;Widget&gt;[
+                          Center(
+                            child: Text(<span class="hljs-string">'电影'</span>),
+                          ),
+                          Center(
+                            child: Text(<span class="hljs-string">'电视'</span>),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )),
+        )
+      ],
+    );
+  }
+}
+</code></pre><p>运行后的效果为：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/12/16a109ce1df1329d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="413" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;413&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

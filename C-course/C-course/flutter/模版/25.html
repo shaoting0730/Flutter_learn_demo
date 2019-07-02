@@ -1,0 +1,491 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 布局 Widget —— 弹性布局</h1>
+<p>Flutter 中的弹性布局是 <a target="_blank" href="https://link.juejin.im?target=https%3A%2F%2Fdocs.flutter.io%2Fflutter%2Fwidgets%2FFlex-class.html" rel="nofollow noopener noreferrer">Flex</a>。Flex 类似于 CSS 的 Flexbox。</p>
+<p>Flex 有主轴和交叉轴，Flex 里的 子Widget 默认沿主轴排列，并且 Flex 和 Expanded 配合使用可以实现 子widge 按照一定比例来分配父容器空间。所以 Flex 叫做弹性布局。</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/3/31/169d172a70fb12c0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="521" data-height="706" src="https://user-gold-cdn.xitu.io/2019/3/31/169d172a70fb12c0?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<h1 class="heading" data-id="heading-1">Flex</h1>
+<h2 class="heading" data-id="heading-2">代码所在位置</h2>
+<p>flutter_widget_demo/lib/flex/FlexWidget.dart</p>
+<h2 class="heading" data-id="heading-3">Flex 的快速上手</h2>
+<p>Flex 有一个必填参数：direction，用于确定主轴的方向，然后就可以在 children 里写 子Widget。</p>
+<p>Flex 使用的代码为：</p>
+<pre><code class="hljs bash" lang="bash">Flex(
+    direction: Axis.horizontal,
+    children: &lt;Widget&gt;[
+      ...
+    ],
+)
+</code></pre><h2 class="heading" data-id="heading-4">Flex 的构造函数及参数说明</h2>
+<p>Flex 的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">class Flex extends MultiChildRenderObjectWidget {
+  Flex({
+    Key key,
+    @required this.direction,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisSize = MainAxisSize.max,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.textDirection,
+    this.verticalDirection = VerticalDirection.down,
+    this.textBaseline,
+    List&lt;Widget&gt; children = const &lt;Widget&gt;[],
+  }) : assert(direction != null),
+       assert(mainAxisAlignment != null),
+       assert(mainAxisSize != null),
+       assert(crossAxisAlignment != null),
+       assert(verticalDirection != null),
+       assert(crossAxisAlignment != CrossAxisAlignment.baseline || textBaseline != null),
+       super(key: key, children: children);
+    ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>Axis</td>
+<td>主轴的方向</td>
+<td>必选</td>
+</tr>
+<tr>
+<td>mainAxisAlignment</td>
+<td>MainAxisAlignment</td>
+<td>表示 子Widget 在主轴的对齐方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>mainAxisSize</td>
+<td>MainAxisSize</td>
+<td>表示主轴应该占用多大的空间</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>crossAxisAlignment</td>
+<td>CrossAxisAlignment</td>
+<td>表示 子Widget 在交叉轴的对齐方式</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textDirection</td>
+<td>TextDirection</td>
+<td>表示 子Widget 在主轴方向上的布局顺序</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>verticalDirection</td>
+<td>VerticalDirection</td>
+<td>表示 子Widget 在交叉轴方向上的布局顺序</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>textBaseline</td>
+<td>TextBaseline</td>
+<td>排列 子Widget 时使用哪个基线</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>children</td>
+<td>List&lt; Widget&gt;</td>
+<td>Flex布局 里排列的内容</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<h4 class="heading" data-id="heading-5">direction : 主轴的方向</h4>
+<p>direction 的类型是 Axis：</p>
+<table>
+<thead>
+<tr>
+<th>Axis 的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Axis.horizontal</td>
+<td>主轴方向为水平方向，那么 子Widget 就会沿水平方向排列，交叉轴就是垂直方向。</td>
+</tr>
+<tr>
+<td>Axis.vertical</td>
+<td>主轴方向为垂直方向，那么 子Widget 就会沿垂直方向排列，交叉轴就是水平方向。</td>
+</tr>
+</tbody>
+</table>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/3/30/169cde68c2cc5843?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="843" data-height="683" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;843&quot; height=&quot;683&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-6">mainAxisAlignment ：子Widget 在主轴的对齐方式</h4>
+<p>mainAxisAlignment 的类型是 MainAxisAlignment：</p>
+<table>
+<thead>
+<tr>
+<th>MainAxisAlignment 的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MainAxisAlignment.start</td>
+<td>沿着主轴的起点对齐<br>textDirection 必须有值，以确定是从左边开始的还是从右边开始的</td>
+</tr>
+<tr>
+<td>MainAxisAlignment.end</td>
+<td>沿着主轴的终点对齐<br>textDirection 必须有值，以确定是在左边结束的还是在右边结束的</td>
+</tr>
+<tr>
+<td>MainAxisAlignment.center</td>
+<td>在主轴上居中对齐</td>
+</tr>
+<tr>
+<td>MainAxisAlignment.spaceBetween</td>
+<td>在主轴上，两端对齐，项目之间的间隔都相等。</td>
+</tr>
+<tr>
+<td>MainAxisAlignment.spaceAround</td>
+<td>在主轴上，将多余的控件均匀分布给 子Widget 之间，而且第一个 子Widget 和 最后一个子Widget 距边框的距离是 两个 子Widget 距离的一半</td>
+</tr>
+<tr>
+<td>MainAxisAlignment.spaceEvenly</td>
+<td>在主轴上，将多余的控件均匀分布给 子Widget 之间，而且第一个 子Widget 和 最后一个子Widget 距边框的距离和 子Widget 之间的距离一样</td>
+</tr>
+</tbody>
+</table>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a001d0d922566e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="866" data-height="1098" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;866&quot; height=&quot;1098&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-7">mainAxisSize : 表示主轴应该占用多大的空间</h4>
+<table>
+<thead>
+<tr>
+<th>MainAxisSize 的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MainAxisSize.min</td>
+<td>主轴的大小是能显示完 子Widget 的最小大小，主轴的大小就是 子Widget 的大小</td>
+</tr>
+<tr>
+<td>MainAxisSize.max</td>
+<td>主轴能显示的最大的大小，根据约束来判断</td>
+</tr>
+</tbody>
+</table>
+<p>紫色代表主轴占用的空间：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a00183506751fd?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="860" data-height="594" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;860&quot; height=&quot;594&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-8">crossAxisAlignment ：表示 子Widget 在交叉轴的对齐方式</h4>
+<p>crossAxisAlignment 的类型是 CrossAxisAlignment：</p>
+<table>
+<thead>
+<tr>
+<th>CrossAxisAlignment 的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CrossAxisAlignment.start</td>
+<td>沿着交叉轴的起点对齐<br>verticalDirection 必须有值，以确定是从左边开始的还是从右边开始的</td>
+</tr>
+<tr>
+<td>CrossAxisAlignment.end</td>
+<td>沿着主轴的终点对齐<br>verticalDirection 必须有值，以确定是在左边结束的还是在右边结束的</td>
+</tr>
+<tr>
+<td>CrossAxisAlignment.center</td>
+<td>在交叉轴上居中对齐</td>
+</tr>
+<tr>
+<td>CrossAxisAlignment.stretch</td>
+<td>要求 子Widget 在交叉轴上填满</td>
+</tr>
+<tr>
+<td>CrossAxisAlignment.baseline</td>
+<td>要求 子Widget 的基线在交叉轴上对齐</td>
+</tr>
+</tbody>
+</table>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a001e173775b64?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="428" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;428&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-9">textDirection ：表示 子Widget 在主轴方向上的布局顺序</h4>
+<p>textDirection 的类型是 TextDirection：</p>
+<table>
+<thead>
+<tr>
+<th>TextDirection 的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TextDirection.rtl</td>
+<td>表示从右到左</td>
+</tr>
+<tr>
+<td>TextDirection.ltr</td>
+<td>表示从左到右</td>
+</tr>
+</tbody>
+</table>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a00192951bfaeb?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="870" data-height="620" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;870&quot; height=&quot;620&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h4 class="heading" data-id="heading-10">verticalDirection ：表示 子Widget 在交叉轴方向上的布局顺序</h4>
+<p>verticalDirection 的类型是 VerticalDirection：</p>
+<table>
+<thead>
+<tr>
+<th>VerticalDirection 的值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VerticalDirection.up</td>
+<td>表示从下到上</td>
+</tr>
+<tr>
+<td>VerticalDirection.down</td>
+<td>表示从上到下</td>
+</tr>
+</tbody>
+</table>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a001a2fed97946?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="856" data-height="746" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;856&quot; height=&quot;746&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<h2 class="heading" data-id="heading-11">Flexible 与 Expanded</h2>
+<p>如果当 Flex 里的内容过长，超过主轴的大小，例如如下的代码：</p>
+<pre><code class="hljs bash" lang="bash">Flex(
+    direction: Axis.horizontal,
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: &lt;Widget&gt;[
+      Text(<span class="hljs-string">'Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!'</span>)
+    ],
+)
+</code></pre><p>Flex 的主轴是水平方向，而Text 里的内容太多，超过了屏幕的宽度，就会抛出 layout 错误：</p>
+<pre><code class="hljs bash" lang="bash">A RenderFlex overflowed by 267 pixels on the right.
+</code></pre><p>界面上也会看到黑黄的条：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/5/14/16ab3d210f9fd6a6?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="862" data-height="166" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;862&quot; height=&quot;166&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>为了避免 子Widget 在 Row、Column、Flex 中超界，就可以使用 Flexible 与 Expanded。Flexible 与 Expanded 可以让 Row、Column、Flex 的 子Widget 具有弹性能力。</p>
+<p>比如上面的例子用 Flexible 或 Expended 来改写：</p>
+<pre><code class="hljs bash" lang="bash">  Flexible(
+    child: Text(
+        <span class="hljs-string">'Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!'</span>),
+  )
+</code></pre><p>或</p>
+<pre><code class="hljs bash" lang="bash">  Expended(
+    child: Text(
+        <span class="hljs-string">'Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!Hello Flutter!'</span>),
+  )
+</code></pre><p>运行的效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/5/14/16ab4a507477269b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="856" data-height="320" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;856&quot; height=&quot;320&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>用 Flexible 与 Expanded 来包 子Widget，当 子Widget 要超过主轴的大小时，会自动换行，但是 Flexible 与 Expanded 也有不同的地方，Expanded 是 Flexible 的子类。</p>
+<p>Flexible 的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">class Flexible extends ParentDataWidget&lt;Flex&gt; {
+  const Flexible({
+    Key key,
+    this.flex = 1,
+    this.fit = FlexFit.loose,
+    @required Widget child,
+  }) : super(key: key, child: child);
+  ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>int</td>
+<td>此 Widget 的弹性因子</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>fit</td>
+<td>FlexFit</td>
+<td>如何分配 弹性Widget 在可用空间里的大小</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>child</td>
+<td>Widget</td>
+<td>要显示的 Widget</td>
+<td>必选</td>
+</tr>
+</tbody>
+</table>
+<p>Expanded 的构造函数为：</p>
+<pre><code class="hljs bash" lang="bash">class Expanded extends Flexible {
+  /// Creates a widget that expands a child of a [Row], [Column], or [Flex]
+  /// expand to fill the available space <span class="hljs-keyword">in</span> the main axis.
+  const Expanded({
+    Key key,
+    int flex = 1,
+    @required Widget child,
+  }) : super(key: key, flex: flex, fit: FlexFit.tight, child: child);
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>int</td>
+<td>此 Widget 的弹性因子</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>child</td>
+<td>Widget</td>
+<td>要显示的 Widget</td>
+<td>必选</td>
+</tr>
+</tbody>
+</table>
+<p>可以明显看到，Flexible 和 Expanded 的 fit 参数不同，Flexible 的 fit 是 FlexFit.loose，Expanded 的 fit 参数是 FlexFit.tight。所以，当还有剩余空间时，Expanded 会占满剩余的所有空间，而 Flexible 只会占用自身大小的空间。</p>
+<p>这里举一个例子，当 Text 的内容不够长时：</p>
+<pre><code class="hljs bash" lang="bash">  Flexible(
+    child: Container(
+      color: Colors.yellow,
+      child: Text(<span class="hljs-string">'使用 Flexible 来包裹 子Widget'</span>),
+    ),
+  ),
+</code></pre><pre><code class="hljs bash" lang="bash">  Expanded(
+    child: Container(
+      color: Colors.yellow,
+      child: Text(<span class="hljs-string">'使用 Expanded 来包裹 子Widget'</span>),
+    ),
+  ),
+</code></pre><p>效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/5/14/16ab4b04fb7adf76?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="860" data-height="396" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;860&quot; height=&quot;396&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>Flexible 会占用自身大小，而 Expanded 会占满全屏幕。</p>
+<h3 class="heading" data-id="heading-12">总结</h3>
+<p>Flexible 与 Expanded 可以让 Row、Column、Flex 的 子Widget 具有弹性能力，当 子Widget 要超过主轴的大小时，会自动换行，当还有剩余空间时，Expanded 会占满剩余的所有空间，而 Flexible 只会占用自身大小的空间。</p>
+<h3 class="heading" data-id="heading-13">Fexible 和 Expanded 的 flex 弹性系数</h3>
+<p>Fexible 和 Expanded 还有一个很重要的参数：<code>flex</code>，flex 为弹性系数，其布局过程如下：</p>
+<ol>
+<li>如果 flex 为0或null，则 child 是没有弹性的，称为 非弹性子Widget，非弹性子Widget 的大小就是其本身的大小，不会被扩展去占用多余的空间。</li>
+<li>如果 flex 大于0，child 是有弹性的，称为 弹性子Widget，首先会计算出第一步所有 flex为0或null 的 子Widget 的大小，然后会会按照 弹性子Widget的flex 占 所有弹性子Widget的flex 总和 的比例来分割主轴的空闲空间。</li>
+</ol>
+<h4 class="heading" data-id="heading-14">Flexible 的 flex 的使用</h4>
+<p>Flexible 的 flex 的使用方式就是使用 Flexible 嵌套这些 Widget，然后设置 flex 的值：</p>
+<pre><code class="hljs bash" lang="bash">Flexible(
+    flex: 1,
+    child: ...
+)
+</code></pre><p>Demo 如下：</p>
+<pre><code class="hljs bash" lang="bash">Flex(
+    direction: Axis.horizontal,
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: &lt;Widget&gt;[
+      Flexible(
+        flex: 1,
+        child: Container(
+          height: 30.0,
+          width: 30.0,
+          color: Colors.yellow,
+        ),
+      ),
+      Flexible(
+        flex: 2,
+        child: Container(
+          height: 30.0,
+          width: 30.0,
+          color: Colors.green,
+        ),
+      ),
+      Flexible(
+        flex: 1,
+        child: Container(
+          height: 30.0,
+          width: 30.0,
+          color: Colors.blue,
+        ),
+      ),
+    ],
+  ),
+</code></pre><p>使用 Flexible 包裹三个宽高都为 30 的色块，并设置 flex 为 1、2、1，效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/5/14/16ab4c0388e777c8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="852" data-height="150" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;852&quot; height=&quot;150&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>因为 子Widget 的宽度是固定的，所以 Flexible 只会占用本身的大小。</p>
+<h4 class="heading" data-id="heading-15">Expanded 的 flex 使用</h4>
+<p>Expanded 的 flex 的使用方式就是使用 Expanded 嵌套这些 Widget，然后设置 flex 的值：</p>
+<pre><code class="hljs bash" lang="bash">Expanded(
+    flex: 1,
+    child: ...
+)
+</code></pre><p>Demo 代码如下：</p>
+<pre><code class="hljs bash" lang="bash">Flex(
+    direction: Axis.horizontal,
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: &lt;Widget&gt;[
+      Expanded(
+        flex: 1,
+        child: Container(
+          height: 30.0,
+          width: 30.0,
+          color: Colors.yellow,
+        ),
+      ),
+      Expanded(
+        flex: 2,
+        child: Container(
+          height: 30.0,
+          width: 30.0,
+          color: Colors.green,
+        ),
+      ),
+      Expanded(
+        flex: 1,
+        child: Container(
+          height: 30.0,
+          width: 30.0,
+          color: Colors.blue,
+        ),
+      ),
+    ],
+  ),
+</code></pre><p>使用 Expanded 包裹三个宽高都为 30 的色块，并设置 flex 为 1、2、1，效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/5/14/16ab4c396f5d1292?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="862" data-height="194" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;862&quot; height=&quot;194&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>虽然三个色块的宽度是固定的，但是 Expanded 还是按照比例瓜分了剩余的全部空间。</p>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

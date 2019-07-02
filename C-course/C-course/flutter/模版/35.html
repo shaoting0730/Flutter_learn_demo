@@ -1,0 +1,248 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+                    
+<div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 可滚动 Widget —— PageView</h1>
+<p>PageView 是可以一页一页滑动的 可滚动Widet。其 子Widget 会占据当前屏幕的所有可见区域。</p>
+<h2 class="heading" data-id="heading-1">PageView 的使用</h2>
+<p>PageView 的使用有三种方式：</p>
+<ol>
+<li>使用默认的构造函数</li>
+<li>使用 PageView.builder</li>
+<li>使用 PageView.custom</li>
+</ol>
+<h3 class="heading" data-id="heading-2">1.使用默认的构造函数，给 children 属性赋值</h3>
+<h4 class="heading" data-id="heading-3">代码所在位置</h4>
+<p>flutter_widget_demo/lib/pageview/PageViewDefaultWidget.dart</p>
+<h4 class="heading" data-id="heading-4">使用方法</h4>
+<p>使用默认构造函数写 PageView，只适用于那些只有少量 子Widget 的 PageView。</p>
+<p>demo 如下：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(PageViewDefaultWidget());
+
+class PageViewDefaultWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">'Test'</span>,
+      home: Scaffold(
+          appBar:
+              AppBar(title: new Text(<span class="hljs-string">'Flutter 可滚动Widget -- PageView'</span>)),
+          body: PageView(
+            onPageChanged: (index){
+              <span class="hljs-built_in">print</span>(<span class="hljs-string">'current page $index '</span>);
+            },
+            children: &lt;Widget&gt;[
+              ListTile(title: Text(<span class="hljs-string">'Title0'</span>)),
+              ListTile(title: Text(<span class="hljs-string">'Title1'</span>)),
+              ListTile(title: Text(<span class="hljs-string">'Title2'</span>)),
+              ListTile(title: Text(<span class="hljs-string">'Title3'</span>)),
+              ListTile(title: Text(<span class="hljs-string">'Title4'</span>)),
+            ],
+          )),
+    );
+  }
+}
+</code></pre><p>运行效果为：</p>
+<p></p><figure><img class="lazyload inited loaded" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a0037ffaedb283?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="428" data-height="768" src="https://user-gold-cdn.xitu.io/2019/4/9/16a0037ffaedb283?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><figcaption></figcaption></figure><p></p>
+<p>可以左右滑动切换页面。</p>
+<h3 class="heading" data-id="heading-5">2.使用 PageView.builder,可用于和数据绑定实现大量或无限的列表</h3>
+<h4 class="heading" data-id="heading-6">代码所在位置</h4>
+<p>flutter_widget_demo/lib/pageview/PageViewBuilderWidget.dart</p>
+<h4 class="heading" data-id="heading-7">使用方法</h4>
+<p>PageView.builder 可以和数据绑定，用于构建大量或无限的列表。而且只会构建那些实际可见的 子Widget。</p>
+<p>PageView.builder 的定义如下：</p>
+<pre><code class="hljs bash" lang="bash">  PageView.builder({
+    Key key,
+    this.scrollDirection = Axis.horizontal,
+    this.reverse = <span class="hljs-literal">false</span>,
+    PageController controller,
+    this.physics,
+    this.pageSnapping = <span class="hljs-literal">true</span>,
+    this.onPageChanged,
+    @required IndexedWidgetBuilder itemBuilder,
+    int itemCount,
+    this.dragStartBehavior = DragStartBehavior.down,
+  })
+</code></pre><p>多了和 ListView.builder 类似的 itemCount 和 itemBuilder 属性，用法也是一样的:</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(PageViewBuilderWidget(
+      items: List&lt;String&gt;.generate(10000, (i) =&gt; <span class="hljs-string">"Item <span class="hljs-variable">$i</span>"</span>),
+    ));
+
+class PageViewBuilderWidget extends StatelessWidget {
+  final List&lt;String&gt; items;
+
+  PageViewBuilderWidget({Key key, @required this.items}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">'Test'</span>,
+      home: Scaffold(
+        appBar: AppBar(title: new Text(<span class="hljs-string">'Flutter 可滚动Widget -- PageView'</span>)),
+        body: PageView.builder(
+          onPageChanged: (index) {
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">'current page $index '</span>);
+          },
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            <span class="hljs-built_in">return</span> ListTile(
+              title: Text(<span class="hljs-string">'${items[index]}'</span>),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+</code></pre><p>运行效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a003838d8f050a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="428" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;428&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>可以左右滑动切换页面。</p>
+<h3 class="heading" data-id="heading-8">3.使用 PageView.custom</h3>
+<h4 class="heading" data-id="heading-9">代码所在位置</h4>
+<p>flutter_widget_demo/lib/pageview/PageViewCustomWidget.dart</p>
+<h4 class="heading" data-id="heading-10">使用方法</h4>
+<p>PageView.custom 的定义如下：</p>
+<pre><code class="hljs bash" lang="bash">  PageView.custom({
+    Key key,
+    this.scrollDirection = Axis.horizontal,
+    this.reverse = <span class="hljs-literal">false</span>,
+    PageController controller,
+    this.physics,
+    this.pageSnapping = <span class="hljs-literal">true</span>,
+    this.onPageChanged,
+    @required this.childrenDelegate,
+    this.dragStartBehavior = DragStartBehavior.down,
+  })
+</code></pre><p>增加了 childrenDelegate 的属性，类型为 SliverChildDelegate，具有定制 子Widget 的能力，和 ListView.custom 里的一样，所以用法也一样:</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(PageViewCustomWidget());
+
+class PageViewCustomWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">'Test'</span>,
+      home: Scaffold(
+          appBar: AppBar(title: new Text(<span class="hljs-string">'Flutter 可滚动Widget -- PageView'</span>)),
+          body: PageView.custom(
+            onPageChanged: (index) {
+              <span class="hljs-built_in">print</span>(<span class="hljs-string">'current page $index '</span>);
+            },
+            childrenDelegate: SliverChildListDelegate(&lt;Widget&gt;[
+              ListTile(title: Text(<span class="hljs-string">'Title0'</span>)),
+              ListTile(title: Text(<span class="hljs-string">'Title1'</span>)),
+              ListTile(title: Text(<span class="hljs-string">'Title2'</span>)),
+              ListTile(title: Text(<span class="hljs-string">'Title3'</span>)),
+              ListTile(title: Text(<span class="hljs-string">'Title4'</span>)),
+            ]),
+          )),
+    );
+  }
+}
+</code></pre><p>运行效果如下：</p>
+<p></p><figure><img class="lazyload inited" data-src="https://user-gold-cdn.xitu.io/2019/4/9/16a0037ffaedb283?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" data-width="428" data-height="768" src="data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; width=&quot;428&quot; height=&quot;768&quot;></svg>"><figcaption></figcaption></figure><p></p>
+<p>可以左右滑动切换页面。</p>
+<h2 class="heading" data-id="heading-11">PageView 的的构造函数及参数说明</h2>
+<p>先看 PageView 的构造函数：</p>
+<pre><code class="hljs bash" lang="bash">class PageView extends StatefulWidget {
+  PageView({
+    Key key,
+    this.scrollDirection = Axis.horizontal,
+    this.reverse = <span class="hljs-literal">false</span>,
+    PageController controller,
+    this.physics,
+    this.pageSnapping = <span class="hljs-literal">true</span>,
+    this.onPageChanged,
+    List&lt;Widget&gt; children = const &lt;Widget&gt;[],
+    this.dragStartBehavior = DragStartBehavior.down,
+  }) : 
+    ...
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>scrollDirection</td>
+<td>Axis</td>
+<td>滑动的方向<br>默认为 Axis.vertical，垂直方向可滑动</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>bool</td>
+<td>控制 PageView 里列表项的排列顺序，是按照插入顺序排，还是按照插入顺序相反的方向排序。<br>默认为 false，就是按照插入顺序排序，第一个插入的在头部<br>，当 reverse 为 true 时，第一个插入的会在底部</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>controller</td>
+<td>PageController</td>
+<td>PageController 可以控制滑动到哪一页，还有其他功能</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>physics</td>
+<td>ScrollPhysics</td>
+<td>设置 PageView 的滚动效果<br>应该使用 PageScrollPhysics</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>pageSnapping</td>
+<td>bool</td>
+<td>默认值为 false<br>设置为false以禁用页面捕捉，对自定义滚动行为很有用。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onPageChanged</td>
+<td>ValueChanged&lt;int&gt;</td>
+<td>当 PageView 当前页面切换的时候调用</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>children</td>
+<td>List&lt;Widget&gt;</td>
+<td>PageView 的列表项</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>semanticChildCount</td>
+<td>int</td>
+<td>提供语义信息的列表项的数量<br>默认为 PageView 的 item 的数量</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>dragStartBehavior</td>
+<td>DragStartBehavior</td>
+<td>确定处理拖动开始行为的方式。<br>如果设置为[DragStartBehavior.start]，则在检测到拖动手势时将开始滚动拖动行为<br>如果设置为[DragStartBehavior.down]，它将在首次检测到向下事件时开始</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>
+
+
+</body>
+</html>

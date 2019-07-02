@@ -1,0 +1,361 @@
+
+
+<html lang="zh-hans"><head>
+<meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+
+
+</head>
+<body>
+   <div data-v-43d7c643="" data-v-7a1f948a="" class="section-view book-section-content"><div data-v-b60f4e3a="" data-v-43d7c643="" class="section-content"><div data-v-b60f4e3a="" class="section-page book-section-view"><div data-v-b60f4e3a="" class="entry-content article-content"><h1 class="heading" data-id="heading-0">Flutter 手势识别 Widget</h1>
+<h2 class="heading" data-id="heading-1">Flutter 通过 Widget 来处理手势事件</h2>
+<p>在前面讲 按钮 的时候，你会发现按钮有 onPressed 来响应点击事件，但是如果我让你去监听 Text 的点击事件，你会发现 Text 根本没有类似按钮的 onPressed 属性，那么如何去监听一个 Text 的点击事件呢？</p>
+<p>那就需要使用专门处理手势事件的 Widget 来嵌套 Text，在 Flutter 中，手势事件识别也是通过 Widget 来实现的，通过这个，你也能更加明白 Everything is a Widget。</p>
+<h2 class="heading" data-id="heading-2">Flutter 手势事件的分类</h2>
+<p>手势事件在 Flutter 中分为两层：</p>
+<ol>
+<li>
+<p>第一层是原始的 pointer events(指针事件)</p>
+<p>它描述了屏幕上指针（例如，触摸，鼠标和触控笔）的位置和移动。例如：PointerDownEvent、PointerUpEvent 、PointerMoveEvent 、PointerCancelEvent 等。</p>
+<p>为了监听 pointer events，请使用 Listener Widget，但一般建议使用 GestureDetector Widget，就是下面要介绍的。</p>
+</li>
+<li>
+<p>第二层是可以对原始的事件识别成不同的手势</p>
+<p>第二层是对第一层原始 pointer event 事件进行识别后的手势，例如：单击、双击、长按、拖动等。</p>
+<p>为了识别不同的手势，请使用 GestureDetector Widget。</p>
+</li>
+</ol>
+<p>下来介绍 GestureDetector 的使用。</p>
+<h2 class="heading" data-id="heading-3">Flutter 手势识别的 Widget —— GestureDetector</h2>
+<p>GestureDetector 是用于检测手势的 Widget。</p>
+<h2 class="heading" data-id="heading-4">代码所在位置</h2>
+<p>flutter_widget_demo/lib/gesture/GestureDetectorWidget.dart</p>
+<h2 class="heading" data-id="heading-5">GestureDetector 快速上手</h2>
+<p>GestureDetector 的使用很简单，只要用 GestureDetector 嵌套要检测手势的 Widget 就行，然后在 GestureDetector 里实现想要监听的手势的方法就行。</p>
+<p>例如，想要检测 Text 的点击事件，就可以这么用：</p>
+<pre><code class="hljs bash" lang="bash">GestureDetector(
+    child: Text(<span class="hljs-string">'Hello Flutter'</span>),
+    onTap: (){
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">'tab Text'</span>);
+    },
+)
+</code></pre><p>GestureDetector 在一个页面使用的完整 Demo 为：</p>
+<pre><code class="hljs bash" lang="bash">import <span class="hljs-string">'package:flutter/cupertino.dart'</span>;
+import <span class="hljs-string">'package:flutter/material.dart'</span>;
+
+void main() =&gt; runApp(GestureDetectorWidget());
+
+class GestureDetectorWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    <span class="hljs-built_in">return</span> MaterialApp(
+      title: <span class="hljs-string">"Flutter Demo"</span>,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text(<span class="hljs-string">"Flutter 手势识别Widget"</span>)),
+        body: GestureDetector(
+          child: Text(<span class="hljs-string">'手势识别'</span>),
+          onTap: (){
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">'点击'</span>);
+          },
+          onDoubleTap: (){
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">'双击'</span>);
+          },
+          onLongPress:  (){
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">'长按'</span>);
+          },
+          onHorizontalDragStart: (DragStartDetails details){
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">'水平滑动'</span>);
+          },
+        ),
+      ),
+    );
+  }
+}
+</code></pre><h2 class="heading" data-id="heading-6">GestureDetector 的构造函数及参数说明</h2>
+<p>为了知道 GestureDetector 支持哪些手势，我们可以看一下 GestureDetector 的构造函数：</p>
+<pre><code class="hljs bash" lang="bash">class GestureDetector extends StatelessWidget {
+  GestureDetector({
+    Key key,
+    this.child,
+    this.onTapDown,
+    this.onTapUp,
+    this.onTap,
+    this.onTapCancel,
+    this.onDoubleTap,
+    this.onLongPress,
+    this.onLongPressUp,
+    this.onLongPressDragStart,
+    this.onLongPressDragUpdate,
+    this.onLongPressDragUp,
+    this.onVerticalDragDown,
+    this.onVerticalDragStart,
+    this.onVerticalDragUpdate,
+    this.onVerticalDragEnd,
+    this.onVerticalDragCancel,
+    this.onHorizontalDragDown,
+    this.onHorizontalDragStart,
+    this.onHorizontalDragUpdate,
+    this.onHorizontalDragEnd,
+    this.onHorizontalDragCancel,
+    this.onForcePressStart,
+    this.onForcePressPeak,
+    this.onForcePressUpdate,
+    this.onForcePressEnd,
+    this.onPanDown,
+    this.onPanStart,
+    this.onPanUpdate,
+    this.onPanEnd,
+    this.onPanCancel,
+    this.onScaleStart,
+    this.onScaleUpdate,
+    this.onScaleEnd,
+    this.behavior,
+    this.excludeFromSemantics = <span class="hljs-literal">false</span>,
+    this.dragStartBehavior = DragStartBehavior.down,
+  })
+  ...
+}
+</code></pre><p>通过看 GestureDetector 构造函数的参数，就可以知道 GestureDetector 支持哪些收拾。</p>
+<table>
+<thead>
+<tr>
+<th>参数名字</th>
+<th>参数类型</th>
+<th>意义</th>
+<th>必选 or 可选</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td>Widget 的标识</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>child</td>
+<td>Widget</td>
+<td>要检测手势事件的 Widget</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onTapDown</td>
+<td>GestureTapDownCallback</td>
+<td>手指触摸屏幕时产生 onTapDown 事件</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onTapUp</td>
+<td>GestureTapDownCallback</td>
+<td>手指离开屏幕时产生 onTapUp 事件，之后便会触发 onTap 事件</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onTap</td>
+<td>GestureTapCallback</td>
+<td>点击事件</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onTapCancel</td>
+<td>GestureTapCancelCallback</td>
+<td>当触发 onTapDown 之后，取消点击，则会触发 onTapCancel，后面的 onTapDown 和 onTapUp 都不会在触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onDoubleTap</td>
+<td>GestureTapCallback</td>
+<td>双击事件</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onLongPress</td>
+<td>GestureLongPressCallback</td>
+<td>长按屏幕时触发，当监听了 onLongPress 事件时，则不能监听 onLongPressDragStart、onLongPressDragUpdate、onLongPressDragUp</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onLongPressUp</td>
+<td>GestureLongPressUpCallback</td>
+<td>长按屏幕，手指离开屏幕时触发，当监听了 onLongPressUp 事件时，则不能监听 onLongPressDragStart、onLongPressDragUpdate、onLongPressDragUp</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onLongPressDragStart</td>
+<td>GestureLongPressDragStartCallback</td>
+<td>长按屏幕，并准备开始拖动时触发，当监听了 onLongPressDragStart 事件时，则不能监听 onLongPress、onLongPressUp</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onLongPressDragUpdate</td>
+<td>GestureLongPressDragUpdateCallback</td>
+<td>长按屏幕后并拖动时触发，当监听了 onLongPressDragUpdate 事件时，则不能监听 onLongPress、onLongPressUp</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onLongPressDragUp</td>
+<td>GestureLongPressDragUpCallback</td>
+<td>长按屏幕拖动，手指离开屏幕时触发，当监听了 onLongPressDragUp 事件时，则不能监听 onLongPress、onLongPressUp</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onVerticalDragDown</td>
+<td>GestureDragDownCallback</td>
+<td>手指接触屏幕，并且可能会开始垂直移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onVerticalDragStart</td>
+<td>GestureDragStartCallback</td>
+<td>手指接触屏幕，并且已经开始垂直移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onVerticalDragUpdate</td>
+<td>GestureDragUpdateCallback</td>
+<td>手指接触屏幕，并且垂直移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onVerticalDragEnd</td>
+<td>GestureDragEndCallback</td>
+<td>手指接触屏幕垂直移动，然后手指离开屏幕时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onVerticalDragCancel</td>
+<td>GestureDragCancelCallback</td>
+<td>当 onVerticalDragDown 没有完成时就会触发 onVerticalDragCancel</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onHorizontalDragDown</td>
+<td>GestureDragDownCallback</td>
+<td>手指接触屏幕，并且可能会开始水平移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onHorizontalDragStart</td>
+<td>GestureDragStartCallback</td>
+<td>手指接触屏幕，并且已经开始水平移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onHorizontalDragUpdate</td>
+<td>GestureDragUpdateCallback</td>
+<td>手指接触屏幕，并且水平移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onHorizontalDragEnd</td>
+<td>GestureDragEndCallback</td>
+<td>手指接触屏幕水平移动，然后手指离开屏幕时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onHorizontalDragCancel</td>
+<td>GestureDragCancelCallback</td>
+<td>当 onHorizontalDragDown 没有完成时就会触发 onHorizontalDragCancel</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onForcePressStart</td>
+<td>GestureForcePressStartCallback</td>
+<td>手指与屏幕接触，并且当有足够的压力时才会触发<br>注意，这个事件仅在具有压力检测屏幕的设备上触发。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onForcePressPeak</td>
+<td>GestureForcePressPeakCallback</td>
+<td>手指与屏幕接触，并且当有压力达到最大时触发<br>注意，这个事件仅在具有压力检测屏幕的设备上触发。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onForcePressUpdate</td>
+<td>GestureForcePressUpdateCallback</td>
+<td>手指与屏幕接触，有足够的压力并在屏幕上移动时触发<br>注意，这个事件仅在具有压力检测屏幕的设备上触发。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onForcePressEnd</td>
+<td>GestureForcePressEndCallback</td>
+<td>手指与屏幕分开时触发<br>注意，这个事件仅在具有压力检测屏幕的设备上触发。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onPanDown</td>
+<td>GestureDragDownCallback</td>
+<td>手指与屏幕接触，并且可能开始移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onPanStart</td>
+<td>GestureDragStartCallback</td>
+<td>手指与屏幕接触，并且开始移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onPanUpdate</td>
+<td>GestureDragUpdateCallback</td>
+<td>手指在屏幕上移动时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onPanEnd</td>
+<td>GestureDragEndCallback</td>
+<td>手指离开屏幕时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onPanCancel</td>
+<td>GestureDragCancelCallback</td>
+<td>当 onPanDown 没有完成时触发 onPanCancel</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onScaleStart</td>
+<td>GestureTapDownCallback</td>
+<td>手指与屏幕接触，并且即将有缩放操作时触发，初始值为 1.0</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onScaleUpdate</td>
+<td>GestureTapDownCallback</td>
+<td>手指与屏幕接触，并且有缩放操作时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>onScaleEnd</td>
+<td>GestureTapDownCallback</td>
+<td>onScaleStart 之后，手指离开屏幕时触发</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>behavior</td>
+<td>HitTestBehavior</td>
+<td>在命中测试期间，此手势检测器应如何表现。</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>excludeFromSemantics</td>
+<td>bool</td>
+<td>是否从语义树中排除这些手势。因为 Widget</td>
+<td>可选</td>
+</tr>
+<tr>
+<td>dragStartBehavior</td>
+<td>DragStartBehavior</td>
+<td>确定处理拖动开始行为的方式。</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+</div><section data-v-b60f4e3a="" class="book-comments"><div data-v-b60f4e3a="" class="box-title">留言</div><div data-v-b60f4e3a="" class="comment-box"><div data-v-04c0b04f="" data-v-b60f4e3a="" class="comment-form comment-form" id="comment"><div data-v-59f839d2="" data-v-1074dbe6="" data-v-04c0b04f="" data-src="https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1" class="lazy avatar avatar loaded" style="background-image: url(&quot;https://mirror-gold-cdn.xitu.io/16a8d65c9bd0435813b?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1&quot;);"></div><div data-v-6fb14242="" data-v-04c0b04f="" class="auth-card"><div data-v-6fb14242="" class="auth-cover"><span data-v-6fb14242="" class="hint"></span>您需要<a data-v-6fb14242="">绑定手机号</a>后才可在掘金社区内发布内容。</div><textarea data-v-04c0b04f="" data-v-6fb14242="" placeholder="评论将在后台进行审核，审核通过后对所有人可见" class="content-input" style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea></div><div data-v-04c0b04f="" class="action-box" style="display: none;"><div data-v-6e2ff326="" data-v-04c0b04f="" class="image-uploader image-uploader" style="display: none;"><input data-v-6e2ff326="" type="file" class="input"><button data-v-6e2ff326="" class="upload-btn"><i data-v-6e2ff326="" class="icon ion-image"></i><span data-v-6e2ff326="">上传图片</span></button></div><div data-v-04c0b04f="" class="submit-box"><span data-v-04c0b04f="" class="submit-text">Ctrl or ⌘ + Enter</span><button data-v-04c0b04f="" class="submit-btn">评论</button></div></div><!----></div></div><ul data-v-1ec4f85b="" data-v-b60f4e3a="" st:block="commentList" class="comment-list comment-list"><!----></ul></section></div></div><!----><!----></div>                 
+
+
+
+</body>
+</html>
