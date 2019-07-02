@@ -38,8 +38,16 @@
    [ 源码 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/Keyboard )    <br/>
    ![image]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/%E5%AF%86%E7%A0%81%E8%BE%93%E5%85%A5.gif ) <br/>
    
-   
-   
+   ## TouchID FaceID
+   [ 采用local_auth ](https://github.com/flutter/plugins/tree/master/packages/local_auth )    <br/>
+   [ 源码 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/faceId_touchid_widget.dart )    <br/>
+   ![image]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/faceID.gif ) <br/>
+   ![image]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/faceId.PNG ) <br/>
+
+ ## DatePicker
+   [ 源码 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/webview_message.dart )    <br/>
+   ![image]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/%E4%B8%8EwebView%E4%BA%A4%E4%BA%92.gif ) <br/>
+
 
 A new Flutter project.
 
