@@ -53,6 +53,11 @@ class KeyboardState extends State<MainKoard> {
             ),
           ),
           Text('密码是$pwdData'), 
+                    ///密码框
+          new Padding(
+            padding: const EdgeInsets.only(top: 15.0),
+            child: _buildPwd(pwdData),
+          ),
 //          new Padding(
 //            padding: const EdgeInsets.only(top: 20.0),
 //            child: new Text(

@@ -8,6 +8,7 @@ import './widgets/stepper_widget.dart';
 import './widgets/notification_scroll.dart';
 import './widgets/rain_drop.dart';
 import './widgets/webview_message.dart';
+import './widgets/faceId_touchid_widget.dart';
 
 class TopBar extends StatefulWidget {
   _TopBarState createState() => _TopBarState();
@@ -46,7 +47,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
             Tab(text: '雨滴动画'),
             Tab(text: '密码输入框'),
             Tab(text: '与webView交互'),
-            Tab(icon:Icon(Icons.business_center)),
+            Tab(text: 'FaceID + TouchID'),
           ],
         ),
       ),
@@ -62,7 +63,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
           Center(child: RainDropWidget(width: 300, height: 400,)),   
           MainKoard(),  
           WebViewPage(),
-          Text('100'),
+          TouchIDFaceID(),
         ],
       ),
     );

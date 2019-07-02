@@ -26,6 +26,7 @@ dependencies:
   flutter_swiper: ^1.1.6
   shared_preferences: ^0.5.3+1
   webview_flutter: ^0.3.9+1
+  local_auth: ^0.5.2+3            
 
 
 dev_dependencies:
