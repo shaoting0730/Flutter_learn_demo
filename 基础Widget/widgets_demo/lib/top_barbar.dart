@@ -9,6 +9,7 @@ import './widgets/notification_scroll.dart';
 import './widgets/rain_drop.dart';
 import './widgets/webview_message.dart';
 import './widgets/faceId_touchid_widget.dart';
+import './widgets/up_drawer.dart';
 
 class TopBar extends StatefulWidget {
   _TopBarState createState() => _TopBarState();
@@ -20,7 +21,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 10, vsync: this);
+    _controller = TabController(length: 11, vsync: this);
   }
 
   @override
@@ -48,6 +49,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
             Tab(text: '密码输入框'),
             Tab(text: '与webView交互'),
             Tab(text: 'FaceID + TouchID'),
+            Tab(text: '上拉抽屉'),
           ],
         ),
       ),
@@ -60,12 +62,27 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
           DialogWidget(),
           StepperWidget(),
           NotificationListenerScroll(),
-          Center(child: RainDropWidget(width: 300, height: 400,)),   
-          MainKoard(),  
+          Center(
+              child: RainDropWidget(
+            width: 300,
+            height: 400,
+          )),
+          MainKoard(),
           WebViewPage(),
           TouchIDFaceID(),
+          FlatButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => UpDrawerDemo(),
+                  ));
+            },
+            child: Text('跳至上拉抽屉页面'),
+          )
         ],
       ),
     );
   }
 }
+
