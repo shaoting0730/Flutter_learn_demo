@@ -26,7 +26,6 @@ class KeyboardState extends State<MainKoard> {
 
   @override
   void initState() {
-
     _showBottomSheetCallback = _showBottomSheet;
   }
 
@@ -53,7 +52,7 @@ class KeyboardState extends State<MainKoard> {
             ),
           ),
           Text('密码是$pwdData'), 
-                    ///密码框
+      ///密码框
           new Padding(
             padding: const EdgeInsets.only(top: 15.0),
             child: _buildPwd(pwdData),
@@ -101,7 +100,6 @@ class KeyboardState extends State<MainKoard> {
         pwdData += data.key;
       }
       setState(() {
-
       });
     }
   }

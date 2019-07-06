@@ -46,10 +46,18 @@ class GuidePage extends StatefulWidget {
 }
 
 class _GuidePageState extends State<GuidePage> {
+  @override
+  void initState() {
+    super.initState();
+    _controller = new SwiperController();
+  }
+
   SwiperController _controller;
   @override
   Widget build(BuildContext context) {
     List swiperDateList = ['guide1.jpg', 'guide2.jpg', 'guide3.jpg'];
+    var left = 0;
+    var right = 0;
     return Scaffold(
       body: Swiper(
           itemBuilder: (BuildContext context, int index) {
@@ -61,13 +69,30 @@ class _GuidePageState extends State<GuidePage> {
                       fit: BoxFit.cover,
                     )
                   : Container(
+                      child: GestureDetector(
+                      onHorizontalDragUpdate: (e) {
+                        var x = e.delta.dx;
+                        if (x < -15) {
+                          left += 1;
+                          if (left == 1) {
+                            _endGuideView();
+                            left = 0;
+                          }
+                        } else if (x > 15) {
+                          right += 1;
+                          if (right == 1) {
+                            _controller.previous();
+                            right = 0;
+                          }
+                        }
+                      },
                       child: Stack(
                         alignment: const FractionalOffset(0.5, 0.8),
                         children: <Widget>[
                           Image.asset('images/guide3.jpg',
                               width: MediaQuery.of(context).size.width,
                               height: MediaQuery.of(context).size.height,
-                              fit: BoxFit.cover),    
+                              fit: BoxFit.cover),
                           InkWell(
                             onTap: _endGuideView,
                             child: Text(
@@ -78,7 +103,7 @@ class _GuidePageState extends State<GuidePage> {
                           )
                         ],
                       ),
-                    ),
+                    )),
             );
           },
           itemCount: swiperDateList.length,
@@ -88,6 +113,7 @@ class _GuidePageState extends State<GuidePage> {
           loop: false),
     );
   }
+
   /*
    * 结束浏览页面
    * 存标志位 跳转页面
