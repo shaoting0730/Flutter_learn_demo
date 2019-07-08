@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: FutureBuilder(
         future: get(),
@@ -56,7 +56,7 @@ class _GuidePageState extends State<GuidePage> {
   @override
   Widget build(BuildContext context) {
     List swiperDateList = ['guide1.jpg', 'guide2.jpg', 'guide3.jpg'];
-    var left = 0;
+    var left = 0; // 用于过滤 只有1才执行后续代码
     var right = 0;
     return Scaffold(
       body: Swiper(
@@ -70,40 +70,43 @@ class _GuidePageState extends State<GuidePage> {
                     )
                   : Container(
                       child: GestureDetector(
-                      onHorizontalDragUpdate: (e) {
-                        var x = e.delta.dx;
-                        if (x < -15) {
-                          left += 1;
-                          if (left == 1) {
-                            _endGuideView();
-                            left = 0;
+                        onHorizontalDragUpdate: (e) {
+                          var x = e.delta.dx;
+                          if (x < -15) {
+                            // 左滑
+                            left += 1;
+                            if (left == 1) {
+                              _endGuideView();  // 结束浏览页 展示主页
+                              left = 0;         
+                            }
+                          } else if (x > 15) {
+                            // 右滑
+                            right += 1;
+                            if (right == 1) {
+                              _controller.previous();  // 上一页面
+                              right = 0;
+                            }
                           }
-                        } else if (x > 15) {
-                          right += 1;
-                          if (right == 1) {
-                            _controller.previous();
-                            right = 0;
-                          }
-                        }
-                      },
-                      child: Stack(
-                        alignment: const FractionalOffset(0.5, 0.8),
-                        children: <Widget>[
-                          Image.asset('images/guide3.jpg',
-                              width: MediaQuery.of(context).size.width,
-                              height: MediaQuery.of(context).size.height,
-                              fit: BoxFit.cover),
-                          InkWell(
-                            onTap: _endGuideView,
-                            child: Text(
-                              '开始体验',
-                              style:
-                                  TextStyle(color: Colors.red, fontSize: 20.0),
+                        },
+                        child: Stack(
+                          alignment: const FractionalOffset(0.5, 0.8),
+                          children: <Widget>[
+                            Image.asset('images/guide3.jpg',
+                                width: MediaQuery.of(context).size.width,
+                                height: MediaQuery.of(context).size.height,
+                                fit: BoxFit.cover),
+                            InkWell(
+                              onTap: _endGuideView,
+                              child: Text(
+                                '开始体验',
+                                style: TextStyle(
+                                    color: Colors.red, fontSize: 20.0),
+                              ),
                             ),
-                          )
-                        ],
+                          ],
+                        ),
                       ),
-                    )),
+                    ),
             );
           },
           itemCount: swiperDateList.length,
