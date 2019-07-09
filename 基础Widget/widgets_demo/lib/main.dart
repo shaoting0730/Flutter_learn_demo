@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
     return guide;
   }
 
+    DateTime _lastPressedAt; //上次点击时间
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,18 +28,32 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: FutureBuilder(
-        future: get(),
-        builder: (context, snapshot) {
-          if (snapshot.data == 1) {
-            return TopBar();
-          } else {
-            return GuidePage();
+      home: WillPopScope(
+        onWillPop: () async {
+          if (_lastPressedAt == null ||
+              DateTime.now().difference(_lastPressedAt) >
+                  Duration(seconds: 1)) {
+            //两次点击间隔超过1秒则重新计时
+            _lastPressedAt = DateTime.now();
+            print("连续双击退出App");
+            return false;
           }
+          return true;
         },
+        child: FutureBuilder(
+          future: get(),
+          builder: (context, snapshot) {
+            if (snapshot.data == 1) {
+              return TopBar();
+            } else {
+              return GuidePage();
+            }
+          },
+        ),
       ),
     );
   }
+
 }
 
 // 引导页面
@@ -76,14 +93,14 @@ class _GuidePageState extends State<GuidePage> {
                             // 左滑
                             left += 1;
                             if (left == 1) {
-                              _endGuideView();  // 结束浏览页 展示主页
-                              left = 0;         
+                              _endGuideView(); // 结束浏览页 展示主页
+                              left = 0;
                             }
                           } else if (x > 15) {
                             // 右滑
                             right += 1;
                             if (right == 1) {
-                              _controller.previous();  // 上一页面
+                              _controller.previous(); // 上一页面
                               right = 0;
                             }
                           }
