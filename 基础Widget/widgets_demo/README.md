@@ -66,7 +66,7 @@
  )    <br/>
    [ event_bus传值-发 ](   https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/event_bus_widget.dart
  )    <br/>
-   [ 回调-收 ](   https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/top_barbar.dart
+   [ event_bus传值-收 ](   https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/top_barbar.dart
  )    <br/>
 
 
