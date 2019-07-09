@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_demo/widgets/event_bus_widget.dart';
 import './widgets/Keyboard/keyboard_main.dart';
 import './widgets/appbar_widget.dart';
 import './widgets/datepicker_widget.dart';
@@ -11,6 +12,9 @@ import './widgets/webview_message.dart';
 import './widgets/faceId_touchid_widget.dart';
 import './widgets/up_drawer.dart';
 import './widgets/callback_widget.dart';
+//引入Bus
+import './widgets/event_bus.dart';
+
 
 class TopBar extends StatefulWidget {
   _TopBarState createState() => _TopBarState();
@@ -30,6 +34,16 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
+  var result = '跳至event_bus';
+//监听Bus events
+void _listen(){
+  eventBus.on<UserLoggedInEvent>().listen((event){
+    setState(() {
+     result = event.text;
+    });
+  });
+}
+
   //  标题数目
   List<Widget> topAry = [
     Tab(text: 'appBar'),
@@ -43,11 +57,12 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
     Tab(text: '与webView交互'),
     Tab(text: 'FaceID + TouchID'),
     Tab(text: '上拉抽屉'),
-    Tab(text: '回调')
+    Tab(text: '回调'),
+    Tab(text: 'event_bus发通知')
   ];
 
 // 底部view
-  bottomAry(context) {
+  bottomAry(context,result) {
     List<Widget> bottomAry = [
       AppbarWidget(),
       DatePickerWidget(),
@@ -56,20 +71,22 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
       StepperWidget(),
       NotificationListenerScroll(),
       Center(
-          child: RainDropWidget(
-        width: 300,
-        height: 400,
-      )),
+        child: RainDropWidget(
+          width: 300,
+          height: 400,
+        ),
+      ),
       MainKoard(),
       WebViewPage(),
       TouchIDFaceID(),
       FlatButton(
         onPressed: () {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => UpDrawerDemo(),
-              ));
+            context,
+            MaterialPageRoute(
+              builder: (context) => UpDrawerDemo(),
+            ),
+          );
         },
         child: Text('跳至上拉抽屉页面'),
       ),
@@ -85,13 +102,26 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
           print(result);
         },
         child: Text('跳转界面'),
+      ),
+      FlatButton(
+        onPressed: (){
+       Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EventBusWidget(),
+            ),
+          );
+        },
+        child: Text(result),
       )
     ];
     return bottomAry;
   }
 
+
   @override
   Widget build(BuildContext context) {
+    _listen();
     return Scaffold(
       appBar: AppBar(
         title: Text('appBar'),
@@ -101,7 +131,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
       ),
       body: TabBarView(
         controller: _controller,
-        children: bottomAry(context),
+        children: bottomAry(context,result),
       ),
     );
   }

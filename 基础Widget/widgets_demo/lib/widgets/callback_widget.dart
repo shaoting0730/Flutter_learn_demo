@@ -10,7 +10,7 @@ class _CallBackWidgetState extends State<CallBackWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('演示回调和监听')),
+      appBar: AppBar(title: Text('演示回调')),
       body: Column(
         children: <Widget>[
           // 点击回调

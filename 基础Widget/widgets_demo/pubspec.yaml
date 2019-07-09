@@ -27,7 +27,7 @@ dependencies:
   shared_preferences: ^0.5.3+1
   webview_flutter: ^0.3.9+1
   local_auth: ^0.5.2+3            
-
+  event_bus: 1.1.0
 
 dev_dependencies:
   flutter_test:
