@@ -10,7 +10,6 @@ import './widgets/rain_drop.dart';
 import './widgets/webview_message.dart';
 import './widgets/faceId_touchid_widget.dart';
 import './widgets/up_drawer.dart';
-import './widgets/edit_widget.dart';
 
 class TopBar extends StatefulWidget {
   _TopBarState createState() => _TopBarState();
@@ -76,14 +75,6 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
     return bottomAry;
   }
 
-  // 跳至编辑界面
-  _pushEditView(context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => EditWidget(),
-        ));
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
    *  获取本地化值
    */
   Future<int> get() async {
-    int guide = 0;
+    int guide;
     SharedPreferences prefs = await SharedPreferences.getInstance();
     guide = prefs.getInt('guide');
     return guide;
