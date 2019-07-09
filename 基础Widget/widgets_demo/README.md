@@ -54,7 +54,21 @@
    [ 源码 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/up_drawer_widget.dart/bottom_drag_widget.dart )    <br/>
    ![image]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/%E4%B8%8A%E6%8B%89%E6%8A%BD%E5%B1%89.gif ) <br/>
 
-A new Flutter project.
+  ## 回调
+   [ 回调-发 ](   https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/callback_widget.dart
+ )    <br/>
+   [ 回调-收 ](   https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/top_barbar.dart
+ )    <br/>
+ 
+ 
+   ## event_bus传值
+   [ event_bus传值-发 ](   https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/event_bus.dart
+ )    <br/>
+   [ event_bus传值-发 ](   https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/widgets/event_bus_widget.dart
+ )    <br/>
+   [ 回调-收 ](   https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo/lib/top_barbar.dart
+ )    <br/>
+
 
 ## Getting Started
 
