@@ -10,6 +10,7 @@ import './widgets/rain_drop.dart';
 import './widgets/webview_message.dart';
 import './widgets/faceId_touchid_widget.dart';
 import './widgets/up_drawer.dart';
+import './widgets/callback_widget.dart';
 
 class TopBar extends StatefulWidget {
   _TopBarState createState() => _TopBarState();
@@ -41,7 +42,8 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
     Tab(text: '密码输入框'),
     Tab(text: '与webView交互'),
     Tab(text: 'FaceID + TouchID'),
-    Tab(text: '上拉抽屉')
+    Tab(text: '上拉抽屉'),
+    Tab(text: '回调')
   ];
 
 // 底部view
@@ -70,19 +72,32 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
               ));
         },
         child: Text('跳至上拉抽屉页面'),
+      ),
+      FlatButton(
+        onPressed: () async {
+          final result = await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CallBackWidget(),
+            ),
+          );
+          // 回调的内容
+          print(result);
+        },
+        child: Text('跳转界面'),
       )
     ];
     return bottomAry;
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('appBar'),
-        backgroundColor: Colors.yellow,
-        bottom: TabBar(controller: _controller, isScrollable: true, tabs: topAry),
+        backgroundColor: Colors.blue,
+        bottom:
+            TabBar(controller: _controller, isScrollable: true, tabs: topAry),
       ),
       body: TabBarView(
         controller: _controller,
