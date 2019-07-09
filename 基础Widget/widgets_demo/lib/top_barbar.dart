@@ -91,43 +91,11 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
       appBar: AppBar(
         title: Text('appBar'),
         backgroundColor: Colors.yellow,
+        bottom: TabBar(controller: _controller, isScrollable: true, tabs: topAry),
       ),
-      body: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
-          child: AppBar(
-            backgroundColor: Colors.blue,
-            bottom: PreferredSize(
-              child: Stack(
-                children: <Widget>[
-                  TabBar(
-                      controller: _controller,
-                      isScrollable: true,
-                      tabs: topAry),
-                  Positioned(
-                    top: 0,
-                    right: 0,
-                    child: InkWell(
-                      onTap: _pushEditView(context),
-                      child: Container(
-                        height: 50,
-                        width: 40,
-                        alignment: Alignment.center,
-                        color: Colors.pink,
-                        child: Text('编辑'),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              preferredSize: Size.fromHeight(50.0),
-            ),
-          ),
-        ),
-        body: TabBarView(
-          controller: _controller,
-          children: bottomAry(context),
-        ),
+      body: TabBarView(
+        controller: _controller,
+        children: bottomAry(context),
       ),
     );
   }
