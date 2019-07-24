@@ -12,6 +12,7 @@ import './widgets/webview_message.dart';
 import './widgets/faceId_touchid_widget.dart';
 import './widgets/up_drawer.dart';
 import './widgets/callback_widget.dart';
+import './widgets/count_down_widget.dart';
 //引入Bus
 import './widgets/event_bus.dart';
 
@@ -58,7 +59,8 @@ void _listen(){
     Tab(text: 'FaceID + TouchID'),
     Tab(text: '上拉抽屉'),
     Tab(text: '回调'),
-    Tab(text: 'event_bus发通知')
+    Tab(text: 'event_bus发通知'),
+    Tab(text: '倒计时')
   ];
 
 // 底部view
@@ -109,11 +111,15 @@ void _listen(){
             context,
             MaterialPageRoute(
               builder: (context) => EventBusWidget(),
+              
             ),
           );
         },
         child: Text(result),
-      )
+      ),
+     Center(
+       child: CountDownWidget(),
+     )
     ];
     return bottomAry;
   }
