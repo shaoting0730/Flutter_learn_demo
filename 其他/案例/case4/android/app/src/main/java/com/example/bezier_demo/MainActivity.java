@@ -1,4 +1,4 @@
-package com.example.case4;
+package com.example.bezier_demo;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
