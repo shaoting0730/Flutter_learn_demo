@@ -7,6 +7,7 @@ import './animationWidget/animation4.dart';
 import './animationWidget/animation5.dart';
 import './animationWidget/animation6.dart';
 import './animationWidget/ringWidget/GradientCircularProgressRoute.dart';
+import './animationWidget/animation8.dart';
 
 class TopBar extends StatefulWidget {
   _TopBarState createState() => _TopBarState();
@@ -43,7 +44,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
             Tab(text: '动画5'),
             Tab(text: '动画6'),
             Tab(text: '动画7'),
-            Tab(text: '捌'),
+            Tab(text: 'Dialog'),
             Tab(text: '玖'),
             Tab(icon: Icon(Icons.business_center)),
           ],
@@ -59,7 +60,7 @@ class _TopBarState extends State<TopBar> with SingleTickerProviderStateMixin {
           Animation5(),
           Animation6(),
           GradientCircularProgressRoute(),
-          Text('88'),
+          Animation8(),
           Text('99'),
           Text('100'),
         ],
