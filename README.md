@@ -110,9 +110,6 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 阿里fish redux视频 ](https://alivideolive.taobao.com/h5/liveDetail/ff36146a-b106-48f0-8cff-246fa0b62d50) <br/>
 > [ 阿里fish redux初识 ](https://www.yuque.com/xytech/flutter/ycc9ni) <br/>
 
-## 类似热更新方案:
-> [ 腾讯-MXFlutter ](https://github.com/TGIF-iMatrix/MXFlutter) <br/>
-> [ 阿里热修复 ](https://helpcdn.aliyun.com/product/51340.html) <br/>
 
 ### 案例
 > [ 案例1 选项卡 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case1) <br/>
