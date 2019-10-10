@@ -77,6 +77,9 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ flutter_boost学习视频 ](  https://www.bilibili.com/video/av68165113?from=search&seid=6069933847949675176 )<br/>
  > [ flutter_boost教程 ]( https://www.jianshu.com/p/679a642ade52 )<br/>
 
+## 热更新方案
+ > [ flutter/issues上关于热更新方案的讨论 ](  https://github.com/flutter/flutter/issues/14330 )<br/>
+
 
 ## 其他
 >  [通知 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/notification/lib/main.dart )    <br/>
