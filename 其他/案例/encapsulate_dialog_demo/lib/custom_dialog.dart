@@ -46,6 +46,7 @@ class _CustomDialogState extends State<CustomDialog> {
   @override
   Widget build(BuildContext context) {
     return Material(
+      type: MaterialType.transparency,
       child: Center(
         child: SizedBox(
           width: 240,
