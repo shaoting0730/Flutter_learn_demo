@@ -24,3 +24,4 @@ class CounterBloc {
     _streamController.close();
   }
 }
+

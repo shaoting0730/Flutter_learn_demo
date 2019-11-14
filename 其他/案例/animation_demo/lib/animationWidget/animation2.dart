@@ -13,6 +13,8 @@ class _Animation2State extends State<Animation2>
 
   initState() {
     super.initState();
+    print('22222222222222222222');
+
     controller = new AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
     animation = new Tween(begin: 0.0, end: 300.0).animate(controller);
