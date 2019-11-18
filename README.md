@@ -81,8 +81,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ flutter/issues上关于热更新方案的讨论 ](  https://github.com/flutter/flutter/issues/14330 )<br/>
 
 
-## 其他
->  [通知 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/notification/lib/main.dart )    <br/>
+## 杂类
+>  [通知 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/notification/lib/main.dart )    <br/>
 >  [ 事件 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/pointer/lib/main.dart )    <br/>
 >  [ 手势 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%89%8B%E5%8A%BF/destruedetector/lib/main.dart )    <br/>
 >  [ 组合Widget 示例1 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E8%87%AA%E5%AE%9A%E4%B9%89Widget/%E7%BB%84%E5%90%88Widget/composite_widget )    <br/>
@@ -129,7 +129,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 案例12 国际化方案]( https://pheromone.github.io/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/ ) <br/>
 > [ 案例13 动画](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_demo) <br/>
 > [ 案例14 Flare学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/其他/案例/flare_learn) <br/>
-
+> [ 案例15 自定义Dialog和基本的组件封装](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/encapsulate_dialog_demo
+) <br/>
 
 
 
