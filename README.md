@@ -76,6 +76,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ Android原生中集成Flutter模块 ]( https://zhoushaoting.com/2019/05/31/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~Android%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/ )<br/>
  > [ flutter_boost学习视频 ](  https://www.bilibili.com/video/av68165113?from=search&seid=6069933847949675176 )<br/>
  > [ flutter_boost教程 ]( https://www.jianshu.com/p/679a642ade52 )<br/>
+ > [ flutter_boost源码浅析 ]( https://juejin.im/post/5e61b803f265da57127e526c )<br/>
 
 ## 热更新方案
  > [ flutter/issues上关于热更新方案的讨论 ](  https://github.com/flutter/flutter/issues/14330 )<br/>
@@ -131,8 +132,6 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 案例14 Flare学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/其他/案例/flare_learn) <br/>
 > [ 案例15 自定义Dialog和基本的组件封装](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/encapsulate_dialog_demo
 ) <br/>
-
-
 
 
 
