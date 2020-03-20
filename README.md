@@ -114,6 +114,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 阿里fish redux视频 ](https://alivideolive.taobao.com/h5/liveDetail/ff36146a-b106-48f0-8cff-246fa0b62d50) <br/>
 > [ 阿里fish redux初识 ](https://www.yuque.com/xytech/flutter/ycc9ni) <br/>
 > [ fish_redux快速创建插件FishReduxTemplate ](https://blog.csdn.net/oZhuiMeng123/article/details/90792530?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task) <br/>
+> [ fish_redux Demo1 ](
+https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/fish_redux_demo1) <br/>
 
 
 
