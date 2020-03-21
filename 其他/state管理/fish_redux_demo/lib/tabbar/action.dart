@@ -1,0 +1,14 @@
+import 'package:fish_redux/fish_redux.dart';
+
+//TODO replace with your own action
+enum TabbarAction { action, switchIndex }
+
+class TabbarActionCreator {
+  static Action onAction() {
+    return const Action(TabbarAction.action);
+  }
+
+  static Action switchIndex(int index) {
+    return Action(TabbarAction.switchIndex, payload: index);
+  }
+}
