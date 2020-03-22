@@ -113,12 +113,12 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ fish redux pdf ](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/Flutter%E5%BA%94%E7%94%A8%E6%A1%86%E6%9E%B6Fish%20Redux.pdf)  <br/>
 > [ 阿里fish redux视频 ](https://alivideolive.taobao.com/h5/liveDetail/ff36146a-b106-48f0-8cff-246fa0b62d50) <br/>
 > [ 阿里fish redux初识 ](https://www.yuque.com/xytech/flutter/ycc9ni) <br/>
+> [ 阿里fish redux中文介绍 ](https://hzgotb.github.io/fish-redux-docs/zh/guide/get-started/) <br/>
 > [ fish_redux快速创建插件FishReduxTemplate ](https://blog.csdn.net/oZhuiMeng123/article/details/90792530?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task) <br/>
 > [ fish_redux Demo ](
 https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/fish_redux_demo) <br/>
 > [ fish_redux Demo1 ](
 https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/fish_redux_demo1) <br/>
-
 
 
 ### 案例
@@ -138,5 +138,6 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例14 Flare学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/其他/案例/flare_learn) <br/>
 > [ 案例15 自定义Dialog和基本的组件封装](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/encapsulate_dialog_demo
 ) <br/>
+
 
 
