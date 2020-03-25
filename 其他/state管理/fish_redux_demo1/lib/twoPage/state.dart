@@ -6,8 +6,7 @@ class TwoState implements Cloneable<TwoState> {
 
   @override
   TwoState clone() {
-    models = models;
-    return TwoState();
+    return TwoState()..models = models;
   }
 }
 
