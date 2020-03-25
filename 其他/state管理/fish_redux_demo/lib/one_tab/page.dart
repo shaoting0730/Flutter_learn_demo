@@ -5,18 +5,21 @@ import 'reducer.dart';
 import 'state.dart';
 import 'view.dart';
 
+import '../components/child_view/component.dart';
+
 class OnePage extends Page<OneState, Map<String, dynamic>> {
   OnePage()
       : super(
-            initState: initState,
-            effect: buildEffect(),
-            reducer: buildReducer(),
-            view: buildView,
-            dependencies: Dependencies<OneState>(
-                adapter: null,
-                slots: <String, Dependent<OneState>>{
-                }),
-            middleware: <Middleware<OneState>>[
-            ],);
-
+          initState: initState,
+          effect: buildEffect(),
+          reducer: buildReducer(),
+          view: buildView,
+          dependencies: Dependencies<OneState>(
+              adapter: null,
+              slots: <String, Dependent<OneState>>{
+                'ChildViewComponent':
+                    ChildViewConnector() + ChildViewComponent()
+              }),
+          middleware: <Middleware<OneState>>[],
+        );
 }

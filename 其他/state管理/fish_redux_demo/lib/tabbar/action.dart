@@ -8,6 +8,7 @@ class TabbarActionCreator {
     return const Action(TabbarAction.action);
   }
 
+  // 切换tab
   static Action switchIndex(int index) {
     return Action(TabbarAction.switchIndex, payload: index);
   }

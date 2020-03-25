@@ -17,6 +17,9 @@ TabbarState _onAction(TabbarState state, Action action) {
   return newState;
 }
 
+/*
+* 切换tab点击
+* */
 TabbarState _switchIndex(TabbarState state, Action action) {
   var index = action.payload;
   final TabbarState newState = state.clone()..index = index;

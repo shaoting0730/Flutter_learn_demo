@@ -32,10 +32,10 @@ Widget buildView(
   Text getTabTitle(int curIndex) {
     if (curIndex == state.index) {
       return new Text(appBarTitles[curIndex],
-          style: new TextStyle(fontSize: 14.0, color: const Color(0xff1296db)));
+          style: new TextStyle(fontSize: 14.0, color: Colors.red));
     } else {
       return new Text(appBarTitles[curIndex],
-          style: new TextStyle(fontSize: 14.0, color: const Color(0xff515151)));
+          style: new TextStyle(fontSize: 14.0, color: Colors.black));
     }
   }
 
