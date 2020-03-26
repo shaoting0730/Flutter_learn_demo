@@ -5,6 +5,6 @@ enum OneAction { action }
 
 class OneActionCreator {
   static Action onAction() {
-    return const Action(OneAction.action);
+    return Action(OneAction.action);
   }
 }

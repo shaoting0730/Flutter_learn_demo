@@ -19,7 +19,7 @@ Widget buildView(TwoState state, Dispatch dispatch, ViewService viewService) {
 Widget _buildEmpty(TwoState state, Dispatch dispatch, ViewService viewService) {
   return Container(
     child: Center(
-      child: Text('占位图'),
+      child: Text('数据拉取。。。'),
     ),
   );
 }

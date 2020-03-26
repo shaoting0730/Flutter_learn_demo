@@ -1,16 +1,20 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
 
-import './one_tab/page.dart';
-import './two_tab/page.dart';
 import './tabbar/page.dart';
+
+import './one_tab/page.dart';
+import './one_tab/details_page/page.dart';
+
+import './two_tab/page.dart';
 
 Widget createApp() {
   final AbstractRoutes routes = PageRoutes(
     pages: <String, Page<Object, dynamic>>{
       'tabbar': TabbarPage(),
       'one': OnePage(), //在这里添加页面
-      'two': TwoPage()
+      'two': TwoPage(),
+      'one_details': OneDetailsPagePage(),
     },
   );
 

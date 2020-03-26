@@ -5,7 +5,7 @@ enum TabbarAction { action, switchIndex }
 
 class TabbarActionCreator {
   static Action onAction() {
-    return const Action(TabbarAction.action);
+    return Action(TabbarAction.action);
   }
 
   // 切换tab
