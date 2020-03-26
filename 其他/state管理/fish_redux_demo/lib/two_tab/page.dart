@@ -15,10 +15,8 @@ class TwoPage extends Page<TwoState, Map<String, dynamic>> {
           reducer: buildReducer(),
           view: buildView,
           dependencies: Dependencies<TwoState>(
-              adapter: null,
               slots: <String, Dependent<TwoState>>{
                 'ChildViewComponent': ItemViewConnector() + ItemViewComponent()
               }),
-          middleware: <Middleware<TwoState>>[],
         );
 }

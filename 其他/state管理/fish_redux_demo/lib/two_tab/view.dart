@@ -10,15 +10,20 @@ Widget buildView(TwoState state, Dispatch dispatch, ViewService viewService) {
     appBar: AppBar(
       title: Text('Two'),
     ),
-    body: ListView(
-      children: <Widget>[
-        _itemView(state, viewService),
-      ],
+    body: state.model.status == null
+        ? _buildEmpty(state, dispatch, viewService)
+        : _itemView(state, viewService),
+  );
+}
+
+Widget _buildEmpty(TwoState state, Dispatch dispatch, ViewService viewService) {
+  return Container(
+    child: Center(
+      child: Text('占位图'),
     ),
   );
 }
 
-Align _itemView(TwoState state, ViewService viewService) {
-  println(jsonEncode(state.model));
-  return Align(child: viewService.buildComponent('ChildViewComponent'));
+Widget _itemView(TwoState state, ViewService viewService) {
+  return viewService.buildComponent('ChildViewComponent');
 }

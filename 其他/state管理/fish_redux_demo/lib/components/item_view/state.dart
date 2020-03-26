@@ -5,10 +5,10 @@ class ItemViewState implements Cloneable<ItemViewState> {
   TwoModel model;
   @override
   ItemViewState clone() {
-    return ItemViewState();
+    return ItemViewState()..model = model;
   }
 }
 
 ItemViewState initState(Map<String, dynamic> args) {
-  return ItemViewState()..model;
+  return ItemViewState();
 }

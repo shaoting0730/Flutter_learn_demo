@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fishreduxdemo/model/twoModel.dart';
 import 'action.dart';
 import 'state.dart';
 
@@ -21,7 +22,8 @@ TwoState _onAction(TwoState state, Action action) {
 }
 
 TwoState _onLoadData(TwoState state, Action action) {
+  final TwoModel model = action.payload;
   final TwoState newState = state.clone();
-  newState.model = action.payload;
+  newState.model = model;
   return newState;
 }

@@ -15,13 +15,16 @@ class TwoState implements Cloneable<TwoState> {
 }
 
 TwoState initState(Map<String, dynamic> args) {
-  return TwoState()..model;
+  TwoState state = TwoState();
+  state.itemState = ItemViewState();
+  state.model = TwoModel();
+  return state;
 }
 
 class ItemViewConnector extends ConnOp<TwoState, ItemViewState> {
   @override
   ItemViewState get(TwoState state) {
-    return state.itemState;
+    return state.itemState..model = state.model;
   }
 
   @override

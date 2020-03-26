@@ -6,8 +6,8 @@ import 'state.dart';
 
 Widget buildView(
     ItemViewState state, Dispatch dispatch, ViewService viewService) {
-//  print(state.model);
+  print(">>>>>>>>>>>>>>>>>>componnet:${state.model.status}");
   return Container(
-    child: Text('22'),
+    child: Text('${state.model.status}'),
   );
 }
