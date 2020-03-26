@@ -5,8 +5,9 @@ import 'action.dart';
 import 'state.dart';
 
 Widget buildView(
-    ChildViewState state, Dispatch dispatch, ViewService viewService) {
+    ItemViewState state, Dispatch dispatch, ViewService viewService) {
+//  print(state.model);
   return Container(
-    child: Text('component'),
+    child: Text('22'),
   );
 }

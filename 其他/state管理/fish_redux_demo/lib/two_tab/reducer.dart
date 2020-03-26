@@ -1,12 +1,10 @@
 import 'dart:convert';
 
 import 'package:fish_redux/fish_redux.dart';
-import 'package:fishreduxdemo/service_api/ServiceApi.dart';
-
 import 'action.dart';
 import 'state.dart';
 
-import '../model/twoModel.dart';
+import '../components/item_view/state.dart';
 
 Reducer<TwoState> buildReducer() {
   return asReducer(
