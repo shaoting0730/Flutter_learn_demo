@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fishreduxdemo/two_tab/state.dart';
 import '../components/child_view/state.dart';
 
 class OneState implements Cloneable<OneState> {
@@ -10,7 +11,9 @@ class OneState implements Cloneable<OneState> {
 }
 
 OneState initState(Map<String, dynamic> args) {
-  return OneState()..childState = ChildViewState();
+  OneState state = OneState();
+  state.childState = ChildViewState();
+  return state;
 }
 
 class ChildViewConnector extends ConnOp<OneState, ChildViewState> {
