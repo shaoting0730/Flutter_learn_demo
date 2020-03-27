@@ -12,8 +12,7 @@ Widget buildView(
 
   return InkWell(
     onTap: () {
-      dispatch(ChildViewActionCreator.onAllStateAction(num));
-//      dispatch(ChildViewActionCreator.onPushToNewPageAction(num));
+      dispatch(ChildViewActionCreator.onPushToNewPageAction(num));
     },
     child: Container(
       height: 100,
