@@ -10,9 +10,13 @@ Widget buildView(TwoState state, Dispatch dispatch, ViewService viewService) {
     appBar: AppBar(
       title: Text('Two'),
     ),
-    body: state.model.status == null
-        ? _buildEmpty(state, dispatch, viewService)
-        : _itemView(state, viewService),
+    body: ListView(
+      children: <Widget>[
+        state.model.status == null
+            ? _buildEmpty(state, dispatch, viewService)
+            : _itemView(state, viewService)
+      ],
+    ),
   );
 }
 

@@ -6,6 +6,7 @@ import 'state.dart';
 import 'view.dart';
 
 import '../components/child_view/component.dart';
+import '../components/achild_view/component.dart';
 
 class OnePage extends Page<OneState, Map<String, dynamic>> {
   OnePage()
@@ -18,7 +19,9 @@ class OnePage extends Page<OneState, Map<String, dynamic>> {
               adapter: null,
               slots: <String, Dependent<OneState>>{
                 'ChildViewComponent':
-                    ChildViewConnector() + ChildViewComponent()
+                    ChildViewConnector() + ChildViewComponent(),
+                'AchildViewComponent':
+                    AchildViewConnector() + AchildViewComponent(),
               }),
           middleware: <Middleware<OneState>>[],
         );

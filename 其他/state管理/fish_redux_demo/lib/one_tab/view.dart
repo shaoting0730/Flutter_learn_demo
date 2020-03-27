@@ -11,6 +11,7 @@ Widget buildView(OneState state, Dispatch dispatch, ViewService viewService) {
     body: ListView(
       children: <Widget>[
         _childView(state, viewService),
+        _achildView(state, viewService),
       ],
     ),
   );
@@ -18,4 +19,8 @@ Widget buildView(OneState state, Dispatch dispatch, ViewService viewService) {
 
 Align _childView(OneState state, ViewService viewService) {
   return Align(child: viewService.buildComponent('ChildViewComponent'));
+}
+
+Align _achildView(OneState state, ViewService viewService) {
+  return Align(child: viewService.buildComponent('AchildViewComponent'));
 }
