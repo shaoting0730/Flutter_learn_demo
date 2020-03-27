@@ -93,13 +93,13 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 >  [ 文件操作 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E8%AF%BB%E5%86%99%E8%AF%B7%E6%B1%82/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/file_operations/lib/main.dart )    <br/>
 >  [ HttpClient ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/HttpClient/httpclient_demo/lib/main.dart )    <br/>
 >  [ dio库 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E4%B8%8E%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/DioPackage/dio_package_demo/lib/main.dart )    <br/>
->  [ SQLite:sqflite库简单学习 ]( https://pheromone.github.io/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E4%B8%AD%E7%9A%84sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/ )    <br/>
->  [ json转实体类:json_serializable库学习 ]( https://pheromone.github.io/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/ )    <br/>
+>  [ SQLite:sqflite库简单学习 ](https://zhoushaoting.com/2019/03/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E4%B8%AD%E7%9A%84sqflite%E5%BA%93%E5%AD%A6%E4%B9%A0/ )    <br/>
+>  [ json转实体类:json_serializable库学习 ]( https://zhoushaoting.com/2019/03/06/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~json_serializable%E5%BA%93%E5%AD%A6%E4%B9%A0/ )    <br/>
 > [ tabBar ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo )<br/>
 > [ tabBar1 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo1 )<br/>
 > [ tabBar2 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/tabbar_demo2 )<br/>
 > [ tabBar3:类今日头条上方tabbar ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/top_tabbars_demo )<br/>
-> [ 路由管理库fluro学习 ]( https://pheromone.github.io/2019/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86%E5%BA%93fluro%E5%AD%A6%E4%B9%A0/ ) <br/>
+> [ 路由管理库fluro学习 ]( https://zhoushaoting.com/2019/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86%E5%BA%93fluro%E5%AD%A6%E4%B9%A0/ ) <br/>
 > [ 路由过渡动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo )<br/>
 
 ## state管理
@@ -133,11 +133,10 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例9 Slivers全家桶学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case9) <br/>
 > [ 案例10 导航条渐隐](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/opacity_nav) <br/>
 > [ 案例11 CanVas学习:签名板]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/canvas_demo ) <br/>
-> [ 案例12 国际化方案]( https://pheromone.github.io/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/ ) <br/>
+> [ 案例12 国际化方案]( https://zhoushaoting.com/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/ ) <br/>
 > [ 案例13 动画](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_demo) <br/>
 > [ 案例14 Flare学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/其他/案例/flare_learn) <br/>
-> [ 案例15 自定义Dialog和基本的组件封装](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/encapsulate_dialog_demo
-) <br/>
+> [ 案例15 自定义Dialog和基本的组件封装](https://zhoushaoting.com/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/) <br/>
 
 
 
