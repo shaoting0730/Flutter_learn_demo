@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'state.dart';
 
 Widget buildView(OneState state, Dispatch dispatch, ViewService viewService) {
+  print(state.themeColor);
   return Scaffold(
     appBar: AppBar(
       title: Text('one'),

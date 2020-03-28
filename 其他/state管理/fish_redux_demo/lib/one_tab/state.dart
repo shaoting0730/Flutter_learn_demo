@@ -1,10 +1,17 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'dart:ui';
+
 import '../components/child_view/state.dart';
 import '../components/achild_view/state.dart';
+import '../store/state.dart';
 
 class OneState implements Cloneable<OneState> {
   ChildViewState childState;
   AchildViewState aChildState;
+
+  @override
+  Color themeColor;
+
   @override
   OneState clone() {
     return OneState()

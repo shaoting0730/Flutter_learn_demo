@@ -7,6 +7,11 @@ import 'state.dart';
 Widget buildView(
     AchildViewState state, Dispatch dispatch, ViewService viewService) {
   return Container(
-    child: Text('我也想知道其他子组件的state'),
+    child: InkWell(
+      onTap: () {
+        dispatch(AchildViewActionCreator.changeThemeColor());
+      },
+      child: Text('修改全局state'),
+    ),
   );
 }

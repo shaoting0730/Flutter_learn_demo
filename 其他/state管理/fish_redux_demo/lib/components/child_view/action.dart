@@ -1,7 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
 
 //TODO replace with your own action
-enum ChildViewAction { action, pushToNewPageAction, allStateAction }
+enum ChildViewAction { action, pushToNewPageAction, initList }
 
 class ChildViewActionCreator {
   static Action onAction() {
@@ -13,7 +13,7 @@ class ChildViewActionCreator {
         payload: {'params': num});
   }
 
-  static Action onAllStateAction(int num) {
-    return Action(ChildViewAction.allStateAction, payload: num);
+  static Action initList(int num) {
+    return Action(ChildViewAction.initList, payload: num);
   }
 }

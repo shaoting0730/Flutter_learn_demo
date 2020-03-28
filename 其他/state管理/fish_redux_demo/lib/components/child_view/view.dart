@@ -9,7 +9,6 @@ import 'dart:math';
 Widget buildView(
     ChildViewState state, Dispatch dispatch, ViewService viewService) {
   var num = Random().nextInt(100);
-
   return InkWell(
     onTap: () {
       dispatch(ChildViewActionCreator.onPushToNewPageAction(num));
@@ -18,7 +17,9 @@ Widget buildView(
       height: 100,
       width: 200,
       child: Center(
-        child: Text('push 传值$num'),
+        child: Text(
+          'push 传值$num',
+        ),
       ),
     ),
   );
