@@ -20,6 +20,8 @@ Widget createApp() {
       'one_details': OneDetailsPagePage(),
     },
     visitor: (String path, Page<Object, dynamic> page) {
+      print('visitor---0');
+
       if (page.isTypeof<GlobalBaseState>()) {
         page.connectExtraStore<GlobalState>(GlobalStore.store,
             (Object pageState, GlobalState appState) {
@@ -29,6 +31,7 @@ Widget createApp() {
               final Object copy = pageState.clone();
               final GlobalBaseState newState = copy;
               newState.themeColor = appState.themeColor;
+              print('visitor---1');
               return newState;
             }
           }

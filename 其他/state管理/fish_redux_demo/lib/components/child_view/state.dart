@@ -1,9 +1,14 @@
-import 'package:fish_redux/fish_redux.dart';
+import 'dart:ui';
 
-class ChildViewState implements Cloneable<ChildViewState> {
+import 'package:fish_redux/fish_redux.dart';
+import '../../store/state.dart';
+
+class ChildViewState implements GlobalBaseState, Cloneable<ChildViewState> {
+  @override
+  Color themeColor;
   @override
   ChildViewState clone() {
-    return ChildViewState();
+    return ChildViewState()..themeColor = themeColor;
   }
 }
 

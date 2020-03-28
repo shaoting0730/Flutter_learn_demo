@@ -1,7 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 
 class AchildViewState implements Cloneable<AchildViewState> {
-
   @override
   AchildViewState clone() {
     return AchildViewState();
