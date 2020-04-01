@@ -13,9 +13,9 @@ class TwoState implements Cloneable<TwoState>, GlobalBaseState {
   @override
   TwoState clone() {
     return TwoState()
-      ..model = model
+      ..themeColor = themeColor
       ..itemState = itemState
-      ..themeColor = themeColor;
+      ..model = model;
   }
 }
 

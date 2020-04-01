@@ -13,10 +13,6 @@ Reducer<GlobalState> buildReducer() {
 }
 
 GlobalState _onChangeThemeColor(GlobalState state, Action action) {
-  print('Global');
-  print(state.themeColor);
-  print('Global');
-
   final Color color =
       state.themeColor == Colors.green ? Colors.blue : Colors.green;
   return state.clone()..themeColor = color;

@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart' hide Action;
 import './tabbar/page.dart';
 
 import './one_tab/page.dart';
-import './one_tab/details_page/page.dart';
+import './one_tab/adapter_testPage/page.dart';
 
 import './two_tab/page.dart';
 
@@ -16,8 +16,8 @@ Widget createApp() {
     pages: <String, Page<Object, dynamic>>{
       'tabbar': TabbarPage(),
       'one': OnePage(), //在这里添加页面
+      'adapter_page': AdapterTestPage(),
       'two': TwoPage(),
-      'one_details': OneDetailsPagePage(),
     },
     visitor: (String path, Page<Object, dynamic> page) {
       if (page.isTypeof<GlobalBaseState>()) {

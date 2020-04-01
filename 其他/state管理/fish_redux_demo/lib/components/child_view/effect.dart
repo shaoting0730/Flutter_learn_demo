@@ -15,5 +15,5 @@ void _onAction(Action action, Context<ChildViewState> ctx) {}
 // push 到新page
 void _pushAction(Action action, Context<ChildViewState> ctx) {
   var params = action.payload;
-  Navigator.of(ctx.context).pushNamed('one_details', arguments: params); //注意2
+  Navigator.of(ctx.context).pushNamed('adapter_page', arguments: params); //注意2
 }

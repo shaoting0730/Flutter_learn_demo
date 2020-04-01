@@ -10,5 +10,6 @@ class ItemViewState implements Cloneable<ItemViewState> {
 }
 
 ItemViewState initState(Map<String, dynamic> args) {
-  return ItemViewState();
+  ItemViewState state = ItemViewState();
+  return state;
 }
