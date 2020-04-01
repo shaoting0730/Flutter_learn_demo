@@ -8,11 +8,12 @@ Widget buildView(
     OneDetailsPageState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
     appBar: AppBar(
-      title: Text('详情界面'),
+      title: Text('详情界面:${state.num.toString()}'),
+      backgroundColor: state.themeColor,
     ),
     body: ListView(
       children: <Widget>[
-        Text('${state.num.toString()}'),
+        Text(''),
       ],
     ),
   );

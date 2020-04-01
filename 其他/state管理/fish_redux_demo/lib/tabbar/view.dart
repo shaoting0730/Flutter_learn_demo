@@ -8,13 +8,8 @@ import '../two_tab/page.dart';
 
 Widget buildView(
     TabbarState state, Dispatch dispatch, ViewService viewService) {
-  int _tabIndex = 0;
   var tabImages;
   var appBarTitles = ['首页', '我的'];
-  /*
-   * 存放2个tab页面
-   */
-  var _pageList;
 
   /*
    * 根据选择获得对应的normal或是press的icon
@@ -58,13 +53,6 @@ Widget buildView(
       getTabImage('images/tab/mine.png'),
       getTabImage('images/tab//mine_select.png')
     ]
-  ];
-  /*
-     * 界面
-     */
-  _pageList = [
-    new OnePage(),
-    new TwoPage(),
   ];
 
   return Scaffold(

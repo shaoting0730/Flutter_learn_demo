@@ -1,16 +1,21 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'dart:ui';
 import 'package:fishreduxdemo/components/item_view/state.dart';
 import '../model/twoModel.dart';
+import '../store/state.dart';
 
-class TwoState implements Cloneable<TwoState> {
+class TwoState implements Cloneable<TwoState>, GlobalBaseState {
   TwoModel model;
   ItemViewState itemState;
 
   @override
+  Color themeColor;
+  @override
   TwoState clone() {
     return TwoState()
       ..model = model
-      ..itemState = itemState;
+      ..itemState = itemState
+      ..themeColor = themeColor;
   }
 }
 

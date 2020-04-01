@@ -8,6 +8,9 @@ import 'view.dart';
 import '../components/child_view/component.dart';
 import '../components/achild_view/component.dart';
 
+import '../store/store.dart';
+import '../store/update.dart';
+
 class OnePage extends Page<OneState, Map<String, dynamic>> {
   OnePage()
       : super(
@@ -24,5 +27,7 @@ class OnePage extends Page<OneState, Map<String, dynamic>> {
                     AchildViewConnector() + AchildViewComponent(),
               }),
           middleware: <Middleware<OneState>>[],
-        );
+        ) {
+    connectExtraStore(GlobalStore.store, globalUpdate());
+  }
 }

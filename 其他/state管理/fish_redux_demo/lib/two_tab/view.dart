@@ -8,11 +8,12 @@ import 'state.dart';
 Widget buildView(TwoState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
     appBar: AppBar(
+      backgroundColor: state.themeColor,
       title: Text('Two'),
     ),
     body: ListView(
       children: <Widget>[
-        state.model.status == null
+        state.model == null
             ? _buildEmpty(state, dispatch, viewService)
             : _itemView(state, viewService)
       ],

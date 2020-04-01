@@ -11,7 +11,7 @@ Widget buildView(
       onTap: () {
         dispatch(AchildViewActionCreator.changeThemeColor());
       },
-      child: Text('修改全局state'),
+      child: Text('component修改全局state'),
     ),
   );
 }

@@ -6,6 +6,7 @@ import 'state.dart';
 Widget buildView(OneState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
     appBar: AppBar(
+      backgroundColor: state.themeColor,
       title: Text('one'),
     ),
     body: ListView(

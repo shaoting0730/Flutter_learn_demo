@@ -7,6 +7,9 @@ import 'view.dart';
 
 import '../components/item_view/component.dart';
 
+import '../store/store.dart';
+import '../store/update.dart';
+
 class TwoPage extends Page<TwoState, Map<String, dynamic>> {
   TwoPage()
       : super(
@@ -18,5 +21,7 @@ class TwoPage extends Page<TwoState, Map<String, dynamic>> {
               slots: <String, Dependent<TwoState>>{
                 'ChildViewComponent': ItemViewConnector() + ItemViewComponent()
               }),
-        );
+        ) {
+    connectExtraStore(GlobalStore.store, globalUpdate());
+  }
 }
