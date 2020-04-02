@@ -22,7 +22,6 @@ class TwoState implements Cloneable<TwoState>, GlobalBaseState {
 TwoState initState(Map<String, dynamic> args) {
   TwoState state = TwoState();
   state.itemState = ItemViewState();
-  state.model = TwoModel();
   return state;
 }
 

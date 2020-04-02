@@ -31,12 +31,13 @@ AdapterTestState initState(Map<String, dynamic> args) {
   state.headerModel = AdapterHeaderModel(
       title: '测试数据头', imageNamed: headerImageNamed, detailTitle: '展示头部视图的标题使用');
   final List<AdapterCellModel> li = List<AdapterCellModel>.generate(
-      20,
-      (i) => AdapterCellModel(
-          title: '萌妹子 ${i + 1}',
-          imageNamed: cellImageNamed,
-          detailTitle: '其实是男孩 ${i + 1}',
-          dateStr: '我是描述描述描述'));
+    20,
+    (i) => AdapterCellModel(
+        title: '萌妹子 ${i + 1}',
+        imageNamed: cellImageNamed,
+        detailTitle: '其实是男孩 ${i + 1}',
+        dateStr: '我是描述描述描述'),
+  );
   state.cellModels = li;
   state.footerStr = '我是当前界面的区尾';
   state..num = args["params"]; // 前面界面传过来的参数

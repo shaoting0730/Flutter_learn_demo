@@ -9,7 +9,7 @@ Widget buildView(
     ItemViewState state, Dispatch dispatch, ViewService viewService) {
   List<Data> items = state.model.data;
   List<Widget> widgets = [];
-  if (items.length > 0) {
+  if (items != null && items.length > 1) {
     items.forEach((e) {
       widgets.add(
         Row(
@@ -36,5 +36,7 @@ Widget buildView(
     );
   }
 
-  return Column(children: widgets);
+  return Column(
+    children: widgets,
+  );
 }
