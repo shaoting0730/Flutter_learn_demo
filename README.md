@@ -139,6 +139,6 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例13 动画](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_demo) <br/>
 > [ 案例14 Flare学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/其他/案例/flare_learn) <br/>
 > [ 案例15 自定义Dialog和基本的组件封装](https://zhoushaoting.com/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/) <br/>
-> [ UI根据角色判断(fish——redux数据流store分开,UI分开,逻辑分开)--初版 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/diffrent_user_tab )<br/>
+> [ 案例16 UI根据角色判断(fish——redux数据流store分开,UI分开,逻辑分开) ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/diffrent_user_tab )<br/>
 
 
