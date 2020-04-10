@@ -8,5 +8,4 @@ Effect<AdapterTestState> buildEffect() {
   });
 }
 
-void _onAction(Action action, Context<AdapterTestState> ctx) {
-}
+void _onAction(Action action, Context<AdapterTestState> ctx) {}
