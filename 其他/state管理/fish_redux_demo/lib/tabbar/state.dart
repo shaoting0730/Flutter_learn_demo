@@ -1,18 +1,13 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../store/state.dart';
 
-class TabbarState implements GlobalBaseState, Cloneable<TabbarState> {
+class TabbarState implements Cloneable<TabbarState> {
   var index = 0;
-  @override
-  Color themeColor;
 
   @override
   TabbarState clone() {
-    TabbarState newState = TabbarState()
-      ..index = index
-      ..themeColor = themeColor;
+    TabbarState newState = TabbarState()..index = index;
     return newState;
   }
 }
