@@ -1,10 +1,10 @@
 import 'package:fish_redux/fish_redux.dart';
 
 //TODO replace with your own action
-enum OneAction { action }
+enum ThreeAction { action }
 
-class OneActionCreator {
+class ThreeActionCreator {
   static Action onAction() {
-    return const Action(OneAction.action);
+    return const Action(ThreeAction.action);
   }
 }

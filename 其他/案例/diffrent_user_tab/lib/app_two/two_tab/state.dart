@@ -1,10 +1,13 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'dart:ui';
+import '../store/state.dart';
 
-class TwoState implements Cloneable<TwoState> {
-
+class TwoState implements Cloneable<TwoState>, GlobalBaseState {
+  @override
+  Color themeColor;
   @override
   TwoState clone() {
-    return TwoState();
+    return TwoState()..themeColor = themeColor;
   }
 }
 

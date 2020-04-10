@@ -1,17 +1,17 @@
 import 'package:fish_redux/fish_redux.dart';
 
-import 'action.dart';
-import 'state.dart';
+import './action.dart';
+import './state.dart';
 
-Reducer<OneState> buildReducer() {
+Reducer<ThreeState> buildReducer() {
   return asReducer(
-    <Object, Reducer<OneState>>{
-      OneAction.action: _onAction,
+    <Object, Reducer<ThreeState>>{
+      ThreeAction.action: _onAction,
     },
   );
 }
 
-OneState _onAction(OneState state, Action action) {
-  final OneState newState = state.clone();
+ThreeState _onAction(ThreeState state, Action action) {
+  final ThreeState newState = state.clone();
   return newState;
 }

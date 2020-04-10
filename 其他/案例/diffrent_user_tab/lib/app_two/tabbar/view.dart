@@ -1,11 +1,11 @@
 import 'package:fish_redux/fish_redux.dart';
-import '../tabbar/action.dart';
 import 'package:flutter/material.dart';
 
-import 'state.dart';
+import './state.dart';
 import '../one_tab/page.dart';
 import '../two_tab/page.dart';
 import '../three_tab/page.dart';
+import '../tabbar/action.dart';
 
 Widget buildView(
     TabbarState state, Dispatch dispatch, ViewService viewService) {
@@ -63,9 +63,9 @@ Widget buildView(
   return Scaffold(
     body: IndexedStack(
       children: <Widget>[
-        UserTwoOnePage().buildPage(null),
-        UserTwoTwoPage().buildPage(null),
-        UserTwoThreePage().buildPage(null),
+        OnePage().buildPage(null),
+        TwoPage().buildPage(null),
+        ThreePage().buildPage(null),
       ],
       index: state.index,
     ),

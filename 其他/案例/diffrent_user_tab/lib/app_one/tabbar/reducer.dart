@@ -1,7 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
 
-import 'action.dart';
-import 'state.dart';
+import './action.dart';
+import './state.dart';
 
 Reducer<TabbarState> buildReducer() {
   return asReducer(

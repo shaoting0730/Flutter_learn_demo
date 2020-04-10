@@ -1,8 +1,7 @@
 import 'package:fish_redux/fish_redux.dart';
-import '../tabbar/action.dart';
 import 'package:flutter/material.dart';
-
-import 'state.dart';
+import '../tabbar/action.dart';
+import './state.dart';
 import '../one_tab/page.dart';
 import '../two_tab/page.dart';
 
@@ -58,8 +57,8 @@ Widget buildView(
   return Scaffold(
     body: IndexedStack(
       children: <Widget>[
-        UserOneOnePage().buildPage(null),
-        UserOneTwoPage().buildPage(null),
+        OnePage().buildPage(null),
+        TwoPage().buildPage(null),
       ],
       index: state.index,
     ),

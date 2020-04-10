@@ -1,9 +1,9 @@
 import 'package:fish_redux/fish_redux.dart';
 
-import 'effect.dart';
-import 'reducer.dart';
-import 'state.dart';
-import 'view.dart';
+import './effect.dart';
+import './reducer.dart';
+import './state.dart';
+import './view.dart';
 
 class UserOneTabbarPage extends Page<TabbarState, Map<String, dynamic>> {
   UserOneTabbarPage()

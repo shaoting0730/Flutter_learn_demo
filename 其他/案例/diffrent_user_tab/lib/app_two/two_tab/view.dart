@@ -1,9 +1,16 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/material.dart';
 
-import 'action.dart';
-import 'state.dart';
+import './state.dart';
 
 Widget buildView(TwoState state, Dispatch dispatch, ViewService viewService) {
-  return Container();
+  return Scaffold(
+    appBar: AppBar(
+      title: Text('app2'),
+      backgroundColor: state.themeColor,
+    ),
+    body: ListView(
+      children: <Widget>[],
+    ),
+  );
 }
