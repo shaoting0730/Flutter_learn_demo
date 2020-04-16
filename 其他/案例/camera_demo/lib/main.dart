@@ -28,6 +28,7 @@ class CameraApp extends StatefulWidget {
 class _CameraAppState extends State<CameraApp> {
   CameraController _cameraControlle;
   var _cameras;
+  var _currentType = 0;
 
   @override
   void initState() {
@@ -57,7 +58,9 @@ class _CameraAppState extends State<CameraApp> {
 
   @override
   Widget build(BuildContext context) {
-    if (_cameraControlle == null || _cameraControlle?.value == null) {
+    if (_cameraControlle == null ||
+        _cameraControlle?.value == null ||
+        _cameraControlle.value.isInitialized == false) {
       return Container(
         child: Center(
           child: CircularProgressIndicator(),
@@ -66,14 +69,14 @@ class _CameraAppState extends State<CameraApp> {
     }
     double rpx = MediaQuery.of(context).size.width / 750;
 
-    final size = MediaQuery.of(context).size;
-    final deviceRatio = size.width / size.height;
+    var size = MediaQuery.of(context).size;
+    var deviceRatio = size.width / size.height;
 
     return Scaffold(
       body: Stack(
         children: <Widget>[
 //          相机取景view
-//          CameraPreview(_cameraControlle), 取景框会出现变形
+//          CameraPreview(_cameraControlle), // 取景框会出现变形
           Transform.scale(
             scale: _cameraControlle.value.aspectRatio / deviceRatio,
             child: Center(
@@ -154,14 +157,31 @@ class _CameraAppState extends State<CameraApp> {
             flex: 1,
             child: FlatButton(
               onPressed: () {
-                _cameraControlle =
-                    CameraController(_cameras[1], ResolutionPreset.medium);
-                _cameraControlle.initialize().then((_) {
-                  if (!mounted) {
-                    return;
-                  }
-                  setState(() {});
-                });
+                if (_currentType == 0) {
+                  _cameraControlle =
+                      CameraController(_cameras[1], ResolutionPreset.medium);
+                  _cameraControlle.initialize().then((_) {
+                    if (!mounted) {
+                      return;
+                    }
+                    setState(() {});
+                  });
+                  setState(() {
+                    _currentType = 1;
+                  });
+                } else {
+                  _cameraControlle =
+                      CameraController(_cameras[0], ResolutionPreset.medium);
+                  _cameraControlle.initialize().then((_) {
+                    if (!mounted) {
+                      return;
+                    }
+                    setState(() {});
+                  });
+                  setState(() {
+                    _currentType = 0;
+                  });
+                }
               },
               child: Icon(
                 Icons.switch_camera,
