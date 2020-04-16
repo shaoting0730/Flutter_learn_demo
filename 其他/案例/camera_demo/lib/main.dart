@@ -64,10 +64,11 @@ class _CameraAppState extends State<CameraApp> {
         ),
       );
     }
-
     double rpx = MediaQuery.of(context).size.width / 750;
+
     final size = MediaQuery.of(context).size;
     final deviceRatio = size.width / size.height;
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -152,7 +153,16 @@ class _CameraAppState extends State<CameraApp> {
           Expanded(
             flex: 1,
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                _cameraControlle =
+                    CameraController(_cameras[1], ResolutionPreset.medium);
+                _cameraControlle.initialize().then((_) {
+                  if (!mounted) {
+                    return;
+                  }
+                  setState(() {});
+                });
+              },
               child: Icon(
                 Icons.switch_camera,
                 size: 80 * rpx,
@@ -185,7 +195,7 @@ class _TakePhotoBtnState extends State<TakePhotoBtn>
     super.initState();
     _animationController = AnimationController(
         duration: const Duration(milliseconds: 500), vsync: this);
-    _animation = new Tween(begin: 60.0, end: 50.0).animate(_animationController)
+    _animation = new Tween(begin: 60.0, end: 40.0).animate(_animationController)
       ..addStatusListener((status) {
         setState(() {
           // the state that has changed here is the animation object’s value
