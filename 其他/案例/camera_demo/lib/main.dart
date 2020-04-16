@@ -58,9 +58,7 @@ class _CameraAppState extends State<CameraApp> {
 
   @override
   Widget build(BuildContext context) {
-    if (_cameraControlle == null ||
-        _cameraControlle?.value == null ||
-        _cameraControlle.value.isInitialized == false) {
+    if (_cameraControlle == null || _cameraControlle?.value == null) {
       return Container(
         child: Center(
           child: CircularProgressIndicator(),
@@ -73,33 +71,35 @@ class _CameraAppState extends State<CameraApp> {
     var deviceRatio = size.width / size.height;
 
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
+      body: _cameraControlle.value.isInitialized
+          ? Stack(
+              children: <Widget>[
 //          相机取景view
 //          CameraPreview(_cameraControlle), // 取景框会出现变形
-          Transform.scale(
-            scale: _cameraControlle.value.aspectRatio / deviceRatio,
-            child: Center(
-              child: AspectRatio(
-                aspectRatio: _cameraControlle.value.aspectRatio,
-                child: CameraPreview(_cameraControlle),
-              ),
-            ),
-          ),
+                Transform.scale(
+                  scale: _cameraControlle.value.aspectRatio / deviceRatio,
+                  child: Center(
+                    child: AspectRatio(
+                      aspectRatio: _cameraControlle.value.aspectRatio,
+                      child: CameraPreview(_cameraControlle),
+                    ),
+                  ),
+                ),
 //          顶部导航
-          Positioned(
-            top: 0,
-            left: 0,
-            child: _topNav(rpx),
-          ),
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  child: _topNav(rpx),
+                ),
 //          底部菜单
-          Positioned(
-            bottom: 0,
-            left: 0,
-            child: _bottomNav(rpx, _cameraControlle),
-          ),
-        ],
-      ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: _bottomNav(rpx, _cameraControlle),
+                ),
+              ],
+            )
+          : Container(),
     );
   }
 
