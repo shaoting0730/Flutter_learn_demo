@@ -1,7 +1,10 @@
 import 'dart:async';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:image_picker_saver/image_picker_saver.dart';
 
 void main() => runApp(MyApp());
 
@@ -110,13 +113,12 @@ class _CameraAppState extends State<CameraApp> {
     return Container(
       width: 750 * rpx,
       height: 100 * rpx,
-      color: Colors.red,
       padding: EdgeInsets.only(top: 10),
       child: Row(
         children: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.flash_on,
+              Icons.add_call,
               color: Colors.white,
             ),
             onPressed: () {},
@@ -133,15 +135,14 @@ class _CameraAppState extends State<CameraApp> {
     return Container(
       width: 750 * rpx,
       height: 150 * rpx,
-      color: Colors.yellow,
       child: Row(
         children: <Widget>[
           Expanded(
             flex: 1,
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () async {},
               child: Icon(
-                Icons.panorama,
+                Icons.backspace,
                 size: 80 * rpx,
               ),
             ),
@@ -234,8 +235,19 @@ class _TakePhotoBtnState extends State<TakePhotoBtn>
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
+      onTap: () async {
         _animationController.forward();
+
+        var path = '';
+        var extDir = await getApplicationDocumentsDirectory();
+        var date = DateTime.now().millisecondsSinceEpoch.toString();
+        path = '${extDir.path}/$date.png';
+        widget.controller.takePicture(path).then((e) async {
+          await ImagePickerSaver.saveFile(
+              fileData: File(path).readAsBytesSync());
+        }).catchError((err) {
+          print(err);
+        });
       },
       child: Center(
         child: Container(
@@ -243,14 +255,14 @@ class _TakePhotoBtnState extends State<TakePhotoBtn>
           width: _animation.value,
           height: _animation.value,
           decoration: BoxDecoration(
-            border: Border.all(width: 5, color: Colors.white),
+            border: Border.all(width: 5, color: Colors.redAccent),
             borderRadius: BorderRadius.all(
               Radius.circular(35),
             ),
           ),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Colors.redAccent,
               borderRadius: BorderRadius.all(
                 Radius.circular(30),
               ),
