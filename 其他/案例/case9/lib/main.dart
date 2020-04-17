@@ -3,6 +3,9 @@ import './widgets/SliverAppBarDemo.dart';
 import './widgets/NestedScrollViewDemo.dart';
 import './widgets/SliverGridDemo.dart';
 import './widgets/SliverListDemo.dart';
+import './widgets/StickyDemo.dart';
+import './widgets/Eleme.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -72,7 +75,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       ));
                 },
                 child: Text('SliverList'),
-              )
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StickyDemo(),
+                      ));
+                },
+                child: Text('StickyDemo'),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ElemeDemo(),
+                      ));
+                },
+                child: Text('饿了么UI'),
+              ),
             ],
           ),
         ),
