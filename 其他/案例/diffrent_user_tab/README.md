@@ -1,6 +1,6 @@
 # diffrentusertab
 
-不同用户登陆展示不同角色tab
+不同用户登陆展示不同角色tab 使用fish_redux
 
 ## Getting Started
 
