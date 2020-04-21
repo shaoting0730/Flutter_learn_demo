@@ -89,6 +89,9 @@ class _MyHomePageState extends State<MyHomePage>
   }
 }
 
+/*
+* 整体下拉view
+* */
 class DropDownView extends StatefulWidget {
   @override
   _DropDownViewState createState() => _DropDownViewState();
@@ -101,22 +104,28 @@ class _DropDownViewState extends State<DropDownView> {
       type: MaterialType.transparency,
       child: Column(
         children: <Widget>[
-          Container(
-            color: Colors.yellow,
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height - 200,
-            child: ListView.builder(
-              itemCount: 1000,
-              itemBuilder: (context, index) {
-                return Text(
-                  '¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥¥',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                );
-              },
+          // 下拉框中的实际内容 5/8
+          Expanded(
+            flex: 5,
+            child: Container(
+              color: Colors.yellow,
+              child: ListView.builder(
+                itemCount: 90,
+                itemBuilder: (context, index) {
+                  return Text(
+                    '============================',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  );
+                },
+              ),
             ),
           ),
-          _bottomShadow(),
+          // 下拉框中阴影 3/8
+          Expanded(
+            flex: 3,
+            child: _bottomShadow(),
+          ),
         ],
       ),
     );
@@ -127,7 +136,6 @@ class _DropDownViewState extends State<DropDownView> {
   * */
   Widget _bottomShadow() {
     return Container(
-      height: 100,
       width: MediaQuery.of(context).size.width,
       color: Color.fromRGBO(0, 0, 0, 0.4),
     );
