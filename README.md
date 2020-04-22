@@ -30,6 +30,7 @@
 > [ stackwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/stackwidget )<br/>
 > [ push ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/push_demo )<br/>
 > [ push传参 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/push_param_demo )<br/>
+> [ inheriteWidget ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/inherite_widget_demo )<br/>
 > [ ExpansionTile ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/expansion_tile )<br/>
 > [ ExpansionPaneList ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/expansionpanelist )<br/>
 > [ 虚线 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/dotted_line_demo )<br/>
@@ -38,7 +39,6 @@
 > [ Chip FilterChip ChioceChip ActionChip  Divider  DataTable
 PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/mdc_demo )<br/>
 > [ 添加引导页面 appBar DatePicker BottomSheet Dialog Stepper 滚动监听 雨滴动画 密码输入框 faceID&TouchID 与webView交互 上拉抽屉 回调 event_bus传值 WillPopScope监听Android物理返回键]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/widgets_demo )<br/>
-
 
 
 ## 布局widget  
