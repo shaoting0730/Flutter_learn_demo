@@ -119,8 +119,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 阿里fish redux中文介绍 ](https://hzgotb.github.io/fish-redux-docs/zh/guide/get-started/) <br/>
 > [ fish_redux模版工具FishReduxTemplateForAS-Android Studio ](https://github.com/BakerJQ/FishReduxTemplateForAS) <br/>
 > [ fish_redux模版工具fish-redux-template-VScode](https://marketplace.visualstudio.com/items?itemName=huangjianke.fish-redux-template) <br/>
-> [ fish_redux Demo(含Tabbar、model、dio、基本传值、component、globalStore、adapter) ](
-https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/fish_redux_demo) <br/>
+> [ fish_redux Demo(含Tabbar、model、dio、基本传值、component、globalStore、adapter) ]( https://zhoushaoting.com/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/) <br/>
 > [ fish_redux Demo1(无Tabbar最简单版本) ](
 https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/fish_redux_demo1) <br/>
 
