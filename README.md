@@ -30,7 +30,6 @@
 > [ stackwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/stackwidget )<br/>
 > [ push ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/push_demo )<br/>
 > [ push传参 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/push_param_demo )<br/>
-> [ inheriteWidget ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/inherite_widget_demo )<br/>
 > [ ExpansionTile ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/expansion_tile )<br/>
 > [ ExpansionPaneList ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/expansionpanelist )<br/>
 > [ 虚线 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/dotted_line_demo )<br/>
