@@ -4,6 +4,12 @@ A new Flutter project.
 
 ## Getting Started
 
+
+https://blog.csdn.net/weixin_34390105/article/details/88017229
+
+https://mp.weixin.qq.com/s/RQxhR0IMcEIt06BYyiEgqw
+
+
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/overlay_flow/result.gif) <br/>
 
 
