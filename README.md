@@ -106,7 +106,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ Dart是值传递还是引用传递？？？]( https://www.jianshu.com/p/532e808c6285 )<br/>
 > [ InheritedWidget相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/InheritedWidget%E7%9B%B8%E5%85%B3.md )<br/>
 > [ Stream相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/Stream%E7%9B%B8%E5%85%B3.md )<br/>
-
+> [ Flutter启动系列之Dart虚拟机启动 ]( https://xiaozhuanlan.com/topic/7039642518 )<br/>
 
 ## state管理
 > [ scoped_model学习 ]( https://zhoushaoting.com/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/ ) <br/> 
