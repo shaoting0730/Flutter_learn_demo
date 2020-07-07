@@ -63,7 +63,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ customscrollview ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/customscrollview_demo )<br/>
 > [ scroll ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scroll_widget )<br/>
 > [ scroll 滚动控制1 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo )<br/>
-> [ container 滚动控制2 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1 )<br/>
+> [ scroll 滚动控制2 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1 )<br/>
 
 ## 功能Widget
 >   [ Android双击物理键退出app 主体Theme学习 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/functional_module/lib/main.dart )    <br/>
@@ -79,6 +79,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ flutter_boost学习视频 ](  https://www.bilibili.com/video/av68165113?from=search&seid=6069933847949675176 )<br/>
  > [ flutter_boost教程 ]( https://www.jianshu.com/p/679a642ade52 )<br/>
  > [ flutter_boost源码浅析 ]( https://juejin.im/post/5e61b803f265da57127e526c )<br/>
+ > [ 深入理解Flutter Platform Channel ]( https://www.jianshu.com/p/39575a90e820 )<br/>
+
 
 ## 热更新方案
  > [ flutter/issues上关于热更新方案的讨论 ](  https://github.com/flutter/flutter/issues/14330 )<br/>
