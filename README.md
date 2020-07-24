@@ -114,6 +114,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ Flutter Engine线程管理与Dart Isolate机制 ]( https://blog.csdn.net/alitech2017/article/details/81108487 )<br/>
 > [ Key ]( https://weilu.blog.csdn.net/article/details/104745624 )<br/>
 > [ Flutter原理简解 ]( https://www.stephenw.cc/2018/05/14/flutter-principle/ )<br/>
+> [ Flutter编译模式 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F.md )<br/>
+
 
 
 ## state管理
