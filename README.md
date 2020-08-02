@@ -80,6 +80,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ flutter_boost教程 ]( https://www.jianshu.com/p/679a642ade52 )<br/>
  > [ flutter_boost源码浅析 ]( https://juejin.im/post/5e61b803f265da57127e526c )<br/>
  > [ 深入理解Flutter Platform Channel ]( https://www.jianshu.com/p/39575a90e820 )<br/>
+ > [ Flutter新锐专家之路：混合开发篇 ]( https://www.jianshu.com/p/d9b1290e9e28 )<br/>
 
 
 
