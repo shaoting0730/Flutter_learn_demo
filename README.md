@@ -157,5 +157,6 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例16 UI根据角色判断(fish——redux数据流store分开,UI分开,逻辑分开) ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/diffrent_user_tab )<br/>
 > [ 案例17 自定义相机页面](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/camera_demo) <br/>
 > [ 案例18 自定义下拉框](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/drop_down_box_demo) <br/>
-> [ 案例19 键盘相关：监听键盘弹出\缩回事件，点击空白缩回键盘、点击按钮弹出键盘](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/keyboard_tips) <br/>
+> [ 案例19 性能优化点](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md ) <br/>
+> [ 案例20 键盘相关：监听键盘弹出\缩回事件，点击空白缩回键盘、点击按钮弹出键盘](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/keyboard_tips) <br/>
 
