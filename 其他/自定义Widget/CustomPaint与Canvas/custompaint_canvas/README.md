@@ -1,4 +1,10 @@
 # custompaint_canvas
+ [ Flutter 动画鼻祖之CustomPaint ]( https://www.cnblogs.com/mengqd/p/13034117.html )   <br/>
+ [ flutter自定义View(CustomPainter) 之 canvas的方法总结 ]( https://blog.csdn.net/u011272795/article/details/83828732)   <br/>
+ [ 使用CustomPainter在Flutter中绘图 ]( https://www.jianshu.com/p/8fc32ea0df07 )   <br/>
+
+
+
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E8%87%AA%E5%AE%9A%E4%B9%89Widget/CustomPaint%E4%B8%8ECanvas/custompaint_canvas/result.png) <br/>
 A new Flutter project.
 
