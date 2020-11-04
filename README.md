@@ -120,6 +120,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 
 
 ## state管理
+> [ Flutter State Management状态管理全面分析 ]( https://www.jianshu.com/p/9334b8f68004 ) <br/> 
 > [ scoped_model学习 ]( https://zhoushaoting.com/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/ ) <br/> 
 > [ redux学习 ]( https://zhoushaoting.com/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~redux%E5%AD%A6%E4%B9%A0/ ) <br/>
 > [ provide学习 ]( https://zhoushaoting.com/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/ ) <br/>
