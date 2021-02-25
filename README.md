@@ -110,6 +110,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ Flutter启动系列之Dart虚拟机启动 ]( https://xiaozhuanlan.com/topic/7039642518 )<br/>
 > [ Future相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/Future%E7%9B%B8%E5%85%B3.md )<br/>
 > [ Flutter Engine线程管理与Dart Isolate机制 ]( https://blog.csdn.net/alitech2017/article/details/81108487 )<br/>
+> [ 聊一聊Flutter线程管理与Dart Isolate机制 ]( https://zhuanlan.zhihu.com/p/40069285 )<br/>
+> [ 深入了解Flutter的isolate(1) ---- 事件循环(event loop)及代码运行顺序 ]( https://juejin.cn/post/6844903756996280327 )<br/>
 > [ Key ]( https://weilu.blog.csdn.net/article/details/104745624 )<br/>
 > [ Key:demo ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/key/flutter_key )<br/>
 > [ Dart 健全的空安全 ]( https://mp.weixin.qq.com/s/zdlsdv8ymyQTHmf1iLCyWA )    <br/>
