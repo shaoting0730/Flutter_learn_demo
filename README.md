@@ -88,6 +88,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 
 ## 杂类
 > [ dart部分认知 ](  http://www.ptbird.cn/category/dart/ )<br/>
+> [ 深入理解 Dart 空安全 ](  https://www.baidu.com/s?wd=dart%20%E7%A9%BA%E5%AE%89%E5%85%A8&rsv_spt=1&rsv_iqid=0xc48e55d800165fbc&issp=1&f=3&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_enter=1&rsv_dl=ts_3&oq=dart&rsv_t=a2987NN0N%2F3v3QPK4kZ7nTyKkCVzDnznWB5f05xz%2F7RzD2fJoZeM5u9o1nrS0o32TtF0&rsv_btype=t&rsv_sug3=13&rsv_sug1=15&rsv_sug7=100&rsv_pq=a1e07b5600281107&rsv_sug2=1&prefixsug=dart%2520&rsp=3&rsv_sug4=4354 ) <br/>
 >  [通知 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/notification/lib/main.dart )    <br/>
 >  [ 事件 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/pointer/lib/main.dart )    <br/>
 >  [ 手势 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%89%8B%E5%8A%BF/destruedetector/lib/main.dart )    <br/>
