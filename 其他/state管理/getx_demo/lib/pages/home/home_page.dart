@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_demo/pages/account/account_controller.dart';
 
 import 'home_controller.dart';
 

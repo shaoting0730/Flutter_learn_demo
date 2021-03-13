@@ -26,7 +26,12 @@ class AccountPage extends GetView<AccountController> {
               ),
               InkWell(
                 onTap: () {
-                  Get.to(SecondPage());
+                  Get.to(
+                    () => SecondPage(
+                      name: controller.name,
+                      age: controller.age,
+                    ),
+                  );
                 },
                 child: Text('跳转二级'),
               ),
