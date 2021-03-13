@@ -34,11 +34,11 @@ class DashboardPage extends StatelessWidget {
             items: [
               _bottomNavigationBarItem(
                 icon: CupertinoIcons.home,
-                label: '首页',
+                title: Text('one'.tr),
               ),
               _bottomNavigationBarItem(
                 icon: CupertinoIcons.person,
-                label: '我的',
+                title: Text('two'.tr),
               ),
             ],
           ),
@@ -47,10 +47,7 @@ class DashboardPage extends StatelessWidget {
     );
   }
 
-  _bottomNavigationBarItem({IconData icon, String label}) {
-    return BottomNavigationBarItem(
-      icon: Icon(icon),
-      label: label,
-    );
+  _bottomNavigationBarItem({IconData icon, Widget title}) {
+    return BottomNavigationBarItem(icon: Icon(icon), title: title);
   }
 }
