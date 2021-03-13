@@ -6,13 +6,6 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          controller.title,
-          style: TextStyle(color: Colors.black),
-        ),
-        backgroundColor: Colors.red,
-      ),
       body: ListView(
         children: [
           Text(
