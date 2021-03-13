@@ -12,8 +12,7 @@ class HomePage extends GetView<HomeController> {
           controller.title,
           style: TextStyle(color: Colors.black),
         ),
-        elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.red,
       ),
       body: Container(
         child: Center(

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_demo/pages/account/second/second_page.dart';
 
-import 'account_controller.dart';
+import '../account_controller.dart';
 
-class AccountPage extends GetView<AccountController> {
+class SecondPage extends GetView<AccountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('二级'),
+      ),
       body: Container(
         child: Center(
           child: Column(
@@ -23,12 +25,6 @@ class AccountPage extends GetView<AccountController> {
                   '加1',
                   style: TextStyle(color: Colors.red, fontSize: 20),
                 ),
-              ),
-              InkWell(
-                onTap: () {
-                  Get.to(SecondPage());
-                },
-                child: Text('跳转二级'),
               ),
             ],
           ),
