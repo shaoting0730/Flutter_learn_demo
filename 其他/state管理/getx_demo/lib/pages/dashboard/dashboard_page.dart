@@ -12,14 +12,12 @@ class DashboardPage extends StatelessWidget {
     return GetBuilder<DashboardController>(
       builder: (controller) {
         return Scaffold(
-          body: SafeArea(
-            child: IndexedStack(
-              index: controller.tabIndex,
-              children: [
-                HomePage(),
-                AccountPage(),
-              ],
-            ),
+          body: IndexedStack(
+            index: controller.tabIndex,
+            children: [
+              HomePage(),
+              AccountPage(),
+            ],
           ),
           bottomNavigationBar: BottomNavigationBar(
             unselectedItemColor: Colors.black,
