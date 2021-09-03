@@ -9,3 +9,6 @@
 > [ Flutter异步编程Future与FutureBuilder的实用技巧]( https://www.imooc.com/article/286318 ) <br/>
 
 > [ Flutter中的异步（Future、async、await、FutureBuilder）和 网络请求 ](https://blog.csdn.net/yuzhiqiang_1993/article/details/89155870 ) <br/>
+
+> [ Flutter/Dart中的异步 ]( https://juejin.cn/post/6844903769793118215 ) <br/>
+
