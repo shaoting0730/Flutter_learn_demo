@@ -8,12 +8,12 @@ class SliverGridDemo extends StatelessWidget {
       appBar: AppBar(title: Text('SliverGridDemo')),
       body: CustomScrollView(
         slivers: <Widget>[
-         SliverSafeArea(
-           sliver: SliverPadding(
+          SliverSafeArea(
+            sliver: SliverPadding(
               padding: EdgeInsets.all(8.0),
               sliver: SliverGridYanshi(),
             ),
-         )
+          )
         ],
       ),
     );

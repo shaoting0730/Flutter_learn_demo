@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class SliverAppBarDemo extends StatefulWidget {
   @override
   _SliverAppBarDemoState createState() => _SliverAppBarDemoState();
@@ -15,16 +14,19 @@ class _SliverAppBarDemoState extends State<SliverAppBarDemo> {
           new SliverAppBar(
             leading: GestureDetector(
               child: Icon(Icons.arrow_back),
-              onTap: (){Navigator.pop(context);},
+              onTap: () {
+                Navigator.pop(context);
+              },
             ), //左侧按钮
             automaticallyImplyLeading: true,
             // title: Text('大标题'), //标题
             centerTitle: true, //标题是否居中
             actions: [
-                IconButton(
+              IconButton(
                   icon: Icon(Icons.ac_unit),
-                  onPressed: (){print('右边');}
-                  )
+                  onPressed: () {
+                    print('右边');
+                  })
             ], //右侧的内容和点击事件啥的
             elevation: 4, //阴影的高度
             forceElevated: false, //是否显示阴影

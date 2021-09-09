@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sliver_widgets/widgets/SliverHeader.dart';
 import './widgets/SliverAppBarDemo.dart';
 import './widgets/NestedScrollViewDemo.dart';
 import './widgets/SliverGridDemo.dart';
@@ -84,6 +85,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       ));
                 },
                 child: Text('StickyDemo'),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SliverPersistentHeaderDemo(),
+                      ));
+                },
+                child: Text('SliverPersistentHeaderDemo'),
               ),
             ],
           ),
