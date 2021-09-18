@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:init_demo/config/constant.dart';
+import 'dart:convert' as convert;
 import 'package:get/get.dart';
 import 'home_controller.dart';
 
@@ -36,7 +38,9 @@ class HomePage extends GetView<HomeController> {
               Get.updateLocale(locale);
               controller.changeValue('英文');
             },
-          )
+          ),
+          const Text(CONSTANT.NAME),
+          Text(convert.jsonEncode(CONSTANT.INFO)),
         ],
       ),
     );
