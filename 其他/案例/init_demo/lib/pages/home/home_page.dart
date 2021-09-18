@@ -39,8 +39,10 @@ class HomePage extends GetView<HomeController> {
               controller.changeValue('英文');
             },
           ),
-          const Text(CONSTANT.NAME),
-          Text(convert.jsonEncode(CONSTANT.INFO)),
+          const Text(CONSTANT.name),
+          Text(
+            convert.jsonEncode(CONSTANT.info),
+          ),
         ],
       ),
     );
