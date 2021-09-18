@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:init_demo/config/constant.dart';
 import 'dart:convert' as convert;
 import 'package:get/get.dart';
@@ -13,7 +14,9 @@ class HomePage extends GetView<HomeController> {
       appBar: AppBar(
         title: const Text('首页'),
       ),
-      body: ListView(
+      body: SingleChildScrollView(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'hello'.tr,
@@ -43,8 +46,19 @@ class HomePage extends GetView<HomeController> {
           Text(
             convert.jsonEncode(CONSTANT.info),
           ),
+          Container(
+            color: Colors.red,
+            width: ScreenUtil().setHeight(100), // 100.w
+            height: ScreenUtil().setHeight(70), // 70.h
+            child: Text(
+              '文字',
+              style: TextStyle(
+                fontSize: ScreenUtil().setSp(25), // 25.sp
+              ),
+            ),
+          ),
         ],
-      ),
+      )),
     );
   }
 }
