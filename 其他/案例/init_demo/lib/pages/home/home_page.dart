@@ -4,6 +4,7 @@ import 'package:init_demo/config/constant.dart';
 import 'dart:convert' as convert;
 import 'package:get/get.dart';
 import 'home_controller.dart';
+import 'package:init_demo/component/my_btn.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
@@ -57,6 +58,23 @@ class HomePage extends GetView<HomeController> {
               ),
             ),
           ),
+          MyBtn(
+            onclick: () {
+              // ignore: avoid_print
+              print('黄');
+            },
+            width: 50,
+            height: 50,
+            color: Colors.yellow,
+          ),
+          MyBtn(
+            onclick: () {
+              // ignore: avoid_print
+              print('黑');
+            },
+            width: 100,
+            height: 50,
+          )
         ],
       )),
     );
