@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:init_demo/pages/account/second/second_page.dart';
-
 import 'account_controller.dart';
 
 class AccountPage extends GetView<AccountController> {

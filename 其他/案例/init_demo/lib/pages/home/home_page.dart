@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:init_demo/config/constant.dart';
+import 'package:init_demo/utils/constant.dart';
 import 'dart:convert' as convert;
 import 'package:get/get.dart';
 import 'home_controller.dart';

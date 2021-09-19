@@ -39,7 +39,8 @@ dependencies:
   flutter_screenutil: 5.0.0 # UI适配库
   common_utils: ^2.0.2   #工具类库
   event_bus: 2.0.0   # 事件发送
-
+  shared_preferences: 2.0.8   # 本地化储存
+  fluttertoast: ^8.0.8   # toast
 
 
 dev_dependencies:
