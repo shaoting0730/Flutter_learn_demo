@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:init_demo/pages/account/second/second_controller.dart';
 
 import '../account_controller.dart';
 
-class SecondPage extends GetView<AccountController> {
+class SecondPage extends GetView<SecondController> {
   final String name;
   final int age;
 
@@ -15,27 +16,25 @@ class SecondPage extends GetView<AccountController> {
       appBar: AppBar(
         title: const Text('二级'),
       ),
-      body: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                '参数--' + this.name + this.age.toString(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              '参数--' + this.name + this.age.toString(),
+            ),
+            Obx(
+              () => Text("结果 ${Get.put(SecondController()).counter}"),
+            ),
+            InkWell(
+              onTap: () => Get.put(AccountController()).increaseCounter(),
+              child: Text(
+                '加1',
+                style: TextStyle(color: Colors.red, fontSize: 20),
               ),
-              Obx(
-                () => Text("结果 ${controller.counter.value}"),
-              ),
-              InkWell(
-                onTap: () => controller.increaseCounter(),
-                child: Text(
-                  '加1',
-                  style: TextStyle(color: Colors.red, fontSize: 20),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
