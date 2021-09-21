@@ -33,6 +33,9 @@ class AccountPage extends GetView<AccountController> {
                   () => SecondPage(
                     name: controller.name,
                     age: controller.age,
+                    callBack: (e) {
+                      print('回来了 $e');
+                    },
                   ),
                 );
               },

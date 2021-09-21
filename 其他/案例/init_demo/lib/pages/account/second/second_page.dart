@@ -7,12 +7,24 @@ class SecondPage extends GetView<SecondController> {
   SecondController get sc => Get.put(SecondController());
   final String name;
   final int age;
-  const SecondPage({Key? key, required this.name, required this.age})
-      : super(key: key);
+  final Function callBack;
+  const SecondPage({
+    Key? key,
+    required this.name,
+    required this.age,
+    required this.callBack,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            callBack("回调的值");
+            Get.back();
+          },
+          child: const Icon(Icons.arrow_back_ios_new),
+        ),
         title: Row(
           children: [
             Text(
@@ -40,10 +52,11 @@ class SecondPage extends GetView<SecondController> {
               children: [
                 Text(sc.grilData[index].author.toString()),
                 Text(sc.grilData[index].desc.toString()),
-                Image.network(
-                  sc.grilData[index].images![0],
-                  fit: BoxFit.contain,
-                  width: 234,
+                FadeInImage.assetNetwork(
+                  fit: BoxFit.fitHeight,
+                  height: 200,
+                  placeholder: 'assets/tab/one.png',
+                  image: sc.grilData[index].images![0],
                 ),
               ],
             );
