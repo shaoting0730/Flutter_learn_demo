@@ -1,0 +1,69 @@
+.prew_video {
+  padding: 75% 0 0;
+  position: relative;
+  margin-bottom: 6px;
+}
+.prew_image {
+  padding: 100% 0 0;
+  position: relative;
+  margin-bottom: 6px;
+}
+.prew_video video, .prew_image video, .prew_image  image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.prew_image  .rabbish-warp {
+  position: absolute;
+  z-index: 1;
+  right: 0rpx;
+  top: 0rpx;
+  width: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  height: 25px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.prew_image .icon-plus {
+  position: absolute;
+  font-size: 50px;
+  color: #d1d1d1;
+  background: #f8f8f8;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  font-weight: lighter;
+}
+
+.prew_image .prew_price {
+  position: absolute;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+  padding: 0 8px;
+  line-height: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.prew_image .prew_price_1{
+  position: absolute;
+  bottom: 0rpx;
+  left: 0;
+  padding: 0 8px;
+  line-height: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: normal;
+}

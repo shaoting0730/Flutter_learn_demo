@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商品目录",
+  "usingComponents": {
+    "van-row": "../../../vendor/vant-webapp/row/index",
+    "author-panel": "../../components/author-panel/index",
+    "van-col": "../../../vendor/vant-webapp/col/index"
+  }
+}

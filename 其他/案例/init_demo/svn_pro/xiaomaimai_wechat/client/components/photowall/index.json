@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-row": "../../../vendor/vant-webapp/row/index",
+    "van-col": "../../../vendor/vant-webapp/col/index",
+    "searchbox": "../../../components/searchbox/index",
+    "iconfont": "../../../components/iconfont/index",
+    "van-stepper": "../../../vendor/vant-webapp/stepper/index",
+    "footer": "../../../components/footer/index",
+    "upload-progressbar": "../../../components/upload-progressbar/index"
+  }
+}

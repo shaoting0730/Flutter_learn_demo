@@ -1,0 +1,22 @@
+
+page {
+  background-color: #f2f2f2;
+}
+.page-footer-fixed{
+  background-color: #fff;
+}
+.btn {
+  height: 40px !important;
+  font-size: 16px !important;
+}
+
+.share-card {
+  justify-self: flex-start;
+  justify-content: flex-start;
+  background-color: transparent;
+  width: auto;
+  height: 100%;
+  border-radius: 5px;
+  display: block;
+  box-sizing: border-box;
+}

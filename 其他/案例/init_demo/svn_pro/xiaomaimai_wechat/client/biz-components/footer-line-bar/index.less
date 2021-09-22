@@ -1,0 +1,34 @@
+@import "../../base";
+
+.footer-line-bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:@margin-size-tiny;
+  //border:solid 1px red;
+
+  .loading-view{
+    transform: scale(0.7);
+    margin-right:-10px;
+  }
+  .title{
+    font-size: @font-size-normal;
+    color:@color-dark-1;
+  }
+  &::before{
+    content: '';
+    flex:1;
+    height:1rpx;
+    background-color: @color-splite-border;
+    margin-right: @margin-size-normal;
+    margin-left:@margin-size-normal;
+  }
+  &::after{
+    content: '';
+    flex:1;
+    height:1rpx;
+    background-color: @color-splite-border;
+    margin-left: @margin-size-normal;
+    margin-right:@margin-size-normal;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "店主推荐详情",
+  "usingComponents": {
+    "imagelist": "../../../components/imagelist/index",
+    "iconfont": "../../../components/iconfont/index",
+    "moment-action-bar": "../../../components/moment-action-bar/index",
+    "moment-comment": "../../../components/moment-comment/index",
+    "one-refresher":"../../../components/one-refresher/index",
+    "one-avatar":"../../../components/one-avatar/index"
+  }
+}

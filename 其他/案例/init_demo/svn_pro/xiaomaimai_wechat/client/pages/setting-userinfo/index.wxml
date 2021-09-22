@@ -1,0 +1,25 @@
+<!-- 积分规则 页 -->
+<scroll-view class="page" scroll-y='true' style="height:{{ clientHeight ? (clientHeight+offsetHeight)+'px':'auto'}};">
+    <view class="setting-panel">
+        <window-simple-row title="头像" showTitleBottomLine="{{true}}" showRightArrow="{{false}}" root-class="row-header">
+            <view class="row-right-title" slot="right">
+                <image class="user-header" src="{{userInfo.avatarUrl}}"/>
+            </view>
+        </window-simple-row>
+        <window-simple-row title="昵称" showTitleBottomLine="{{true}}" showRightArrow="{{false}}">
+            <view class="row-right-title" slot="right">{{userInfo.nickName}}</view>
+        </window-simple-row>
+        <window-simple-row title="手机号" showTitleBottomLine="{{true}}" showRightArrow="{{true}}" bind:tapRow="bindPhoneNumber">
+            <view class="row-right-title" slot="right">{{maskPhoneNumber}}</view>
+        </window-simple-row>
+        <window-simple-row wx:if="{{seller}}" title="供应商推荐码(点击复制)" showTitleBottomLine="{{true}}" showRightArrow="{{false}}" bind:tapRow="copyVendorCode">
+            <view class="row-right-title" slot="right">{{vendorCode}}</view>
+        </window-simple-row>
+    </view>
+    <blank-row/>
+    <view class="setting-panel">
+        <window-simple-row title="收件地址管理" showTitleBottomLine="{{false}}" showRightArrow="{{true}}" bind:tapRow="bindAddressTo"></window-simple-row>
+    </view>
+    <view class="bottom-empty"/>
+</scroll-view>
+

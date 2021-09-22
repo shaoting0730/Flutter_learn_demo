@@ -1,0 +1,5 @@
+<!--components/badge/index.wxml-->
+<view wx:if="{{ count > 0 }}" class="badge extended-class">
+    <text>{{count}}</text>
+</view>
+<view wx:if="{{ count === 0 }}" class="badge dot extended-class"></view>

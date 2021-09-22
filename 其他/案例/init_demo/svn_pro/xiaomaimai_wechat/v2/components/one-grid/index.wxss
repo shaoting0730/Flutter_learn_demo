@@ -1,0 +1,106 @@
+.one-grid {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.one-grid-row-1 > one-grid-item {
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+.one-grid-row-2 > one-grid-item {
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+.one-grid-row-3 > one-grid-item {
+  max-width: 33.33333%;
+  flex: 0 0 33.33333%;
+}
+.one-grid-row-4 > one-grid-item {
+  max-width: 25%;
+  flex: 0 0 25%;
+}
+.one-grid-row-5 > one-grid-item {
+  max-width: 20%;
+  flex: 0 0 20%;
+}
+.one-grid-row-6 > one-grid-item {
+  max-width: 16.66666%;
+  flex: 0 0 16.66666%;
+}
+.one-grid-row-7 > one-grid-item {
+  max-width: 14.28571%;
+  flex: 0 0 14.28571%;
+}
+.one-grid-row-8 > one-grid-item {
+  max-width: 12.5%;
+  flex: 0 0 12.5%;
+}
+.one-grid-row-9 > one-grid-item {
+  max-width: 11.11111%;
+  flex: 0 0 11.11111%;
+}
+.one-grid-row-10 > one-grid-item {
+  max-width: 10%;
+  flex: 0 0 10%;
+}
+.one-grid-row-11 > one-grid-item {
+  max-width: 9.0909%;
+  flex: 0 0 9.0909%;
+}
+.one-grid-row-12 > one-grid-item {
+  max-width: 8.33333%;
+  flex: 0 0 8.33333%;
+}
+.one-grid-row-13 > one-grid-item {
+  max-width: 7.6923%;
+  flex: 0 0 7.6923%;
+}
+.one-grid-row-14 > one-grid-item {
+  max-width: 7.14285%;
+  flex: 0 0 7.14285%;
+}
+.one-grid-row-15 > one-grid-item {
+  max-width: 6.66666%;
+  flex: 0 0 6.66666%;
+}
+.one-grid-row-16 > one-grid-item {
+  max-width: 6.25%;
+  flex: 0 0 6.25%;
+}
+.one-grid-row-17 > one-grid-item {
+  max-width: 5.88235%;
+  flex: 0 0 5.88235%;
+}
+.one-grid-row-18 > one-grid-item {
+  max-width: 5.55555%;
+  flex: 0 0 5.55555%;
+}
+.one-grid-row-19 > one-grid-item {
+  max-width: 5.26315%;
+  flex: 0 0 5.26315%;
+}
+.one-grid-row-20 > one-grid-item {
+  max-width: 5%;
+  flex: 0 0 5%;
+}
+.one-grid-row-21 > one-grid-item {
+  max-width: 4.7619%;
+  flex: 0 0 4.7619%;
+}
+.one-grid-row-22 > one-grid-item {
+  max-width: 4.54545%;
+  flex: 0 0 4.54545%;
+}
+.one-grid-row-23 > one-grid-item {
+  max-width: 4.34782%;
+  flex: 0 0 4.34782%;
+}
+.one-grid-row-24 > one-grid-item {
+  max-width: 4.16666%;
+  flex: 0 0 4.16666%;
+}

@@ -1,0 +1,186 @@
+<wxs src="./index.wxs" module="help" />
+<navigation-bar title="商品详情" background="#fff" />
+<scroll-view
+  scroll-y="{{true}}"
+  style="height:{{scrollHeight}}px"
+  scroll-top="{{scrollMomentsTop}}"
+  scroll-with-animation="{{true}}"
+>
+  <view class="prew_video" wx:if="{{product.VideoUrl}}">
+    <video object-fit="contain" src="{{product.VideoUrl}}" />
+  </view>
+  <van-image
+    wx:else
+    use-loading-slot
+    lazy-load="{{true}}"
+    width="{{screenWidth}}"
+    height="{{screenWidth}}"
+    fit="cover"
+    src="{{product.PictureList[0]? product.PictureList[0]+'?imageView2/2/w/'+ screenWidth : 'http://resource.xlwonder.wang/DQ_Product_Default.png'}}"
+    data-url="{{product.PictureList[0]? product.PictureList[0]+'?imageView2/2/w/'+ screenWidth : 'http://resource.xlwonder.wang/DQ_Product_Default.png'}}"
+    bind:click="onPreviewImage"
+  >
+    <van-loading slot="loading" type="spinner" size="40" vertical />
+  </van-image>
+  <van-cell-group border="{{ false }}">
+    <van-cell border="{{ false }}">
+      <view slot="title">
+        <text selectable="{{true}}">{{product.Description}}</text>
+      </view>
+      <view slot="right-icon">
+        <van-button wx:if="{{product.Status !== -1 }}" custom-class="share-btn" type="primary" size="small" bind:click="onShare">
+          <view class="shear-btn-inner">
+            <van-icon
+              name="/images/icon_goods_detail_share@2x.png"
+              size="18"
+              custom-class="share-icon"
+            />
+            <text class="ml-1">分享</text>
+          </view>
+        </van-button>
+      </view>
+    </van-cell>
+    <van-cell border="{{ false }}" custom-class="cell">
+      <view slot="title">
+        <one-price price="{{product.Price}}" custom-class="price" />
+      </view>
+    </van-cell>
+    <van-cell border="{{ false }}" custom-class="cell">
+      <view slot="title" class="info-bar">
+        <view>快递：¥{{shippingCost}}</view>
+        <view wx:if="{{product.MonthlySales}}">月销{{product.MonthlySales}}笔</view>
+        <view
+          wx:if="{{help.isFavorite(product,favorite)}}"
+          data-value="{{true}}"
+          bind:tap="onFavorite"
+          class="favorite-icon"
+        >
+          已收藏 <van-icon name="/images/icon_home_collection_on@2x.png" size="18"
+        /></view>
+        <view wx:else data-value="{{false}}" class="favorite-icon" bind:tap="onFavorite"
+          >收藏 <van-icon name="/images/icon_home_collection_off@2x.png" size="18"
+        /></view>
+      </view>
+    </van-cell>
+
+    <van-cell border="{{ false }}" custom-class="cell">
+      <view slot="title">
+        <block wx:for="{{ product.TagList }}" wx:for-index="index" wx:for-item="tag" wx:key="key">
+          <one-tag type="primary">{{tag}}</one-tag>
+        </block>
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <van-cell-group custom-class="mt-3" border="{{ false }}">
+    <van-cell title="商品详情" />
+    <view wx:if="{{pictures.length >0}}" class="pricture-wrap">
+      <block wx:for="{{ pictures}}" wx:for-index="index" wx:for-item="picture" wx:key="index">
+        <image
+          src="{{picture+'?imageView2/2/w/'+ screenWidth }}"
+          mode="widthFix"
+          data-url="{{picture}}"
+          bind:tap="onPreviewImage"
+        />
+      </block>
+    </view>
+    <view wx:else class="empty-wrap">
+      <view>
+        <van-icon name="/images/icon_goods_detail_empty@2x.png" size="22" />
+        <text class="ml-2">当前没有更多详情</text>
+      </view>
+    </view>
+  </van-cell-group>
+
+  <van-cell-group wx:if="{{!seller && promoted.length > 0}}" custom-class="mt-3" border="{{ false }}">
+    <van-cell title="为您推荐" border="{{ false }}" />
+    <swiper
+      indicator-dots="{{ true }}"
+      autoplay="{{ true }}"
+      current="{{ current }}"
+      class="swiper"
+      indicator-color="#ddd"
+      indicator-active-color="#FFAF4C"
+    >
+      <block wx:for="{{ promoted }}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <swiper-item>
+          <view class="products-wrap">
+            <view wx:for="{{ item }}" wx:for-index="index" wx:for-item="product" wx:key="Guid">
+              <one-product-item
+                seller="{{ true }}"
+                product="{{ product }}"
+                is-select="{{ false }}"
+              />
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </van-cell-group>
+
+  <view class="footer"></view>
+</scroll-view>
+<one-comp seller="{{false}}" custom-class="comp" bind:backTop="onMomentBackTop" />
+
+<view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <view wx:if="{{notice.show}}" class="notice {{notice.className}}">
+    {{notice.text}}
+  </view>
+
+  <view wx:if="{{seller}}" style=" padding: 5px 10px;">
+    <van-row gutter="10">
+      <van-col span="12">
+        <van-button
+          block
+          plain
+          disabled="{{product.Status === -1 }}"
+          custom-class="btn"
+          type="primary"
+          bind:click="onRemoveProduct"
+        >
+          下架
+        </van-button>
+      </van-col>
+      <van-col span="12">
+        <van-button
+          block
+          disabled="{{product.Status === -1 }}"
+          custom-class="btn"
+          type="primary"
+          bind:click="onEditProduct"
+        >
+          编辑
+        </van-button>
+      </van-col>
+    </van-row>
+  </view>
+  <view wx:else class="footer-bar">
+    <view class="cart-tab" bind:tap="onGotoCart">
+      <van-icon name="/images/icon_shoppingcart_gray@2x.png" info="{{cartCount}}" size="18" />
+      <view>购物车</view>
+    </view>
+    <view class="group-btn">
+      <van-row>
+        <van-col span="12">
+          <van-button
+            block
+            disabled="{{product.Status === -1 ||help.isDisabledAddCartBtn(product ,shoppingCart ) }}"
+            custom-class="btn btn-cart "
+            bind:click="onAddToCart"
+          >
+            加入购物车
+          </van-button>
+        </van-col>
+        <van-col span="12">
+          <van-button
+            block
+            disabled="{{product.Status === -1 || product.StockQuantity === 0 }}"
+            custom-class="btn btn-buy "
+            bind:click="onBuy"
+          >
+            立即购买
+          </van-button>
+        </van-col>
+      </van-row>
+    </view>
+  </view>
+</view>

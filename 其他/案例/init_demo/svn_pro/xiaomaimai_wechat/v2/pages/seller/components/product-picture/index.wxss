@@ -1,0 +1,58 @@
+.picture {
+  padding: 100% 0 0;
+  position: relative;
+  margin-bottom: 8px;
+}
+.picture .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.select-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.picture:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: inherit;
+  border-radius: inherit;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  content: "";
+  background-color: #fff;
+  z-index: 1;
+}
+.unselected:before {
+  opacity: 0.6;
+}
+.description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 8px;
+  line-height: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: normal;
+}
+.order {
+  position: absolute;
+  top: 5px;
+  left:5px;
+  text-align: center;
+  width: 20px;
+  line-height: 20px;
+  color: #fff;
+  background: #ffaf4c;
+  font-size: 12px;
+  font-weight: normal;
+}

@@ -1,0 +1,122 @@
+<view>
+  <van-notice-bar
+    wx:if="{{showNoticeBar}}"
+    text="{{ noticeText }}"
+    background-color="#eff6ff"
+    color="#1d72be"
+    bind:click="copyOwnerWechatId"
+    wrapable
+    scrollable="false"
+  >
+    <van-icon slot="right-icon" name="cross" bind:click="onCloneNoticeBar" />
+  </van-notice-bar>
+  <van-cell-group wx:if="{{ carts.length > 0}}">
+    <van-cell>
+      <view slot="title">
+        <van-checkbox value="{{selectedAllStatus}}" bind:change="bindToggleSelectAll">
+          全选
+        </van-checkbox>
+      </view>
+      <view class="clear" bind:tap="onRemoveCart">
+        <iconfont name="rabbish" class="icon-rabbish" />
+        <text>删除选中产品</text>
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <scroll-view scroll-y bindscroll="refresherScroll" style="height: {{tabContentHeight}}px">
+    <one-refresher
+      id="refresher"
+      distance="50"
+      loadNoDataText=""
+      bind:pulling="onPulling"
+      bind:refresh="onRefresh"
+      scroll-top="{{ scrollTop }}"
+    >
+      <view
+        class="search_no"
+        wx:if="{{ carts.length === 0}}"
+        style="height:{{tabContentHeight}}px;"
+      >
+        <empty-placeholder
+          placeholder-class="empty-placeholder"
+          show="{{true}}"
+          title=" 您的购物车空空如也，快去加购吧~"
+        ></empty-placeholder>
+      </view>
+      <view wx:else>
+        <block wx:for="{{carts}}" wx:for-index="index" wx:for-item="cart" wx:key="ProductCode">
+          <one-card
+            title="{{cart.ProductDescription || ' '}}"
+            range-price="{{cart.ProductPrice  === 0 && (cart.ProductMinPrice>0 || cart.ProductMaxPrice>0)}}"
+            price="{{ cart.ProductPrice }}"
+            stockQuantity="{{cart.StockQuantity}}"
+            min-price="{{cart.ProductMinPrice}}"
+            max-price="{{cart.ProductMaxPrice}}"
+            num="{{cart.Quantity}}"
+            thumb="{{ cart.VideoUrl ? cart.VideoUrl+'?vframe/jpg/offset/0|imageView2/1/w/268/h/150': cart.ThumbImageUrl }}"
+            bottom-class="cart-bottom"
+          >
+            <view slot="left" style="width:30px">
+              <van-checkbox
+                value="{{ cart.selected }}"
+                data-item="{{cart}}"
+                data-index="{{index}}"
+                bind:change="bindItemCheckbox"
+              />
+            </view>
+            <view slot="bottom" class="stepper">
+              <van-stepper
+                value="{{ cart.Quantity }}"
+                size="small"
+                integer
+                min="{{productMin}}"
+                max="{{cart.StockQuantity <= 0 ? 1: productMax}}"
+                data-stockQuantity="{{cart.StockQuantity}}"
+                data-item="{{cart}}"
+                plus-class="'stepper-button-number"
+                minus-class="stepper-button-zero"
+                input-class="input-class"
+                data-productcode="{{cart.ProductCode}}"
+                bind:change="bindStepperChange"
+              />
+            </view>
+          </one-card>
+        </block>
+      </view>
+    </one-refresher>
+  </scroll-view>
+
+  <view class="carts-footer" style="bottom: {{footerBottom}}px;">
+    <view class="shopping-cart">
+      <image
+        class="icon-cart"
+        style="bottom: {{footerBottom}}px"
+        src="{{ totalQuantity > 0 ? '/images/icon_buy_shoppingcart_full_white@2x.png' : '/images/icon_buy_shoppingcart_empty_white@2x.png' }}"
+      />
+      <van-row>
+        <van-col span="16">
+          <view class="total">
+            <view class="account" wx:if="{{isRangePrice}}">
+              <text class="number">待议</text>
+            </view>
+            <view class="account" wx:else>
+              <iconfont name="cny" />
+              <text class="number">{{ total }}</text>
+            </view>
+
+            <view class="message">
+              (已选
+              <text class="quantity">{{ totalQuantity }}</text>
+              件商品)
+            </view>
+          </view>
+        </van-col>
+        <van-col span="8">
+          <view class="checkout" bindtap="bindCheckout">结算</view>
+        </van-col>
+      </van-row>
+    </view>
+  </view>
+</view>
+
+<van-dialog id="van-dialog" />

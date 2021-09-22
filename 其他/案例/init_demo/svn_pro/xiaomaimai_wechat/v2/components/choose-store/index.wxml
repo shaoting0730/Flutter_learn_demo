@@ -1,0 +1,65 @@
+<view wx:if="{{myOwnStores.length>0}}">
+  <van-row>
+    <view class="myStore">
+      <view class="title">我自己的小买卖</view>
+      <one-grid border="{{false}}">
+        <block
+          wx:for="{{ myOwnStores }}"
+          wx:for-index="index"
+          wx:for-item="item"
+          wx:key="StoreGuid"
+        >
+          <one-grid-item
+            data-storeguid="{{item.StoreGuid}}"
+            data-storehost="{{item.StoreHost}}"
+            bind:click="onChooseStore"
+          >
+            <one-avatar
+              text="{{item.StoreName}}"
+              thumb="{{item.StoreLogoUrl}}"
+              ellipsis
+              clamp="2"
+              border-color="#FFAD4C"
+            />
+          </one-grid-item>
+        </block>
+      </one-grid>
+    </view>
+  </van-row>
+</view>
+<view
+  wx:if="{{myVisitStores.length>0}}"
+  style="padding-bottom: {{needAuthor ?safeAreaBottom + 50: 0}}px"
+>
+  <view class="myVisitStores">
+    <view class="title">我看过的小买卖</view>
+    <one-grid border="{{false}}">
+      <block
+        wx:for="{{ myVisitStores }}"
+        wx:for-index="index"
+        wx:for-item="item"
+        wx:key="StoreGuid"
+      >
+        <one-grid-item
+          data-storeguid="{{item.StoreGuid}}"
+          data-storehost="{{item.StoreHost}}"
+          bind:click="onChooseStore"
+        >
+          <one-avatar
+            text="{{item.StoreName}}"
+            thumb="{{item.StoreLogoUrl}}"
+            ellipsis
+            clamp="2"
+            border-color="#FFAD4C"
+          />
+        </one-grid-item>
+      </block>
+    </one-grid>
+  </view>
+</view>
+
+<view  wx:if="{{needAuthor}}" class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <button class="btn-main" hover-class="btn-active" bindtap="onApplyNew">
+    关注公众号，免费开店
+  </button>
+</view>

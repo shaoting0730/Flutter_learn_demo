@@ -1,0 +1,29 @@
+.media {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 15px 15px 0;
+}
+.media-image {
+  margin-right: 1rem;
+}
+.media-body {
+  box-sizing: border-box;
+  color: #333333;
+  width: 100%;
+}
+.media-title {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.media-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e4e4e4;
+}

@@ -1,0 +1,2 @@
+<!--window-panel 组件-->
+<view style="height: {{safeAreaBottom}}rpx"></view>

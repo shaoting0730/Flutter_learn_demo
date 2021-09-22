@@ -1,0 +1,76 @@
+.container {
+  padding: 15px;
+  background: #f8f8f8;
+  height: 100%;
+}
+.container .card {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 1px 10px #dddddd;
+  margin-bottom: 15px;
+}
+.container .card .order {
+  padding: 20px 15px;
+  border-bottom: 1px solid #dddddd;
+}
+.container .card .order .price {
+  float: right;
+  color: #EE5050;
+  font-weight: 600;
+  font-size: 36rpx;
+}
+.container .card .confirm .message {
+  margin: 20px 15px;
+  color: #999999;
+}
+.container .card .confirm .btn-confirm {
+  background: linear-gradient(to right, #5CC831, #2BA246);
+  color: #ffffff;
+  font-size: 30rpx;
+  margin: 20px 15px;
+  border-radius: 0;
+}
+.container .card .payment {
+  padding: 15px;
+}
+.container .card .payment .message {
+  display: inline-flex;
+  align-items: center;
+  color: #999999;
+  height: 35px;
+}
+.container .card .payment .btn-refresh {
+  background: #FFAF4C;
+  color: #ffffff;
+  border-radius: 0;
+  font-size: 26rpx;
+  margin: 0 0;
+  float: right;
+  height: 35px;
+}
+.container .card .payment-qrcode {
+  text-align: center;
+}
+.container .card .payment-qrcode .icon-wechat-success {
+  color: #2BA246;
+  font-size: 44rpx;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.container .card .payment-qrcode .message {
+  font-size: 34rpx;
+  color: #2CA447;
+}
+.container .card .payment-qrcode .qrcode {
+  width: 234px;
+  height: 234px;
+}
+.container .card .payment-qrcode .qrcode-message {
+  font-size: 28rpx;
+  color: #999999;
+}
+.container .warning-message {
+  color: #cccccc;
+  margin-top: -5px;
+  font-size: 26rpx;
+}

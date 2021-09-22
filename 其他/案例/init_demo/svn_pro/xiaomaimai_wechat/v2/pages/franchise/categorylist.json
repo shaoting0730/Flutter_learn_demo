@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "商品目录",
+  "usingComponents": {
+    "author-panel": "../../components/author-panel/index",
+    "one-grid": "../../components/one-grid/index",
+    "one-grid-item": "../../components/one-grid-item/index",
+    "one-avatar": "../../components/one-avatar/index"
+  }
+}

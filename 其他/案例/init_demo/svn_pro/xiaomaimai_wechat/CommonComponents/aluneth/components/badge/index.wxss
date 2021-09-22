@@ -1,0 +1,20 @@
+/* common variable */
+.badge {
+  position: absolute;
+  margin: -6rpx 0 0 10rpx;
+  z-index: 1120;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  border-radius: 36rpx;
+  background: #e10050;
+  font-size: 24rpx;
+  color: #ffffff;
+}
+.badge.dot {
+  width: 18rpx;
+  height: 18rpx;
+}

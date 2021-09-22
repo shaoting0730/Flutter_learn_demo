@@ -1,0 +1,80 @@
+<view class="product-detail">
+    <view class="product-list">
+        <view class="list-title">
+            <van-cell title="{{ orderInfo.CreatedOn }}" value="{{ orderInfo.OrderStatus }}" title-class="title" value-class="value"></van-cell>
+        </view>
+        <view class="list-content {{ !collapse ? '' : 'hide' }}">
+            <van-row custom-class="photo-wall">
+                <block wx:for="{{ orderAttributes }}" wx:for-index="index" wx:for-item="item" wx:key="key">
+                    <van-col span="6" wx:if="{{item.NoteName=='ShippingLabel' && item.NoteValue !== null}}">
+                        <image src="{{ item.NoteValue }}" data-guid="{{ item.Guid }}" data-src="{{ item.NoteValue  }}" bindtap='previewImage'>
+                            <view class="price">
+                                <text>发货面单</text>
+                            </view>
+                        </image>
+                    </van-col>
+                </block>
+                <block wx:for="{{ orderItems }}" wx:for-index="index" wx:for-item="item" wx:key="key">
+                    <van-col span="6">
+                        <image src="{{ item.ProductImageUrl !== null ? item.ProductImageUrl : 'http://resource.xlwonder.wang/DQ_Product_Default.png' }}" data-guid="{{ item.Guid }}" data-src="{{ item.ProductImageUrl !== null ? item.ProductImageUrl : 'http://resource.xlwonder.wang/DQ_Product_Default.png' }}" bindtap='previewImage'>
+                            <view class="quantity">
+                                <text>{{ item.Quantity }}</text>
+                            </view>
+                            <view class="price">
+                                <iconfont name="cny" custom-class="unit"></iconfont>
+                                <text>{{ item.SubTotal }}</text>
+                            </view>
+                        </image>
+                    </van-col>
+                </block>
+            </van-row>
+        </view>
+        <view class="total-quantity" bind:tap="onCollapse">
+            共计<text>{{ totalQuantity }}</text>件商品
+            <iconfont name="{{ !collapse ? 'double-up-arrow' : 'double-down-arrow' }}" custom-class="icon-double-arrow"></iconfont>
+        </view>
+    </view>
+    <view class="order-info">
+        <van-cell-group>
+            <van-cell title="商品总价：" value="￥{{total}}" title-class="title" value-class="value"></van-cell>
+        </van-cell-group>
+        <van-cell-group>
+            <van-cell title="基础运费" value="￥{{shippingCost}}" title-class="title" value-class="value"></van-cell>
+        </van-cell-group>
+        <van-cell-group>
+            <van-cell title="订单总价" value="￥{{orderInfo.OrderReceivable}}" title-class="order-title" value-class="order-value"></van-cell>
+        </van-cell-group>
+    </view>
+    <view class="member-info">
+        <view class="address-bar-top-line"></view>
+        <van-cell-group>
+            <van-cell title="收件人" value="{{ orderInfo.ShipToName }}" title-width="80px" title-class="title" value-class="value" />
+            <van-cell title="手机" value="{{ orderInfo.ShipToPhone }}" title-width="80px" title-class="title" value-class="value" />
+            <van-cell title="收货地址" value="{{ orderInfo.ShipToProvince }}{{orderInfo.ShipToCity}}{{orderInfo.ShipToAddress}}" title-width="80px" title-class="title" value-class="value" />
+            <van-cell title="备注" value="{{ orderInfo.Notes }}" title-width="80px" title-class="title" value-class="value" />
+        </van-cell-group>
+        <view class="address-bar-top-line"></view>
+      <button class="modify-price" wx:if="{{!seller && (orderInfo.OrderStatus=='等候卖家确认' || orderInfo.OrderStatus=='等候付款')}}"  open-type="share" data-guid="{{orderInfo.Guid}}">分享给卖家结算</button>
+      <view wx:if="{{seller && (orderInfo.OrderStatus=='发货中')}}" >
+        <button class="modify-price-col1" open-type="share" data-guid="{{orderInfo.Guid}}">分享给供货商发货</button>    
+        <button class="modify-price-col2" bind:tap="onMarkAsShipped"  data-guid="{{orderInfo.Guid}}">标记为已发货</button>    
+      </view>
+    </view>
+    <button class="modify-price" wx:if="{{(seller && (orderInfo.OrderStatus=='等候卖家确认' || orderInfo.OrderStatus=='等候付款'))}}" bind:tap="onMarkAsPaid" data-guid="{{orderInfo.Guid}}">标记为已付款</button>
+    <button class="modify-price" wx:if="{{(isForVendor && !seller && orderInfo.OrderStatus=='发货中')}}" bind:tap="onMarkAsPaid" data-guid="{{orderInfo.Guid}}">我来供货</button>
+</view>
+<view class="store-list {{ collapse ? 'in' : '' }}">
+  <van-col span="24">
+    <view class="myStore">
+      <view class="title">请选择归入哪个店铺出单</view>
+      <block wx:for="{{ myOwnStores }}">
+        <van-col span="6">
+          <view bindtap='onChooseStore' data-storeguid="{{item.StoreGuid}}" data-storehost="{{item.StoreHost}}">
+            <image src="{{ item.StoreLogoUrl }}" class="storeIcon" model="aspectFill" />
+            <view class="storeName">{{ item.StoreName }}</view>
+          </view>
+        </van-col>
+      </block>
+    </view>
+  </van-col>
+</view>

@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "我的相册",
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#000000",
+  "usingComponents": {
+    "van-row": "../../../vendor/vant-webapp/row/index",
+    "van-col": "../../../vendor/vant-webapp/col/index",
+    "iconfont": "../../../components/iconfont/index",
+    "van-tag": "../../../vendor/vant-webapp/tag/index"
+  }
+}

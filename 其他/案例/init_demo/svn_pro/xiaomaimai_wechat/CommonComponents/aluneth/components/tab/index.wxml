@@ -1,0 +1,3 @@
+<view class="tab-content {{active}}">
+    <slot />
+</view>

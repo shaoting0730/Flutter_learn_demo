@@ -1,0 +1,19 @@
+<view class="results flex-column-center">
+    <image class="image" src="../../images/icon_publish_success@2x.png"></image>
+    <view class="notes flex-column-center">
+        <block wx:if="{{status === 'exists'}}">
+            <text>您已经创建了店铺，无需申请开店。</text>
+            <text>　</text>
+            <text>　</text>
+            <navigator url="/pages/home/index"><button>进入店铺</button></navigator>
+        </block>
+        <block wx:else>
+            <text>申请提交成功，请耐心等待</text>
+            <text>请留意公众号推送消息</text>
+        </block>
+    </view>
+    <view class="info flex-column-center">
+        <text>如需咨询请邮箱留言</text>
+        <text>info@xiaomaimaiquan.com</text>
+    </view>
+</view>

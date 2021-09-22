@@ -1,0 +1,128 @@
+/**index.wxss**/
+.container .store {
+  width: 100vw;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.userinfo image {
+  width: 100%;
+}
+.userinfo .btn-userinfo {
+  width: 90%;
+  background: linear-gradient(150deg, #FFAF4C 0%, #FFAF4C 100%);
+  color: #fff;
+  margin-top: 80rpx;
+}
+.userinfo .icon-wechat {
+  width: 48rpx;
+  height: 48rpx;
+  height: linear-gradient(150deg, #FFAF4C 0%, #FFAF4C 100%);
+  background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_signin_wechat.png");
+  background-size: 100% 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.userinfo text {
+  font-size: 32rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: #aaa;
+}
+.tab-content {
+  margin-bottom: 75px;
+}
+.header-top {
+  padding: 15px 0 0 0;
+  height: 65px;
+  width: 100%;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXcAAABpCAMAAAD2tZOTAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA8UExURf//9v/83//83P/+8P/////95f/82f//+f/+6//94v/+9P///v/+8v/+7f///P/96P/sxP/vzP/00//ot0Y1/AAAAAT8SURBVHja7ZoNg6oqEIYHSja3Lxj+/3+9zigLHm566uJYd+dR0TdC8Tks1SlA9zHE6HYm+GVC8GFkRSuCan+CZem0MBgQ3TKg2v+D9/in+Alc967aG4334MvxvnY3oNqfnN8jbWvaV7zHD/Fu99Ruac3emay/ts7TzNrdgHU2nZyP3jLHOGb0+/YnLL2oJpBwVXvuPWcaRMBHlgqus++YYxwzRty3P/jYejaPZL5qz73nHONQgn1/YuQda98Ih4xbe1r5LibOzGfp1Yly7/PdvOAdCeesEM5vrx2Tr7UrhNXhXnmvtb/k3WE+tQjba3flULWLoB+JM+uzOYZZ027htT6S+//NaA8FiM8N+KydwRH3SLuP9jXvGPK7JSuAyCSTwAXx6KddPeJDYX00v6D9Ne8uFNexm2Oi31y7TXPz0m3lDoT1yR3dinb2buywGip5Wc5Y/gNjVd86ez9mjFjVt8ruR96Eq59P5qbs/Jy5dMbl9qkxZ+/z9cGYsZ52dLycsfyYgFV94+w9Z+p4Vd8sI0/RXEz66ueTuZRJfCy1V+8h5+2pMefoi+uDeQrM1yPvm0LaCb7r7cBJug95OBXUHcD6f9yTdKZunO4m86x35wuc2RYroT1pzCJxUXtukf9ISvPuUWNrXvTOhOKaRgLuuIT3kGYNt9oBLK37+Rv3xcavezfZu/147Uzv54S/6ICrv9dbGO1NvNvgmSCqXXCiwZUO5Eah+pz6970H0xtaaWNWs0H680JT1W+RMWJV3zxXw53rs7m6fTI/127n5+fGj64PfU8HtHBh3ipjRIHrWV9gy3oy97C9QSy/TzXV+THiw+sDZ2Y8eKeMEef1FhFN++uZkEd7Uc/aF9sbYx2/YTd1fRo04+qQsen80L8v3PESE0Ig8e1xGMi6qzrQpPcGM3bsPnyIdgZ5PnW9AC214/yDlW3gXfaukV/J3AdqR9ZeiIcP0c4YT5hP057J4mGcftzba2ds8MF+lnaXpQeklTA9/Lxadf0c+Vweu33702F0r7bn3v/kMCOJH7x3GAjbd7RQ0XfEr84uujbnw/JbwDzPG+i66dWKGtGzE785Y8RG5wvsvR7zg3fjCdMpCYyua4OpvxyZvFMlvVp1SsKR9jZYsp7FZ/fQKc21ZzCNdy4K1HuF67tmzL4X9ep9iXvX3HutHugyd1qma2pumW2WPp/m4X4fnkHFnek0t8x9/VMbP3lXtiT8+48pUb1vC1baebHqfWN8BYnv1PvGWF8T7F29y840DN7V+9ac7lhrJ++nYSFOY6G5ba7F4yl5L9HcPnchWw8d18NJEaDDwD9ixY5S8n4/ccmb5sa5Rsf79qh39a78eL+eEppFMpyu1xMvlIagWSTDlQ+5YDSLZLgq4qj3t/F+uB40C2Sg/RQPVGoWyXDIj9F60CyS4aDsgXpX7+pdUe/qXWnp/XI4DNvlMpWaRTJcRvgx2msWyXBRxFDv6v1Xe//mjQvNIhm+iQuvfKBZJMO3sgPqXb3/Pu/AOxh2moUyrcBH08OaRbKiKIoEX1/jTrNg5vg1ALxqFsh8qOwBpDKhWSLreN8FnWfUu3pXhLzfbmOgnWaRDLeSoUazSIabIop6V+/qXVHv6l1pDpxvt/OZD8+8ahbJwOV5YCio1CyS4Xw+nguOmkUy8MHxyBs9olkkw3HkTCuhWSTDUZFCve8PfB8Veb7/AcHpzQf+IeB3AAAAAElFTkSuQmCC');
+}
+.header-top .header-img {
+  display: inline-flex;
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+  margin-left: 15px;
+  float: left;
+}
+.header-top .nick-name {
+  display: inline-flex;
+  font-size: 32rpx;
+  padding: 0 10px;
+  font-weight: 600;
+  color: #333;
+}
+.header-top .fans {
+  display: block;
+  font-size: 24rpx;
+  padding: 5px 10px;
+  color: #999999;
+}
+.header-top .fans .follow{
+  padding: 5px 10px;
+}
+.header-top .fans .favorite {
+  margin-left: 10px;
+}
+.header-top .fans .share {
+  padding: 0 14px;
+  float:right;
+  top: -15px;
+  right: 2vw;
+  position: relative;
+  display: inline-flex;
+  color: #ffffff;
+  background: #FFAF4C;
+  border-radius: 3px;
+  border: 0;
+  height: 32px;
+  line-height: 32px;
+}
+.header-top .fans .share .icon-qr {
+  padding-right: 5px;
+  vertical-align: middle;
+  font-weight: lighter;
+}
+.header-top .fans .share text {
+  vertical-align: middle;
+}
+.photo {
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -35px;
+  border-radius: 50%;
+  box-shadow: 0 -3px 10px #cccccc;
+  width: 70px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background: #ffffff;
+}
+.photo .camera {
+  margin-top: -10px;
+  font-size: 65rpx;
+  color: #999999;
+  font-weight: lighter;
+}
+.in {
+  display: block;
+}
+.empty-placeholder {
+  margin-top: 100rpx;
+  background-color: white;
+}

@@ -1,0 +1,77 @@
+/* common variable */
+.btn {
+  border-radius: unset;
+  background-color: #999999;
+  color: #ffffff;
+  box-shadow: 0 4rpx 10rpx 0 rgba(0, 0, 0, 0.16), 0 4rpx 20rpx 0 rgba(0, 0, 0, 0.12);
+  opacity: 1;
+  font-size: 30rpx;
+}
+.btn.inline {
+  display: inline-block;
+  margin: 6rpx;
+}
+.btn.small {
+  font-size: 24rpx;
+}
+.btn.medium {
+  font-size: 30rpx;
+}
+.btn.large {
+  font-size: 36rpx;
+}
+.btn.primary {
+  background: #4285F4;
+}
+.btn.primary.button-hover {
+  transition: all 100ms linear;
+  background: #1266f1;
+}
+.btn.default {
+  background: #2BBBAD;
+}
+.btn.default.button-hover {
+  transition: all 100ms linear;
+  background: #219287;
+}
+.btn.secondary {
+  background: #aa66cc;
+}
+.btn.secondary.button-hover {
+  transition: all 100ms linear;
+  background: #9540bf;
+}
+.btn.success {
+  background: #00C851;
+}
+.btn.success.button-hover {
+  transition: all 100ms linear;
+  background: #00953c;
+}
+.btn.info {
+  background: #33b5e5;
+}
+.btn.info.button-hover {
+  transition: all 100ms linear;
+  background: #1a9bcb;
+}
+.btn.warning {
+  background: #ff8800;
+}
+.btn.warning.button-hover {
+  transition: all 100ms linear;
+  background: #cc6d00;
+}
+.btn.danger {
+  background: #ff3547;
+}
+.btn.danger.button-hover {
+  transition: all 100ms linear;
+  background: #ce0012;
+}
+.btn::after {
+  border: none;
+}
+.btn.disabled {
+  opacity: 0.6;
+}

@@ -1,0 +1,67 @@
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.flex-row-top-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-bottom-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-center-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-row-center-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.item-panel {
+  border: solid 2rpx #ddd;
+  border-radius: 6rpx;
+  padding: 30rpx;
+  position: relative;
+  background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/bg_quota_history.png");
+  background-size: 240rpx 170rpx;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  margin-bottom: 20rpx;
+}
+.item-panel .top .title {
+  color: #3688FF;
+  font-size: 32rpx;
+}
+.item-panel .bottom {
+  margin-top: 20rpx;
+}
+.item-panel .bottom .subTitle {
+  color: #333;
+  font-size: 28rpx;
+}
+.item-panel .btn-delete {
+  width: 100rpx;
+  height: 68rpx;
+  background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_quota_history_delete.png");
+  background-size: 100% 100%;
+  position: absolute;
+  right: -1rpx;
+  top: 50rpx;
+}

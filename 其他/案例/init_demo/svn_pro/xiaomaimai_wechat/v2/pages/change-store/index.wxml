@@ -1,0 +1,5 @@
+<!-- xxx 页 -->
+<view class="page">
+    <text wx:if="{{errInfo}}">{{errInfo}}</text>
+    <choose-store myAccessStores="{{myAccessStores}}" bind></choose-store>
+</view>

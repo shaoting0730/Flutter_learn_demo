@@ -1,0 +1,130 @@
+.topbanner {
+  background-color: #f1f1f1;
+  border-radius: 10rpx;
+  margin-top: 208;
+  margin-left: 16vw;
+  height: 70rpx;
+  width: 68vw;
+}
+.topbanner .title {
+  color: #666666;
+  font-size: 28rpx;
+  line-height: 30rpx;
+  padding-top: 20rpx;
+  text-align: center;
+}
+.middletilte {
+  color: #6dd359;
+  text-align: center;
+  margin-top: 120rpx;
+  font-size: 34rpx;
+  line-height: 48rpx;
+}
+.middletitledone {
+  color: #ffad4c;
+  text-align: center;
+  margin-top: 120rpx;
+  font-size: 34rpx;
+  line-height: 48rpx;
+}
+
+.progressbar {
+  margin-top: 40rpx;
+  margin-left: 16vw;
+  color: #f1f1f1;
+  width: 68vw;
+  height: 40rpx;
+  border-radius: 5rpx;
+}
+.exportbox {
+  margin-top: 40rpx;
+  margin-left: 10vw;
+  width: 80vw;
+  height: 134rpx;
+  background: #eee1ff;
+  border: 2rpx solid #9b5cf4;
+  border-radius: 16rpx;
+}
+.exportbox .exportdesc {
+  font-size: 24rpx;
+  line-height: 33rpx;
+  color: #9653f3;
+  margin-top: 1.3vw;
+  margin-left: 3.3vw;
+  margin-bottom: 1.3vw;
+  margin-right: 3.3vw;
+}
+.bottomtitle {
+  display: flex;
+  margin-left: 4%;
+  margin-top: 20vw;
+  width: 92vw;
+  font-size: 30rpx;
+  color: #999999;
+  text-align: center;
+  line-height: 36rpx;
+}
+.bottomtitle .content {
+  margin-right: 2vw;
+  margin-left: 2vw;
+}
+.bottomtitle .bottomline {
+  border-top: solid 2rpx #ebebeb;
+  margin-top: 16rpx;
+  width: 254rpx;
+}
+.disabled {
+  filter: Gray;
+  -webkit-filter: grayscale(100%);
+}
+.bottomaction {
+
+}
+
+.icon-wechat {
+  width: 100rpx;
+  height: 100rpx;
+  background: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_wechat_filled.png") no-repeat;
+  background-size: 80% 80%;
+  background-position: center ;
+  background-color: #F1FFE4;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 2rpx solid #8ad245;
+}
+.icon-copylink {
+  width: 100rpx;
+  height: 100rpx;
+  background: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_link_yellow.png") no-repeat;
+  background-position: center ;
+  background-color: #fff7ee;
+  background-size: 80% 80%;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 2rpx solid #ffaf4c;
+}
+.bottomtext {
+  margin-top: 20rpx;
+  margin-left: 28.4vw;
+  width: 43.2vw;
+}
+.bottomtext .lefttext {
+  float: left;
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+  line-height: 36rpx;
+}
+.bottomtext .righttext {
+  float: right;
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+  line-height: 36rpx;
+}

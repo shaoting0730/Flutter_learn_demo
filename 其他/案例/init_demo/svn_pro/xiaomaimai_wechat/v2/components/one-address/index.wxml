@@ -1,0 +1,25 @@
+<view class="one-address custom-class">
+  <van-cell-group bind:tap="onClick">
+    <view class=" {{ clickable ?'one-address-clickable':''}} ">
+      <van-cell
+        value="{{ phone }}"
+        custom-class="one-address_header"
+        value-class="one-address_phone"
+        border="{{false}}"
+      >
+        <view slot="title" class="one-address_title">
+          {{title}}
+          <van-tag wx:if="{{isDefault}}" size="medium" type="primary">{{tagName}}</van-tag>
+        </view>
+      </van-cell>
+      <van-cell
+        title="{{addressLine}}"
+        custom-class="one-address_content"
+        title-class="content-class"
+      ></van-cell>
+    </view>
+  </van-cell-group>
+  <view wx:if="{{useFooterSlot}}" class="one-address_footer footer-class">
+    <slot name="footer" slot="label" />
+  </view>
+</view>

@@ -1,0 +1,64 @@
+<wxs src="../../utils/utils.wxs" module="utils" />
+<view style=" border-top:1px solid #ddd ;">
+  <van-cell-group border="{{false}}" wx:if="{{seller}}">
+    <van-cell
+      custom-class="comment-bar"
+      title-class="comment-bar-title"
+      value-class="comment-bar-value"
+      border="{{false}}"
+      title="评论设置"
+      value="{{disableCommentText}}"
+    >
+      <view slot="right-icon" class="comment-bar-switch">
+        <van-switch checked="{{ checked }}" bind:change="onChange" size="20px" />
+      </view>
+    </van-cell>
+  </van-cell-group>
+
+  <scroll-view
+    scroll-y="{{true}}"
+    style="height:{{scrollHeight}}px;"
+    bindscroll="refresherScroll"
+    scroll-top="{{scrollTop}}"
+  >
+    <one-refresher
+      id="refresher"
+      distance="50"
+      bind:refresh="onRefresh"
+      bind:loadmore="onLoadmore"
+      scroll-top="{{ refresherScrollTop }}"
+    >
+      <view class="search_no" style="height:{{scrollHeight}}px;" wx:if="{{!messageData.length}}">
+        <empty-placeholder
+          placeholder-class="empty-placeholder"
+          show="{{true}}"
+          title="没有任何消息"
+        />
+      </view>
+      <view wx:else>
+        <block wx:for="{{messageData}}" wx:for-index="index" wx:for-item="item" wx:key="Guid">
+          <one-media
+            title="{{item.StoreCustomerName}}{{!seller? '回复了您':''}}"
+            image="{{item.StoreCustomerHeaderImage}}"
+            image-class="avatar"
+            title-class="{{seller && !checked? 'disable':''}}"
+            data-item="{{item}}"
+            bind:click="onToComment"
+          >
+            <view>
+              <view class="context {{seller && !checked? 'disable':''}}">
+                {{item.Content}}
+              </view>
+              <view class="time">
+                {{ utils.getDateStr(item.CreatedOn) }}
+              </view>
+            </view>
+            <view slot="right" class="thumbernail">
+              <image src="{{item.Thumbernail}}" mode="aspectFill" />
+            </view>
+          </one-media>
+        </block>
+      </view>
+    </one-refresher>
+  </scroll-view>
+</view>

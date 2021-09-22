@@ -1,0 +1,57 @@
+<view class="product">
+  <view class="header">
+    <image
+      mode="aspectFill"
+      class="image {{product.VideoUrl ? 'image-video' : 'image-image'}}"
+      src="{{ product.VideoUrl? product.VideoUrl+'?vframe/jpg/offset/0|imageView2' : (product.PictureList[0] !== null && product.PictureList[0] !== undefined ? product.PictureList[0] : 'http://resource.xlwonder.wang/DQ_Product_Default.png') + '?imageView2/0/w/250/h/250' }}"
+      catch:tap="onClick"
+    />
+
+    <view wx:if="{{ isSelect && !hiddenSelectIcon }}" class="select-icon">
+      <van-icon
+        size="20"
+        name="{{ product.selected ? '/images/icon_detail_add_yellow@2x.png' : '/images/icon_detail_add2_gray@2x.png' }}"
+        bind:click="onClick"
+      />
+    </view>
+    <view wx:if="{{ !seller }}" class="favorite-icon">
+      <van-icon
+        size="20"
+        name="{{ product.favorite ? '/images/icon_home_collection_on@2x.png' : '/images/icon_home_collection_off@2x.png' }}"
+        bind:click="triggerFavorite"
+      />
+    </view>
+    <view wx:if="{{ product.PictureList.length > 1 }}" class="multiimage">
+      <van-icon
+        size="14"
+        name="/images/icon_picture_more@2x.png"
+        custom-style="margin-right: 5px;"
+      />
+      <view>{{product.PictureList.length}}</view>
+    </view>
+  </view>
+  <view class="body">
+    <text class="name" bind:tap="onClick" selectable="{{true}}">{{product.ProductName || product.Description}}</text>
+    <view class="bottom-bar">
+      <view class="price" wx:if="{{!product.RangePriceRequired}}">
+        <one-price price="{{product.Price}}" />
+      </view>
+      <view class="price" wx:else>
+        <one-price price="{{product.MinPrice}}" />
+        {{' ~ '}}
+        <one-price price="{{product.MaxPrice}}" />
+      </view>
+      <view wx:if="{{ !seller  && product.StockQuantity > 0 }}">
+        <van-button
+          round
+          icon="plus"
+          size="mini"
+          type="{{product.addedToCart ? 'primary': 'default'}}"
+          custom-class="plus-btn {{product.addedToCart ? 'plus-btn-primary': 'plus-btn-default'}}"
+          bind:click="triggerCart"
+        />
+      </view>
+    </view>
+  </view>
+  <view class="footer"> </view>
+</view>

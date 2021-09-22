@@ -1,0 +1,99 @@
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.flex-row-top-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-bottom-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-center-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-row-center-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.zan-tab {
+  height: 45rpx;
+  border-bottom: solid 1px #EBEBEB;
+}
+.zan-tab__bd {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e5e5e5;
+  background: #fff;
+}
+.zan-tab__bd--fixed {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.zan-tab__item {
+  flex: 1;
+  display: inline-block;
+  padding: 0 5rpx;
+  line-height: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+.zan-tab__item--selected .zan-tab__title {
+  color: #FFAD4C;
+}
+.zan-tab__item--selected .zan-tab__title .underline {
+  left: 0;
+  right: 0;
+}
+.zan-tab__title {
+  display: inline-block;
+  padding: 0 7px;
+  max-width: 100%;
+  height: 44rpx;
+  line-height: 44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  word-break: keep-all;
+  font-size: 28rpx;
+  color: #666666;
+  position: relative;
+}
+.zan-tab__title .underline {
+  height: 6rpx;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  background-color: #FFAF4C;
+  transition: all 0.25s ease;
+}
+.zan-tab__bd--scroll {
+  display: block;
+  white-space: nowrap;
+}
+.zan-tab__bd--scroll .zan-tab__item {
+  min-width: 80rpx;
+}

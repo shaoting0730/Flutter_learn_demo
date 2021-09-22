@@ -1,0 +1,5 @@
+<!--blank-row 组件-->
+<view class="progress">
+    <view class="progress-bar progress-bar-info progress-bar-striped active {{percent>=100?'background-finish':''}}" style="width: {{percent}}%;">
+    </view>
+</view>

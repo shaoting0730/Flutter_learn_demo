@@ -1,0 +1,14 @@
+<!--blank-row 组件-->
+<view class="table root-class">
+    <view class="flex-row-center header">
+        <view class="flex-row-center cell" wx:for="{{dataSource.header}}" wx:for-item="header" wx:key="index">
+            <view>{{header.title}}</view>
+        </view>
+    </view>
+
+    <view class="flex-row-center row" wx:for="{{dataSource.body}}" wx:for-item="body" wx:key="index">
+        <view class="flex-row-center-left cell" wx:for="{{body.row}}" wx:for-item="row" wx:key="index">
+            <view>{{row.title}}</view>
+        </view>
+    </view>
+</view>

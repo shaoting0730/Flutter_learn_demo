@@ -1,0 +1,18 @@
+@import "../common/font";
+@import "../common/theme/color";
+@import "../common/variable";
+.counter {
+  display: inline-flex;
+  .number {
+    border: 2rpx solid @border-color;
+    display: inline-block;
+    width: 60rpx;
+    font-size: @font-size-small;
+    padding: 0 10rpx;
+  }
+  .plus, .minus {
+    font-size: @font-size;
+    background: @background-light-color;
+    color: @counter-button-color;
+  }
+}

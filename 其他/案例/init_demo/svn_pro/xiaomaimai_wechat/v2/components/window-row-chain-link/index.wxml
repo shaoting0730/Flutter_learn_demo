@@ -1,0 +1,9 @@
+<!--window-panel 组件-->
+<view class="chain-link-row">
+    <view class="left">
+        <view class="chain-link"></view>
+    </view>
+    <view class="right">
+        <view class="chain-link"></view>
+    </view>
+</view>

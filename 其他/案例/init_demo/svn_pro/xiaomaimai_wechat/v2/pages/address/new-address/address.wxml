@@ -1,0 +1,77 @@
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <van-cell-group border="{{false}}">
+      <van-field
+        name="name"
+        value="{{ address.FullName  }}"
+        label="姓名"
+        placeholder="请填写收件人真实姓名"
+        error-message="{{errors.FullName}}"
+        bind:blur="onBlur"
+        data-name="FullName"
+      />
+      <van-field
+        name="phone"
+        value="{{ address.PhoneNumber }}"
+        label="手机号"
+        placeholder="请输入手机号"
+        error-message="{{errors.PhoneNumber}}"
+        bind:blur="onBlur"
+        data-name="PhoneNumber"
+      />
+      <van-field
+        name="areas"
+        value="{{ areas }}"
+        label="所在地区"
+        placeholder="省/市/区"
+        readonly="{{ true }}"
+        error-message="{{errors.area}}"
+        is-link
+        bindtap="showPopup"
+        clickable="{{true}}"
+      />
+      <van-field
+        name="address"
+        value="{{ address.AddressLine}}"
+        label="详细地址"
+        placeholder="不需要填写 省/市/区"
+        error-message="{{errors.AddressLine}}"
+        bind:input="onChangeAddressLine"
+        data-name="AddressLine"
+      />
+    </van-cell-group>
+    <van-cell-group title="清关材料（选填，必须与收件人真实信息一致）" custom-class="">
+      <van-field
+        name="idcard"
+        value="{{idcard}}"
+        label="身份证号码"
+        placeholder="选填"
+        error-message="{{errors.IDCardNumber}}"
+        bind:input="onChangeIDCard"
+        data-name="IDCardNumber"
+      />
+      <van-cell title="设为默认" custom-class="switch-cell">
+        <van-switch
+          checked="{{ isDefaultAddress }}"
+          slot="right-icon"
+          active-color="#ffaf4c"
+          size="24px"
+          bind:change="onChangeDefaultAddress"
+        />
+      </van-cell>
+    </van-cell-group>
+    <view class="py-4 px-3 ">
+      <button class="btn-main" hover-class="btn-active" formType="submit">保存</button>
+    </view>
+  </form>
+</view>
+<van-popup show="{{ showAreaList }}" position="bottom">
+  <van-area
+    area-list="{{ areaList }}"
+    columns-placeholder="{{ ['请选择/省', '请选择/市', '请选择/区'] }}"
+    value="{{address.PostCode}}"
+    title="所在地区"
+    bind:confirm="onAreaCofrim"
+    bind:cancel="onCloseAreaList"
+  />
+</van-popup>

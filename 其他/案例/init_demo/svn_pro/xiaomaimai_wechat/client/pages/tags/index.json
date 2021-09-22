@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "编辑标签",
+  "usingComponents": {
+    "van-row": "../../../vendor/vant-webapp/row/index",
+    "van-col": "../../../vendor/vant-webapp/col/index",
+    "van-tag": "../../../vendor/vant-webapp/tag/index",
+    "iconfont": "../../../components/iconfont/index"
+  }
+}

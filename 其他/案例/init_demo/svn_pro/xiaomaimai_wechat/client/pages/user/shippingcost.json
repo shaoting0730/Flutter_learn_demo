@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "运费设置",
+  "usingComponents": {
+    "iconfont": "../../../components/iconfont/index"
+  }
+}

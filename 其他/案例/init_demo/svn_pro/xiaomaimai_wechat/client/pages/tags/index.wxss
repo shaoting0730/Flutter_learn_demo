@@ -1,0 +1,69 @@
+.tags-content .tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw;
+  min-height: 60px;
+  max-height: 110px;
+  border: 1px solid #e3e3e3;
+  padding: 5px 5px 0 5px;
+  margin-bottom: 10px;
+  font-size: 28rpx;
+}
+.tags-content .tags .add-tag-item {
+  padding: 3px 10px;
+}
+.tags-content .tags .tag-item {
+  color: #2377C3;
+  padding: 8px 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.tags-content .history-tags {
+  padding: 10px 0;
+  font-size: 24rpx;
+  width: 95vw;
+}
+.tags-content .history-tags .title {
+  color: #999999;
+  margin-bottom: 10px;
+}
+.tags-content .history-tags .tag-edit {
+  display: flex;
+  float: right;
+}
+.tags-content .history-tags .tag-edit .icon-edit {
+  font-size: 24rpx;
+  margin-right: 3px;
+}
+.tags-content .history-tags .tag-item {
+  color: #2377C3;
+  padding: 8px 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background: #F1F1F1 !important;
+}
+.tags-content .history-tags .tag-item.active {
+  background: #FFF0DD !important;
+  color: #F07C28;
+}
+.tags-content .message {
+  color: #999999;
+  margin-top: 5px;
+  font-size: 24rpx;
+}
+.hide {
+  display: none !important;
+}
+.btn-submit {
+  width: 100%;
+  height: 50px;
+  border-radius: 0 !important;
+  background: linear-gradient(to bottom, #FFC63F, #FFA739);
+  color: #ffffff;
+  letter-spacing: 2px;
+  border: 0 !important;
+}
+.button-hover {
+  background: linear-gradient(to bottom, #FFA739, #FFC63F);
+}

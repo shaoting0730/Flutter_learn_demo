@@ -1,0 +1,8 @@
+<!--产品价格组件-->
+<view class="loading-bar" wx:if="{{show}}">
+    <view class="loading-view">
+        <van-loading type="spinner" color="black"></van-loading>
+    </view>
+    <view class="title">{{title}}</view>
+</view>
+

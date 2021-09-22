@@ -1,0 +1,69 @@
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row-top-left {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+.flex-row-bottom-left {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+.flex-row-center-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flex-row-center-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.container .checkbox {
+    width: 32rpx;
+    height: 32rpx;
+    display: inline-block;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+
+.container .checked {
+    background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_address_on.png");
+}
+
+.container .unchecked {
+    background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_address_off.png");
+}
+
+.container .title {
+    font-size: 24rpx;
+    color: #999;
+    margin-left: 10rpx;
+    vertical-align: middle;
+}

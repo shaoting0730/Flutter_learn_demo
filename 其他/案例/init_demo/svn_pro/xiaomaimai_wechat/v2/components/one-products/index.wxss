@@ -1,0 +1,23 @@
+.btn-select {
+  color: #2377c3;
+  width: 82px;
+  background: transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 200;
+}
+
+.products-wrap {
+  padding: 0 12px;
+  display: flex;
+  align-content: stretch !important;
+  flex-wrap: wrap !important;
+  margin: 0 -4px;
+}
+.products-wrap > view {
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 0 4px;
+}

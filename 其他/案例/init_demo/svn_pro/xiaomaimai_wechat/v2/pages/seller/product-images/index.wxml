@@ -1,0 +1,54 @@
+<navigation-bar title="管理商品图片" />
+<scroll-view scroll-y="{{true}}" style="height:{{scrollHeight}}px">
+  <view class="page">
+    <van-row gutter="8">
+      <block wx:for="{{ images }}" wx:for-index="index" wx:for-item="image" wx:key="index">
+        <van-col span="8">
+          <view class="image-item">
+            <view class="header">
+              <image
+                mode="aspectFill"
+                class="image"
+                src="{{ image+'?imageView2/0/w/250/h/250' }}"
+              />
+              <view class="del-icon" wx:if="{{mainIndex != index}}">
+                <van-icon
+                  size="12"
+                  data-index="{{index}}"
+                  name="cross"
+                  custom-class="icon"
+                  bind:click="onDelete"
+                />
+              </view>
+            </view>
+            <view class="footer">
+              <van-button
+                round
+                size="small"
+                custom-class=" {{mainIndex === index ? 'btn': 'btn btn-default'}}"
+                type="{{mainIndex === index ? 'primary': 'default'}}"
+                data-index="{{index}}"
+                bind:click="onSetMain"
+              >
+                设为主图
+              </van-button>
+            </view>
+          </view>
+        </van-col>
+      </block>
+      <van-col span="8">
+        <view class="image-item">
+          <view class="header">
+            <van-button custom-class="btn-image" bind:click="onChooseImage">
+              <van-icon name="plus" size="30" custom-class="icon" />
+            </van-button>
+          </view>
+        </view>
+      </van-col>
+    </van-row>
+  </view>
+</scroll-view>
+<view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <button class="btn-main" hover-class="btn-active" bindtap="onSave">保存</button>
+</view>
+<upload-progressbar progress="{{progress}}" />

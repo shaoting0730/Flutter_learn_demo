@@ -1,0 +1,9 @@
+/* common variable */
+.carousel .swiper {
+  height: 480rpx;
+  min-height: 300rpx;
+}
+.carousel .swiper image {
+  width: 100%;
+  height: 100%;
+}

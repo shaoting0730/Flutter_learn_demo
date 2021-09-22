@@ -1,0 +1,8 @@
+<!--blank-row 组件-->
+<view class="throw-line root-class">
+    <view class="line"/>
+    <view class="title">
+        {{title}}
+    </view>
+    <view class="line"/>
+</view>

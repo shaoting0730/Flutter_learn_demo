@@ -1,0 +1,9 @@
+<!--blank-row 组件-->
+<view class="form-panel root-class">
+    <block wx:if="{{showTitle===true}}">
+        <card-panel-title title="{{title}}" right-title-class="right-title-class" titleRight="{{titleRight}}" bind:tapRight="bindTapRight" showRightArrow="{{showRightArrow}}" showTitleBottomLine="{{showTitleBottomLine}}"/>
+    </block>
+    <view wx:if="{{showTitleBottomLine}}" class="panel-title-bottom-line"></view>
+    <slot></slot>
+</view>
+<view wx:if="{{showBottomLine}}" class="panel-title-bottom-line"></view>

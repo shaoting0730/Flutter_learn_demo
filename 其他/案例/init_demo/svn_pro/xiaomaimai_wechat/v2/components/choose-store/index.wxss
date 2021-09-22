@@ -1,0 +1,56 @@
+
+@import "../../app.wxss";
+.myStore {
+    border-top-color: #f1f1f1;
+    border-top-style: solid;
+    border-width: 26rpx;
+}
+
+.myVisitStores {
+    border-top-color: #f1f1f1;
+    border-top-style: solid;
+    border-width: 26rpx;
+    margin-top: 50rpx;
+}
+
+.title {
+    font-size: 28rpx;
+    color: #999999;
+    line-height: 40rpx;
+    margin-left: 4.8vw;
+    margin-top: 2.2vw;
+}
+
+.storeIcon {
+    width: 120rpx;
+    height: 120rpx;
+    margin-left: 4.8vw;
+    margin-top: 3.4vw;
+    border-radius: 50%;
+    border: 3rpx solid#FFAD4C;
+}
+
+.storeName {
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 40rpx;
+    height: 40rpx;
+    text-overflow: ellipsis;
+}
+
+.bottomButton {
+    position: fixed;
+    width: 100vw;
+    height: 100rpx;
+    border-radius: 0!important;
+    background: linear-gradient(to bottom, #FFC63F, #FFA739);
+    color: #ffffff;
+    letter-spacing: 4rpx;
+    border: 0!important;
+}
+
+.button-hover {
+    background: linear-gradient(to bottom, #FFA739, #FFC63F);
+}

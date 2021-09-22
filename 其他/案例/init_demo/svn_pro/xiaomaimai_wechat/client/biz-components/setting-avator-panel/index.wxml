@@ -1,0 +1,17 @@
+<view class="flex-row-center userinfo">
+  <view wx:if="{{showBalance}}" class="balance">账户余额：<iconfont name="cny"></iconfont>{{balance}}</view>
+  <view wx:if="{{showExport}}" class="export" bindtap='btnExportOrder'>
+      <iconfont name="download" custom-class="icon-download"></iconfont>
+      <text>一键导出订单</text>
+  </view>
+  <view class="flex-column-center icon-top-left">
+    <view class="avator-container" bindtap="bindUserEditor">
+        <image class="avatar" src="{{avatarUrl}}" background-size="cover"></image>
+        <image class="icon-editor" src="../../images/icons/btn_my_edit.png"/>
+    </view>
+    <view class="info">
+        <view class="nick-name">{{nickName}}</view>
+    </view>
+  </view>
+  <view class="bottom-circle-bar"></view>
+</view>

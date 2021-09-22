@@ -1,0 +1,26 @@
+page {
+    font-size: 28rpx;
+    background: #FFF;
+}
+
+.results {
+    margin: 60rpx 0 0 0;
+}
+
+.results .image {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.results .notes {
+    margin: 20rpx
+}
+
+.results .info {
+    margin-top: 580rpx;
+    background: #F9F9F9;
+    font-size: 26rpx;
+    color: #999999;
+    text-align: center;
+    padding: 28rpx;
+}

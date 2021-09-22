@@ -1,0 +1,28 @@
+<!--收货地址组件-->
+<view class="container">
+    <view wx:if="{{address}}">
+        <navigator url="/pages/address/user-address/user-address?allowSelect=true" hover-class="none">
+
+            <view class="address-bar">
+                <view class="left-panel">
+                    <view class="user-name">
+                        {{address.FullName}}
+                        <view class="default" wx:if="{{address.AddressType==2}}">默认</view>
+                    </view>
+                </view>
+                <view class="mid-panel"></view>
+                <view class="right-panel">
+                    <view class="phone-number">{{address.PhoneNumber}}</view>
+                </view>
+            </view>
+            <view class="address">{{ address.Province }}{{ address.City }}{{ address.Town }}{{ address.AddressLine}}</view>
+        </navigator>
+    </view>
+    <view wx:else>
+        <navigator url="/pages/address/user-address/user-address?allowSelect=true" hover-class="none">
+            <view class="address-bar">
+                选择收货地址
+            </view>
+        </navigator>
+    </view>
+</view>

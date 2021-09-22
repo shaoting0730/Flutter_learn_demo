@@ -1,0 +1,45 @@
+<view>
+  <view class="topbanner">
+    <view class="title">{{exportordertime}}{{exportorderstatus}}订单导出表</view>
+  </view>
+  <view wx:if="{{ progress.percent < 100 }}" class="middletilte">
+  正在生成表格中...
+  </view>
+  <view wx:else class="middletitledone">
+  表格完成，可下载或分享
+  </view>
+  <view class="progressbar">
+    <progress wx:if="{{ progress.percent < 100 }}"  percent="{{ progress.percent }}" activeColor="#76D663" backgroundColor="#F1F1F1" stroke-width="12" border-radius="20"></progress>
+    <progress wx:else percent="{{ progress.percent }}" activeColor="#FFAD4C" backgroundColor="#F1F1F1" stroke-width="12" border-radius="20"></progress>
+  </view>
+  <!--view class="exportbox">
+    <view class="exportdesc">导出内容：订单一键导出，包括产品图片，名称，尺寸，姓名，收件人，电话，地址、备注、价格、付款状态</view>
+  </view-->
+  <view class='bottomtitle'>
+  <view class="bottomline"></view>
+  <view class="content">保存或分享</view>
+  <view class="bottomline"></view>
+  </view>
+  <view wx:if="{{ progress.percent < 100}}" class="bottomaction disabled">
+    <view class="leftaction">
+        <view class="icon-copylink"></view>
+    </view>
+    <view class="rightaction">
+      <view class="icon-wechat"></view>
+    </view>
+  </view>
+  <view wx:else class="bottomaction">
+    <view class="leftaction" bindtap='btnCopyLink'>
+        <view class="icon-copylink"></view>
+    </view>
+    <view class="rightaction" bindtap='btnDownload'>
+      <view class="icon-wechat"></view>
+    </view>
+  </view>
+  <view class="bottomtext">
+    <view class="lefttext">复制链接</view>
+    <view class="righttext">微信下载</view>
+  </view>
+</view>
+
+ 

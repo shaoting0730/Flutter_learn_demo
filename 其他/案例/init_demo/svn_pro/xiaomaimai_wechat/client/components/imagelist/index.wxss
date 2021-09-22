@@ -1,0 +1,28 @@
+.prew_video{
+  max-width: 100px;
+  max-height: 100px;
+}
+.image-list .image-content {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.image-list image {
+  max-width: 100px;
+  max-height: 100px;
+}
+.image-list .price {
+  position: relative;
+  top: -17px;
+  padding: 0 5px;
+  color: #ffffff;
+  float: right;
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.6);
+  font-weight: bolder;
+}
+.image-list .price .unit {
+  font-weight: bolder;
+  font-size: 24rpx;
+}

@@ -1,0 +1,72 @@
+@import "../../base";
+page{
+    height:100%;
+    display: flex;
+}
+.page {
+    display: flex;
+    flex:1;
+    font-family: '微软雅黑';
+    background-color: white;
+    flex-direction: column;
+}
+
+.input-panel{
+    padding-bottom:150rpx;
+    padding-top: 30rpx;
+    padding-left:@margin-size-normal;
+    padding-right:@margin-size-normal;
+}
+
+.row-panel {
+    border-bottom: solid 1px #EBEBEB;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    height: 96rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .title-icon{
+        display: inline-block;
+        width:36rpx;
+        height:36rpx;
+        border-radius: 5rpx;
+    }
+}
+
+.input-text{
+    margin-left: @margin-size-normal;
+    flex:1;
+}
+.btn-send-valid{
+    width:180rpx;
+    height:60rpx;
+    background-image: linear-gradient(90deg, #45ADF9 0%, #3B8EFF 100%);
+    color:white;
+    font-size:28rpx;
+    line-height:60rpx;
+    border-radius: 6rpx;
+}
+
+.btn-send-valid-disable{
+    background-image: linear-gradient(90deg, #b3b3b3 0%, #606060 100%);
+}
+
+.btn{
+    height:88rpx;
+    line-height: 88rpx;
+    border-radius: 10rpx;
+    font-size:32rpx;
+    display: block;
+    margin:0 @margin-size-normal;
+    margin-bottom:40rpx;
+
+}
+
+.btn-primary{
+    background-image: linear-gradient(90deg, #45ADF9 0%, #3B8EFF 100%);
+    color:white;
+}
+
+
+

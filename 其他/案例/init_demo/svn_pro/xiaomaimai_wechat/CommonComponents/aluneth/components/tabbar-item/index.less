@@ -1,0 +1,18 @@
+@import "../common/font";
+@import "../common/theme/color";
+@import "../common/variable";
+.tabbar-item {
+  text-align: center;
+  font-size: @font-size-small;
+  .icon {
+    justify-content: center;
+
+    display: flex;
+  }
+  &.active {
+    color: @tab-color;
+  }
+  &.disabled {
+    color: @color-disabled;
+  }
+}

@@ -1,0 +1,23 @@
+<!--pages/advertisement/advertisement.wxml-->
+<view class="container">
+    <view class="moments">
+        <view class="image-list">
+            <van-row>
+                <van-col span="24">
+                    <textarea class="desc" bindinput="bindAddMomentDesc" placeholder="请输入广告语，不超过50个字符..." value="{{ moment.Advertisement.Description }}" maxlength="50"></textarea>
+                </van-col>
+                <block wx:for="{{ moment.ProductList }}" wx:for-item="item">
+                    <block wx:for="{{ item.PictureList }}" wx:for-item="imageItem">
+                        <van-col span="8">
+                            <image src="{{ imageItem }}" bind:tap="onPreviewImage" mode="aspectFill"/>
+                        </van-col>
+                    </block>
+                </block>
+            </van-row>
+        </view>
+        <view class="pricerange">
+            <text>广告可以被其他店主选择是否加入自己店铺显示。如果其他店主显示了您的广告，并且被客户点击进入了您的店铺，您将支付每个点击1元人民币的价格！</text>
+        </view>
+    </view>
+    <button bind:tap="onPublishAdvertisement" class="btn-push">确认投放</button>
+</view>

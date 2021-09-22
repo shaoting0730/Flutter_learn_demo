@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "免费开店",
+  "usingComponents": {
+    "iconfont": "../../../components/iconfont/index",
+    "text-with-icon": "../../../components/text-with-icon/index",
+    "author-panel": "../../../components/author-panel/index",
+    "window-title": "../../../components/window-title/index",
+    "safe-area": "../../../components/safe-area/index",
+    "upload-progressbar": "../../../components/upload-progressbar/index"
+  }
+}

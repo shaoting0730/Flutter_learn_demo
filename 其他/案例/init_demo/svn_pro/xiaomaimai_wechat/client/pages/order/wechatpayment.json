@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "微信支付",
+  "usingComponents": {
+    "iconfont": "../../../components/iconfont/index"
+  }
+}

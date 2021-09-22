@@ -1,0 +1,12 @@
+<!--订单状态页 订单列表项 组件-->
+<view class="container">
+    <view class="left-panel">
+        <image  class="product-image" src="{{product.ImageUrls[0]}}?imageMogr2/format/jpg/thumbnail/375x375" bindtap="bindProductDetail"></image>
+    </view>
+    <view class="right-panel">
+        <view class="product-name">{{product.ProductName}}</view>
+        <view class="bottom-panel">
+            <product-price-bar showOldPrice="{{false}}" product="{{product}}"/>
+        </view>
+    </view>
+</view>

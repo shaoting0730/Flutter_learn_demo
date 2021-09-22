@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cover-progress": "./../cover-progress/index"
+  }
+}

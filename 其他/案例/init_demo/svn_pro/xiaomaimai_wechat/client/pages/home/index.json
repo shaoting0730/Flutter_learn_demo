@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "van-tab": "../../../vendor/vant-webapp/tab/index",
+    "van-tabs": "../../../vendor/vant-webapp/tabs/index",
+    "van-button": "../../../vendor/vant-webapp/button/index",
+    "iconfont": "../../../components/iconfont/index",
+    "van-icon": "../../../vendor/vant-webapp/icon/index",
+    "van-popup": "../../../vendor/vant-webapp/popup/index",
+    "footer": "../../../components/footer/index",
+    "searchbox": "../../../components/searchbox/index",
+    "listbox": "../../../components/listbox/index",
+    "photowall": "../../../components/photowall/index",
+    "author-panel": "../../components/author-panel/index",
+    "empty-placeholder": "../../biz-components/empty-placeholder/index"
+  }
+}

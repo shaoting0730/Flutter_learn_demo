@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "one-media": "../one-media/index",
+    "one-refresher": "../one-refresher/index",
+    "empty-placeholder": "../../biz-components/empty-placeholder/index"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发布商品上线销售",
+  "usingComponents": {
+    "iconfont": "../../../components/iconfont/index",
+    "upload-progressbar": "../../../components/upload-progressbar/index"
+  }
+}

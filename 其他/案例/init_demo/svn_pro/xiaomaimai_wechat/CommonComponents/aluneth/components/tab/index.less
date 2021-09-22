@@ -1,0 +1,15 @@
+@import "../common/theme/color";
+@import "../common/font";
+@import "../common/variable";
+
+
+.tab-content {
+  display: none;
+  padding: @padding-horizontal;
+  font-size: @font-size;
+  color: @color;
+  &.active {
+    position: relative;
+    display: flex;
+  }
+}

@@ -1,0 +1,22 @@
+<van-overlay show="{{overlayShow}}" wx:if="{{ mask }}" bind:click="onMaskClick"  />
+<view class="one-popover-wrap">
+  <view
+    class="one-popover one-popover--theme-dark one-popover--placement-top  custom-class"
+    style="{{popoverStyle }}"
+  >
+    <van-transition show="{{ popoverVisible }}" name="{{fade}}" bind:after-enter="onEnter">
+      <view class="one-popover__content">
+        <view class="one-popover__arrow"></view>
+        <view class="one-popover__inner">
+          <view class="one-popover__title" wx:if="{{ title }}">{{ title }}</view>
+          <slot name="title" wx:else></slot>
+          <view class="one-popover__inner-content content-class" wx:if="{{ content }}">{{ content }}</view>
+          <slot name="content" wx:else></slot>
+        </view>
+      </view>
+    </van-transition>
+  </view>
+  <view class="one-popover__element" catchtap="onClick">
+    <slot></slot>
+  </view>
+</view>

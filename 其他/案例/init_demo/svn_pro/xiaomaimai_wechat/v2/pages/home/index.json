@@ -1,0 +1,24 @@
+{
+  "navigationBarTitleText": "首页",
+  "navigationStyle": "custom",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "launch": "../../../components/launch/index",
+    "window-title": "../../../components/window-title/index",
+    "safe-area": "../../../components/safe-area/index",
+    "iconfont": "../../../components/iconfont/index",
+    "footer": "../../../components/footer/index",
+    "searchbox": "../../../components/searchbox/index",
+    "moment": "../../../components/moment/index",
+    "one-products": "../../../components/one-products/index",
+    "aboutme": "../../../components/aboutme/index",
+    "cart": "../../../components/cart/index",
+    "empty-placeholder": "../../biz-components/empty-placeholder/index",
+    "upload-progressbar": "../../../components/upload-progressbar/index",
+    "text-with-icon": "../../../components/text-with-icon/index",
+    "one-refresher": "../../../components/one-refresher/index",
+    "one-comp": "../../../components/one-comp/index",
+    "disclaimer-modal": "../../../components/disclaimer-modal/index",
+    "message-list": "../../../components/message-list/index"
+  }
+}

@@ -1,0 +1,140 @@
+<wxs src="./index.wxs" module="help" />
+<navigation-bar title="{{storeName}}" background="#fff" />
+<view class="container">
+  <view class="photo-detail" style="top:{{getSafeAreaTop}}px;">
+    <view class="swiper-bar" style="padding-bottom:{{safeAreaBottom}}px;">
+      <swiper
+        indicator-dots="{{ indicatorDots }}"
+        autoplay="{{ autoplay }}"
+        current="{{ current }}"
+        class="swiper"
+        indicator-color="#727272"
+        indicator-active-color="#fff"
+        bindchange="onChange"
+      >
+        <block wx:for="{{ list }}" wx:for-index="index" wx:for-item="item" wx:key="uuid">
+          <swiper-item item-id="{{item.Guid}}" data-item="{{item}}" class="swiper-item">
+            <view class="prew_video" wx:if="{{item.VideoUrl}}">
+              <video object-fit="contain" src="{{item.VideoUrl}}" />
+            </view>
+            <image
+              wx:else
+              data-url="{{item.PictureList[0]}}"
+              bind:tap="onPreviewImage"
+              src="{{item.PictureList[0] !== null && item.PictureList[0] !== undefined ? item.PictureList[0]+'?imageView2/2/w/'+ screenWidth : 'http://resource.xlwonder.wang/DQ_Product_Default.png'}}"
+              mode="aspectFit"
+            ></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="share-btn">
+    <van-button
+      type="primary"
+      size="small"
+      icon="/images/icon_goods_release_white@2x.png"
+      bind:click="onShare"
+    >
+      分享
+    </van-button>
+  </view>
+  <view
+    class="desc {{ collapse ? '' : 'in' }}"
+    style="padding-bottom:{{safeAreaBottom > 0 ? safeAreaBottom+16: 16 }}px ; bottom:0px"
+  >
+    <!--<view class="collapse" bind:tap="onCollapse">{{ collapse ? "收缩" : "展开" }}</view>-->
+    <view class="desc-content">
+      <view class="desc-box" wx:if="{{list[current].isTakeOff}}">
+        <view class="operations">
+          <view class="price"></view>
+          <view class="add-to-cart">
+            <button size="mini" class="btn-add-cart-disabled">
+              已下架
+            </button>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="desc-box">
+        <view class="topic">
+          {{ list[current].Description }}
+        </view>
+        <view class="operations">
+          <view wx:if="{{!list[current].RangePriceRequired}}" class="price">
+            <iconfont name="cny" custom-class="icon-cny"></iconfont>
+            <text class="money">{{ list[current].Price==0?'待议':list[current].Price }}</text>
+          </view>
+          <view wx:else class="price">
+            <iconfont name="cny" custom-class="unit"></iconfont>
+            <text wx:if="{{list[current].MinPrice>0}}">{{ list[current].MinPrice }}</text>
+            <text wx:else>待议</text>
+            ~
+            <iconfont name="cny" custom-class="unit"></iconfont>
+            <text wx:if="{{list[current].MaxPrice>0}}">{{ list[current].MaxPrice }}</text>
+            <text wx:else>待议</text>
+          </view>
+          <view wx:if="{{ !seller  }}" class="add-to-cart">
+            <block wx:if="{{ list[current].StockQuantity > 0 }}">
+              <button
+                size="mini"
+                class="btn-add-cart"
+                data-guid="{{ list[current].Guid }}"
+                catch:tap="onBuy"
+              >
+                立即购买
+              </button>
+              <button
+                wx:if="{{help.isShowAddBtn(list[current].Guid, shoppingCart)}}"
+                size="mini"
+                class="btn-add-cart"
+                data-guid="{{ list[current].Guid }}"
+                style="margin-left: 10px;"
+                catch:tap="onAddToCart"
+              >
+                加入购物车
+              </button>
+            </block>
+            <button
+              wx:else
+              size="mini"
+              class="btn-add-cart-disabled"
+              data-guid="{{ list[current].Guid }}"
+            >
+              缺货
+            </button>
+          </view>
+          <view wx:else class="product-edit">
+            <button
+              size="mini"
+              class="btn-edit"
+              data-guid="{{ list[current].Guid }}"
+              catch:tap="onEditProduct"
+            >
+              编辑
+            </button>
+            <button
+              size="mini"
+              class="btn-edit"
+              data-guid="{{ list[current].Guid }}"
+              catch:tap="onRemoveProduct"
+            >
+              下架
+            </button>
+          </view>
+        </view>
+        <view class="tags">
+          <block
+            wx:for="{{ list[current].TagList }}"
+            wx:for-index="i"
+            wx:for-item="tag"
+            wx:key="key"
+          >
+            <block wx:if="{{ tag != null }}">
+              <van-tag size="medium" custom-class="tag-item">{{ tag }}</van-tag>
+            </block>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,100 @@
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.flex-row-top-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-bottom-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-center-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-row-center-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.table {
+  border-radius: 10rpx;
+  border: solid 1rpx #3688FF;
+}
+.header {
+  background-color: #3688FF;
+  height: 80rpx;
+  color: white;
+}
+.header .cell:first-child {
+  width: 120px !important;
+}
+.header .cell:last-child {
+  width: 200px !important;
+}
+.row .cell {
+  border-right: solid 1rpx #3688FF;
+  border-bottom: solid 1rpx #3688FF;
+  min-height: 80rpx;
+  color: #333;
+  text-align: left;
+  padding: 0 20rpx;
+}
+.row .cell:last-child {
+  border-right: none;
+}
+.row:last-child .cell {
+  border-bottom: none;
+}
+.flex-complex-table .flex-complex-row {
+  display: flex;
+}
+.flex-complex-table .flex-complex-row .box {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1rpx #3688FF;
+  border-right: solid 1rpx #3688FF;
+  min-height: 30px;
+  color: #666;
+}
+.flex-complex-table .flex-complex-row .items {
+  width: 100%;
+}
+.flex-complex-table .flex-complex-row .item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-bottom: solid 1rpx #3688FF;
+  min-height: 30px;
+  padding-left: 40rpx;
+  text-decoration-line: underline;
+  color: #4183c4;
+}
+.flex-complex-table:first-child {
+  border-bottom: none;
+}
+.flex-complex-table .flex-complex-row:last-child .box {
+  border-bottom: none;
+}
+.flex-complex-table .flex-complex-row:last-child .item:last-child {
+  border-bottom: none;
+}

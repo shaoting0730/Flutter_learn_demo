@@ -1,0 +1,4 @@
+<!--components/list/index.wxml-->
+<view class="extended-class">
+    <slot />
+</view>

@@ -1,0 +1,43 @@
+@import "../../base";
+
+.row-panel {
+  font-size: 28rpx;
+  line-height: 28rpx;
+  height: 136rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .left{
+    flex:1;
+    .title-icon{
+      display: inline-block;
+      width: 56rpx;
+      height: 56rpx;
+      border-radius: 10rpx;
+      background-color: @color-bg-gray-4;
+    }
+    .title{
+      font-size: 28rpx;
+      color: @color-dark;
+      padding: 0 15px;
+    }
+  }
+  .right{
+    flex:1;
+    padding-right:@margin-size-normal;
+    .right-arrow{
+      width:22rpx;
+      height:22rpx;
+    }
+  }
+}
+
+.panel-title-bottom-line{
+  border-bottom:solid 1rpx @color-splite-border;
+}
+
+.icon {
+  font-size: 36rpx !important;
+  color: #FFA739;
+  font-weight: bolder;
+}

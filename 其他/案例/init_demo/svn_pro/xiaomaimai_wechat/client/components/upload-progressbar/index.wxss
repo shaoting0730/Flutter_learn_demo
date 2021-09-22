@@ -1,0 +1,69 @@
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.flex-row-top-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-bottom-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-center-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-row-center-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.blank-row {
+  height: 20rpx;
+  background-color: #f2f2f2;
+}
+.upload-backdrop {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+}
+.upload-backdrop .uploading {
+  position: fixed;
+  width: 80%;
+  height: 100px;
+  margin: 0 5%;
+  top: 50%;
+  margin-top: -50px;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 0 15px;
+}
+.upload-backdrop .uploading .progress-bar {
+  margin-top: 40px;
+  width: 100%;
+}
+.upload-backdrop .uploading .uploading-text {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 26rpx;
+}

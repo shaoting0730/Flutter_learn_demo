@@ -1,0 +1,86 @@
+.product {
+  margin-bottom: 12px;
+}
+.header {
+  padding: 100% 0 0;
+  position: relative;
+  margin-bottom: 3px;
+}
+.header .image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.select-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.favorite-icon {
+  position: absolute;
+  right: 5px;
+  bottom: -3px;
+}
+.multiimage {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.66);
+  padding: 0px 5px;
+  color: #e2e2e2;
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 12px;
+}
+
+.body {
+  font-size: 14px;
+  color: #333;
+}
+.name{
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+}
+.bottom-bar {
+  padding-top: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  flex: auto;
+}
+
+.bottom-bar .plus-btn {
+  min-width: 20px;
+  height: 20px;
+  line-height: 18px;
+}
+.bottom-bar .plus-btn-default {
+  color: #fff;
+  background: #ccc;
+  border: 1px solid #ccc;
+}
+
+.image-video:before {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  content: "";
+  background-image: var(--play-icon);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30%;
+}

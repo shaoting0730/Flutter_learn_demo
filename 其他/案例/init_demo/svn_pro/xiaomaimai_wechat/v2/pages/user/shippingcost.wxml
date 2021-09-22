@@ -1,0 +1,16 @@
+<view class="page-body">
+  <view class="topbanner">
+    <text>当前运费：{{shippingCost}}元</text>
+  </view>
+  <view class="middletitle mt-4 mb-3">修改新运费</view>
+  <view class="price">
+    <text class="text-cny">¥</text>
+    <input type="digit" class="number" value="{{cost}}" placeholder="输入价格" bindinput="onInputCost" />
+  </view>
+  <view class="message mt-3">
+    *当前为基础运费，如个别客户运费上涨可修改订单总价
+  </view>
+  <view class="mt-5">
+    <button class="btn-main" hover-class="btn-active" bind:tap="onSave">保存设置</button>
+  </view>
+</view>

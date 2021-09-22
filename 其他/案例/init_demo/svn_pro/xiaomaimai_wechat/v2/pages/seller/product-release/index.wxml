@@ -1,0 +1,44 @@
+<navigation-bar title="上架新商品" background="#fff" />
+<scroll-view scroll-y="{{true}}" style="height:{{scrollHeight}}px">
+  <block wx:for="{{ products }}" wx:for-index="index" wx:for-item="item" wx:key="Guid">
+    <one-product-edit
+      title="商品{{index+1}}"
+      index="{{index}}"
+      product="{{item}}"
+      bind:choose="onShowActionSheet"
+      bind:update="onUpdataProduct"
+    />
+  </block>
+
+  <van-row wx:if="{{!isOneVideo}}">
+    <van-col span="18" offset="3">
+      <van-button block icon="plus" type="dotted" bind:click="onAddProduct">
+        添加新商品
+      </van-button>
+    </van-col>
+  </van-row>
+</scroll-view>
+
+<view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <view style=" padding: 5px 10px;">
+    <van-row gutter="10">
+      <van-col span="12">
+        <van-button block plain custom-class="btn" type="primary" bind:click="onRelease">
+          上架
+        </van-button>
+      </van-col>
+      <van-col span="12">
+        <van-button block custom-class="btn" type="primary" bind:click="onReleasePublish">
+          上架并发布店主推荐
+        </van-button>
+      </van-col>
+    </van-row>
+  </view>
+</view>
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onCloseActionSheet"
+  bind:select="onSelectActionSheet"
+/>
+<upload-progressbar progress="{{progress}}" />

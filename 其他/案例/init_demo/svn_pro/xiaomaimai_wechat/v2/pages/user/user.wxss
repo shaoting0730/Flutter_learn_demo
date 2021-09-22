@@ -1,0 +1,65 @@
+/* pages/user/user.wxss */
+.me {
+    height: 100%;
+}
+
+.sc {
+    background: #fff;
+    width: 100%;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    color: #666;
+    padding: 4% 0;
+}
+
+.sc image {
+    width: 48rpx;
+    height: 48rpx;
+    display: inline-block;
+}
+
+.bte {
+    border-top: 2rpx solid#eee;
+}
+
+.qbdd {
+    background: #fff;
+    width: 92%;
+    font-size: 24rpx;
+    color: #666;
+    padding: 4%;
+    border-bottom: 2rpx solid#eee
+}
+
+.c33 {
+    float: left;
+    color: #000
+}
+
+contact-button {
+    position: relative;
+    left: -100rpx;
+    opacity: 0;
+}
+
+.userinfo-avatar {
+    display: block;
+    width: 160rpx;
+    height: 160rpx;
+    margin: 20rpx;
+    margin-top: 50rpx;
+    border-radius: 50%;
+    border: 4rpx solid#fff;
+    box-shadow: 6rpx 6rpx 20rpx rgba(0, 0, 0, 0.2);
+}
+
+.userinfo {
+    position: relative;
+    width: 750rpx;
+    height: 320rpx;
+    background: #537DDA;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

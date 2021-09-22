@@ -1,0 +1,7 @@
+<van-popup show="{{ show }}" bind:close="onClose" custom-class="popup" custom-style="{{}}">
+  <view class="video-wrap">
+    <view class="video-inner " style="height: {{height}}px">
+      <video src="{{videoUrl}}" autoplay="{{autoplay}}" bindfullscreenchange="fullScreen" />
+    </view>
+  </view>
+</van-popup>

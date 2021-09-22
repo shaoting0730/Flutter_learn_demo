@@ -1,0 +1,15 @@
+/* common variable */
+.tab-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 2rpx 10rpx 0 rgba(0, 0, 0, 0.2), 0 4rpx 4rpx 0 rgba(0, 0, 0, 0.14), 0 6rpx 2rpx -4rpx rgba(0, 0, 0, 0.12);
+  padding: 10rpx 0;
+  background: #ffffff;
+}
+.tab-bar.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1100;
+}

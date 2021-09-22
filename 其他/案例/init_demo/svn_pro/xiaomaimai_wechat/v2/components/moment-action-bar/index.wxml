@@ -1,0 +1,64 @@
+<view class="moment-action-bar">
+  <view>
+    <van-button custom-class="moment-btn" bind:click="onLike">
+      <view class="btn-context">
+        <van-icon
+          size="18"
+          name="/images/{{hasLiked ? 'icon_like_red@2x.png': 'icon_like_grey@2x.png'}}"
+        />
+        <text class="button-text simhei-text">({{likes}})</text>
+      </view>
+    </van-button>
+    <van-button wx:if="{{showCommentBtn && !disableComment}}" custom-class="moment-btn" catch:click="onToComment">
+      <view class="btn-context">
+        <van-icon size="18" name="/images/icon_comments_grey@2x.png" />
+        <text class="button-text simhei-text">({{count}})</text>
+      </view>
+    </van-button>
+  </view>
+  <view class="action-group" wx:if="{{seller && moment.Advertisement === null}}">
+    <van-button custom-class="moment-btn" bind:click="onShare" data-guid="{{ moment.Guid }}">
+      <view class="btn-context">
+        <van-icon size="18" name="/images/icon_home_share@2x.png" />
+        <text class="button-text">分享</text>
+      </view>
+    </van-button>
+
+    <one-popover
+      wx:if="{{showMome}}"
+      id="popover"
+      client-width="90"
+      client-height="88"
+      bind:showPopover="onShowPopover"
+    >
+      <view slot="content" class="popover-actions">
+        <view
+          wx:if="{{moment.AtTheTop === 0}}"
+          class="action-item"
+          hover-class="hover"
+          data-value="1"
+          bind:tap="onSetTop"
+          >设为置顶</view
+        >
+        <view wx:else class="action-item" hover-class="hover" data-value="0" bind:tap="onSetTop"
+          >取消置顶</view
+        >
+        <view class="action-item" hover-class="hover" bind:tap="onRemoveMoment">删除</view>
+      </view>
+      <van-button custom-class="moment-btn">
+        <view class="btn-context">
+          <van-icon size="18" name="/images/icon_home_more@2x.png" />
+          <text class="button-text">更多</text>
+        </view>
+      </van-button>
+    </one-popover>
+  </view>
+  <view wx:else>
+    <van-button custom-class="moment-btn" bind:click="onShare" data-guid="{{ moment.Guid }}">
+      <view class="btn-context">
+        <van-icon size="18" name="/images/icon_home_share@2x.png" />
+        <text class="button-text">分享</text>
+      </view>
+    </van-button>
+  </view>
+</view>

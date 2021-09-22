@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+  <author-panel wx:if="{{needAuthor}}" needAuthor="{{needAuthor}}" canIUse="{{canIUse}}" bind:bindGetUserInfo="bindGetUserInfo"></author-panel>
+  <view class="store" wx:else>
+      <view style="position:fixed; top:0rpx;width: 100vw; background:#ffffff; z-index:100;">
+        <searchbox id="searchbox" class="searchbox-pos" inline="{{ search_inline }}"></searchbox>
+      </view>
+      <view style='margin-top:85rpx;'>
+          <van-tabs active="{{ active }}" bind:change="onChange">
+              <van-tab title="店主动态" custom-class="tab-content">
+                  <view class="header-top">
+                        <image class="header-img" src="{{storeInfo.StoreLogoUrl}}" background-size="cover"></image>
+                        <text class="nick-name">{{storeInfo.StoreName}}</text>
+                        <view class="fans">
+                          <text class="follow">店主：{{storeInfo.OwnerNickName}}</text>
+                          <!---text class="favorite">收藏(2298)</text-->
+                          <van-button custom-class="share" size="small" bindtap='btnShare'>
+                              <iconfont name="share" custom-class="icon-share"></iconfont>
+                              <text>分享给朋友</text>
+                          </van-button>
+                      </view>
+                  </view>
+                  <view class="search_no" wx:if="{{moments.length<=0}}">
+                    <empty-placeholder placeholder-class="empty-placeholder" show="{{true}}" title="等候店主发新动态"/>
+                  </view>    
+                  <listbox wx:else moments="{{ moments }}" seller="{{seller}}"></listbox>
+                  <footer wx:if="{{ showFooter }}" seller="{{seller}}" active="{{ tabBar_active }}" badge="{{totalQuantity==0?'':totalQuantity}}" id="myfooter">
+                    <view class="photo" wx:if="{{seller}}">
+                        <navigator url="../../pages/moments/index" hover-class="none">
+                            <iconfont name="camera" custom-class="camera"></iconfont>
+                        </navigator>
+                    </view>
+                  </footer>
+              </van-tab>
+              <van-tab title="购物墙" custom-class="tab-content">
+                  <photowall seller="{{ seller }}" photoWallList="{{ photoWallList }}" wishList="{{ wishList }}" shoppingCart="{{ shoppingCart }}" total="{{ totalForCart }}" totalQuantity="{{ totalQuantity }}"></photowall>
+              </van-tab>
+          </van-tabs>
+        </view>
+      <view>
+      </view>
+  </view>
+</view>

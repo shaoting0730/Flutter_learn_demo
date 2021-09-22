@@ -1,0 +1,96 @@
+@import "../../base.wxss";
+.modal {
+  width: 320px;
+  box-sizing: border-box;
+  padding: 20px 16px;
+}
+.header {
+  display: flex;
+  justify-content: center;
+}
+.modal input {
+  background-color: #f3f3f3;
+  padding: 5px 16px;
+  border-radius: 4px;
+  color: #333;
+}
+.field {
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.footer {
+  padding: 20px 0;
+}
+
+.radio-group {
+  display: flex;
+  box-sizing: border-box;
+  padding: 5px 0 10px;
+}
+.radio-group .radio {
+  margin-right: 10px;
+}
+.input-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.input-wrap input {
+  position: relative;
+  font-size: 18px;
+  color: #ee5050;
+  padding-left: 25px;
+}
+.input-wrap .full {
+  flex: 1 1 auto;
+}
+.input-wrap .mi {
+  margin: 0 10px;
+  color: #b0b0b0;
+}
+.input-wrap input::after {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 14px;
+  content: "¥";
+  color: #b0b0b0;
+}
+
+.image-wrap {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.image-wrap image {
+  width: 100%;
+  height: 100%;
+}
+.image-wrap .price {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.profit {
+  color: #b0b0b0;
+  font-size: 12px;
+}
+.success-wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column !important;
+  box-sizing: border-box;
+  padding: 40px 0;
+  align-items: center;
+}
+.success-wrap .image {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 11px;
+}

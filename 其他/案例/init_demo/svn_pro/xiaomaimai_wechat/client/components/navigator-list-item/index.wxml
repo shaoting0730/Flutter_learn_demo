@@ -1,0 +1,13 @@
+<navigator
+        url="{{url}}"
+        hover-class="none">
+    <view class="item-panel">
+        <view class="top">
+            <view class="title">{{title}}</view>
+        </view>
+        <view class="bottom">
+            <view class="subTitle">{{subTitle}}</view>
+        </view>
+        <view class="btn-delete" catchtap="bindDelete"></view>
+    </view>
+</navigator>

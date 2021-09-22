@@ -1,0 +1,67 @@
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.flex-row-top-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-bottom-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-center-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-row-center-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page {
+  flex: 1;
+}
+.banner-bg {
+  width:100vw;
+}
+.icon-wechat {
+  width: 48rpx;
+  height: 48rpx;
+  background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_signin_wechat.png");
+  background-size: 100% 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.btn-author {
+  color: white;
+  font-size: 32rpx;
+  background-image: linear-gradient(150deg, #FFAF4C 0%, #FFAF4C 100%);
+  display: block;
+  height: 88rpx;
+  line-height: 86rpx;
+  margin-top: 70rpx;
+  vertical-align: middle;
+}
+.btn-author .title {
+  vertical-align: middle;
+}
+.description{
+  padding: 32rpx;
+}

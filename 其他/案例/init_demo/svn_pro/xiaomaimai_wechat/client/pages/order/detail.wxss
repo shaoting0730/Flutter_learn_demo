@@ -1,0 +1,213 @@
+page {
+  background: #F1F1F1;
+}
+.product-list .list-title {
+  margin-top: 15px;
+  background: #ffffff;
+  font-size: 24rpx;
+  color: #999999;
+}
+.product-list .list-title .title {
+  font-size: 26rpx;
+  color: #999999;
+}
+.product-list .list-title .value {
+  font-size: 26rpx;
+  color: #333333;
+}
+.list-content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.list-content .photo-wall {
+  width: 100vw;
+  text-align: center;
+  margin-top: 15px;
+}
+.list-content image {
+  max-width: 90px;
+  max-height: 90px;
+  background: #e3e3e3;
+}
+.list-content .quantity {
+  position: relative;
+  top: -90px;
+  padding: 3px;
+  color: #ffffff;
+  float: left;
+  display: inline-flex;
+  background: #FFA739;
+  font-size: 24rpx;
+  min-width: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.list-content .price {
+  position: relative;
+  top: -17px;
+  padding: 0 5px;
+  color: #ffffff;
+  float: right;
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.6);
+  font-weight: bolder;
+  font-size: 26rpx;
+}
+.list-content .price .unit {
+  font-weight: bolder;
+  font-size: 24rpx;
+}
+.total-quantity {
+  width: 100vw;
+  font-size: 28rpx;
+  color: #999999;
+  text-align: center;
+  padding: 15px 0;
+}
+.hide {
+  display: none !important;
+}
+.order-info .title {
+  font-size: 26rpx;
+  color: #999999;
+}
+.order-info .value {
+  font-size: 26rpx;
+  color: #999999;
+}
+.order-info .order-title {
+  color: #333333;
+  font-size: 28rpx;
+}
+.order-info .order-value {
+  color: #EE5050;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.member-info {
+  font-size: 26rpx;
+}
+.member-info .title {
+  color: #666666;
+}
+.member-info .value {
+  color: #666666;
+}
+.member-info .address-bar-top-line {
+  height: 8rpx;
+  background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAAICAMAAACRQYpOAAAATlBMVEV1kPL/r03///+dsfb/0pj3+f/X3/zF0PqxwfmMo/X/+/R+mPP/9OP/69D/xn//tlr/4Lb/yob/v2zr7/7o7P7b4/z///z/58f/3bL/vGk+axVvAAAAGnRSTlOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzszORl9QAAADSSURBVFjD5Zg5DoNQDET9wYR9zX7/iyZNXATZlisXMyXyPL1BVFD5Zq8kNem5yNVS9MwBlg/DEsNYmSfG9Ne+Gu1eribD5P0IsHwYlBjGyiwx+dyPStIZ9Vau2FB5BVg+DEsMY2WSmHzuZZPnzai3x+Z3Nay6yToEWD4MSgxjZZoY0+mFt6Snk6ut6OEAy4dhiWGszBJjkrakN+o3uToMlSnA8mFYYhgrk8SYzu270a7lajZMlgDLh2GJYaxMEmOSdvRv2G6oPAMsH4YlhrEyR4w/u5Qke7RX5cMAAAAASUVORK5CYII=') repeat-x;
+  background-size: cover;
+}
+.member-info .address {
+  display: flex;
+  padding: 0 10px 15px 10px;
+}
+.member-info .icon-address {
+  color: #FFAF4C;
+  font-size: 34rpx;
+}
+.modify-price {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background: linear-gradient(to right, #FFA739, #FFC63F);
+  color: #ffffff;
+  border-radius: 0;
+  letter-spacing: 1px;
+}
+.modify-price-col1 {
+  position: fixed;
+  bottom: 0;
+  width: 50vw;
+  background: linear-gradient(to right, #FFA739, #FFC63F);
+  color: #ffffff;
+  border-radius: 0;
+  letter-spacing: 1px;
+}
+.modify-price-col2 {
+  position: fixed;
+  bottom: 0;
+  left: 50vw;
+  width: 50vw;
+  background: linear-gradient(to right, #FFA739, #FFC63F);
+  color: #ffffff;
+  border-radius: 0;
+  letter-spacing: 1px;
+}
+.confirm-price {
+  text-align: center;
+}
+.confirm-price .title {
+  padding: 10px 15px;
+}
+.confirm-price .original-price {
+  color: #FFAF4C;
+  text-decoration-line: line-through;
+  padding: 10px 15px;
+}
+.confirm-price .price {
+  margin: 10px 15px;
+  text-align: left;
+  background: #EEEEEE;
+}
+.confirm-price .price .icon-cny {
+  float: left;
+  font-size: 34rpx;
+  padding: 10px 0 10px 10px;
+  height: 27px;
+}
+.confirm-price .price .number {
+  padding: 10px;
+  border-radius: 4px;
+}
+.confirm-price .message {
+  font-size: 24rpx;
+  color: #999999;
+  padding: 10px 0;
+}
+
+.store-list {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  min-height: 200px;
+  max-height: 365px;
+  overflow-y: auto;
+  bottom: 0px;
+  background: #ffffff;
+  z-index: 5;
+  box-shadow: 0 0 20px rgba(153, 153, 153, 0.5);
+}
+.store-list.in {
+  display: block;
+  z-index: 999;
+}
+.myStore{
+  border-top-color: #f1f1f1;
+  border-top-style: solid;
+  border-width: 26rpx;
+}
+.title{
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 40rpx;
+  margin-left: 4.8vw;
+  margin-top: 2.2vw;
+}
+.storeIcon{
+  width:120rpx;
+  height:120rpx;
+  margin-left: 4.8vw;
+  margin-top: 3.4vw;
+  border-radius: 50%;
+  border: 3rpx solid #FFAD4C;
+}
+.storeName{
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 40rpx;
+}

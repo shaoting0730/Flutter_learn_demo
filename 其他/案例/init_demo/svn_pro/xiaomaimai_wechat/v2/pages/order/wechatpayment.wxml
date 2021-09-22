@@ -1,0 +1,16 @@
+<view class="paymentSection">
+  <view class="paymenttitle">支付金额</view>
+  <view class="paymentamount"><iconfont name="cny" custom-class="icon-cny"/>{{paymentAmount}}</view>
+</view>
+<view class="barcodeSection">
+  <view class="barcodetitle">
+    <view class="icon-wechat"></view>
+    使用微信支付
+   </view>
+   <view class="barcodeContainer">
+  <!---image class="barcode" src="{{barcodeImageUrl}}" bindtap='previewImage' mode="aspectFill"/--->
+  微信支付申请中，请先联系店家线下付款
+  </view>
+  <view class="bottomtitle">识别上方二维码完成支付</view>
+</view>
+<view class="paidconfirm" bindtap='onPaid'>支付完成</view>

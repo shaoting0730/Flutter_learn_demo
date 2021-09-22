@@ -1,0 +1,4 @@
+<!--components/column/index.wxml-->
+<view class="col-{{col}} extended-class">
+    <slot />
+</view>

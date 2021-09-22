@@ -1,0 +1,17 @@
+/* common variable */
+.counter {
+  display: inline-flex;
+}
+.counter .number {
+  border: 2rpx solid #eeeeee;
+  display: inline-block;
+  width: 60rpx;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+}
+.counter .plus,
+.counter .minus {
+  font-size: 30rpx;
+  background: #ffffff;
+  color: #999999;
+}

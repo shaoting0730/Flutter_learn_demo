@@ -1,0 +1,77 @@
+<!--pages/moments/index.wxml-->
+<view class="container">
+    <view class="moments">
+        <view class="image-list">
+            <van-row>
+                  <van-col span="24">
+                  <van-col span="8">
+                    <van-checkbox data-index="{{ index }}" value="{{ products[0].PriceType==0 }}" bind:change="onOpenPriceClick">不定价</van-checkbox>
+                    </van-col>
+                  <van-col span="8">
+                    <van-checkbox data-index="{{ index }}" value="{{ products[0].PriceType==1 }}" bind:change="onFixPriceClick">一口价</van-checkbox>
+                    </van-col>
+                  <van-col span="8">
+                    <van-checkbox data-index="{{ index }}" value="{{ products[0].PriceType==2 }}" bind:change="onRangePriceClick">区间价</van-checkbox>
+                    </van-col>
+                </van-col>
+                <van-col span="16">
+                    <view wx:if="{{products[0].PriceType==2}}" class="price">                    
+                        <input type="number" value="{{ products[0].MinPrice }}" data-index="{{ index }}" bindinput="bindKeyMinPriceInput" />
+                        ~
+                        <input type="number" value="{{ products[0].MaxPrice }}" data-index="{{ index }}" bindinput="bindKeyMaxPriceInput" />
+                    </view>
+                    <view wx:if="{{products[0].PriceType==1}}" class="price">
+                        <input type="number" value="{{ products[0].Price }}" data-index="{{ index }}" bindinput="bindKeyPriceInput" />
+                    </view>
+
+                    <view>
+                        <van-checkbox data-index="{{ index }}" value="{{ products[0].ConfirmPriceRequired }}" bind:change="onChange">分享时隐藏商品价格</van-checkbox>
+                    </view>
+                </van-col>
+
+                <van-col span="24">
+                    <textarea class="desc" bindinput="bindAddProductDesc" placeholder="商品描述" value="{{ products[0].Description }}" maxlength="200"></textarea>
+                </van-col>
+                <van-col span="24">
+                    <view>
+                        <block wx:for="{{ products[0].TagList }}" wx:for-index="index" wx:for-item="tag" wx:key="key">
+                            <van-tag size="medium" custom-class="tag-item">{{ tag }}</van-tag>
+                        </block>
+                    </view>
+                    <van-tag size="medium" custom-class="edit-tag-item">
+                        <navigator url="../../pages/tags/index?productIndex=0" hover-class="none">
+                            <iconfont name="plus" custom-class="tag-plus"></iconfont>编辑标签
+                        </navigator>
+                    </van-tag>
+                </van-col>
+                <view wx:if="{{products[0].VideoUrl}}">
+                    <van-col span="8">
+                      <view class="prew_video" hidden="">
+                          <video id="prew_video" 
+                                      autoplay="false" 
+                                      muted="{{true}}"
+                                      src="{{products[0].VideoUrl}}" >
+                        </video>
+                      </view>
+                  </van-col>
+                </view>
+                <view wx:else>
+                  <block wx:for="{{ products[0].PictureList }}" wx:for-index="index" wx:for-item="item">
+                      <van-col span="8">
+                          <image data-index="{{ index }}" src="{{ item }}" bind:tap="onPreviewImage" mode="aspectFill">
+                              <view wx:if="{{ products[0].PictureList.length>1 }}" class="add-to-cart" catch:tap="onRemovePicture" data-index="{{ index }}">
+                                  <iconfont name="rabbish" custom-class="icon-rabbish"></iconfont>
+                              </view>
+  </image>
+                    </van-col>
+                  </block>                
+                </view>
+            </van-row>
+            <image src="" bind:tap="onAddImage">
+                <iconfont name="plus" custom-class="icon-plus"></iconfont>
+            </image>
+        </view>
+    </view>
+    <button bind:tap="onSaveProduct" class="btn-push">保存修改</button>
+</view>
+<upload-progressbar progress="{{ progress}}" />

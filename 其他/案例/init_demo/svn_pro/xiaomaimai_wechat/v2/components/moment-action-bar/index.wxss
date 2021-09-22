@@ -1,0 +1,60 @@
+.moment-action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 10px -5px;
+}
+
+.action-group {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.button-text {
+  display: block;
+  color: #999;
+  margin-left: 5px;
+}
+
+.popover-actions {
+  width: 90px;
+  text-align: center;
+}
+.action-item {
+  position: relative;
+  padding: 10px 15px;
+  color: #fff !important;
+  box-sizing: border-box;
+}
+.action-item::after {
+  position: absolute;
+  content: "";
+  left: 10px;
+  right: 10px;
+  bottom: 1px;
+  border-bottom: 1px solid #979797;
+}
+.action-item:last-child:after {
+  content: none;
+}
+
+.action-item.hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.moment-btn {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  height: 30px !important;
+  padding: 0 5px !important;
+}
+.btn-context {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.simhei-text {
+  font-family: 黑体;
+}

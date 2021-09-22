@@ -1,0 +1,19 @@
+.cover-progress-bar {
+  position: relative;
+  z-index: 1;
+  background: #f1f1f1;
+  border-radius: 20px;
+  height: 20rpx;
+}
+
+.cover-progress-portion {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: #76d663;
+  background: var(--progress-color, #76d663);
+}
+
+ 

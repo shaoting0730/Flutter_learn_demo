@@ -1,0 +1,64 @@
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row-top-left {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+.flex-row-bottom-left {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+.flex-row-center-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flex-row-center-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.throw-line {
+    display: flex;
+    font-size: 26rpx;
+    color: #FFFFFF;
+    line-height: 28rpx;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.throw-line .line {
+    height: 1rpx;
+    background-color: #979797;
+    flex: 1;
+}
+
+.throw-line .title {
+    font-size: 26rpx;
+    line-height: 28rpx;
+    color: white;
+    margin: 30rpx;
+}

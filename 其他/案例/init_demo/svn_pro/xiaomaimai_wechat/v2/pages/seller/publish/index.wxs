@@ -1,0 +1,10 @@
+module.exports = {
+  getSelectedOrder: function (list, uuid) {
+
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].uuid === uuid) {
+        return i + 1
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<view>
+  <button bindtap='btnBackToHome' class="backtohome">返回首页</button>
+  <van-col span="24">
+    <view class="myStore">
+      <view class="title">线上供货商,发货更省心</view>
+      <block wx:for="{{ myVendors }}">
+        <van-col span="6">
+          <view bindtap='onChooseVendor' data-vendorguid="{{item.Guid}}" data-vendorcode="{{item.VendorCode}}">
+            <image src="{{ item.VendorLogoUrl }}" class="storeIcon" model="aspectFill" />
+            <view class="storeName">{{ item.VendorName }}</view>
+          </view>
+        </van-col>
+      </block>
+    </view>
+  </van-col>
+</view>

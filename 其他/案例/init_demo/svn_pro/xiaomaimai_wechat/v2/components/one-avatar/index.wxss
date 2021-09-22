@@ -1,0 +1,63 @@
+.one-avatar {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.one-avatar-vertical {
+  flex-direction: column;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  align-items: center;
+  min-width: 0;
+  min-height: 80px;
+  min-height: var(--one-avatar-height-size, 80px);
+}
+
+.one-avatar-horizontal {
+  -webkit-align-items: center;
+  align-items: center;
+  /* -webkit-justify-content: center;
+  justify-content: center */
+}
+
+.one-avatar_thumb {
+  position: relative;
+  -webkit-flex: none;
+  flex: none;
+  width: 60px;
+  width: var(--one-avatar-thumb-size, 60px);
+  height: 60px;
+  height: var(--one-avatar-thumb-size, 60px);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+}
+
+.one-avatar_img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+}
+
+.one-avatar_text {
+  font-size: 16px;
+  text-align: center;
+}
+
+.one-avatar_text-ellipsis {
+  text-overflow: ellipsis;
+}
+.one-avatar_text-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.one-avatar-vertical .one-avatar_thumb {
+  margin-bottom: 10px;
+}
+.one-avatar-horizontal .one-avatar_thumb {
+  margin-right: 10px;
+}

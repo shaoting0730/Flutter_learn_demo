@@ -1,0 +1,9 @@
+<!--产品走马灯组件-->
+<swiper class="product-big-img-contain wx-swiper-dot" circular="{{circular}}" indicator-dots="{{product.ImageUrls.length>1}}" indicator-active-color="#B3B3B3" indicator-color="#B3B3B3" autoplay="{{autoplay}}" interval="{{interval}}"
+        duration="{{duration}}">
+    <block wx:for="{{product.ImageUrls}}" wx:for-index="idx" wx:key="*this">
+        <swiper-item>
+            <view class="product-big-image-outer" style='background-image: url("{{item}}")' data-imageidx="{{idx}}" bindtap="bindPreviewImage"></view>
+        </swiper-item>
+    </block>
+</swiper>

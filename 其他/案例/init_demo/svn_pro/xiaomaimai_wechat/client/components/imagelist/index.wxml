@@ -1,0 +1,37 @@
+<!--components/imagelist/index.wxml-->
+<view class="custom-class">
+    <van-row custom-class="image-list" gutter="5">
+        <block wx:for="{{ productList }}" wx:for-index="index" wx:for-item="product" wx:key="key">
+            <van-col span="8">
+                <view class="image-content">
+                    <view class="prew_video" wx:if="{{product.VideoUrl}}">
+                      <video id="prew_video" 
+                                  autoplay="false" 
+                                  muted="{{true}}"
+                                  src="{{product.VideoUrl}}" />
+                    </view>
+                    <image wx:else mode="aspectFill" bind:tap="onPreview" data-index="{{ index }}" data-src="{{ product.PictureList[0] }}"
+                           src="{{ product.PictureList[0] == null ? 'http://resource.xlwonder.wang/DQ_Product_Default.png' : product.PictureList[0] }}"
+                           mode="aspectFill" data-guid="{{ product.Guid }}">
+                        <view wx:if="{{displayPirce}}">
+                          <view wx:if="{{!product.RangePriceRequired}}" class="price">
+                              <iconfont name="cny" custom-class="unit"></iconfont>
+                              <text wx:if="{{product.Price>0}}">{{ product.Price }}</text>
+                              <text wx:else>待议</text>
+                          </view>
+                          <view wx:else class="price">
+                              <iconfont name="cny" custom-class="unit"></iconfont>
+                              <text wx:if="{{product.MinPrice>0}}">{{ product.MinPrice }}</text>
+                              <text wx:else>待议</text>
+                              ~
+                              <iconfont name="cny" custom-class="unit"></iconfont>
+                              <text wx:if="{{product.MaxPrice>0}}">{{ product.MaxPrice }}</text>
+                              <text wx:else>待议</text>
+                          </view>
+                        </view>
+                    </image>
+                </view>
+            </van-col>
+        </block>
+    </van-row>
+</view>

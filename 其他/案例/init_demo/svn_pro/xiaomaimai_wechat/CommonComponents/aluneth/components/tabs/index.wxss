@@ -1,0 +1,43 @@
+/* common variable */
+.tab-scroll {
+  overflow: scroll;
+  white-space: nowrap;
+  width: 100%;
+  box-shadow: 0 2rpx 10rpx 0 rgba(0, 0, 0, 0.2), 0 4rpx 4rpx 0 rgba(0, 0, 0, 0.14), 0 6rpx 2rpx -4rpx rgba(0, 0, 0, 0.12);
+}
+.tab-scroll .tabs .tab {
+  display: inline-block;
+  text-align: center;
+  font-size: 24rpx;
+  min-width: 25%;
+}
+.tab-scroll .tabs .tab .title {
+  padding: 20rpx 0;
+}
+.tab-scroll .tabs .tab .tab-line {
+  transform: scale(0);
+  transition: all 200ms linear;
+}
+.tab-scroll .tabs .tab.active {
+  color: #2196f3;
+}
+.tab-scroll .tabs .tab.active .tab-line {
+  height: 4rpx;
+  transform: scale(1);
+  background: #2196f3;
+}
+.tab-scroll .tabs .tab.disabled {
+  color: rgba(0, 0, 0, 0.38);
+}
+.tab-scroll .tabs .tab-width-1 {
+  width: 100%;
+}
+.tab-scroll .tabs .tab-width-2 {
+  width: 50%;
+}
+.tab-scroll .tabs .tab-width-3 {
+  width: 33.33333333%;
+}
+.tab-scroll .tabs .tab-width-4 {
+  width: 25%;
+}

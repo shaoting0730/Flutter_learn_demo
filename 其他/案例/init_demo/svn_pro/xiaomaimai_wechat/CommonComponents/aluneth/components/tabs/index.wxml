@@ -1,0 +1,16 @@
+<!--components/tabs/index.wxml-->
+<scroll-view scroll-x class="tab-scroll" scroll-left="{{ scrollLeft }}">
+    <view class="tabs extended-class">
+        <block wx:for="{{children}}" wx:for-index="index" wx:for-item="item" wx:key="key">
+            <view wx:if="{{ !item.disabled }}" class="tab tab-width-{{children.length}} {{ item.active }} extended-class" bind:tap="onChange" data-index="{{ index }}">
+                <view class="title">{{ item.title }}</view>
+                <view class="tab-line"></view>
+            </view>
+            <view wx:else class="tab tab-width-{{children.length}} disabled {{ item.active }} extended-class" data-index="{{ index }}">
+                <view class="title">{{ item.title }}</view>
+                <view class="tab-line"></view>
+            </view>
+        </block>
+    </view>
+</scroll-view>
+<slot />

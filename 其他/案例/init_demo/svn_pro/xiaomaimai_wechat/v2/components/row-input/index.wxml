@@ -1,0 +1,5 @@
+<!--blank-row 组件-->
+<view class="row-panel">
+    <image src="{{iconUrl}}" class="title-icon"/>
+    <slot></slot>
+</view>

@@ -1,0 +1,26 @@
+<!--components/carousel/index.wxml-->
+<view class="carousel">
+    <swiper class="swiper"
+            indicator-dots="{{ indicatorDots }}"
+            indicator-color="{{indicatorColor}}"
+            indicator-active-color="{{indicatorActiveColor}}"
+            autoplay="{{ autoPlay }}"
+            current="{{current}}"
+            current-item-id="{{currentItemId}}"
+            interval="{{interval}}"
+            duration="{{duration}}"
+            circular="{{circular}}"
+            vertical="{{vertical}}"
+            previous-margin="{{previousMargin}}"
+            next-margin="{{nextMargin}}"
+            display-multiple-items="{{displayMultipleItems}}"
+            skip-hidden-item-layout="{{skipHiddenItemLayout}}"
+            bindchange="onChange"
+            bindanimationfinish="onAnimationFinish">
+        <block wx:for="{{ imageUrls }}" wx:for-index="index" wx:for-item="item" wx:key="key">
+            <swiper-item>
+                <image src="{{item}}" mode="widthFix"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>

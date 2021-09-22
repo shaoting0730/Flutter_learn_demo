@@ -1,0 +1,5 @@
+<!--FooterLine组件-->
+<view class="footer-line-bar" wx:if="{{show}}">
+    <view class="title">{{title}}</view>
+</view>
+

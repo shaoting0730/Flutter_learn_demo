@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cryptojs@^2.5.3",
+        "scope": null,
+        "escapedName": "cryptojs",
+        "name": "cryptojs",
+        "rawSpec": "^2.5.3",
+        "spec": ">=2.5.3 <3.0.0",
+        "type": "range"
+      },
+      "F:\\program\\MobileWeb"
+    ]
+  ],
+  "_cnpm_publish_time": 1326505286045,
+  "_defaultsLoaded": true,
+  "_engineSupported": true,
+  "_from": "cryptojs@>=2.5.3 <3.0.0",
+  "_id": "cryptojs@2.5.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/cryptojs",
+  "_nodeVersion": "v0.6.7",
+  "_npmUser": {
+    "name": "gwjjeff",
+    "email": "gwjjeff@gmail.com"
+  },
+  "_npmVersion": "1.1.0-beta-10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cryptojs@^2.5.3",
+    "scope": null,
+    "escapedName": "cryptojs",
+    "name": "cryptojs",
+    "rawSpec": "^2.5.3",
+    "spec": ">=2.5.3 <3.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/cryptojs/download/cryptojs-2.5.3.tgz",
+  "_shasum": "909547ecf15bac456e275459b39f2ef45d7fcbb9",
+  "_shrinkwrap": null,
+  "_spec": "cryptojs@^2.5.3",
+  "_where": "F:\\program\\MobileWeb",
+  "author": {
+    "name": "Jeff Guo",
+    "email": "gwjjeff@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/gwjjeff/cryptojs/issues"
+  },
+  "dependencies": {},
+  "description": "Following googlecode project crypto-js, provide standard and secure cryptographic algorithms for NodeJS. Support MD5, SHA-1, SHA-256, RC4, Rabbit, AES, DES, PBKDF2, HMAC, OFB, CFB, CTR, CBC, Base64",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "909547ecf15bac456e275459b39f2ef45d7fcbb9",
+    "size": 24385,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/cryptojs/download/cryptojs-2.5.3.tgz"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "homepage": "https://github.com/gwjjeff/cryptojs",
+  "main": "cryptojs.js",
+  "maintainers": [
+    {
+      "name": "gwjjeff",
+      "email": "gwjjeff@gmail.com"
+    }
+  ],
+  "name": "cryptojs",
+  "optionalDependencies": {},
+  "publish_time": 1326505286045,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gwjjeff/cryptojs.git"
+  },
+  "tags": [
+    "Hash",
+    "MD5",
+    "SHA1",
+    "SHA-1",
+    "SHA256",
+    "SHA-256",
+    "RC4",
+    "Rabbit",
+    "AES",
+    "DES",
+    "PBKDF2",
+    "HMAC",
+    "OFB",
+    "CFB",
+    "CTR",
+    "CBC",
+    "Base64"
+  ],
+  "version": "2.5.3"
+}

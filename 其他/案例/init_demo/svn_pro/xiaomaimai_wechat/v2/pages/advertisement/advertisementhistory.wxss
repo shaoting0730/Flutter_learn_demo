@@ -1,0 +1,12 @@
+.pricerange {
+    display: flex;
+    padding: 20rpx 0;
+    color: #999999;
+}
+
+.pricerange text {
+    display: inline-flex;
+    margin-left: 10rpx;
+    justify-content: left;
+    align-items: left;
+}

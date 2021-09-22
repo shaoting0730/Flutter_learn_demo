@@ -1,0 +1,26 @@
+<!--pages/tag/index.wxml-->
+<view class="container">
+  <view class="tags-content">
+    <view class="tags">
+      <block wx:for="{{ tags }}" wx:for-index="index" wx:for-item="tag" wx:key="key">
+        <van-tag size="medium" color="#E7F1F9" custom-class="tag-item">{{ tag }}</van-tag>
+      </block>
+      <input type="text" value="{{ value }}" bindconfirm="bindInputConfirm" bindinput="bindKeyInput" class="add-tag-item" confirm-type="完成" confirm-hold="true" maxlength="10" />
+    </view>
+    <view class="message">*最多输入五个标签，每个标签不能超过十个字符。每个标签完成后，请用回车换行确认，标签变成蓝色才是保存成功</view>
+    <view class="history-tags">
+      <view class="title">
+        <text>历史标签（可选）</text>
+      </view>
+      <block wx:for="{{ historyTags }}" wx:for-index="index" wx:for-item="historyTag" wx:key="key">
+        <van-tag size="medium" custom-class="tag-item {{ historyTag.active ? 'active' : '' }}" bind:tap="bindAddTag" data-name="{{ historyTag.ProductTag }}">
+          {{ historyTag.ProductTag }}
+        </van-tag>
+      </block>
+    </view>
+  </view>
+
+</view>
+<view class="page-footer-fixed">
+  <button class="btn-main" hover-class="btn-active" bind:tap="bindSubmitTags">保存</button>
+</view>

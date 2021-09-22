@@ -1,0 +1,71 @@
+.list-box .box-item {
+  font-size: 26rpx;
+  padding: 0 15px 15px 15px;
+}
+.list-box .box-item .time {
+  color: #999999;
+  font-size: 22rpx;
+  font-weight: bold;
+}
+.list-box .box-item .box-content {
+  /*display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;*/
+  margin-bottom: 5px;
+}
+.list-box .box-item .box-content .topic-title {
+  padding-right: 5px;
+  color: #FFAF4C;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.list-box .box-item .box-content .topic-content {
+  color: #666666;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.list-box .box-item .favorite {
+  display: inline-flex;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #FFAD4C;
+}
+.list-box .box-item .favorite text {
+  padding: 0 3px;
+  vertical-align: middle;
+  color: #999999;
+}
+.list-box .box-item .share {
+  display: inline-flex;
+  margin-top: 10px;
+}
+.list-box .box-item .share .icon-share {
+  font-weight: lighter;
+  color:#999999;
+}
+.list-box .box-item .share text {
+  padding: 0 3px;
+  vertical-align: middle;
+  color: #999999;
+}
+.list-box .box-item .more {
+  display: inline-flex;
+  margin-left: 10px;
+}
+.list-box .box-item .more .icon-more {
+  font-weight: lighter;
+  color: #999999;
+}
+.list-box .box-item .more text {
+  padding: 0 3px;
+  vertical-align: middle;
+  color: #999999;
+}
+.list-box .box-item .share .icon-advertisement {
+  padding: 0 3px;
+  width:30rpx;
+  height:30rpx;
+}

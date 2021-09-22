@@ -1,0 +1,7 @@
+page {
+  background: #fdfdfd;
+}
+.container {
+  width: 100%;
+  height: 92vh;
+}

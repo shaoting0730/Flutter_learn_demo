@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "iconfont": "../../../components/iconfont/index"
+  }
+}

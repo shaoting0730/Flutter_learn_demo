@@ -1,0 +1,56 @@
+.topbanner{
+  background-color:#FFF0DD; 
+  border-radius: 10rpx;
+  margin-top: 3%;
+  margin-left: 4%;
+  height:128rpx;
+  width:92%;
+}
+.topbanner .title{
+  color:#EF751D;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  padding-top: 3%;
+  margin-left: 4%;
+}
+.middletitle{
+  color:#666666;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-top: 40rpx;
+  margin-left: 4%;
+}
+.btn-save {
+  margin-top: 40rpx;
+  margin-left: 4%;
+  width: 92vw;
+  height: 50px;
+  border-radius: 0 !important;
+  background: linear-gradient(to bottom, #FFC63F, #FFA739);
+  color: #ffffff;
+  letter-spacing: 2px;
+  border: 0 !important;
+}
+.button-hover {
+  background: linear-gradient(to bottom, #FFA739, #FFC63F);
+}
+.price{
+  margin: 10px 15px;
+  text-align: left;
+  background: #EEEEEE;
+}
+.price .icon-cny {
+  float: left;
+  font-size: 34rpx;
+  padding: 10px 0 10px 10px;
+  height: 27px;
+}
+.price .number {
+  padding: 10px;
+  border-radius: 4px;
+}
+.message {
+  font-size: 24rpx;
+  color: #999999;
+  margin: 10px 15px;
+}

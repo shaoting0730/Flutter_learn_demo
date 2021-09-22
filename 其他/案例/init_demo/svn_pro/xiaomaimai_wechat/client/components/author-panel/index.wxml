@@ -1,0 +1,14 @@
+<view class="page">
+<block wx:if="{{needAuthor}}">
+    <image class="banner-bg" src="http://resource.xlwonder.wang/wxapp/xmmq/bg_xmmq_wechat_login.png" mode="widthFix"></image>
+    <view class="description">小买卖圈是一款以各个独立店铺为单位微商平台，为了提高您的用户体验，系统会根据您的登录信息来自动判断您曾经访问过的店铺，因此需要使用微信登录后才能使用。</view>
+    <card-panel title="请点击下方的授权登录按钮，开始进入您的小买卖圈商城">
+        <view wx:if="{{canIUse}}" class="panel-author">
+            <button class="btn-author" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+                <view class="icon-wechat"></view><text class="title">微信授权登录</text>
+            </button>
+        </view>
+        <view wx:else>请升级微信版本</view>
+    </card-panel>
+</block>
+</view>

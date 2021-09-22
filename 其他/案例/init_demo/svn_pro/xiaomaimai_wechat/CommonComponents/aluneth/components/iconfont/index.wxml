@@ -1,0 +1,2 @@
+<!--components/iconfont/index.wxml-->
+<text class="iconfont icon-{{type}} {{size}} extended-class"></text>

@@ -1,0 +1,27 @@
+<view>
+  <button bindtap='btnBackToHome' class="backtohome">返回首页</button>
+  <van-col span="24">
+    <view class="myStore">
+      <view class="title">商品目录</view>
+      <view wx:for="{{ myCategorys }}">
+        <van-col span="6">
+          <view catch:tap='onChooseCategory' data-categoryguid="{{item.Guid}}">
+            <image src="{{ item.CategoryLogoUrl }}" class="storeIcon" model="aspectFill" />
+            <view class="storeName">{{ item.CategoryName }}</view>
+          </view>
+        </van-col>
+      </view>
+    </view>
+  </van-col>
+  <view class="bottom-bar">
+      <view class="payment" bind:tap="onShowBindVendor">绑定新的供货商</view>
+  </view>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="row-panel">
+    <input type="text" bindinput="bindVendorCodeInput" value='{{VendorCode}}' placeholder="输入供应商推荐码"/>
+  </view>
+  <button class="shareButton" bind:tap="bindNewVendor">绑  定</button>
+</view>
+ 

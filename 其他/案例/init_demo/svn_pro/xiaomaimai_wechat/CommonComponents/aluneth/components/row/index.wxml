@@ -1,0 +1,4 @@
+<!--components/grid/index.wxml-->
+<view class="row extended-class">
+    <slot />
+</view>

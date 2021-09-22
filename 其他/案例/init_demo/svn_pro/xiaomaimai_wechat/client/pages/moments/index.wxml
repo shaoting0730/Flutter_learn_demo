@@ -1,0 +1,80 @@
+<!--pages/moments/index.wxml-->
+<view class="container">
+    <view class="moments">
+        <textarea class="moment" placeholder="#添加话题# 我要发布..." maxlength="5000" value="{{ moment }}" bindfocus="bindAddMomentFocus" bindinput="bindAddMoment"></textarea>
+        <view class="image-list">
+            <van-row>
+                <block wx:for="{{ products }}" wx:for-index="index" wx:for-item="product" wx:key="key">
+                    <van-col wx:if="{{product.PictureList.length>0}}" span="8">
+                        <image data-index="{{ index }}" src="{{ product.PictureList[0] }}" bind:tap="onChooseImage" mode="aspectFill"></image>
+                    </van-col>
+                    <van-col wx:if="{{product.VideoUrl}}" span="8">
+                      <view class="prew_video" hidden="">
+                          <video id="prew_video" 
+                                      autoplay="false" 
+                                      muted="{{true}}"
+                                      src="{{product.VideoUrl}}" ></video>
+                          <!--image class="delete" src="{{product.VideoUrl}}?vframe/jpg/offset/0|imageView2/1/w/268/h/150"></image-->
+                      </view>
+                    </van-col>                   
+                    <van-col span="24">
+                      <van-col span="8">
+                        <van-checkbox data-index="{{ index }}" value="{{ product.PriceType==0 }}" bind:change="onOpenPriceClick">不定价</van-checkbox>
+                        </van-col>
+                      <van-col span="8">
+                        <van-checkbox data-index="{{ index }}" value="{{ product.PriceType==1 }}" bind:change="onFixPriceClick">一口价</van-checkbox>
+                        </van-col>
+                      <van-col span="8">
+                        <van-checkbox data-index="{{ index }}" value="{{ product.PriceType==2 }}" bind:change="onRangePriceClick">区间价</van-checkbox>
+                        </van-col>
+                    </van-col>
+                    <van-col span="16">
+                        <view wx:if="{{product.PriceType==2}}" class="price">                    
+                            <input type="number" value="{{ product.MinPrice }}" data-index="{{ index }}" bindinput="bindKeyMinPriceInput" />
+                            ~
+                            <input type="number" value="{{ product.MaxPrice }}" data-index="{{ index }}" bindinput="bindKeyMaxPriceInput" />
+                        </view>
+                        <view wx:if="{{product.PriceType==1}}" class="price">
+                            <input type="number" value="{{ product.Price }}" data-index="{{ index }}" bindinput="bindKeyPriceInput" />
+                        </view>
+
+                        <view>
+                            <van-checkbox data-index="{{ index }}" value="{{ product.ConfirmPriceRequired }}" bind:change="onChange">分享时隐藏商品价格</van-checkbox>
+                        </view>
+                    </van-col>
+                    <van-col span="24">
+                        <textarea class="desc" data-index="{{ index }}" bindinput="bindAddProductDesc" placeholder="商品描述" value="{{ product.description }}" maxlength="200"></textarea>
+                    </van-col>
+                    <van-col span="24">
+                        <view>
+                            <block wx:for="{{ product.TagList }}" wx:for-index="index" wx:for-item="tag" wx:key="key">
+                                <van-tag size="medium" custom-class="tag-item">{{ tag }}</van-tag>
+                            </block>
+                        </view>
+                        <van-tag size="medium" custom-class="edit-tag-item">
+                            <navigator url="../../pages/tags/index?productIndex={{ index }}" hover-class="none">
+                                <iconfont name="plus" custom-class="tag-plus"></iconfont>编辑标签
+                            </navigator>
+                        </van-tag>
+                    </van-col>
+                </block>
+            </van-row>
+            <block wx:if="{{ products.length >=0 && products.length < maxCount && addedVideos<1 }}">
+              <view class="message">添加图片</view>
+              <image src="" bind:tap="onAddProduct">
+                  <iconfont name="plus" custom-class="icon-plus"></iconfont>
+              </image>
+            </block>
+            <view class="message" wx:if="{{ products.length >=0 && products.length < maxCount && addedVideos<1 }}">*图片最多添加8张</view>
+            <block wx:if="{{ products.length ==0 }}">
+              <view class="message">添加视频</view>
+              <image src="" bind:tap="onAddVideoProduct">
+                  <iconfont name="plus" custom-class="icon-plus"></iconfont>
+              </image>
+            </block>
+            <view class="message">*视频最多1个</view>
+        </view>
+    </view>
+    <button bind:tap="onPushMoment" class="btn-push">发布</button>
+</view>
+<upload-progressbar progress="{{ progress}}" />

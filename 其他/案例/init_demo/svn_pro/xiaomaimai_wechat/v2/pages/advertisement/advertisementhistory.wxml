@@ -1,0 +1,23 @@
+<view class="search_no" wx:if="{{advertisements.length<=0}}">
+  <empty-placeholder
+    placeholder-class="empty-placeholder"
+    show="{{true}}"
+    title="暂无投放广告记录"
+  />
+</view>
+<view wx:else class="mx-2">
+  <block wx:for="{{ advertisements }}" wx:for-index="index" wx:for-item="moment" wx:key="Guid">
+    <moment
+      moment="{{ moment }}"
+      publish="{{publish}}"
+      StoreGuid="{{StoreGuid}}"
+      isAdvertisement="{{true}}"
+      seller="{{seller}}"
+    />
+  </block>
+</view>
+<view wx:if="{{publish==0}}" class="pricerange">
+  <text
+    >您可以选择您觉得适合的广告显示在您的推荐页面，凡是点击了您店铺显示的广告，每个点击，您将赚取0.9元人民币到您的充值账户！</text
+  >
+</view>

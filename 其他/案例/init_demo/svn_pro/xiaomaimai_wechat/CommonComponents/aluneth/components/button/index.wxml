@@ -1,0 +1,9 @@
+<!--components/buttons/index.wxml-->
+<button wx:if="{{!disabled}}" class="btn {{inline}} {{size}} {{type}} extended-class" hover-class="button-hover">
+    <text>{{ value }}</text>
+    <slot />
+</button>
+<button wx:else class="btn disabled {{inline}} {{size}} {{type}} extended-class">
+    <text>{{ value }}</text>
+    <slot />
+</button>

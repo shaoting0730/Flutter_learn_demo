@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "product-price-bar": "../product-price-bar/index",
+    "zan-stepper": "../../vendor/vant-webapp/stepper/index",
+    "zan-row": "../../vendor/vant-webapp/row/index",
+    "zan-col": "../../vendor/vant-webapp/col/index",
+    "zan-button": "../../vendor/vant-webapp/button/index"
+  }
+}

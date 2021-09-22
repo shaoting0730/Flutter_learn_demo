@@ -1,0 +1,8 @@
+<!-- xxx 页 -->
+<view class="page">
+    <image class="share-card" src="data:image/jpeg;base64,{{shareImageUrl}}" mode="widthFix"></image>
+    <view class="flex-row-center bottom-group-bar">
+        <button class="btn btn-save" bindtap="bindSaveShare">保存图片分享</button>
+        <button class="btn btn-share" open-type="share" bindtap="bindShareToFirend">分享给好友</button>
+    </view>
+</view>

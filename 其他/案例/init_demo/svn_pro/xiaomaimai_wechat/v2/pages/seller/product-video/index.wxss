@@ -1,0 +1,23 @@
+.page {
+  border-top: 15px solid #f2f2f2;
+  padding: 16px;
+}
+.video-wrap{
+  padding: 75% 0 0;
+  position: relative;
+  margin-bottom: 6px;
+}
+.video-wrap video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.btn {
+  padding: 0 15px !important;
+}
+.btn-default {
+  color: #999 !important;
+  border: 1px solid #979797 !important;
+}

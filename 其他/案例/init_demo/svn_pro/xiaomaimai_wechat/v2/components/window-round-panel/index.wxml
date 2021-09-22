@@ -1,0 +1,8 @@
+<!--window-panel 组件-->
+<view class="window-panel root-class">
+    <slot name="title"></slot>
+    <view class="window-body">
+        <slot></slot>
+    </view>
+    <slot name="footer"></slot>
+</view>

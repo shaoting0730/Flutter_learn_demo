@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "投放广告记录",
+  "usingComponents": {
+    "listbox": "../../../components/listbox/index",
+    "empty-placeholder": "../../biz-components/empty-placeholder/index"
+  }
+}

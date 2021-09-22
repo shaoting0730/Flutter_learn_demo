@@ -1,0 +1,41 @@
+<!-- index.wxml -->
+<view class="page">
+    <view class="page-container">
+        <avator-panel avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}" balance="{{AccountBalance}}" showBalance="{{seller &&(AccountBalance>0) }}" level="1"/>
+        <!--<blank-row/>-->
+        <card-panel showTitle="{{false}}" root-class="root-card-panel" class="card-panel">
+          <scroll-view>
+                <window-simple-row title="我投放的广告" wx:if="{{seller}}" showTitleBottomLine="{{true}}" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_opinion.png" bind:tapRow="bindAdvertisementHistory">
+                </window-simple-row>
+                <window-simple-row title="我显示的广告" wx:if="{{seller}}" showTitleBottomLine="{{true}}" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_opinion.png" bind:tapRow="bindShowAdvertisement">
+                </window-simple-row>
+                </scroll-view>
+        </card-panel>
+    </view>
+    <footer active="1" showCamera="true">
+      <view class="photo" wx:if="{{seller}}">
+        <navigator url="../../pages/moments/index" hover-class="none">
+            <iconfont name="camera" custom-class="camera"></iconfont>
+        </navigator>
+      </view>
+    </footer>
+</view>
+<template name="row-input">
+    <view class="row-panel">
+        <i class="title-icon"/>
+        <input class="input-text" type="text" name="{{inputName}}" value='{{value}}' placeholder="{{placeholder}}"/>
+    </view>
+</template>
+<template name="row-navgation">
+    <view class="row-panel" bindtap="{{bindtap}}">
+        <i class="title-icon"/>
+        <text class="title">{{title}}</text>
+    </view>
+</template>
+<template name="row-input-validator">
+    <view class="row-panel" bindtap="{{bindtap}}">
+        <i class="title-icon"/>
+        <input class="input-text" type="text" name="{{inputName}}" value='{{value}}' placeholder="{{placeholder}}"/>
+        <image src="{{verifyImage}}" class="verify-image" bindtap='refreshCode' mode='scscaleToFill'></image>
+    </view>
+</template>

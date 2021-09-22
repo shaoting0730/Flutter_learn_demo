@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "切换店铺",
+  "usingComponents": {
+    "choose-store": "../../components/choose-store/index"
+  }
+}
+

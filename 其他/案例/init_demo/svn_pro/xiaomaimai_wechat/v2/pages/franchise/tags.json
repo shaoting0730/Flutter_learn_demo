@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "编辑标签",
+  "usingComponents": {
+    "iconfont": "../../../components/iconfont/index"
+  }
+}

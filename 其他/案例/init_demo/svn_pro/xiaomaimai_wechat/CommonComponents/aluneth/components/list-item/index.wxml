@@ -1,0 +1,5 @@
+<!--components/list-item/index.wxml-->
+<view class="list-item extended-class">
+    <slot />
+    <iconfont type="right" extended-class="icon-right"></iconfont>
+</view>

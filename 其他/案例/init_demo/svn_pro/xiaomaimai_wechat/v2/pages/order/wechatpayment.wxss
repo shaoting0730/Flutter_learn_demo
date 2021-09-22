@@ -1,0 +1,93 @@
+.paymentSection{
+  background: #FFFFFF;
+  box-shadow: 0 12rpx 68rpx 0 rgba(0,0,0,0.12);
+  border-radius: 16rpx;
+  margin-top:30rpx;
+  margin-left:4vw;
+  width:92vw;
+  height:130rpx;
+}
+.paymenttitle{
+  margin-top:45rpx;
+  margin-left:30rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333333;
+  float:left;
+}
+.paymentamount{
+  margin-top:45rpx;
+  margin-right:30rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #EE5050;
+  text-align: right;
+  float:right;
+}
+.paymentSection .seperateline{
+  border: 2rpx solid #DDDDDD;
+  margin-top: 45rpx;
+  width: 100vw;
+}
+
+.barcodeSection{
+  background: #FFFFFF;
+  box-shadow: 0 12rpx 68rpx 0 rgba(0,0,0,0.12);
+  border-radius: 16rpx;
+  margin-top:30rpx;
+  margin-left:4vw;
+  width:92vw;
+  height:800rpx;
+}
+.barcodetitle{
+  font-size: 34rpx;
+  color: #2CA447;
+  line-height: 48rpx;
+  padding-top:12vw;
+  text-align: center;
+}
+.icon-wechat{
+  width: 50rpx;
+  height: 50rpx;
+  background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_wechat_filled.png");
+  background-size: 100% 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.barcodeContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.barcode{
+  text-align: center;
+  margin-top:20rpx;
+  width:320rpx;
+  height:320rpx;
+}
+.bottomtitle{
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top:20rpx;
+}
+.paidconfirm{
+  position: fixed;
+  bottom: 0;
+  display: inline-flex;
+  line-height: 100rpx;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 10rpx;
+  border-radius: 0;
+  background: linear-gradient(to bottom right, #FFC63F, #FFA739);
+  color: #ffffff;
+  font-size: 34rpx;
+}
+.button-hover {
+  background: linear-gradient(to bottom right, #FFA739, #FFC63F);
+}
+page{
+
+}

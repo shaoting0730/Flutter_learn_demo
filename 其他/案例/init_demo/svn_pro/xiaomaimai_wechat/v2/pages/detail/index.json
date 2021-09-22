@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "one-product-item": "../../../components/one-product-item/index",
+    "one-price": "../../../components/one-price/index",
+    "one-tag": "../../../components/one-tag/index",
+    "one-comp": "../../../components/one-comp/index"
+  }
+}

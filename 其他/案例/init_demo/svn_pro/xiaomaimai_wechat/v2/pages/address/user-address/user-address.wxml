@@ -1,0 +1,51 @@
+<!-- 地址管理 -->
+<view class="address-wrap">
+  <block wx:if="{{ address && address.length>0}}">
+    <van-radio-group value="{{addressValue}}" bind:change="setDefault">
+      <block wx:for="{{address}}" wx:for-index="index" wx:for-item="item" wx:key="Guid">
+        <one-address
+          title="{{item.FullName}}"
+          phone="{{item.PhoneNumber}}"
+          province="{{item.Province}}"
+          city="{{item.City}}"
+          town="{{item.Town}}"
+          address="{{item.AddressLine}}"
+          use-footer-slot="{{true}}"
+          isDefault="{{addressValue === item.Guid }}"
+          data-item="{{item}}"
+          bind:click="selectAddress"
+          clickable="{{allowSelect}}"
+        >
+          <view slot="footer" class="d-flex justify-content-between align-items-center">
+            <view>
+              <van-radio name="{{item.Guid}}">设置默认地址</van-radio>
+            </view>
+            <view>
+              <van-button
+                icon="edit"
+                custom-class="text-secondary"
+                data-address="{{item}}"
+                bind:click="gotoNewAddress"
+                >编辑</van-button
+              >
+              <van-button
+                icon="delete"
+                custom-class="text-secondary"
+                data-guid="{{item.Guid}}"
+                bind:click="delAddress"
+                >删除</van-button
+              >
+            </view>
+          </view>
+        </one-address>
+      </block>
+    </van-radio-group>
+  </block>
+  <block wx:else>
+    <empty-placeholder placeholder-class="empty-placeholder" show="{{true}}" title="暂无收货地址" />
+  </block>
+</view>
+
+<view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <button class="btn-main" hover-class="btn-active" bindtap="gotoNewAddress">新增地址</button>
+</view>

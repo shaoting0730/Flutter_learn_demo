@@ -1,0 +1,160 @@
+<wxs src="../../utils/utils.wxs" module="utils" />
+<navigation-bar title="订单确认" background="#fff" />
+<view class="cboby">
+  <choose-address-to-bar
+    address="{{address}}"
+    is-show-choose="{{isShowChoose}}"
+    checkAddress="{{checkAddress}}"
+    bind:chooseAddress="chooseAddress"
+    bind:checkAddress="checkAddress"
+  />
+  <scroll-view scroll-y="{{true}}" style="height:{{scrollHeight}}px;">
+    <block wx:for="{{orderPrice.Orders}}" wx:for-index="index" wx:for-item="order" wx:key="index">
+      <van-cell-group custom-class="mt-3">
+        <van-cell custom-style="align-items: center;">
+          <van-icon slot="icon" name="/images/icon_order_detail@2x.png" size="25" />
+          <view class="order-title" slot="title">订单{{index + 1}}</view>
+          <van-tag custom-class="tag tag-info" wx:if="{{order.OrderInfo.RequireShipToIdCard}}">
+            直邮商品
+          </van-tag>
+          <van-tag custom-class="tag tag-danger" wx:if="{{order.OrderInfo.RequireBuyerIdCard}}">
+            保税商品
+          </van-tag>
+        </van-cell>
+        <van-cell custom-class="product-list" border="{{false}}">
+          <block
+            wx:for="{{order.OrderItems}}"
+            wx:for-index="index"
+            wx:for-item="item"
+            wx:key="index"
+          >
+            <one-card
+              price="{{ item.UnitPrice }}"
+              range-price="{{item.PriceType  == 0 && (item.MaxPrice>0 || item.MinPrice>0)}}"
+              min-price="{{item.MinPrice}}"
+              max-price="{{item.MaxPrice}}"
+              num="{{item.Quantity}}"
+              thumb="{{ item.ProductImageUrl + '?imageView2/0/w/250/h/250' }}"
+              bottom-class="cart-bottom"
+              price-class="text-secondary"
+              content-class="content"
+            >
+              <view slot="title">
+                <view class="text-right text-body">
+                  <view class="d-inline-block text-left ">{{item.ProductVariantName}}</view>
+                </view>
+              </view>
+              <view slot="desc" class="text-secondary">
+                <view>x {{ item.Quantity }}</view>
+              </view>
+            </one-card>
+          </block>
+        </van-cell>
+        <van-cell use-label-slot="{{true}}" custom-class="py-0" border="{{false}}">
+          <view slot="label" class="text-center">
+            共计<text>{{ utils.getOrderItemsQuantity(order.OrderItems)}}</text>件商品
+          </view>
+        </van-cell>
+        <van-cell
+          custom-class="py-1"
+          title-class="text-secondary"
+          value-class="text-body"
+          title="商品总价"
+          value="¥ {{utils.toFixed(order.OrderInfo.OrderSubtotal)}}"
+          border="{{false}}"
+        />
+        <van-cell custom-class="py-1" title-class="text-secondary" title="运费">
+          <text class="text-body" wx:if="{{checkAddress ==='1'}}"
+            >¥ {{utils.toFixed(order.OrderInfo.OrderShipping)}}</text
+          >
+          <text class="text-detete" wx:else
+            >¥ {{utils.toFixed(order.OrderInfo.OrderShipping)}}</text
+          >
+        </van-cell>
+        <van-cell title-class="text-secondary" title="订单总价">
+          <view class="text-total-price">
+            <text class="text-currency" wx:if="{{checkAddress ==='1'}}"
+              >¥ {{utils.toFixed(order.OrderInfo.OrderReceivable)}}</text
+            >
+            <text class="text-currency" wx:else>
+              ¥ {{utils.toFixed(order.OrderInfo.OrderReceivable - order.OrderInfo.OrderShipping)}}
+            </text>
+          </view>
+        </van-cell>
+      </van-cell-group>
+    </block>
+    <van-cell-group custom-class="mt-3 mb-5">
+      <van-cell title="备注" title-width="88px">
+        <view style=" position:relative ;">
+          <input
+            class="order-memo"
+            disabled="{{showModal}}"
+            auto-height="{{ true }}"
+            name="remark"
+            placeholder="备注你想要的型号、颜色或大小..."
+            bindinput="remarkInput"
+            value="{{remark}}"
+          />
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </scroll-view>
+</view>
+<form bindsubmit="createProductOrderByWX" report-submit="true" class="form-view">
+  <view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+    <button
+      form-type="submit"
+      class="btn-main"
+      hover-class="btn-active"
+      aria-role="button"
+      style="z-index: 112;"
+    >
+      提交订单
+    </button>
+  </view>
+</form>
+
+<van-popup show="{{ showModal }}" bind:close="onCloseModal">
+  <view class="modalDlg">
+    <van-row>
+      <van-col span="24" wx:if="{{WechatMPPayEnabled && isScan}}">
+        <van-button
+          block
+          type="primary"
+          size="large"
+          square="{{true}}"
+          bind:click="onRequestPayment"
+          icon="/images/icon_wechat_white@2x.png"
+          >微信支付
+        </van-button>
+      </van-col>
+      <van-col span="24" wx:if="{{!(WechatMPPayEnabled && isScan)}}">
+        <van-button
+          block
+          type="primary"
+          size="large"
+          square="{{true}}"
+          open-type="contact"
+          show-message-card="true"
+          send-message-title="请扫下方二维码付款"
+          send-message-img="{{shareImageUrl}}"
+          session-from="{{storeGuid+'|||'+sharedGuid}}"
+          icon="/images/icon_wechat_white@2x.png"
+          >店主付款码支付
+        </van-button>
+      </van-col>
+      <van-col span="24">
+        <van-button
+          plain
+          block
+          size="large"
+          square="{{true}}"
+          bind:click="btnPaymentDone"
+          icon="/images/icon_payment@2x.png"
+          >查看订单
+        </van-button>
+      </van-col>
+    </van-row>
+  </view>
+</van-popup>
+<van-dialog id="van-dialog" cancel-button-color="#999" confirm-button-color="#ffaf4c" />

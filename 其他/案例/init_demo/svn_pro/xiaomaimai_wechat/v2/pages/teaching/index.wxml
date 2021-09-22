@@ -1,0 +1,73 @@
+<!-- <scroll-view scroll-y="{{true}}" style="height:{{scrollHeight}}px"> -->
+<navigation-bar title="一分钟学会使用小买卖圈！"  background="#fff" />
+<view class="teach-page" wx:if="{{seller}}">
+  <view class="tilte">
+    店主一分钟学会使用小买卖圈！
+  </view>
+  <view>
+    <text class="text-primary ">小买卖圈</text>
+    <text class="ml-3 text-secondary ">2020-01-21</text>
+  </view>
+  <view
+    class="teach-box"
+    wx:for="{{sellerVideos}}"
+    wx:for-index="index"
+    wx:for-item="video"
+    wx:key="index"
+  >
+    <view class="sub-title">{{video.title}}</view>
+    <view wx:if="{{video.description}}">{{video.description}}</view>
+    <view style="text-align: center;" class="my-2" wx:if="{{video.adImage}}">
+      <image src="{{video.adImage}}" style="width:400rpx;height:400rpx" />
+    </view>
+    <view class="video-wrap" data-url="{{video.video}}" bind:tap="onShowVideo">
+      <image mode="aspectFit" src="{{video.video +'?vframe/jpg/offset/0|imageView2'}}" />
+    </view>
+  </view>
+</view>
+<view class="teach-page" wx:else>
+  <view class="tilte">
+    买家一分钟学会使用小买卖圈！
+  </view>
+  <view>
+    <text class="text-primary ">小买卖圈</text>
+    <text class="ml-3 text-secondary ">2020-01-21</text>
+  </view>
+  <view
+    class="teach-box"
+    wx:for="{{buyerVideos}}"
+    wx:for-index="index"
+    wx:for-item="buyer"
+    wx:key="index"
+  >
+    <view class="sub-title">{{buyer.title}}</view>
+    <view wx:if="{{buyer.description}}"> {{buyer.description}}</view>
+    <view wx:if="{{buyer.subdes}}" style="color:#f00 " class="mt-2">{{buyer.subdes}}</view>
+    <block wx:for="{{buyer.video}}" wx:for-index="i" wx:for-item="video" wx:key="i">
+      <view wx:if="{{video.title}}" class="sub-title-2">
+        <view>{{video.title}}</view>
+      </view>
+      <view class="video-wrap" data-url="{{video.url}}" bind:tap="onShowVideo">
+        <image mode="aspectFit" src="{{video.url +'?vframe/jpg/offset/0|imageView2'}}" />
+      </view>
+    </block>
+  </view>
+</view>
+<!--</scroll-view>
+ <view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <view style=" padding: 5px 10px;">
+    <van-row gutter="10">
+      <van-col span="12">
+        <van-button block plain custom-class="btn" type="primary" bind:click="onGoyoHome">
+          返回首页
+        </van-button>
+      </van-col>
+      <van-col span="12">
+        <van-button block custom-class="btn" type="primary">
+          分享给好友
+        </van-button>
+      </van-col>
+    </van-row>
+  </view>
+</view> -->
+<prevideo show="{{show}}" bind:close="prevideoClose" videoUrl="{{videoUrl}}" autoplay="{{true}}" />

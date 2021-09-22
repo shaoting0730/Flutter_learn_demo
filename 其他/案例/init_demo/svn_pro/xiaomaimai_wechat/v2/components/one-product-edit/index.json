@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "one-price": "../one-price/index",
+    "one-tag":"../one-tag/index"
+  }
+}

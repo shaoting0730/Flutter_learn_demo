@@ -1,0 +1,92 @@
+<wxs src="./index.wxs" module="help" />
+<navigation-bar title="店主推荐发布" delta="{{delta}}" />
+<scroll-view scroll-y="{{true}}" style="height:{{scrollHeight}}px">
+  <view class="page">
+    <textarea
+      class="input"
+      placeholder="#新品上架# 请输入…"
+      value="{{ context }}"
+      maxlength="5000"
+      bindfocus="onContextFocus"
+      bindinput="onContextInput"
+    ></textarea>
+
+    <view class="container">
+      <view class="header">
+        <view class="title"
+          >选择商品图片
+          <one-popover
+            client-width="227"
+            client-height="72"
+            content-class="popover-content"
+            content="选择商品后自动展开所有商品图片，点击图片选择您想要的曝光图片"
+          >
+            <van-icon name="/images/icon_question_tips@2x.png" size="18" custom-class="help-icon" />
+          </one-popover>
+        </view>
+        <view class="exp">
+          <text class="text-secondary" wx:if="{{selected.length}}"
+            >已选择{{selected.length}}张
+          </text>
+          <text
+            class="link"
+            bind:tap="onGotoReselect"
+            wx:if="{{selected.length > 0 &&  target==='home'}}"
+            >重新选择商品</text
+          >
+        </view>
+      </view>
+      <view class="body">
+        <view wx:if="{{pictures.length}}" class="products-wrap">
+          <van-row gutter="8">
+            <block wx:for="{{ pictures }}" wx:for-index="index" wx:for-item="item" wx:key="uuid">
+              <van-col span="8">
+                <product-picture
+                  selected="{{item.selected}}"
+                  order="{{help.getSelectedOrder(selected,  item.uuid)}}"
+                  url="{{item.url}}"
+                  description="¥ {{item.product.Price}}"
+                  data-index="{{index}}"
+                  bind:click="onClickPicture"
+                />
+              </van-col>
+            </block>
+          </van-row>
+          <view class="text-secondary my-3 ">* 图片最多添加9张 </view>
+        </view>
+        <view wx:elif="{{isOneVideo}}">
+          <view class="video-wrap">
+            <video src="{{video.VideoUrl}}" />
+          </view>
+          <view class="text-secondary my-3 ">* 视频仅可选择一个 </view>
+        </view>
+        <view wx:else class="mt-5">
+          <van-row>
+            <van-col span="18" offset="3">
+              <van-button block icon="plus" type="dotted" bind:click="onGotoReselect">
+                选择商品
+              </van-button>
+            </van-col>
+          </van-row>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <image src="/images/button_yellow_high@2x.png" class="btn-main-image" mode="aspectFill"> </image>
+  <cover-view class="btn-mian-conver-view" aria-role="button" style="bottom:{{safeAreaBottom}}px;">
+    <button
+      disabled="{{selected.length === 0}}"
+      bind:tap="onPushMoment"
+      class="btn-main btn-bg-transparent"
+      hover-class="btn-active"
+      aria-role="button"
+      style="z-index: 112;"
+    >
+      发布动态
+    </button>
+  </cover-view>
+</view>
+<upload-progressbar progress="{{progress}}" />

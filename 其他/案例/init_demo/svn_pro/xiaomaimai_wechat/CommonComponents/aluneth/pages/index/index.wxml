@@ -1,0 +1,155 @@
+<scroll-view scroll-y class="container">
+    <!--Carousel-->
+    <carousel imageUrls="{{imageUrls}}" bind:change="onChangeCarousel" bindanimationfinish="onAnimationFinish"></carousel>
+    <!--Counter-->
+    <counter></counter>
+    <!--Tabs-->
+    <tabs active="0" bind:change="onChangeTab">
+        <tab title="ITEM ONE">
+            <view>ITEM ONE CONTENT</view>
+        </tab>
+        <tab title="ITEM TWO">
+            <view>ITEM TWO CONTENT</view>
+        </tab>
+        <tab title="ITEM THREE" disabled="{{ true }}">
+            <view>ITEM THREE CONTENT</view>
+        </tab>
+        <tab title="ITEM FOUR">
+            <view>ITEM FOUR CONTENT</view>
+        </tab>
+        <tab title="ITEM FIVE">
+            <view>ITEM FIVE CONTENT</view>
+        </tab>
+        <tab title="ITEM SIX">
+            <view>ITEM SIX CONTENT</view>
+        </tab>
+        <tab title="ITEM SEVEN">
+            <view>ITEM SEVEN CONTENT</view>
+        </tab>
+        <tab title="ITEM EIGHT">
+            <view>ITEM EIGHT CONTENT</view>
+        </tab>
+        <tab title="ITEM NIGHT">
+            <view>ITEM NIGHT CONTENT</view>
+        </tab>
+        <tab title="ITEM TEN">
+            <view>ITEM TEN CONTENT</view>
+        </tab>
+    </tabs>
+    <!--Grid-->
+    <row extended-class="header-bar">
+        <column col="3" extended-class="avatar">
+            <avatar type="circle"></avatar>
+        </column>
+        <column col="9">
+            <row>
+                <column col="9" extended-class="user-info">
+                    <view>汪长剑</view>
+                    <view>
+                        <text class="follow">关注(100)</text>
+                        <text class="favorite">收藏(100)</text>
+                    </view>
+                </column>
+                <column col="3" extended-class="scan">
+                    <view>
+                        <iconfont type="qrcode" extended-class="icon-qrcode"></iconfont>
+                        <text>二维码</text>
+                    </view>
+                </column>
+            </row>
+        </column>
+    </row>
+    <row>
+        <column col="12">
+            <view style="margin: 20rpx 0;">
+                <v-button inline="block" size="medium" type="info" bind:tap="onOpenLeftDrawer" value="Open Left Drawer"></v-button>
+            </view>
+            <view style="margin: 20rpx 0;">
+                <v-button inline="block" size="medium" type="secondary" bind:tap="onOpenRightDrawer" value="Open Right Drawer"></v-button>
+            </view>
+        </column>
+    </row>
+    <!--Buttons-->
+    <row>
+        <column col="12">
+            <view class="buttons">
+                <v-button inline="inline" size="medium" type="default" extended-class="v-button" value="Default"></v-button>
+                <v-button inline="inline" size="medium" type="primary" extended-class="v-button" value="Primary"></v-button>
+                <v-button inline="inline" size="medium" type="secondary" extended-class="v-button" value="Secondary"></v-button>
+                <v-button inline="inline" size="medium" type="success" extended-class="v-button" value="Success"></v-button>
+                <v-button inline="inline" size="medium" type="info" extended-class="v-button" value="Info"></v-button>
+                <v-button inline="inline" size="medium" type="warning" extended-class="v-button" value="Warning"></v-button>
+                <v-button inline="inline" size="medium" type="danger" extended-class="v-button" value="Danger"></v-button>
+                <v-button inline="inline" size="medium" type="default" disabled extended-class="v-button" value="Default"></v-button>
+                <v-button inline="inline" size="medium" type="primary" disabled extended-class="v-button" value="Primary"></v-button>
+                <v-button inline="inline" size="medium" type="secondary" disabled extended-class="v-button" value="Secondary"></v-button>
+                <v-button inline="inline" size="medium" type="success" disabled extended-class="v-button" value="Success"></v-button>
+                <v-button inline="inline" size="medium" type="info" disabled extended-class="v-button" value="Info"></v-button>
+                <v-button inline="inline" size="medium" type="warning" disabled extended-class="v-button" value="Warning"></v-button>
+                <v-button inline="inline" size="medium" type="danger" disabled extended-class="v-button" value="Danger"></v-button>
+            </view>
+        </column>
+    </row>
+</scroll-view>
+<!--Drawer-->
+<drawer-left extended-class="drawer" show="{{drawer_left_show}}">
+    <!--List-->
+    <view>
+        <list extended-class="list">
+            <list-item extended-class="item" catch:tap="onClickListItem">
+                <iconfont type="user" extended-class="icon-user"></iconfont>
+                <text>会员中心</text>
+            </list-item>
+            <list-item extended-class="item" catch:tap="onClickListItem">
+                <iconfont type="shopping-cart" extended-class="icon-shopping-cart"></iconfont>
+                <text>我的购物车</text>
+            </list-item>
+            <list-item extended-class="item" catch:tap="onClickListItem">
+                <iconfont type="profile" extended-class="icon-profile"></iconfont>
+                <text>我的订单</text>
+            </list-item>
+            <list-item extended-class="item" catch:tap="onClickListItem">
+                <iconfont type="setting" extended-class="icon-setting"></iconfont>
+                <text>设置</text>
+            </list-item>
+        </list>
+    </view>
+</drawer-left>
+<drawer-right extended-class="drawer" show="{{drawer_right_show}}">
+    <!--List-->
+    <view>
+        <list extended-class="list">
+            <list-item extended-class="item" catch:tap="onClickListItem">
+                <iconfont type="user" extended-class="icon-user"></iconfont>
+                <text>会员中心</text>
+            </list-item>
+            <list-item extended-class="item" catch:tap="onClickListItem">
+                <iconfont type="shopping-cart" extended-class="icon-shopping-cart"></iconfont>
+                <text>我的购物车</text>
+            </list-item>
+            <list-item extended-class="item" catch:tap="onClickListItem">
+                <iconfont type="profile" extended-class="icon-profile"></iconfont>
+                <text>我的订单</text>
+            </list-item>
+            <list-item extended-class="item" catch:tap="onClickListItem">
+                <iconfont type="setting" extended-class="icon-setting"></iconfont>
+                <text>设置</text>
+            </list-item>
+        </list>
+    </view>
+</drawer-right>
+<!--Tab bar-->
+<tabbar active="0" fixed bind:change="onChangeTabbar">
+    <tabbar-item title="Home" icon="home">
+        <badge count="99" extended-class="badge"></badge>
+    </tabbar-item>
+    <tabbar-item title="User" icon="user">
+        <badge count="9" extended-class="badge"></badge>
+    </tabbar-item>
+    <tabbar-item title="Info" icon="info-cirlce-o" disabled="{{ true }}">
+        <badge extended-class="badge"></badge>
+    </tabbar-item>
+    <tabbar-item title="Setting" icon="setting">
+        <badge count="0" extended-class="badge"></badge>
+    </tabbar-item>
+</tabbar>

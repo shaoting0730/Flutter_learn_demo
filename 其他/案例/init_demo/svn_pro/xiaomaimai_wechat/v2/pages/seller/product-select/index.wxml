@@ -1,0 +1,65 @@
+<navigation-bar title="选择商品" background="#fff" />
+<view>
+  <searchbox
+    seller="{{ true }}"
+    topic="{{topic}}"
+    tags="{{tags}}"
+    bind:onSearch="onSearch"
+    bind:onChooseTopic="onChooseTopic"
+    bind:onChooseTag="onChooseTag"
+  >
+  </searchbox>
+</view>
+<view class="refresher-wrap">
+  <scroll-view
+    scroll-y="{{true}}"
+    style="height:{{scrollHeight}}px;"
+    bindscroll="refresherScroll"
+    scroll-top="{{scrollWallTop}}"
+    scroll-with-animation="{{scrollAnimation}}"
+  >
+    <one-refresher
+      id="refresher"
+      distance="50"
+      isInnerComponent="{{true}}"
+      bind:pulling="onPulling"
+      bind:refresh="onRefresh"
+      bind:loadmore="onLoadmore"
+      scroll-top="{{ scrollTop }}"
+    >
+      <view class="search_no" wx:if="{{ products.length <= 0}}" style="height:{{scrollHeight}}px;">
+        <empty-placeholder
+          placeholder-class="empty-placeholder"
+          show="{{true}}"
+          title=""
+        ></empty-placeholder>
+      </view>
+      <view wx:else class="products-wrap">
+        <block wx:for="{{ products }}" wx:for-index="pIndex" wx:for-item="item" wx:key="key">
+          <view>
+            <one-product-item
+              seller="{{ true }}"
+              is-select="{{true}}"
+              product="{{ item }}"
+              selected-imge-count="{{ selectedImgeCount }}"
+              selected-video-count="{{ selectedVideoCount }}"
+              hidden-select-icon="{{selectedVideoCount === 0 && selectedImgeCount===0 ? false: selectedVideoCount > 0 ? !item.selected :  item.VideoUrl ? true: false}}"
+              bind:triggerSelected="onTriggerSelected"
+            />
+          </view>
+        </block>
+      </view>
+    </one-refresher>
+  </scroll-view>
+</view>
+
+<view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <button
+    class="btn-main"
+    hover-class="btn-active"
+    bindtap="onComplete"
+    disabled="{{selectedList.length===0}}"
+  >
+    选择<text wx:if="{{selectedList.length}}">({{selectedList.length}})</text>
+  </button>
+</view>

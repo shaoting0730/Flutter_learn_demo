@@ -1,0 +1,12 @@
+  <view class="search_no" wx:if="{{!productData.length}}">
+      <empty-placeholder placeholder-class="empty-placeholder" show="{{true}}" title="没有任何收藏品"/>
+  </view>
+<view wx:else class="favorite-list">
+    <block wx:for="{{productData}}" wx:for-index="index" wx:for-item="product" wx:key="key">
+        <van-card bind:tap="onPreview" custom-class="card" price="{{ product.Price }}" desc="{{ product.Description }}" title="{{ product.ProductName }}" thumb="{{ product.VideoUrl? product.VideoUrl+'?vframe/jpg/offset/0|imageView2/1/w/268/h/150' : product.PictureList[0] }}" data-guid="{{ product.Guid }}">
+            <view slot="footer">
+                <iconfont name="star" custom-class="icon-star" catch:tap="onCancel" data-guid="{{ product.Guid }}"></iconfont>
+            </view>
+        </van-card>
+    </block>
+</view>

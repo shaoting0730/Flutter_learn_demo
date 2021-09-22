@@ -1,0 +1,66 @@
+@import "../../base";
+page{
+    height:100%;
+    display: flex;
+}
+.page {
+    font-family: '微软雅黑';
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    background-color: @color-bg-gray-4;
+}
+
+.page-container{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+.canvas-shared{
+    width:690px;
+    height:1056px;
+    border:solid 1px red;
+}
+
+.share-card{
+    //border:solid 1rpx @color-primary;
+    justify-self: flex-start;
+    justify-content: flex-start;
+    background-color: transparent;
+    width:auto;
+    height:100%;
+    margin:@margin-size-normal;
+    border-radius: 10rpx;
+    display: block;
+    //background-size: cover;
+    //border:solid 1rpx red;
+}
+
+.bottom-group-bar{
+    height:110rpx;
+    padding:0 @margin-size-normal ;
+    background-color: white;
+    box-shadow: 0 -2px 6px 0 rgba(0,0,0,0.10);
+    .btn{
+        flex:1;
+        height:80rpx;
+        font-size:32rpx;
+        line-height:80rpx;
+        border-radius: 12rpx;
+    }
+    .btn-save{
+        border:solid 1rpx @color-primary;
+        color:@color-primary;
+        background-color: white;
+        margin-right:@margin-size-normal/2;
+    }
+    .btn-share{
+        background-image: linear-gradient(90deg, #45ADF9 0%, #3B8EFF 100%);
+        color:white;
+        margin-left:@margin-size-normal/2;
+    }
+    .btn-share-only{
+        background-image: linear-gradient(90deg, #45ADF9 0%, #3B8EFF 100%);
+        color:white;
+    }
+}

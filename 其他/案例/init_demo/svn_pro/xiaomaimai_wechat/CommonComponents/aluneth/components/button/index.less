@@ -1,0 +1,92 @@
+@import "../common/theme/color";
+@import "../common/variable";
+@import "../common/font";
+.btn {
+  border-radius: unset;
+  background-color: @button-gray;
+  color: @button-text-default-color;
+  box-shadow: @box-shadow-button;
+  opacity: 1;
+  font-size: @font-size;
+
+  &.inline {
+    display: inline-block;
+    margin: 6rpx;
+  }
+  &.small {
+    font-size: @font-size-small;
+  }
+  &.medium {
+    font-size: @font-size;
+  }
+  &.large {
+    font-size: @font-size-large;
+  }
+  &.primary {
+    background: @button-primary;
+
+    &.button-hover {
+      transition: @transition-button;
+      background: darken(@button-primary, 10%);
+    }
+  }
+
+  &.default {
+    background: @button-default;
+
+    &.button-hover {
+      transition: @transition-button;
+      background: darken(@button-default, 10%);
+    }
+  }
+
+  &.secondary {
+    background: @button-secondary;
+
+    &.button-hover {
+      transition: @transition-button;
+      background: darken(@button-secondary, 10%);
+    }
+  }
+
+  &.success {
+    background: @button-success;
+
+    &.button-hover {
+      transition: @transition-button;
+      background: darken(@button-success, 10%);
+    }
+  }
+
+  &.info {
+    background: @button-info;
+
+    &.button-hover {
+      transition: @transition-button;
+      background: darken(@button-info, 10%);
+    }
+  }
+
+  &.warning {
+    background: @button-warning;
+
+    &.button-hover {
+      transition: @transition-button;
+      background: darken(@button-warning, 10%);
+    }
+  }
+  &.danger {
+    background: @button-danger;
+
+    &.button-hover {
+      transition: @transition-button;
+      background: darken(@button-danger, 20%);
+    }
+  }
+  &::after {
+    border:none;
+  }
+  &.disabled {
+    opacity: 0.6;
+  }
+}

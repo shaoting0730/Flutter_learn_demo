@@ -1,0 +1,10 @@
+{
+
+    "navigationBarTitleText": "管理收货地址",
+    "usingComponents": {
+        "address-to-bar": "../../../biz-components/address-to-bar/index",
+        "empty-placeholder": "../../../biz-components/empty-placeholder/index",
+        "loading-bar": "../../../biz-components/loading-bar/index",
+        "iconfont": "../../../components/iconfont/index"
+    }
+}

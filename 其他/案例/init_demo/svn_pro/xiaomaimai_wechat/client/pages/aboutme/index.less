@@ -1,0 +1,217 @@
+@import "../../base";
+page{
+    height:100%;
+    display: flex;
+}
+.page {
+    display: flex;
+    flex:1;
+    font-family: '微软雅黑';
+    flex-direction: column;
+    background-color: white;
+}
+.page-container{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+/*授权登录*/
+.panel-author {
+    padding-top: 73rpx;
+    padding-left: 45rpx;
+    padding-right: 45rpx;
+}
+.panel-title-author {
+    padding-top: 50rpx;
+    padding-bottom: 75rpx;
+}
+.title-author {
+    color: #616161;
+    font-size: 36rpx;
+}
+.panel-btn-author {
+    padding-left: 100rpx;
+    padding-right: 100rpx;
+}
+
+.userinfo{
+    position: relative;
+    width: 750rpx;
+    padding-bottom:50rpx;
+    background-image: linear-gradient(180deg, @color-logo-light 3%, @color-logo-dark 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .avatar {
+        display: block;
+        width: 164rpx;
+        height: 164rpx;
+        margin-top: 28rpx;
+        margin-bottom: 20rpx;
+        border-radius: 50%;
+        border:3px solid #fff;
+    }
+    .nick-name{
+        font-size: 28rpx;
+    }
+}
+.qbdd{
+    background: #fff;
+    width: 92%;
+    font-size: 12px;
+    color: #666;
+    padding: 4%;
+    border-bottom: 1px solid #eee
+}
+.row-panel {
+    border-bottom: solid 1px #EBEBEB;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    height: 96rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .title-icon{
+        display: inline-block;
+        width:50rpx;
+        height:50rpx;
+        border-radius: 5rpx;
+        background-color: @color-bg-gray-4;
+    }
+    .title{
+        font-size: 28rpx;
+        color: @color-dark;
+        margin-left: @margin-size-normal;
+        flex:1;
+    }
+    .input-text{
+        margin-left: @margin-size-normal;
+        flex:1;
+    }
+    .verify-image{
+        width:160rpx;
+        height:60rpx;
+    }
+}
+.displaytext {
+    border-bottom: solid 1px #EBEBEB;
+    font-size: 24rpx;
+    line-height: 24rpx;
+}
+.highlighttext {
+    border-bottom: solid 1px #EBEBEB;
+    color: red;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    padding: 20rpx 40rpx;
+}
+.row-panel .picker {
+    color: #616161;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    padding: 10rpx 0;
+}
+.row-panel:last-child {
+    border-bottom: none;
+}
+.bottom-panel {
+    .btn-save {
+        color: white;
+        font-size: 32rpx;
+        background-image: linear-gradient(-180deg, @color-primary 2%, @color-primary-dark 97%);
+        display: block;
+        height: 88rpx;
+        line-height: 88rpx;
+        margin-top:70rpx;
+    }
+}
+.blank-row{
+    height: @margin-size-small;
+    background-color: @color-bg-gray;
+}
+.form-panel{
+    padding:32rpx;
+    flex: 1;
+}
+
+.panel-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom:70rpx;
+    .left{
+        flex:1;
+        font-size: 42rpx;
+        font-weight: bold;
+        color: #444444;
+    }
+    .right{
+        flex:1;
+        text-align: right;
+        font-size: 28rpx;
+        color: @color-primary;
+    }
+}
+
+.card-panel{
+    flex:1;
+    background-color: white;
+}
+.root-card-panel{
+    padding:0 @margin-size-normal!important;
+    padding-right:0!important;
+    margin-top:-30rpx!important;
+
+}
+
+.row-right-title{
+    font-size:26rpx;
+    font-weight: normal;
+    color:@color-dark-3;
+    margin-right:@margin-size-tiny;
+}
+
+.row-right-title-blue{
+    font-size:26rpx;
+    color:@color-primary;
+    margin-right:@margin-size-tiny;
+}
+
+.row-right-title-buble-blue{
+    font-size:28rpx;
+    color:@color-primary;
+    margin-right:@margin-size-tiny;
+    background-image: linear-gradient(150deg, #45ADF9 0%, #3B8EFF 100%);
+    border-radius: 28rpx;
+    height:56rpx;
+    font-size: 22rpx;
+    color:white;
+    line-height:56rpx;
+    padding:0 @margin-size-normal;
+}
+
+.badge-count{
+    font-size:28rpx;
+    color:@color-primary;
+}
+
+.export {
+    display: inline-flex;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(153, 153, 153, 0.4);
+    padding: 10px 15px;
+    color: #666666;
+    font-size: 24rpx;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    float: right;
+    margin-top: 10px;
+
+    .icon-download {
+        color: #FFAC45;
+        font-size: 36rpx;
+        margin-right: 2px;
+    }
+}

@@ -1,0 +1,53 @@
+<navigation-bar title="{{navTitle}}" background="#fff" />
+<van-cell-group title="应海关要求，跨境订单需提供以下信息" border="{{false}}" />
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <van-cell-group wx:if="{{(orderType & 1) === 1}}" border="{{false}}">
+    <van-field
+      name="ShipName"
+      disabled
+      value="{{ ShipName }}"
+      label="当前收件人"
+      placeholder="请填写收件人真实姓名"
+      custom-style="align-items: center;"
+    >
+      <van-button
+        plain
+        custom-class="editbtn"
+        slot="button"
+        color="#2377C3"
+        size="small"
+        type="default"
+        bind:click="onClickEdit"
+      >
+        修改姓名
+      </van-button>
+    </van-field>
+    <van-field
+      name="ShipCrad"
+      label="身份证号码"
+      placeholder="身份证号与收件人需一致"
+      error-message="{{errors.ShipCrad}}"
+      bind:input="onChangeShipCrad"
+    />
+  </van-cell-group>
+  <view class="my-3" wx:if="{{(orderType & 2) === 2}}">
+    <van-cell-group border="{{false}}">
+      <van-field
+        name="BuyerName"
+        label="支付人"
+        placeholder="请填写支付人真实姓名"
+        error-message="{{errors.BuyerName}}"
+      />
+      <van-field
+        name="BuyerIdCard"
+        label="身份证号码"
+        placeholder="身份证号与支付人需一致"
+        error-message="{{errors.BuyerIdCard}}"
+        bind:input="onChangeBuyerIdCard"
+      />
+    </van-cell-group>
+  </view>
+  <view class="py-4 px-3 ">
+    <button class="btn-main" hover-class="btn-active" formType="submit">保存</button>
+  </view>
+</form>

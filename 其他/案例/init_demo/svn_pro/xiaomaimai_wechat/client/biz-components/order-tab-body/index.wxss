@@ -1,0 +1,248 @@
+.order-list .order-content .title {
+  color: #999999;
+  font-size: 26rpx;
+  padding: 10px;
+  margin-top: 15px;
+  background: #ffffff;
+}
+.order-list .order-content .title .status {
+  float: right;
+  color: #333333;
+  font-weight: 600;
+}
+.order-list .order-content .title .btnPay {
+  padding: 0 14px;
+  left: 20vw;
+  position: relative;
+  display: inline-flex;
+  color: #ffffff;
+  background: #FFAF4C;
+  border-radius: 3px;
+  border: 0;
+  height: 32px;
+}
+.order-list .order-content .title .btnPay .icon-wechat {
+  padding-right: 5px;
+  vertical-align: middle;
+  font-weight: lighter;
+}
+.order-list .order-content .title .btnPay text {
+  vertical-align: middle;
+}
+.order-list .order-content .product-info {
+  width: auto;
+  height: 90px;
+  white-space: nowrap;
+  overflow: scroll;
+  padding: 10px;
+}
+.order-list .order-content .product-info .product-image {
+  display: inline-flex;
+  padding: 0 3px;
+}
+.order-list .order-content .product-info .product-image image {
+  width: 90px;
+  height: 90px;
+  background: #e3e3e3;
+}
+.order-list .order-content .product-info .product-image image .price {
+  position: relative;
+  top: -17px;
+  padding: 0 5px;
+  color: #ffffff;
+  float: right;
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.6);
+  font-weight: bolder;
+  font-size: 26rpx;
+}
+.order-list .order-content .product-info .product-image image .price .unit {
+  font-weight: lighter;
+  font-size: 24rpx;
+}
+.order-list .order-content .orderno {
+  padding: 15px 10px;
+  background: #ffffff;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.order-list .order-content .btndetail {
+  float:right;
+  background: linear-gradient(to right, #FFA739, #FFC63F);
+  color: #ffffff;
+  border-radius: 0;
+  font-size: 24rpx;
+  letter-spacing: 1px;
+}
+.order-list .order-content .bottom {
+  padding: 15px 10px;
+  background: #ffffff;
+}
+.order-list .order-content .bottom .total {
+  font-size: 24rpx;
+  color: #999999;
+}
+.order-list .order-content .bottom .total .total-title {
+  font-size: 28rpx;
+  margin-right: 5px;
+}
+.order-list .order-content .bottom .total .price {
+  float: right;
+  color: #999999;
+  font-size: 30rpx;
+}
+.footer {
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+  padding: 10px 15px;
+  margin-bottom: 120rpx;
+}
+.btn-float-bottom-button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to right, #FFA739, #FFC63F);
+  color: #ffffff;
+  border-radius: 0;
+  letter-spacing: 1px;
+}
+.btn-float-bottom-right {
+  font-size: 32rpx;
+  display: block;
+  width: 200rpx;
+  height: 114rpx;
+  line-height: 86rpx;
+  margin-top: 70rpx;
+  vertical-align: middle;
+  float: right;
+  position: fixed;
+  bottom: 20px;
+  right: 12px;  
+}
+.btn-float-bottom-right2 {
+  font-size: 32rpx;
+  display: block;
+  width: 200rpx;
+  height: 114rpx;
+  line-height: 86rpx;
+  margin-top: 70rpx;
+  vertical-align: middle;
+  float: right;
+  position: fixed;
+  bottom: 90px;
+  right: 12px;  
+}
+
+ .add-to-cart .icon-correct {
+  display: inline-flex;
+  color: #FFAF4C;
+  font-size: 40rpx;
+}
+.btn-small {
+  display: inline-block;
+  font-size: 24rpx;
+  color: #616161;
+  float:right;
+  margin-right: 5rpx;
+  margin-left: 15rpx;
+}
+.btn-remove .icon-rabbish {
+  color: #999999;
+  margin-right: 5px;
+}
+
+.store-list {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  min-height: 200px;
+  max-height: 365px;
+  overflow-y: auto;
+  bottom: 0px;
+  background: #ffffff;
+  z-index: 5;
+  box-shadow: 0 0 20px rgba(153, 153, 153, 0.5);
+}
+.store-list.in {
+  display: block;
+}
+.myStore{
+  border-top-color: #f1f1f1;
+  border-top-style: solid;
+  border-width: 26rpx;
+}
+.title{
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 40rpx;
+  margin-left: 4.8vw;
+  margin-top: 2.2vw;
+}
+.storeIcon{
+  width:120rpx;
+  height:120rpx;
+  margin-left: 4.8vw;
+  margin-top: 3.4vw;
+  border-radius: 50%;
+  border: 3rpx solid #FFAD4C;
+}
+.storeName{
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 40rpx;
+}
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.7;
+}
+
+.modalDlg{
+    width: 580rpx;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999;
+    margin: -370rpx 85rpx;
+    background-color: #fff;
+    border-radius: 36rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.shareButton {
+  line-height: 50px;
+  width: 100%;
+  justify-content: center;
+  letter-spacing: 5px;
+  border-radius: 0;
+  background: linear-gradient(to bottom right, #FFC63F, #FFA739);
+  color: #ffffff;
+  font-size: 34rpx;
+}
+ .selectall {
+  display: block;
+  color: #FFAF4C;
+  padding:20rpx;
+  font-size: 24rpx;
+}
+.selectall .ordertotal{
+  float: right;
+  color: #333333;
+  font-weight: 600;
+}
+.backtohome{
+  color: #ffffff;
+  background: #FFAF4C;
+  border-radius: 3px;
+  border: 0; 
+}

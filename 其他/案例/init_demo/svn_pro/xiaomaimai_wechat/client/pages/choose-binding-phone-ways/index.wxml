@@ -1,0 +1,9 @@
+<!-- 选择登录页 -->
+<view class="page">
+    <!--<button class="btn btn-primary" open-type="getPhoneNumber" bindtap="bindByWechat">-->
+        <!--微信一键绑定手机号-->
+    <!--</button>-->
+    <button class="btn btn-border btn-primary" bindtap="bindByUser">
+        更换手机号
+    </button>
+</view>

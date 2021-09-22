@@ -1,0 +1,2 @@
+<!--blank-row 组件-->
+<view class="mui-switch root-class mui-switch-animbg {{checked ? 'mui-switch-checked':''}}" style="color:{{color}}" bindtap="bindTap"/>

@@ -1,0 +1,22 @@
+<!--pages/more/index.wxml-->
+<view class="container">
+    <view class="more">
+        <view class="topic-title">我的话题</view>
+        <view class="topic-list">
+            <block wx:for="{{ topics }}" wx:for-index="index" wx:for-item="item" wx:key="key">
+                <view data-index="{{ index }}" class="tag-item {{ item.active ? 'active' : '' }}" bind:tap="onChooseTopic">
+                    <text>#{{ item.groupName }}#</text>
+                </view>
+            </block>
+        </view>
+        <view class="tag-title">我的标签</view>
+        <view class="tag-list">
+            <block wx:for="{{ tags }}" wx:for-index="index" wx:for-item="item" wx:key="key">
+                <view data-index="{{ index }}" class="tag-item {{ item.active ? 'active' : '' }}" bind:tap="onChooseTag">
+                    <text>#{{ item.tagName }}#</text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <button class="btn-confirm" bind:tap="onConfirm">确定</button>
+</view>

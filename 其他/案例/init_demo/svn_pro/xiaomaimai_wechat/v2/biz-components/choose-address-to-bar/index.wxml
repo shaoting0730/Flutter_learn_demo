@@ -1,0 +1,60 @@
+<view class="address-bar">
+  <van-cell-group>
+    <van-cell wx:if="{{isShowChoose}}">
+      <view slot="title">
+        <van-radio-group
+          value="{{ checkAddress }}"
+          bind:change="onCheckAddress"
+          class="flex-row-space-evenly"
+        >
+          <van-radio name="1">快递发货</van-radio>
+          <van-radio name="2">无需快递</van-radio>
+        </van-radio-group>
+      </view>
+    </van-cell>
+    <block wx:if="{{checkAddress === '1'}}">
+      <van-cell
+        is-link
+        center
+        border="{{false}}"
+        link-type="navigateTo"
+        bind:click="gotoAddress"
+        wx:if="{{address && address.AddressLine}}"
+      >
+        <van-row custom-class="justify-content-between">
+          <van-col span="12" custom-class="py-1">
+            <text-with-icon
+              title="{{address.FullName}}"
+              url="/images/icon_order_adress1@2x.png"
+            ></text-with-icon>
+          </van-col>
+          <van-col span="12" custom-class="py-1">
+            <text-with-icon
+              class="right"
+              title="{{address.PhoneNumber}}"
+              url="/images/icon_order_adress2@2x.png"
+            ></text-with-icon>
+          </van-col>
+          <van-col span="24" custom-class="py-1">
+            <text-with-icon
+              title="{{ address.Province }}{{ address.City }}{{ address.Town }}{{ address.AddressLine}}"
+              url="/images/icon_order_adress3@2x.png"
+            ></text-with-icon>
+          </van-col>
+        </van-row>
+      </van-cell>
+      <van-cell
+        wx:else
+        is-link
+        border="{{false}}"
+        custom-class="text-primary null-cell"
+        title="选择收货地址"
+        title-class="null-title"
+        link-type="navigateTo"
+        bind:click="gotoAddress"
+      >
+        <van-icon slot="icon" name="/images/icon_order_adress3@2x.png" size="20" />
+      </van-cell>
+    </block>
+  </van-cell-group>
+</view>

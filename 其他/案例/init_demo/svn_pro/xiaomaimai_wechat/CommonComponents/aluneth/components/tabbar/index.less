@@ -1,0 +1,17 @@
+@import "../common/theme/color";
+@import "../common/variable";
+.tab-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: @box-shadow;
+  padding: @padding-tabbar;
+  background: @background-light-color;
+
+  &.bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: @z-index-bar;
+  }
+}

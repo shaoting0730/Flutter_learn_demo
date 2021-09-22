@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "empty-placeholder": "../../biz-components/empty-placeholder/index",
+    "safe-area": "../../../components/safe-area/index",
+    "one-refresher":"../../../components/one-refresher/index",
+    "one-card": "../../../components/one-card/index",
+    "one-publish-modal":"../../../components/one-publish-modal/index",
+    "one-avatar": "../../components/one-avatar/index"
+  }
+
+}

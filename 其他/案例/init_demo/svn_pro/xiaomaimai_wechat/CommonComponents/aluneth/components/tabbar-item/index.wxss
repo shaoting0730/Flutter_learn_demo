@@ -1,0 +1,15 @@
+/* common variable */
+.tabbar-item {
+  text-align: center;
+  font-size: 24rpx;
+}
+.tabbar-item .icon {
+  justify-content: center;
+  display: flex;
+}
+.tabbar-item.active {
+  color: #2196f3;
+}
+.tabbar-item.disabled {
+  color: rgba(0, 0, 0, 0.38);
+}

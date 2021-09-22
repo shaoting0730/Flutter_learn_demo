@@ -1,0 +1,134 @@
+@import "../../../base";
+
+page {
+  background: @color-bg-gray-4;
+}
+
+.container {
+  background-color: #F1F1F1;
+
+  form {
+    width: 100%;
+    background: #ffffff;
+  }
+}
+
+.row-panel {
+  width: 100%;
+  border-bottom:solid 1px @color-splite-border;
+  font-size: @font-size-normal;
+  line-height: @font-size-normal;
+  padding:@margin-size-small @margin-size-normal;
+  .picker {
+    color: #878787;
+    font-size: @font-size-normal;
+    line-height: @font-size-normal;
+    //border:solid 1px;
+    padding:@margin-size-tiny 0;
+  }
+}
+
+.row-panel:last-child{
+  border-bottom: none;
+}
+
+.bottom-panel{
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  border-top:solid 1px @color-splite-border;
+  padding:@margin-size-small @margin-size-normal;
+  background-color: white;
+  .btn-save {
+    color: white;
+    font-size: 28rpx;
+    border-radius: 0;
+    line-height: 40px;
+    background: linear-gradient(to bottom right, #FFC63F, #FFA739);
+  }
+
+  .button-hover {
+    background: linear-gradient(to top right, #FFC63F, #FFA739);
+  }
+}
+
+.name {
+  display: inline-flex;
+  width: 100%;
+  line-height: 26px;
+}
+
+.name:before {
+  content: "姓名：";
+  width: 100px;
+}
+
+.phone {
+  display: inline-flex;
+  width: 100%;
+  line-height: 26px;
+}
+
+.phone:before {
+  content: "电话号码：";
+  width: 100px;
+}
+
+.idcardnumber {
+  display: inline-flex;
+  width: 100%;
+  line-height: 26px;
+}
+
+.idcardnumber:before {
+  content: "身份证号：";
+  width: 100px;
+}
+
+.province {
+  display: inline-flex;
+  width: 100%;
+  line-height: 26px;
+}
+
+.province:before {
+  content: "省份：";
+  width: 80px;
+  color: #000000;
+}
+
+.city {
+  display: inline-flex;
+  width: 100%;
+  line-height: 26px;
+}
+
+.city:before {
+  content: "城市：";
+  width: 80px;
+  color: #000000;
+}
+
+.town {
+  display: inline-flex;
+  width: 100%;
+  line-height: 26px;
+}
+
+.town:before {
+  content: "区县：";
+  width: 80px;
+  color: #000000;
+}
+
+.address {
+  display: inline-flex;
+  width: 100%;
+  line-height: 26px;
+}
+
+.address:before {
+  content: "详细地址：";
+  width: 100px;
+}

@@ -1,0 +1,69 @@
+<view class="w100">
+    <scroll-view class="{{ address ? 'main-scroll' : '' }}">
+        <!--收件地址-->
+        <choose-address-to-bar address="{{address}}"/>
+        <!--产品订单列表-->
+        <view class="product-list">
+            <view class="list-title">
+                <text>商品明细</text>
+            </view>
+            <view class="list-content {{ !collapse ? '' : 'hide' }}">
+                <van-row custom-class="photo-wall">
+                    <!--<view class="product-list-panel" wx:for="{{productData}}" wx:key="{{item.Guid}}">
+                        <order-product-item product="{{item}}"/>
+                    </view>-->
+                    <block wx:for="{{productData}}" wx:key="{{item.Guid}}">
+                        <van-col span="6">
+                            <image src="{{ item.ThumbImageUrl !== null ? item.ThumbImageUrl : 'http://resource.xlwonder.wang/DQ_Product_Default.png' }}">
+                                <view class="quantity">
+                                    <text>{{ item.Quantity }}</text>
+                                </view>
+                                <view class="price">
+                                    <iconfont name="cny" custom-class="unit"></iconfont>
+                                    <text>{{ item.ProductOnSalePrice }}</text>
+                                </view>
+                            </image>
+                        </van-col>
+                    </block>
+                </van-row>
+            </view>
+            <view class="total-quantity" bind:tap="onCollapse">
+                共计<text>{{ totalQuantity }}</text>件商品
+                <iconfont name="{{ !collapse ? 'double-up-arrow' : 'double-down-arrow' }}" custom-class="icon-double-arrow"></iconfont>
+            </view>
+        </view>
+        <!--选择优惠券-->
+        <coupon-bar show="{{false}}"/>
+        <view class="order-info">
+            <van-cell-group>
+                <van-cell title="商品总价：" value="￥{{totalPrice}}" title-class="title" value-class="value"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="基础运费：" value="￥{{shippingCost}}" title-class="title" value-class="value"></van-cell>
+            </van-cell-group>
+            <van-cell-group>
+                <van-cell title="订单总价" value="￥{{totalPrice + shippingCost}}" title-class="order-title" value-class="order-value"></van-cell>
+            </van-cell-group>
+        </view>
+        <!--订单备注-->
+        <view class="order-memo-panel">
+            <view class="title">备注</view>
+            <textarea class="order-memo" name="remark" placeholder="备注你想要的型号、颜色或大小..." bindinput="remarkInput" value="{{remark}}"/>
+        </view>
+    </scroll-view>
+    <!-- 商品总计 | 立即支付 -->
+    <view class="bottom-bar" wx:if="{{address}}">
+      <form bindsubmit="createProductOrderByWX" report-submit="true" class="form-view">
+          <button form-type="submit" class="payment">
+              <view>提交订单</view>
+          </button>
+      </form>    
+    </view>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+    <!---button class="shareButton" open-type='share' >点我分享给卖家微信沟通付款</button--->
+    <button class="shareButton" open-type='contact' show-message-card='true' send-message-title="请扫下方二维码付款" send-message-img="{{shareImageUrl}}" session-from="{{storeGuid+'|||'+sharedGuid}}"><view class='icon-wechat'></view>微信付款</button>
+    <button class="paidButton" bind:tap="btnPaymentDone">支付已完成</button>
+</view>
+ 

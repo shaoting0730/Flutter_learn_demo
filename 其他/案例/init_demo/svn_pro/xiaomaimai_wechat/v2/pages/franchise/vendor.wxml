@@ -1,0 +1,24 @@
+<view>
+  <button bindtap="btnBackToHome" class="backtohome">返回首页</button>
+  <van-col span="24">
+    <view class="myStore">
+      <view class="title">线上供货商,发货更省心</view>
+      <one-grid border="{{false}}">
+        <block wx:for="{{ myVendors }}" wx:for-index="index" wx:for-item="item" wx:key="Guid">
+          <one-grid-item
+            data-item="{{item}}"
+            bind:click="onVendorProduct"
+          >
+            <one-avatar
+              text="{{item.VendorName}}"
+              thumb="{{item.VendorLogoUrl}}"
+              ellipsis
+              clamp="2"
+              border-color="#FFAD4C"
+            />
+          </one-grid-item>
+        </block>
+      </one-grid>
+    </view>
+  </van-col>
+</view>

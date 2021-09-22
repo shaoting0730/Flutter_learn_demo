@@ -1,0 +1,22 @@
+<van-popup z-index="10000" show="{{show}}">
+  <view class="modal">
+    <view class="modal-header">
+      小买卖圈免责声明
+    </view>
+    <view class="modal-body">
+      <text
+        >本平台不接触货币交易，如发生经济纠纷，请及时保留证据。平台里所提供的产品、信息，若在任何司法管辖地区供任何人士使用或分发给任何人士时，会违反该司法管辖地区的法律或条例的规定，或会导致本平台或其第三方代理人受限于该司法管辖地区内的任何监管规定时，则该等信息不宜在该司法管辖地区供该等任何人士使用或分发给该等任何人士。用户须自行保证不会受限于任何限制或禁止用户使用或分发本平台所提供产品、信息的当地的规定。</text
+      >
+      <text
+        >本平台产品图片、文字之类版权申明，因为源自网络收集或因注册用户自行上传产品图片或文字，本平台无法鉴别所上传产品图片或文字的知识版权，如果侵犯，请及时通知我们或卖家，我们将在第一时间处理。</text
+      >
+      <text>凡以任何方式登录本平台或直接、间接使用本平台者，视为自愿接受本平台声明的约束。</text>
+    </view>
+    <view class="modal-footer">
+      <view class="checkbox">
+        <van-checkbox value="{{ checked }}" bind:change="onChange">下次不再提醒</van-checkbox>
+      </view>
+      <van-button block type="primary" bind:click="onAgree">我同意本声明</van-button>
+    </view>
+  </view>
+</van-popup>

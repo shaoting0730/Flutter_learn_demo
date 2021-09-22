@@ -1,0 +1,41 @@
+/**app.wxss**/
+@import "./vendor/vant-webapp/common/index.wxss";
+
+.hide {
+  display: none;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  //background: transparent linear-gradient(to bottom right, #E3FDF5, #FFE6FA);
+}
+
+.van-tabs {
+  .van-tabs__wrap {
+    box-shadow: 5px 5px 10px rgba(54, 54, 54, 0.1);
+  }
+  .van-ellipsis {
+    color: #FFAD4C;
+    font-weight: 600;
+  }
+  .van-tabs__line {
+    background: #FFAD4C;
+  }
+}
+.van-search {
+  background: transparent !important;
+  padding-top: 15px !important;
+  .van-cell {
+    background: #ededed;
+    border-radius: 4px;
+    padding: 5px 15px !important;
+  }
+}

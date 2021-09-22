@@ -1,0 +1,10 @@
+<van-button
+  square
+  size="large"
+  type="{{ type }}"
+  loading="{{ loading }}"
+  disabled="{{ disabled }}"
+  bind:click="onClick"
+>
+  {{ text }}
+</van-button>

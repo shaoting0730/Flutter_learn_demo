@@ -1,0 +1,142 @@
+.moments {
+  padding: 15px;
+  margin-bottom: 50px;
+}
+.moments textarea.moment {
+  display: flex;
+  width: 90vw;
+  max-height: 110px;
+  border: 1px solid #e3e3e3;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 28rpx;
+}
+.moments .image-list image {
+  display: inline-flex;
+  max-width: 100px;
+  max-height: 100px;
+  background: #F8F8F8;
+  margin-top: 5px;
+}
+.moments .image-list .message {
+  color: #c9c9c9;
+  margin-top: 5px;
+  font-size: 24rpx;
+}
+.moments .image-list .pricerange {
+  display: flex;
+  padding: 10px 0;
+  color: #999999;
+}
+.moments .image-list .pricerange text {
+  display: inline-flex;
+  margin-left: 10rpx;
+  justify-content: left;
+  align-items: left;
+}
+.moments .image-list .price {
+  display: flex;
+  padding: 10px 0;
+  color: #999999;
+}
+.moments .image-list .price text {
+  width: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.moments .image-list .price input {
+  margin-left: 10px;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #EE5050;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid #c9c9c9;
+}
+.moments .image-list .price input:before {
+  content: "￥";
+  color: #c9c9c9;
+  font-weight: normal;
+  letter-spacing: 3px;
+  font-size: 34rpx;
+}
+.moments .image-list .checkbox-confirm {
+  margin-left: 5px;
+  color: #999999 !important;
+}
+.moments .image-list textarea.desc {
+  display: flex;
+  width: 90vw;
+  max-height: 80px;
+  border: 1px solid #e3e3e3;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 28rpx;
+}
+.moments .image-list .tag-item {
+  color: #2377C3;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  float: left;
+  background: #E7F1F9 !important;
+}
+.moments .image-list .edit-tag-item {
+  color: #EF751D;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  background: #FFF0DD !important;
+}
+.moments .image-list .edit-tag-item .tag-plus {
+  font-size: 20rpx !important;
+  padding-right: 5px;
+  color: #EF751D;
+}
+.moments .choose-popup {
+  font-size: 30rpx;
+  text-align: center;
+}
+.moments .choose-popup .choose-from-camera {
+  padding: 10px 0;
+  border-bottom: 1px solid #ededed;
+}
+.moments .choose-popup .choose-from-photo {
+  padding: 10px 0;
+  border-bottom: 1px solid #ededed;
+}
+.moments .choose-popup .cancel {
+  padding: 10px 0;
+}
+.moments .choose-popup .message {
+  color: #b9b9b9;
+  font-size: 24rpx;
+}
+.moments .icon-plus {
+  font-size: 100rpx;
+  color: #D1D1D1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  font-weight: lighter;
+}
+.btn-push {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
+  border-radius: 0 !important;
+  background: linear-gradient(to bottom, #FFC63F, #FFA739);
+  color: #ffffff;
+  letter-spacing: 2px;
+  border: 0 !important;
+  z-index: 100;
+}
+.button-hover {
+  background: linear-gradient(to bottom, #FFA739, #FFC63F);
+}

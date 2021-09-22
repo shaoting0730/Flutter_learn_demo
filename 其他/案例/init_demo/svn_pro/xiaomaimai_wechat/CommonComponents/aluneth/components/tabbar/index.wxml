@@ -1,0 +1,4 @@
+<!--components/tabbar/index.wxml-->
+<view class="tab-bar {{ fixed? 'bottom' : '' }} extended-class">
+    <slot />
+</view>

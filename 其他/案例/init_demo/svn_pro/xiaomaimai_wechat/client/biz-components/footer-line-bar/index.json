@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "zan-loading":"./../../vendor/vant-webapp/loading/index"
+  }
+}

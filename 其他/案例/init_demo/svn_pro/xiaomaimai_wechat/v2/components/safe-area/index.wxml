@@ -1,0 +1,4 @@
+
+<view class="safe-area content-class" style="margin-top:{{viewStartTop}}px;">
+    <slot></slot>
+</view>

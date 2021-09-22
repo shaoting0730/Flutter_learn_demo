@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "我的收藏",
+  "usingComponents": {
+    "title-bar": "../../biz-components/title-bar/index",
+    "empty-placeholder": "../../biz-components/empty-placeholder/index",
+    "favorite-product-item": "../../biz-components/favorite-product-item/index",
+    "loading-bar": "../../biz-components/loading-bar/index",
+    "footer-line-bar": "../../biz-components/footer-line-bar/index",
+    "iconfont": "../../../components/iconfont/index",
+    "van-card": "../../../vendor/vant-webapp/card/index"
+  }
+}

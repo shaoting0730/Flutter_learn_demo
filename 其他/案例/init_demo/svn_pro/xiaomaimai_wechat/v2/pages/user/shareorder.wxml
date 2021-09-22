@@ -1,0 +1,5 @@
+<author-panel wx:if="{{needAuthor}}" needAuthor="{{needAuthor}}" canIUse="{{canIUse}}" bind:bindGetUserInfo="bindGetUserInfo"></author-panel>
+<block wx:else>
+    <button bindtap='btnBackToHome' class="backtohome">返回首页</button>
+    <order-tab-body wx:if="{{shareGuid.length>0}}" id="order-tab-body-All" currentTab="-1" fromShareOrder="{{true}}" seller="{{seller}}"/>
+</block>

@@ -1,0 +1,7 @@
+.price-wrap {
+  font-size: 12px;
+  color: #ee5050;
+}
+.price {
+  font-size: 14px;
+}

@@ -1,0 +1,26 @@
+<navigation-bar title="管理商品视频" />
+<scroll-view scroll-y="{{true}}" style="height:{{scrollHeight}}px">
+  <view class="page">
+    <view class="video-wrap">
+      <video src="{{videoUrl}}" autoplay="{{autoplay}}" />
+    </view>
+
+    <view class="text-center my-3">
+      <van-button
+        round
+        size="small"
+        custom-class="btn btn-default"
+        type="default"
+        data-index="{{index}}"
+        bind:click="onChooseVideo"
+      >
+        更换视频
+      </van-button>
+    </view>
+    <view class="text-secondary">* 当前视频仅限一个，如需删除，请到商品管理选择下架</view>
+  </view>
+</scroll-view>
+<view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+  <button class="btn-main" hover-class="btn-active" bindtap="onSave">保存</button>
+</view>
+<upload-progressbar progress="{{progress}}" />

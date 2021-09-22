@@ -1,0 +1,13 @@
+{
+  "component": true,
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "checkbox": "../../components/checkbox/index",
+    "title-bar": "../../biz-components/title-bar/index",
+    "product-price-bar": "../../biz-components/product-price-bar/index",
+    "iconfont": "../../components/iconfont/index",
+    "one-card": "../one-card/index",
+    "one-refresher":"../one-refresher/index",
+    "empty-placeholder": "../../biz-components/empty-placeholder/index"
+  }
+}

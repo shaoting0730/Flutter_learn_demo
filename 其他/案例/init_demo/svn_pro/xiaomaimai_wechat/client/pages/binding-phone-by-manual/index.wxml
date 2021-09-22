@@ -1,0 +1,33 @@
+<!-- xxx 页 -->
+<view class="page">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="input-panel">
+            <template is="row-input"
+                      data="{{inputName:'phonenumber',bindInput:'bindInputPhoneNumber', placeholder:'请输入手机号',iconUrl:'http://resource.xlwonder.wang/wxapp/xmmq/ico-phone.png' }}"></template>
+            <template is="row-input-valid"
+                      data="{{waitSec:waitSec,inputName:'validcode',bindInput:'bindInputValidCode',bindTapValid:'bindSendValidButton',bindTapValidDisabled:'bindSendValidDisabledButton', placeholder:'请输入短信验证码',iconUrl:'http://resource.xlwonder.wang/wxapp/xmmq/ico-email.png' }}"></template>
+        </view>
+        <button class="btn btn-primary" bindtap="bindPhoneNumber">立即绑定</button>
+    </form>
+</view>
+
+<template name="row-input">
+    <view class="row-panel">
+        <image src="{{iconUrl}}" class="title-icon"/>
+        <input class="input-text" type="text" name="{{inputName}}" value='{{value}}' bindinput="{{bindInput}}" placeholder="{{placeholder}}"/>
+    </view>
+</template>
+
+
+<template name="row-input-valid">
+    <view class="row-panel">
+        <image src="{{iconUrl}}" class="title-icon"/>
+        <input class="input-text" type="text" name="{{inputName}}"  bindinput="{{bindInput}}" value='{{value}}' placeholder="{{placeholder}}"/>
+        <block wx:if="{{waitSec>0}}">
+            <button class="btn-send-valid btn-send-valid-disable" bindtap="{{bindTapValidDisabled}}">{{"等待"+waitSec+"秒"}}</button>
+        </block>
+        <block wx:else>
+            <button class="btn-send-valid" bindtap="{{bindTapValid}}">发送验证码</button>
+        </block>
+    </view>
+</template>

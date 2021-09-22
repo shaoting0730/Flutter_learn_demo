@@ -1,0 +1,175 @@
+
+<block wx:if="{{status === 'loading'}}">
+  <view></view>
+</block>
+<block wx:elif="{{status === 'need-author'}}">
+  <author-panel
+    needAuthor="{{true}}"
+    canIUse="{{canIUse}}"
+    bind:bindGetUserInfo="bindGetUserInfo"
+  ></author-panel>
+</block>
+<block wx:elif="{{status === 'ready'}}">
+  <view class="top-row"></view>
+  <view class="steps flex-row-center">
+    <view class="completed">
+      <text class="number">1</text>
+      <text>个人认证信息</text>
+    </view>
+    <view class="line"></view>
+    <view class="{{step === 1 ? 'incomplete' : 'completed'}}">
+      <text class="number">2</text>
+      <text>小程序店铺信息</text>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view wx:if="{{step === 1}}" class="row-panel">
+      <view class="inputtitle"
+        >姓名
+        <text class="red">*</text>
+      </view>
+      <input
+        class="text"
+        type="text"
+        placeholder-class="placeholder"
+        name="name"
+        value="{{store.Name}}"
+        placeholder="请输入真实姓名"
+      />
+    </view>
+    <view wx:if="{{step === 1}}" class="row-panel">
+      <view class="inputtitle"
+        >手机电话
+        <text class="red">*</text>
+      </view>
+      <input
+        class="text"
+        type="text"
+        placeholder-class="placeholder"
+        name="phone"
+        value="{{store.PhoneNumber}}"
+        placeholder="请输入手机号码"
+      />
+    </view>
+    <view wx:if="{{step === 1}}" class="row-panel">
+      <view class="inputtitle"
+        >身份证
+        <text class=".titleextra">（非必填）</text>
+      </view>
+      <input
+        class="text"
+        type="text"
+        placeholder-class="placeholder"
+        name="idcardnumber"
+        value="{{store.IdCardNumber}}"
+        placeholder="请输入姓名对应的身份证号"
+      />
+    </view>
+    <view wx:if="{{step === 1}}" class="row-panel">
+      <view class="inputtitle"
+        >邮箱
+        <text class=".titleextra">（非必填）</text>
+      </view>
+      <input
+        class="text"
+        type="email"
+        placeholder-class="placeholder"
+        name="email"
+        value="{{store.Email}}"
+        placeholder="联系邮箱（非必填）"
+      />
+    </view>
+    <view wx:if="{{step === 2}}" class="row-panel">
+      <view class="inputtitle"
+        >店铺名称
+        <text class="red">*</text>
+      </view>
+      <input
+        class="text"
+        type="text"
+        placeholder-class="placeholder"
+        name="applicationname"
+        value="{{store.ApplicationName}}"
+        placeholder="请输入店铺名称，不超过8个字"
+        maxlength="8"
+        bindchange="bindApplicationNameChange"
+      />
+    </view>
+    <view wx:if="{{step === 2}}" class="row-panel">
+      <view class="inputtitle"
+        >微信号
+        <text class="red">*</text>
+      </view>
+      <input
+        class="text"
+        type="text"
+        placeholder-class="placeholder"
+        name="wechatid"
+        value="{{store.WechatId}}"
+        placeholder="请输入您的微信号"
+        bindchange="bindWechatIdChange"
+      />
+      <view class="wechatidtip"
+        >*
+        我们不接触付款流程，为了让客户更容易的找到您，进行付款、转账等操作，请您正确填写微信号。该微信号用于通讯，与开店绑定的微信号可以不一致</view
+      >
+    </view>
+    <view wx:if="{{step === 2}}" class="row-panel">
+      <view class="inputtitle"
+        >微信收款二维码
+        <text class="red">*</text>
+      </view>
+      <view class="flex-row-bottom-left">
+        <image
+          class="qrcode"
+          wx:if="{{ store.WechatPaymentQRCode.length>0 }}"
+          src="{{ store.WechatPaymentQRCode }}"
+          mode="aspectFit"
+        ></image>
+        <view class="qrcodeplaceholder flex-row-center" wx:else>
+          <image class="image" src="../../images/icon_apply_wechatcode@2x.png"></image>
+        </view>
+        <view class="upload-button flex-row-center" src="" bind:tap="onAddImage">
+          <text-with-icon
+            iconSize="14"
+            url="../../images/icon_apply_upload@2x.png"
+            fontColor="#FFF"
+            title="点击上传"
+          ></text-with-icon>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{step === 2}}" class="row-panel">
+      <view class="inputtitle"
+        >供货商推荐码
+        <text class="titleextra" wx:if="{{!options.REFCODE}}">（非必填）</text>
+      </view>
+      <input
+        class="text"
+        type="email"
+        placeholder-class="placeholder"
+        disabled="{{!!options.REFCODE}}"
+        name="VendorRefCode"
+        value="{{store.VendorRefCode}}"
+        placeholder="输入推荐码，将自动加入供货商"
+        bindchange="bindVendorRefCodeChange"
+      />
+    </view>
+    <view class="bottom-space"></view>
+    <view class="page-footer-fixed">
+      <button wx:if="{{step === 1}}" class="btn-main" hover-class="btn-active" formType="submit">
+        下一步
+      </button>
+      <button wx:else class="btn-main" hover-class="btn-active" formType="submit">申请</button>
+    </view>
+  </form>
+
+  <template name="row-input">
+    <view class="row-panel">
+      <input type="text" name="{{inputName}}" value="{{value}}" placeholder="{{placeholder}}" />
+    </view>
+  </template>
+  <upload-progressbar progress="{{ progress}}" />
+</block>
+
+<view class="bottom-panel"> </view>

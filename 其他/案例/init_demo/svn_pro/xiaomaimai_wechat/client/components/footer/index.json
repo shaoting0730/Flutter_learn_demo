@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-tabbar": "../../../vendor/vant-webapp/tabbar/index",
+    "van-tabbar-item": "../../../vendor/vant-webapp/tabbar-item/index",
+    "iconfont": "../../../components/iconfont/index"
+  }
+}

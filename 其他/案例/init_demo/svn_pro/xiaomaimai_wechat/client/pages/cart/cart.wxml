@@ -1,0 +1,101 @@
+<!--pages/cart/cart.wxml-->
+<view class="page">
+  <view wx:if="{{showLoading}}">
+      <zan-loading type="spinner" color="black"></zan-loading>
+  </view>
+  <view wx:else>
+      <!--样式-->
+      <view class="container carts-list" wx:if="{{carts==''}}">
+          <view class="pp">
+              <image class="kong" src="../../images/cart.jpg" mode="aspectFill"/>
+              <view class="cla">您的购物车空空如也，快去加购吧~</view>
+          </view>
+      </view>
+      <view wx:else>
+          <!--布局购物车-->
+          <title-bar>
+            <view  class="cart-title">
+              <checkbox title="全选" checked="{{selectedAllStatus}}" bind:change="bindToggleSelectAll"/>
+              <view class="clear" bind:tap="onRemoveCart">
+                <iconfont name="rabbish" class="icon-rabbish"></iconfont>
+                <text>删除选中产品</text>
+              </view>
+            </view>
+          </title-bar>
+          <view class="container carts-list">
+              <!--勾-->
+              <view wx:for="{{carts}}" class="carts-item" data-title="{{item.ProductName}}" id="{{item.ProductCode}}" wx:key="{{item.Guid}}">
+                  <checkbox checked="{{item.selected}}" bind:change="bindItemCheckbox" data-index="{{index}}"/>
+                  <!--img-->
+                  <view bindtap="bindJumpDetail" data-productcode="{{item.ProductCode}}">
+                      <image class="carts-image" src="{{item.VideoUrl? item.VideoUrl+'?vframe/jpg/offset/0|imageView2/1/w/268/h/150' : item.ThumbImageUrl}}" mode="aspectFill"/>
+                  </view>
+                  <!--文字-->
+                  <view class="carts-text">
+                      <text class="carts-title">{{item.ProductName}}</text>
+                      <view class="carts-subtitle">
+                          <text class="carts-price">¥{{item.ProductPrice}}</text>
+                          <!--右边-->
+                          <view class="product-item-right">
+                              <zan-stepper value="{{ item.Quantity }}"
+                                      size="small"
+                                      min="{{productMin}}"
+                                      max="{{productMax}}"
+                                      data-productcode="{{item.ProductCode}}"
+                                      bind:change="bindStepperChange"
+                              />
+                          </view>
+                      </view>
+                  </view>
+
+              </view>
+          </view>
+      </view>
+  </view>
+  <!--底部-->
+  <view class="carts-footer">
+      <view class="shopping-cart">
+          <iconfont name="cart" custom-class="icon-cart" catch:tap="onToggleCart"></iconfont>
+          <van-row>
+              <van-col span="16">
+                  <view class="total">
+                      <view class="account">
+                          <iconfont name="cny"></iconfont>
+                          <text class="number">{{ total }}</text>
+                      </view>
+                      <view class="message">
+                          (已选<text class="quantity">{{ totalQuantity }}</text>件商品)
+                      </view>
+                  </view>
+              </van-col>
+              <van-col span="8">
+                  <view class="checkout" bindtap='bindCheckout'>结算</view>
+              </van-col>
+          </van-row>
+      </view>
+  </view>
+
+  <footer active="2" showCamera="true" seller="{{false}}">
+    <view class="photo" wx:if="{{false}}">
+      <navigator url="../../pages/moments/index" hover-class="none">
+          <iconfont name="camera" custom-class="camera"></iconfont>
+      </navigator>
+    </view>
+  </footer>
+</view>
+
+<!--<view class="carts-footer">
+    <view class="cart-sum-area">
+        <text class="title">总计：</text>
+        <text class="reds">¥{{total}}</text>
+    </view>
+    <zan-row rowClass="cart-bottom-group-footer">
+        <zan-col col="12" col-class="custom-zan-col">
+            <button class="btn-continue" bindtap='bindScanProductQRCode'>继续加购</button>
+        </zan-col>
+        <zan-col col="12" col-class="custom-zan-col">
+            <button class="btn-pay" bindtap='toggleChooseShipmentWay'>结算</button>
+        </zan-col>
+    </zan-row>
+</view>-->
+<mask-choose-shipment-way id="maskChooseShipmentWay"/>

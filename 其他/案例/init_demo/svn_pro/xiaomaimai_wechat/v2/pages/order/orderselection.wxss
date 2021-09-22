@@ -1,0 +1,66 @@
+.selection {
+  padding-bottom: 0 !important;
+}
+
+.selection .van-cell__title {
+  color: #999;
+}
+
+.optionbutton {
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.optionbutton .buttontitle {
+  color: #333;
+}
+
+.optionbutton .buttontitle3 {
+  color: #333;
+}
+
+.selectedoption {
+  background-color: #fff0dd;
+  border-radius: 3px;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.selectedoption .buttontitle {
+  color: #ef751d;
+}
+
+.selectedoption .buttontitle3 {
+  color: #ef751d;
+}
+
+.timeTitle {
+  color: #333;
+  text-align: left;
+}
+
+.timePicker {
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  height: 40px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.timePicker .icon-time {
+  width: 24px;
+  height: 20px;
+  background: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_time_circle.png") no-repeat center;
+  background-size: 20px 20px;
+}
+
+.timePicker input {
+  margin-left: 10px;
+ 
+}

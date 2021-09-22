@@ -1,0 +1,101 @@
+.box-item {
+  font-size: 14px;
+  padding: 0 15px 15px 15px;
+  margin: 0 10px;
+}
+
+.box-item-top-line {
+  border-top: solid 1px#E4E4E4;
+  padding-top: 10px;
+}
+
+.box-item .time {
+  color: #999;
+  font-size: 14px;
+}
+
+.box-item .box-content {
+  margin-bottom: 5px;
+}
+
+.box-item .box-content .topic-title {
+  padding-right: 5px;
+  color: #ffaf4c;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.box-item .box-content .topic-content {
+  color: #151515;
+  font-size: 14px;
+}
+.mommentbar {
+  background-color: #f7f7f7 !important;
+}
+.mommentbar .van-search__content {
+  background: #fff !important;
+}
+.mommentbar-btn {
+  color: #2377c3;
+}
+
+.context-warp {
+  border-top: 10px solid #f7f7f7;
+  padding: 0 10px 70px;
+  box-sizing: border-box;
+
+}
+
+.comment-box {
+  border-bottom: 1px solid #e4e4e4;
+  box-sizing: border-box;
+  padding: 15px 0;
+}
+.comment-box:last-child {
+  border: none;
+}
+.context-warp .title {
+  box-sizing: border-box;
+  padding: 15px 0 0;
+  font-size: 15px;
+  color: #333333;
+}
+.context-warp .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+.context-warp .body {
+  padding-left: 37px;
+  line-height: 21px;
+  color: #333333;
+  overflow: hidden;
+}
+.avatar-text {
+  color: #ffaf4c;
+  margin-right: 5px;
+  font-weight: bold;
+}
+.btn {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  height: 24px !important;
+  padding: 0 5px !important;
+  color: #2377c3 !important;
+  font-size: 12px !important;
+  float: right;
+}
+.comment-actions{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.time {
+  color: #999999;
+  font-size: 12px;
+}
+
+.owner-text{
+  color: #333 !important ;
+}

@@ -1,0 +1,84 @@
+<view class="box-item">
+  <van-row custom-class="row">
+    <van-col span="4">
+      <text class="time">{{ moment.UpdatedOn }}</text>
+      <view wx:if="{{moment.AtTheTop === 1}}">
+        <van-icon size="30px" name="/images/icon_label_top@2x.png" />
+      </view>
+    </van-col>
+    <van-col wx:if="{{!isAdvertisement}}" span="20">
+      <view class="box-content">
+        <text selectable="{{true}}">
+          <text wx:if="{{moment.GroupName!=''}}" class="topic-title">#{{ moment.GroupName }}#</text>
+          <text class="topic-content">{{ moment.Description }}</text>
+        </text>
+      </view>
+      <view>
+        <imagelist
+          pictures= "{{ moment.PictureList  || []}}"
+          product-list="{{ moment.ProductList  || []}}"
+          moment-guid="{{ moment.Guid || ''}}"
+        ></imagelist>
+      </view>
+      <moment-action-bar
+        moment="{{moment}}"
+        seller="{{seller}}"
+        disable-comment="{{disableComment}}"
+        bind:updataMoment="onUpdataMoment"
+      />
+      <moment-comment
+        moment="{{moment}}"
+        seller="{{seller}}"
+        disable-comment="{{disableComment}}"
+        bind:updataMoment="onUpdataMoment" />
+
+      <!--view wx:if="{{seller && moment.Advertisement==null}}" class="share" bind:tap="onAdvertisement" data-guid="{{ moment.Guid }}">
+                        <image class="icon-advertisement" src="http://resource.xlwonder.wang/wxapp/xmmq/icon_home_advertisement.png"></image>
+                        <text>(投放广告)</text>
+                    </view-->
+      <view
+        wx:if="{{moment.Advertisement!=null}}"
+        class="share"
+        bind:tap="onGoToStore"
+        data-guid="{{ moment.Guid }}"
+      >
+        <iconfont name="share" custom-class="icon-share"></iconfont>
+        <text>(去店里逛逛)</text>
+      </view>
+      <view wx:if="{{moment.Advertisement!=null}}" class="more">
+        <iconfont name="more" custom-class="icon-more"></iconfont>
+        <text>广告</text>
+      </view>
+    </van-col>
+    <van-col wx:else span="20">
+      <view wx:if="{{moment.GroupName!=''}}" class="box-content">
+        <text class="topic-title">#{{ moment.GroupName }}#</text>
+        <text class="topic-content">{{ moment.Description }}</text>
+      </view>
+      <view>
+        <imagelist productList="{{ moment.ProductList }}" moments="{{ moments }}"></imagelist>
+      </view>
+      <view
+        wx:if="{{seller && publish==0 && moment.Advertisement.DisplayStoreGuid!=StoreGuid}}"
+        class="share"
+        bind:tap="onPublishAdvertisement"
+        data-guid="{{ moment.Advertisement.Guid }}"
+      >
+        <image
+          class="icon-advertisement"
+          src="http://resource.xlwonder.wang/wxapp/xmmq/icon_home_advertisement.png"
+        ></image>
+        <text>(显示广告赚钱)</text>
+      </view>
+      <view
+        wx:if="{{seller && ( publish==1 || moment.Advertisement.DisplayStoreGuid==StoreGuid)}}"
+        class="more"
+        bind:tap="onRemoveAdvertisement"
+        data-guid="{{ moment.Advertisement.Guid }}"
+      >
+        <iconfont name="more" custom-class="icon-more"></iconfont>
+        <text>下架广告</text>
+      </view>
+    </van-col>
+  </van-row>
+</view>

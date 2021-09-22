@@ -1,0 +1,64 @@
+<view class="one-card custom-class">
+  <view class="one-card_header">
+    <slot name="left" />
+    <view class="one-card_thumb" bind:tap="onClickThumb">
+      <image
+        wx:if="{{ thumb }}"
+        src="{{ thumb }}"
+        mode="{{ thumbMode }}"
+        lazy-load="{{ lazyLoad }}"
+        class="one-card_img thumb-class"
+      />
+      <slot name="thumb" />
+    </view>
+    <view class="one-card_content content-class">
+      <block wx:if="{{!useConentSlot}}">
+        <view wx:if="{{ title }}" class="one-card_title title-class">
+          <view class="title-text-class">{{ title }}</view>
+        </view>
+        <slot wx:else name="title" />
+        <view wx:if="{{ desc }}" class="one-card_desc desc-class">{{ desc }}</view>
+        <slot wx:else name="desc" />
+        <slot name="tags" />
+        <view class="one-card_bottom bottom-class">
+          <block wx:if="{{rangePrice}}">
+            <view class="one-card_price price-class">
+              <view wx:if="{{ minPrice || minPrice === 0}}">
+                {{ currency }} {{ minPrice }}
+              </view>
+              <text> {{ '~' }} </text>
+              <view wx:if="{{ maxPrice || maxPrice === 0}}">
+                {{ currency }} {{ maxPrice }}
+              </view>
+            </view>
+            <view
+              wx:if="{{ originPrice || originPrice === 0 }}"
+              class="one-card_origin-price origin-price-class"
+            >
+              {{ currency }} {{ originPrice }}
+            </view>
+          </block>
+          <block wx:else>
+            <view wx:if="{{ showZeroText && (price || 0) <=0 }}" class="one-card_price price-class"
+              >{{priceZeroText}} </view
+            >
+            <view wx:else class="one-card_price price-class">{{ currency }} {{ price }}{{stockQuantity < 100 ? ('(库存' + stockQuantity + ')') : '' }}</view>
+            <view
+              wx:if="{{ originPrice || originPrice === 0 }}"
+              class="one-card_origin-price origin-price-class"
+            >
+              {{ currency }} {{ originPrice }}
+            </view>
+          </block>
+          <view wx:if="{{ num }}" class="one-card_num num-class">x {{ num }}</view>
+          <slot name="bottom" />
+        </view>
+      </block>
+      <slot wx:else name="content" />
+    </view>
+    <slot name="right" />
+  </view>
+  <view class="one-card_footer">
+    <slot name="footer" />
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<!-- index.wxml -->
+<view class="page">
+    <author-panel wx:if="{{needAuthor}}" needAuthor="{{needAuthor}}" canIUse="{{canIUse}}" bind:bindGetUserInfo="bindGetUserInfo"></author-panel>
+    <view class="page-container" wx:else>
+        <avator-panel avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}" showExport="{{seller}}" balance="{{AccountBalance}}" showBalance="{{seller &&(AccountBalance>0) }}" vendorCode="{{vendorCode}}" level="1"/>
+        <!--<blank-row/>-->
+        <card-panel showTitle="{{false}}" root-class="root-card-panel" class="card-panel">
+          <scroll-view>
+            <!--official-account></official-account-->
+            <!--window-simple-row wx:if="{{!seller}}" title="购物车" showTitleBottomLine="{{true}}" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_shoppingcart.png" showRightArrow="true" bind:tapRow="bindMyShoppingCart">
+                <view class="row-right-title" slot="right" wx:if="{{shoppingCartCount>0}}"><text class="badge-count">{{shoppingCartCount}}</text></view>
+            </window-simple-row-->
+            <window-simple-row title="我的订单" showTitleBottomLine="{{true}}" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_order.png" showRightArrow="true" bind:tapRow="bindMyOrder">
+            <view class="row-right-title" slot="right" wx:if="{{unPaidOrderCount>0}}"><text class="badge-count">{{unPaidOrderCount}}</text></view>
+            </window-simple-row>
+            <window-simple-row wx:if="{{!seller}}" title="我的收藏" showTitleBottomLine="{{true}}" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_collection.png" showRightArrow="true" bind:tapRow="bindMyWhishList">
+            <view class="row-right-title" slot="right" wx:if="{{wishListCount>0}}"><text class="badge-count">{{wishListCount}}</text></view>
+            </window-simple-row>
+            <window-simple-row wx:if="{{seller}}" title="运费设置" showTitleBottomLine="{{true}}" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_freight.png" showRightArrow="true" bind:tapRow="bindShippingCost">
+              <view class="row-right-title" slot="right">基础运费：<text class="badge-count">{{shippingCost}}</text>元</view>
+            </window-simple-row>
+            <!--window-simple-row title="分享我们" showTitleBottomLine="{{true}}" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_share.png" bind:tapRow="bindShare">
+            </window-simple-row-->
+            <window-simple-row title="我的小买卖" showTitleBottomLine="{{true}}"  showRightArrow="true" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_see.png" bind:tapRow="bindChooseStore">
+            </window-simple-row>
+            <!--window-simple-row title="我的广告" wx:if="{{seller}}" showTitleBottomLine="{{true}}"  showRightArrow="true" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_opinion.png" bind:tapRow="bindAdvertisement">
+            </window-simple-row-->
+            <window-simple-row title="我的供货商" wx:if="{{seller}}" showTitleBottomLine="{{true}}"  showRightArrow="true" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_opinion.png" bind:tapRow="bindFranchise">
+            </window-simple-row>
+            <window-simple-row wx:if="{{!seller}}" title="收货地址" showTitleBottomLine="{{true}}" iconUrl="http://resource.xlwonder.wang/wxapp/xmmq/icon_my_collection.png" showRightArrow="true" bind:tapRow="bindMyAddress"/>
+          </scroll-view>
+        </card-panel>
+    </view>
+    <footer active="1" showCamera="true" seller="{{seller}}" badge="{{shoppingCartCount==0?'':shoppingCartCount}}">
+      <view class="photo" wx:if="{{seller}}">
+        <navigator url="../../pages/moments/index" hover-class="none">
+            <iconfont name="camera" custom-class="camera"></iconfont>
+        </navigator>
+      </view>
+    </footer>
+</view>
+<template name="row-input">
+    <view class="row-panel">
+        <i class="title-icon"/>
+        <input class="input-text" type="text" name="{{inputName}}" value='{{value}}' placeholder="{{placeholder}}"/>
+    </view>
+</template>
+<template name="row-navgation">
+    <view class="row-panel" bindtap="{{bindtap}}">
+        <i class="title-icon"/>
+        <text class="title">{{title}}</text>
+    </view>
+</template>
+<template name="row-input-validator">
+    <view class="row-panel" bindtap="{{bindtap}}">
+        <i class="title-icon"/>
+        <input class="input-text" type="text" name="{{inputName}}" value='{{value}}' placeholder="{{placeholder}}"/>
+        <image src="{{verifyImage}}" class="verify-image" bindtap='refreshCode' mode='scscaleToFill'></image>
+    </view>
+</template>

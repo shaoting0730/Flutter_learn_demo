@@ -1,0 +1,79 @@
+@tag-font-color: #2377C3;
+@tag-bg-active: #FFF0DD;
+@tag-font-color-active: #F07C28;
+.tags-content {
+  .tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90vw;
+    min-height: 60px;
+    max-height: 110px;
+    border: 1px solid #e3e3e3;
+    padding: 5px 5px 0 5px;
+    margin-bottom: 10px;
+    font-size: 28rpx;
+    .add-tag-item {
+      padding: 3px 10px;
+    }
+    .tag-item {
+      color: @tag-font-color;
+      padding: 8px 15px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .history-tags {
+    padding: 10px 0;
+    font-size: 24rpx;
+    width:95vw;
+    .title {
+      color: #999999;
+      margin-bottom: 10px;
+    }
+    .tag-edit {
+      display: flex;
+      float: right;
+      .icon-edit {
+        font-size: 24rpx;
+        margin-right: 3px;
+      }
+    }
+    .tag-item {
+      color: @tag-font-color;
+      padding: 8px 15px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      background: #F1F1F1 !important;
+    }
+    .tag-item.active {
+      background: @tag-bg-active !important;
+      color: @tag-font-color-active;
+    }
+  }
+
+  .message {
+    color: #999999;
+    margin-top: 5px;
+    font-size: 24rpx;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.btn-submit {
+  width: 100%;
+  height: 50px;
+  border-radius: 0 !important;
+  background: linear-gradient(to bottom, #FFC63F, #FFA739);
+  color: #ffffff;
+  letter-spacing: 2px;
+  border: 0 !important;
+}
+
+.button-hover {
+  background: linear-gradient(to bottom, #FFA739, #FFC63F);
+}

@@ -1,0 +1,37 @@
+<view class="container">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="row-panel">
+            <view class="inputtitle">姓名：</view>
+            <input class="text" type="text" name="name" value='{{store.Name}}' placeholder="姓名"/>
+        </view>
+        <view class="row-panel">
+            <view class="inputtitle">联系邮箱：</view>
+            <input class="text" type="email" name="email" value='{{store.Email}}' placeholder="联系邮箱"/>
+        </view>
+        <view class="row-panel">
+            <view class="inputtitle">联系电话：</view>
+            <input class="text" type="text" name="phone" value='{{store.PhoneNumber}}' placeholder="联系电话"/>
+        </view>
+        <view class="row-panel">
+            <view class="inputtitle">店铺名称：</view>
+            <input class="text" type="text" name="applicationname" value='{{store.ApplicationName}}' placeholder="店铺名称"/>
+        </view>
+        <view class="row-panel">
+          <view class="inputtitle">微信收款码：</view>
+            <image wx:if="{{ store.WechatPaymentQRCode.length>0 }}" src="{{ store.WechatPaymentQRCode }}" mode="aspectFit"/>
+            <image wx:else src="" bind:tap="onAddImage" class="icon-plus">
+              <iconfont name="plus" custom-class="icon-plus"></iconfont>
+            </image>
+        </view>
+        <view class="bottom-panel">
+            <button class="onApplyNew" formType="submit">提交申请</button>
+        </view>
+    </form>
+</view>
+
+<template name="row-input">
+    <view class="row-panel">
+        <input type="text" name="{{inputName}}" value='{{value}}' placeholder="{{placeholder}}"/>
+    </view>
+</template>
+<upload-progressbar progress="{{ progress}}" />

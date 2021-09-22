@@ -1,0 +1,23 @@
+<wxs src="../../miniprogram_npm/@vant/weapp/wxs/utils.wxs" module="utils" />
+<view class="flex-row-center userinfo">
+  <view wx:if="{{showBalance}}" class="balance"
+    >账户余额： <iconfont name="cny"></iconfont>{{balance}}
+  </view>
+  <view wx:if="{{showExport}}" class="export" bindtap="btnExportOrder">
+    <image class="icon-editor" src="/images/icon_my_export@2x.png" />
+    <text>一键导出订单</text>
+  </view>
+  <view wx:elif="{{!storeInfo.WechatMPPayEnabled  }}" class="export" bindtap="openSellerInfo">
+    <image class="icon-editor" src="/images/icon_information_yellow@2x.png" />
+    <text>店主信息</text>
+  </view>
+  <view class="flex-column-center icon-top-left">
+    <view class="avator-container" bindtap="bindUserEditor">
+      <image class="avatar" src="{{avatarUrl}}" background-size="cover"></image>
+      <image wx:if="{{showExport}}" class="icon-editor" src="/images/icon_my_edit@2x.png" />
+    </view>
+    <view class="info">
+      <view class="nick-name">{{nickName}}</view>
+    </view>
+  </view>
+</view>

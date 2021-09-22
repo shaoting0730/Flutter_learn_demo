@@ -1,0 +1,157 @@
+<view>
+  <van-tabs
+    type="card"
+    custom-class="tabs"
+    nav-class="tab-nav"
+    tab-class="tab"
+    tab-active-class="tab-active"
+  >
+    <van-tab title="批发商" wx:if="{{category.length >= 1}}">
+      <scroll-view scroll-y="{{true}}" style="height:{{scrollHeight}}px;background-color:#F7F7F7; ">
+        <van-collapse value="{{ activeNames }}" bind:change="onCollapseChange">
+          <block wx:for="{{ category }}" wx:for-index="index" wx:for-item="data" wx:key="Guid">
+            <van-collapse-item
+              wx:if="{{data.Guid !== '999999999'}}"
+              title="{{data.CategoryName}}"
+              name="{{index}}"
+              value="{{ data.isOpen ? '收起':'展开' }}"
+            >
+              <view slot="icon" class="left-icon"> </view>
+              <view wx:if="{{!data.products}}" class="d-flex justify-content-center my-5">
+                <van-loading size="24px" vertical>加载中...</van-loading>
+              </view>
+              <view wx:else class="product-wrap {{data.isLoading&& 'wproduct-wrap-loading' }} ">
+                <block
+                  wx:for="{{ data.products }}"
+                  wx:for-index="index"
+                  wx:for-item="item"
+                  wx:key="Guid"
+                >
+                  <one-card
+                    use-conent-slot="{{true}}"
+                    thumb="{{ item.PictureList[0] || 'http://resource.xlwonder.wang/DQ_Product_Default.png' }}?imageView2/0/w/250/h/250"
+                    custom-class="card"
+                  >
+                    <view slot="content">
+                      <view class="text-body p-title">
+                        {{item.ProductName }}
+                      </view>
+                      <view class="flex-row-center-left">
+                        <text class="text-secondary py-1 mr-2">¥ {{item.VendorPrice}}</text>
+                        <van-tag custom-class="tag tag-info">{{item.vendor.VendorName}}</van-tag>
+                      </view>
+                      <view wx:if="{{item.MyGuid}}">
+                        <van-tag custom-class="tag tag-primary">我的售价</van-tag>
+                        <text
+                          wx:if="{{item.MyMinPrice > 0 || item.MyMaxPrice > 0 }}"
+                          class="my-price mr-2"
+                        >
+                          ¥ {{item.MyMinPrice}} ~ ¥ {{item.MyMaxPrice}}</text
+                        >
+                        <text wx:else class="my-price mr-2">¥ {{item.MyPrice}}</text>
+                      </view>
+                    </view>
+                    <view slot="right">
+                      <van-button
+                        plain
+                        color="#979797"
+                        size="small"
+                        wx:if="{{item.MyGuid}}"
+                        bind:click="onShowPublishModal"
+                        data-item="{{item}}"
+                        >编辑</van-button
+                      >
+                      <van-button
+                        wx:else
+                        size="small"
+                        type="primary"
+                        bind:click="onShowPublishModal"
+                        data-item="{{item}}"
+                        >上架</van-button
+                      >
+                    </view>
+                  </one-card>
+                </block>
+                <view class="more-footer">
+                  <view
+                    wx:if="{{data.products.length < data.TotalCount}}"
+                    class="d-flex justify-content-center my-2"
+                  >
+                    <view wx:if="{{data.isLoading}}">
+                      <van-loading size="24px" vertical>加载中...</van-loading>
+                    </view>
+                    <view
+                      wx:else
+                      bind:tap="loadProductMore"
+                      data-index="{{index}}"
+                      data-item="{{data}}"
+                    >
+                      点击加载更多...
+                    </view>
+                  </view>
+                  <view wx:else class="text-center my-2">
+                    没有更多数据
+                  </view>
+                </view>
+              </view>
+            </van-collapse-item>
+          </block>
+        </van-collapse>
+      </scroll-view>
+    </van-tab>
+    <van-tab title="供货商家" wx:if="{{category !== null}}">
+      <view class="my-2 px-2 text-secondary">您已绑定的线上供货商，发货更省心</view>
+      <one-grid border="{{false}}">
+        <block wx:for="{{ vendors }}" wx:for-index="index" wx:for-item="item" wx:key="Guid">
+          <one-grid-item
+            data-item="{{item}}"
+            wx:if="{{item.VendorType === 2}}"
+            bind:click="onVendorProduct"
+          >
+            <one-avatar
+              text="{{item.VendorName}}"
+              thumb="{{item.VendorLogoUrl}}"
+              ellipsis
+              clamp="2"
+              border-color="#FFAD4C"
+            />
+          </one-grid-item>
+        </block>
+      </one-grid>
+      <view class="page-footer-fixed" style="bottom:{{safeAreaBottom}}px;">
+        <button class="btn-main" hover-class="btn-active" bind:tap="onShowBindVendor">
+          绑定新的供货商
+        </button>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>
+
+<one-publish-modal
+  show="{{showPublishModal}}"
+  publish-success="{{publishSuccess}}"
+  product="{{product}}"
+  bind:onClose="onClosePublishModal"
+  bind:onPublish="onPublish"
+/>
+<van-dialog
+  use-slot
+  async-close="{{true}}"
+  title="绑定新的供货商"
+  close-on-click-overlay="{{true}}"
+  show="{{ showVendorModal }}"
+  bind:close="onCloseBindVendor"
+  bind:confirm="bindNewVendor"
+  confirmButtonText="绑 定"
+  confirm-button-color="#FFAD4C"
+>
+  <view class="my-4 px-3">
+    <input
+      class="form-control"
+      type="text"
+      bindinput="bindVendorCodeInput"
+      value="{{VendorCode}}"
+      placeholder="输入供应商推荐码"
+    />
+  </view>
+</van-dialog>

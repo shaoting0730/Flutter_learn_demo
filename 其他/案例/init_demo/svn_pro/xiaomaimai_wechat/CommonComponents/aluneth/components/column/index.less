@@ -1,0 +1,12 @@
+@import "../common/clearfix";
+
+@iterations: 12;
+@cell: (1 / @iterations);
+.col-loop(@i) when (@i > 0){
+  .col-@{i} {
+    width: percentage(@i * @cell);
+    float: left;
+  }
+  .col-loop(@i - 1);
+}
+.col-loop(@iterations);

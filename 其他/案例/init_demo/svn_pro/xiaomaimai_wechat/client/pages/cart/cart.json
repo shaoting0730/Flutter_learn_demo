@@ -1,0 +1,18 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "footer": "../../../components/footer/index",
+    "zan-loading": "../../vendor/vant-webapp/loading/index",
+    "zan-row": "../../vendor/vant-webapp/row/index",
+    "zan-col": "../../vendor/vant-webapp/col/index",
+    "zan-button": "../../vendor/vant-webapp/button/index",
+    "zan-stepper": "../../vendor/vant-webapp/stepper/index",
+    "checkbox": "../../components/checkbox/index",
+    "title-bar": "../../biz-components/title-bar/index",
+    "product-price-bar": "../../biz-components/product-price-bar/index",
+    "mask-choose-shipment-way": "../../biz-components/mask-choose-shipment-way/index",
+    "van-row": "../../../vendor/vant-webapp/row/index",
+    "van-col": "../../../vendor/vant-webapp/col/index",
+    "iconfont": "../../../components/iconfont/index"
+  }
+}

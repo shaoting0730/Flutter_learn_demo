@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "小买卖圈",
+  "usingComponents": {
+    "author-panel": "../../../components/author-panel/index",
+    "choose-store": "../../../components/choose-store/index"
+  }
+}

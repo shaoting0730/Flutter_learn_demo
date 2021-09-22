@@ -1,0 +1,138 @@
+<wxs src="../../utils/utils.wxs" module="utils" />
+
+<view>
+  <view class="box-item">
+    <van-row>
+      <van-col span="4">
+        <text class="time">{{ moment.UpdatedOn }}</text>
+        <view wx:if="{{moment.AtTheTop === 1}}">
+          <van-icon size="30px" name="/images/icon_label_top@2x.png" />
+        </view>
+      </van-col>
+      <van-col wx:if="{{!isAdvertisement}}" span="20">
+        <view class="box-content">
+          <text wx:if="{{moment.GroupName!=''}}" class="topic-title">#{{ moment.GroupName }}#</text>
+          <text class="topic-content">{{ moment.Description }}</text>
+        </view>
+        <view>
+          <imagelist
+            pictures="{{moment.PictureList}}"
+            productList="{{ moment.ProductList }}"
+            moment-guid="{{moment.Guid}}"
+            moments="{{ moments }}"
+          ></imagelist>
+        </view>
+        <moment-action-bar
+          moment="{{moment}}"
+          seller="{{seller}}"
+          show-mome="{{false}}"
+          show-comment-btn="{{false}}"
+          bind:updataMoment="onUpdataMoment"
+        />
+      </van-col>
+    </van-row>
+  </view>
+  <view class="context-warp" wx:if="{{!disableComment}}">
+    <view class="title">全部评论 ({{moment.Comments.length}})</view>
+    <block wx:for="{{moment.Comments}}" wx:for-index="index" wx:for-item="item" wx:key="Guid">
+      <view class="comment-box">
+        <view class="header">
+          <view class="d-flex">
+            <one-avatar
+              custom-class="justify-content-start navbar-title"
+              text-class="avatar-text"
+              thumb-width="25px"
+              thumb-height="25px"
+              alignment="horizontal"
+              ellipsis
+              clamp="1"
+              text="{{item.StoreCustomerName}}"
+              thumb="{{item.StoreCustomerHeaderImage}}"
+            />
+            <van-icon
+              wx:if="{{item.AtTheTop === 1}}"
+              size="27"
+              name="/images/icon_label_top@2x.png"
+            />
+          </view>
+          <view class="time">{{ utils.getDateStr(item.CreatedOn) }}</view>
+        </view>
+        <view class="body">
+          <view data-item="{{item}}" bindtap="onReplieUser">{{item.Content}}</view>
+          <view class="comment-actions" wx:if="{{seller}}">
+            <van-button
+              wx:if="{{item.AtTheTop === 0}}"
+              data-value="1"
+              data-item="{{item}}"
+              custom-class="btn"
+              bind:click="onSetTop"
+              >设为置顶</van-button
+            >
+            <van-button
+              wx:else
+              data-value="0"
+              data-item="{{item}}"
+              custom-class="btn"
+              bind:click="onSetTop"
+              >取消置顶</van-button
+            >
+          </view>
+
+          <block wx:for="{{item.Replies}}" wx:for-index="index" wx:for-item="replie" wx:key="Guid">
+            <view class="comment-box">
+              <view class="header">
+                <view class="d-flex">
+                  <one-avatar
+                    custom-class="justify-content-start navbar-title"
+                    text-class="avatar-text {{replie.IsStoreOwner===0 && 'owner-text' }}"
+                    thumb-width="25px"
+                    thumb-height="25px"
+                    alignment="horizontal"
+                    ellipsis
+                    clamp="1"
+                    text="{{replie.StoreCustomerName}}"
+                    thumb="{{replie.StoreCustomerHeaderImage}}"
+                  />
+
+                  <van-icon
+                    wx:if="{{replie.IsStoreOwner === 0}}"
+                    size="27"
+                    name="/images/icon_label_shopowner@2x.png"
+                  />
+                </view>
+                <view class="time">{{ utils.getDateStr(replie.CreatedOn) }}</view>
+              </view>
+              <view class="body">
+                <view>{{replie.Content}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<van-dialog id="van-dialog" />
+<block wx:if="{{!disableComment}}">
+  <van-popup
+    show="{{true }}"
+    overlay="{{false}}"
+    z-index="100"
+    position="bottom"
+    bind:close="onCommentClose"
+  >
+    <van-search
+      focus="{{commentShow}}"
+      use-action-slot
+      maxlength="250"
+      custom-class="mommentbar"
+      left-icon="/images/icon_address_edit@2x.png"
+      value="{{ commentText }}"
+      bind:change="onCommentChange"
+      placeholder="我也来说两句…"
+      input-class="input"
+    >
+      <view slot="action" class="mommentbar-btn" bind:tap="onCommit">发送</view>
+    </van-search>
+  </van-popup>
+</block>

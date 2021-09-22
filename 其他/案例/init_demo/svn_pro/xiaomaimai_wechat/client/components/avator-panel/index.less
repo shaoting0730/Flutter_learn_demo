@@ -1,0 +1,35 @@
+@import "../../base";
+
+.userinfo{
+  position: relative;
+  width: 750rpx;
+  padding-bottom:50rpx;
+  background-image: linear-gradient(180deg, @color-logo-light 3%, @color-logo-dark 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .avatar {
+    display: block;
+    width: 164rpx;
+    height: 164rpx;
+    margin-top: 28rpx;
+    margin-bottom: 20rpx;
+    border-radius: 50%;
+    border:3px solid #fff;
+  }
+  .info{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    .nick-name{
+      font-size: 28rpx;
+      line-height: 30rpx;
+    }
+    .icon-level{
+      width: 30rpx;
+      height: 30rpx;
+      margin-left:6rpx;
+    }
+  }
+}

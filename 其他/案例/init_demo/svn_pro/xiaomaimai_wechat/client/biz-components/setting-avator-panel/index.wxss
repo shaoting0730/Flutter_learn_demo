@@ -1,0 +1,163 @@
+.flex-row-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.flex-row-top-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-bottom-left {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+}
+.flex-row-center-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flex-row-center-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flex-column-right {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: flex-end;
+}
+.banner-bg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.userinfo {
+  position: relative;
+  width: 100vw;
+  height: 360rpx;
+  background: linear-gradient(to bottom, #ffffff, #ededed);
+  background-size: auto;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.userinfo .bottom-circle-bar {
+  height: 30rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: white;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.userinfo .avator-container {
+  position: relative;
+}
+.userinfo .avator-container .icon-editor {
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 0;
+}
+.userinfo .avatar {
+  box-sizing: border-box;
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.userinfo .info {
+  flex-direction: column;
+}
+.userinfo .info .nick-name {
+  font-size: 34rpx;
+  color: #666666;
+  line-height: 40rpx;
+  padding: 10px 0;
+  height: 45rpx;
+}
+.userinfo .info .icon-phone {
+  width: 18rpx;
+  height: 26rpx;
+  background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_my_phone.png");
+  background-size: 100% 100%;
+  display: inline-block;
+  margin-right: 10rpx;
+  font-weight: normal;
+}
+.userinfo .info .phoneNumber {
+  font-size: 28rpx;
+  line-height: 30rpx;
+  color: white;
+  display: inline-block;
+}
+.userinfo .info .icon-level {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 6rpx;
+}
+.userinfo .icon-qr-code {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 5rpx;
+  background-image: url("http://resource.xlwonder.wang/wxapp/xmmq/icon_my_code.png");
+  background-size: 100% 100%;
+}
+.userinfo .icon-top-left {
+  position: absolute;
+  left: 30rpx;
+  top: 52rpx;
+  right: 30rpx;
+}
+.balance {
+  background: #FFAC45;
+  box-shadow: 0 0 10px rgba(153, 153, 153, 0.4);
+  padding: 10px 15px;
+  color: #333333;
+  font-size: 24rpx;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  top: 10rpx;
+  right: 0;
+  position: absolute;
+}
+.export {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(153, 153, 153, 0.4);
+  padding: 10px 15px;
+  color: #666666;
+  font-size: 24rpx;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  bottom: 50rpx;
+  right: 0;
+  position: absolute;
+  z-index:999;
+}
+
+.export .icon-download {
+  color: #FFAC45;
+  font-size: 36rpx;
+  margin-right: 2px;
+}

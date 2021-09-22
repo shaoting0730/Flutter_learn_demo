@@ -1,0 +1,11 @@
+<!--blank-row 组件-->
+<view class="panel-title">
+    <view class="left">{{title}}</view>
+    <block wx:if="{{ (titleRight!=null && titleRight!='') || showRightArrow}}">
+        <view class="right right-title-class" bindtap="bindTapRight">
+            {{titleRight}}
+            <image wx:if="{{showRightArrow}}" src="../../images/x_right.png" class="right-arrow"></image>
+        </view>
+    </block>
+
+</view>
