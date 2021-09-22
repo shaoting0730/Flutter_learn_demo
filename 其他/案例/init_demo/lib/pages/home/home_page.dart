@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:init_demo/utils/constant.dart';
 import 'dart:convert' as convert;
 import 'package:get/get.dart';
+import 'package:init_demo/utils/event_bus.dart';
 import 'home_controller.dart';
 import 'package:init_demo/component/my_btn.dart';
 
@@ -70,11 +71,22 @@ class HomePage extends GetView<HomeController> {
           MyBtn(
             onclick: () {
               // ignore: avoid_print
-              print('黑');
+              print('粉');
             },
             width: 100,
             height: 50,
-          )
+          ),
+          MyBtn(
+            onclick: () {
+              eventBus.fire(
+                NotificationTag('3'),
+              );
+            },
+            color: Colors.blueAccent,
+            width: 120,
+            height: 120,
+            widget: const Text('event_bus改变'),
+          ),
         ],
       )),
     );

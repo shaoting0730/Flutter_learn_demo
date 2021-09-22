@@ -3,14 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:init_demo/pages/account/account_page.dart';
 import 'package:init_demo/pages/home/home_page.dart';
+import 'package:init_demo/utils/event_bus.dart';
 
 import 'dashboard_controller.dart';
 
-class DashboardPage extends StatelessWidget {
+class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
 
   @override
+  _DashboardPageState createState() => _DashboardPageState();
+}
+
+class _DashboardPageState extends State<DashboardPage> {
+  String _tag = '2';
+  _listen() {
+    // 联系人返回
+    eventBus.on<NotificationTag>().listen((event) {
+      setState(() {
+        _tag = event.text;
+      });
+    });
+    //
+  }
+
+  @override
   Widget build(BuildContext context) {
+    _listen();
     return GetBuilder<DashboardController>(
       builder: (controller) {
         return Scaffold(
@@ -98,8 +116,8 @@ class DashboardPage extends StatelessWidget {
                               ),
                               width: 20,
                               height: 15,
-                              child: const Center(
-                                child: Text('2'),
+                              child: Center(
+                                child: Text(_tag),
                               ),
                             ),
                           ],

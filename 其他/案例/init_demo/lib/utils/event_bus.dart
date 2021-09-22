@@ -3,7 +3,7 @@ import 'package:event_bus/event_bus.dart';
 //Bus初始化
 EventBus eventBus = EventBus();
 
-class UserLoggedInEvent {
+class NotificationTag {
   String text;
-  UserLoggedInEvent(this.text);
+  NotificationTag(this.text);
 }

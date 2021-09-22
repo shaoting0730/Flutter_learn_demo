@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'dart:async';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DioUtil {

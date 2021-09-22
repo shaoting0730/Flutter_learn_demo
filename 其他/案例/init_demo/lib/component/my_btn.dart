@@ -5,9 +5,11 @@ class MyBtn extends StatelessWidget {
   final double width;
   final double height;
   final Function onclick;
+  final Widget widget;
   const MyBtn(
       {Key? key,
       this.color = Colors.pinkAccent,
+      this.widget = const Text(''),
       required this.width,
       required this.height,
       required this.onclick})
@@ -21,6 +23,9 @@ class MyBtn extends StatelessWidget {
         color: color,
         width: width,
         height: height,
+        child: Center(
+          child: widget,
+        ),
       ),
     );
   }
