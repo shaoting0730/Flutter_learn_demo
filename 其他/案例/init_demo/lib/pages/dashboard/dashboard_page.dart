@@ -7,21 +7,13 @@ import 'package:init_demo/utils/event_bus.dart';
 
 import 'dashboard_controller.dart';
 
-class DashboardPage extends StatefulWidget {
+class DashboardPage extends StatelessWidget {
   const DashboardPage({Key? key}) : super(key: key);
 
-  @override
-  _DashboardPageState createState() => _DashboardPageState();
-}
-
-class _DashboardPageState extends State<DashboardPage> {
-  String _tag = '2';
   _listen() {
     // 联系人返回
     eventBus.on<NotificationTag>().listen((event) {
-      setState(() {
-        _tag = event.text;
-      });
+      Get.put(DashboardController()).updateTag(event.text);
     });
     //
   }
@@ -117,7 +109,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               width: 20,
                               height: 15,
                               child: Center(
-                                child: Text(_tag),
+                                child: Text(controller.tag),
                               ),
                             ),
                           ],
