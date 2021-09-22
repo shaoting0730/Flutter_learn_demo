@@ -53,7 +53,6 @@ class SecondPage extends GetView<SecondController> {
                 Text(sc.grilData[index].author.toString()),
                 Text(sc.grilData[index].desc.toString()),
                 FadeInImage.assetNetwork(
-                  fit: BoxFit.fitHeight,
                   height: 200,
                   placeholder: 'assets/tab/one.png',
                   image: sc.grilData[index].images![0],

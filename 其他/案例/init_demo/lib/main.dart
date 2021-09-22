@@ -9,6 +9,8 @@ void main() {
   runApp(const MyApp());
 }
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(750, 1334),
       builder: () => GetMaterialApp(
+        navigatorKey: navigatorKey,
         translations: Languages(), // 你的翻译
         locale: const Locale('zh', 'CN'), // 将会按照此处指定的语言翻译
         fallbackLocale: const Locale('en', 'US'), // 添加一个回调语言选项，以备上面指定的语言翻译不存在

@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:init_demo/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DioUtil {
@@ -25,6 +27,8 @@ class DioUtil {
         throw Exception('后端接口出现异常');
       }
     } catch (e) {
+      // BuildContext context = navigatorKey.currentState!.context;
+      Fluttertoast.showToast(msg: '请求$url失败');
       return print(e);
     }
   }
@@ -50,6 +54,7 @@ class DioUtil {
         throw Exception('后端接口出现异常');
       }
     } catch (e) {
+      Fluttertoast.showToast(msg: '请求$url失败');
       return print(e);
     }
   }
