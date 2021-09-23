@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "商品列表",
-  "usingComponents": {
-    "searchbox": "../../../components/searchbox/index",
-    "productcell": "../../../components/productcell/index",
-    "empty-placeholder": "../../biz-components/empty-placeholder/index"
-  }
-}

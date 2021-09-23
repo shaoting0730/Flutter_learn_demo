@@ -1,8 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "one-popover": "../../../../components/one-popover/index",
-    "product-picture":"../components/product-picture/index"
-
-  }
-}

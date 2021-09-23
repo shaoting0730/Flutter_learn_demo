@@ -1,7 +1,0 @@
-<view class="userinfo">
-    <image class="avatar" src="{{avatarUrl}}" background-size="cover"></image>
-    <view class="info">
-        <text class="nick-name">{{nickName}}</text>
-        <image src="http://resource.xlwonder.wang/wxapp/images/ico-vip{{level}}.png" class="icon-level" background-size="cover"></image>
-    </view>
-</view>

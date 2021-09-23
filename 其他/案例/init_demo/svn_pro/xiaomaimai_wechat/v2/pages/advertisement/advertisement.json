@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "投放广告",
-  "usingComponents": {
-    "iconfont": "../../../components/iconfont/index",
-    "upload-progressbar": "../../../components/upload-progressbar/index"
-  }
-}

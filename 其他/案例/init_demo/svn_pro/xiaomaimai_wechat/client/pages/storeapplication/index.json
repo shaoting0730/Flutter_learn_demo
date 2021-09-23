@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "iconfont": "../../../components/iconfont/index",
-    "upload-progressbar": "../../../components/upload-progressbar/index"
-  }
-}

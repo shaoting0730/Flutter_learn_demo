@@ -1,7 +1,0 @@
-<!--产品价格组件-->
-<view class="title-bar">
-    <text wx:if="{{title}}" class="title">{{title}}</text>
-    <slot name="left"></slot>
-    <slot></slot>
-    <slot name="right"></slot>
-</view>

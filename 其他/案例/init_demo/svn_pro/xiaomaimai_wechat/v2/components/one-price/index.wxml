@@ -1,4 +1,0 @@
-<view  class="price-wrap custom-class">
-  {{currency}} <text class="price">{{price}}</text>
-</view>
-

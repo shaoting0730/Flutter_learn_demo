@@ -1,9 +1,0 @@
-<!--window-panel 组件-->
-<view class="window-title">
-    <view class="left">
-        <view>{{left}}</view>
-    </view>
-    <view class="right">
-        <view>{{right}}</view>
-    </view>
-</view>

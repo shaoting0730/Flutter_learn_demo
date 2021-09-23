@@ -1,5 +1,0 @@
-<!--产品价格组件-->
-<view class="price-bar">
-    <span class="cur-price">¥{{curPrice}}</span>
-    <span wx:if="{{showOldPrice}}" class="old-price">原价 ¥{{oldPrice}}</span>
-</view>

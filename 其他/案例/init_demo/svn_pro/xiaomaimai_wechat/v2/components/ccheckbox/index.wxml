@@ -1,5 +1,0 @@
-<!--blank-row 组件-->
-<view class="container root-class" bindtap="bindClick">
-    <view class="checkbox {{checked?'checked':'unchecked'}}"></view>
-    <text wx:if="{{title}}" class="title title-class">{{title}}</text>
-</view>

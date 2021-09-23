@@ -1,9 +1,0 @@
-<!--window-panel 组件-->
-<view class="window-title">
-    <view class="left">
-        <view class="title">{{left}}</view>
-    </view>
-    <view class="right">
-        <view  bindtap="bindTapRight">{{right}}</view>
-    </view>
-</view>

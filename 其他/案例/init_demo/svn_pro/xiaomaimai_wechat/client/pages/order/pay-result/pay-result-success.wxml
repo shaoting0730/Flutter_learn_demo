@@ -1,7 +1,0 @@
-<view class='container'>
-  <view class='pay-result'>
-      <icon type="success_circle" size="80" />
-      <text class="pay-result-text">支付成功</text>
-      <button class="btn-see-order" bindtap="onJumpToOrderDetail" >查看订单</button>
-  </view>
-</view>

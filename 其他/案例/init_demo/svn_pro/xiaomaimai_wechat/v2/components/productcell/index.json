@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "imagelist": "../../../components/imagelist/index",
-    "iconfont": "../../../components/iconfont/index"
-  }
-}

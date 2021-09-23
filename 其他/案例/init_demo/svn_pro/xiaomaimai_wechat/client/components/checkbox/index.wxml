@@ -1,7 +1,0 @@
-<!--产品价格组件-->
-<view class="checkbox checkbox-class" bindtap="onTapCheckBox">
-    <icon wx:if="{{checked}}" type="success_circle" size="20"/>
-    <icon wx:else type="circle" size="20"/>
-    <text wx:if="{{title}}" class="title">{{title}}</text>
-    <slot></slot>
-</view>

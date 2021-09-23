@@ -1,9 +1,0 @@
-<view class="one-grid-item" style="{{ style }}" bindtap="onClick">
-  <view
-    class="one-grid-item_content {{ border ? 'one-grid-item_border' : '' }} {{center ? 'one-grid-item_content-center':''}}  "
-    style="{{ contentStyle }}"
-  >
-    <slot />
-  </view>
-</view>
-

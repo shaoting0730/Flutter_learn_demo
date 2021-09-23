@@ -1,6 +1,0 @@
-{
-    "navigationBarTitleText": "一键导出订单",
-    "usingComponents": {
-      "iconfont": "../../../components/iconfont/index"
-    }
-}

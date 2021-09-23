@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "card-panel-title": "./../card-panel-title/index"
-  }
-}

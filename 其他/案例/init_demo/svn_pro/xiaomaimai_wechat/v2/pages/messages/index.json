@@ -1,6 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "message-list": "../../../components/message-list/index"
-  }
-}

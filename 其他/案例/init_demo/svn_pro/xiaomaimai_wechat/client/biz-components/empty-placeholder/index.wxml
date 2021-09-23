@@ -1,8 +1,0 @@
-<!--空白占位组件-->
-<block wx:if="{{show}}">
-    <view class="container placeholder-class">
-        <image class="placeholder-image image-class" src="{{src}}"></image>
-        <text class="title title-class">{{title}}</text>
-    </view>
-</block>
-

@@ -1,5 +1,0 @@
-{
-  "usingComponents": {
-    "zan-button": "../../../vendor/vant-webapp/button/index"
-  }
-}

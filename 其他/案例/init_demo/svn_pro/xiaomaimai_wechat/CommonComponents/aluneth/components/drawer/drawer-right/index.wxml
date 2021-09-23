@@ -1,5 +1,0 @@
-<!--components/drawer/drawer-right/index.wxml-->
-<view class="drawer-right {{ show ? 'in' : '' }} extended-class">
-    <slot />
-</view>
-<view class="drawer-backdrop {{ show ? 'in' : '' }}" catch:tap="onClose"></view>

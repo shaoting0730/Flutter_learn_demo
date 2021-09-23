@@ -1,6 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "upload-progressbar": "../../../../components/upload-progressbar/index"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "iconfont": "../../../components/iconfont/index",
-    "text-with-icon":"../../../components/text-with-icon/index"
-  }
-}

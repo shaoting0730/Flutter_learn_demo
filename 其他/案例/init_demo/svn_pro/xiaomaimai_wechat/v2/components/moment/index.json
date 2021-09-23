@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "imagelist": "../imagelist/index",
-    "moment-action-bar": "../moment-action-bar/index",
-    "moment-comment": "../moment-comment/index"
-  }
-}

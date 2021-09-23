@@ -1,7 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "one-product-edit": "../../../../components/one-product-edit/index",
-    "upload-progressbar": "../../../../components/upload-progressbar/index"
-  }
-}

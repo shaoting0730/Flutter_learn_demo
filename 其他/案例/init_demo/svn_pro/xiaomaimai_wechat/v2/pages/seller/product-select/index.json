@@ -1,9 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "searchbox": "../../../../components/searchbox/index",
-    "one-refresher":"../../../../components/one-refresher/index",
-    "one-product-item":"../../../../components/one-product-item/index",
-    "empty-placeholder": "../../../../biz-components/empty-placeholder/index"
-  }
-}

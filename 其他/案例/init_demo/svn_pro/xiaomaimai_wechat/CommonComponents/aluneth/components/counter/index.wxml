@@ -1,6 +1,0 @@
-<!--components/counter/index.wxml-->
-<view class="counter">
-    <iconfont type="minus-circle" extended-class="minus"></iconfont>
-    <input type="number" class="number" />
-    <iconfont type="plus-circle" extended-class="plus"></iconfont>
-</view>

@@ -1,8 +1,0 @@
-<view
-  class="tag {{type? 'tag-'+type: ''}} custom-class"
-  hover-class="{{hasHover?'tag-hover':''}}"
-  bind:tap="onClick"
->
-  <van-icon wx:if="{{icon}}" name="{{icon}}" custom-class="icon" />
-  <slot />
-</view>

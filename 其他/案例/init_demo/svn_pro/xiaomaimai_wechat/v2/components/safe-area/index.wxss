@@ -1,5 +1,0 @@
-.safe-area{
-  position: relative;
-  width: 100vw;
-  box-sizing: border-box;
-}

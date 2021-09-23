@@ -1,3 +1,0 @@
-<view class="one-grid one-grid-row-{{columnNum}} custom-class" style="{{ style }}">
-  <slot />
-</view>

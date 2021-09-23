@@ -1,9 +1,0 @@
-{
-  "component": true,
-  "navigationBarTitleText": "我的",
-  "usingComponents": {
-    "setting-avator-panel": "../../biz-components/setting-avator-panel/index",
-    "iconfont": "../../../components/iconfont/index"
-  }
-}
-

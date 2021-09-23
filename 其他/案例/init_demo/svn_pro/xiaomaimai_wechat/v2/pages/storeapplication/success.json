@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "提交成功",
-  "usingComponents": {
-    "text-with-icon": "../../../components/text-with-icon/index"
-  }
-}

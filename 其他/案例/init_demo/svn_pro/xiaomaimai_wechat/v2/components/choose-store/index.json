@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "one-avatar": "../one-avatar/index",
-    "one-grid": "../one-grid/index",
-    "one-grid-item": "../one-grid-item/index"
-  }
-}

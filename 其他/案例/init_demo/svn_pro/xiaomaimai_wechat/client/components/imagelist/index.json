@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "van-row": "../../../vendor/vant-webapp/row/index",
-    "van-col": "../../../vendor/vant-webapp/col/index",
-    "iconfont": "../../../components/iconfont/index"
-  }
-}

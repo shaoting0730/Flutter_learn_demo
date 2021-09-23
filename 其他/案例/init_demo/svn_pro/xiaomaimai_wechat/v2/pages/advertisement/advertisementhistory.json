@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "投放广告记录",
-  "usingComponents": {
-    "moment": "../../../components/moment/index",
-    "empty-placeholder": "../../biz-components/empty-placeholder/index"
-  }
-}

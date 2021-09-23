@@ -1,5 +1,0 @@
-<!--window-panel 组件-->
-<view class="window-footer">
-    <view class="left">{{left}}</view>
-    <view class="right right-class ">{{right}}</view>
-</view>

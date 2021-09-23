@@ -1,3 +1,0 @@
-<view class="van-goods-action custom-class">
-  <slot />
-</view>

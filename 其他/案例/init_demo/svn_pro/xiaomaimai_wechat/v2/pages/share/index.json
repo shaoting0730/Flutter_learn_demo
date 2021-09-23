@@ -1,9 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "blank-row": "../../components/blank-row/index",
-    "card-panel": "../../components/card-panel/index",
-    "window-title-normal": "../../components/card-panel/index",
-    "card-panel-title": "../../components/card-panel/index"
-  }
-}

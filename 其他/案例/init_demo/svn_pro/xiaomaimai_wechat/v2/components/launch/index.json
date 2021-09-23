@@ -1,9 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "author-panel": "../author-panel/index",
-    "choose-store": "../choose-store/index",
-    "window-title": "../window-title/index",
-    "safe-area": "../safe-area/index"
-  }
-}

@@ -1,6 +1,0 @@
-<cover-view class="cover-progress-bar custom-class">
-  <cover-view class="cover-progress-portion" style="width: {{ percentage }}%;">
-    <cover-view class="cover-progress-pivot">
-    </cover-view>
-  </cover-view>
-</cover-view>

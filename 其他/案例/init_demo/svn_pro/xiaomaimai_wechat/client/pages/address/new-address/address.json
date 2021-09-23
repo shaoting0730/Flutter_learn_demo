@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "联系地址",
-    "usingComponents": {
-        "van-row": "../../../vendor/vant-webapp/row/index",
-        "van-col": "../../../vendor/vant-webapp/col/index"
-    }
-}
