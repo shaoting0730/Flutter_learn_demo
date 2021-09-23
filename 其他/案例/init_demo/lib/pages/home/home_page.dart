@@ -78,6 +78,17 @@ class HomePage extends GetView<HomeController> {
           ),
           MyBtn(
             onclick: () {
+              Get.changeTheme(
+                Get.isDarkMode ? ThemeData.light() : ThemeData.dark(),
+              );
+            },
+            color: Colors.redAccent,
+            width: 50,
+            height: 50,
+            widget: const Text('改主题'),
+          ),
+          MyBtn(
+            onclick: () {
               eventBus.fire(
                 NotificationTag('3'),
               );
