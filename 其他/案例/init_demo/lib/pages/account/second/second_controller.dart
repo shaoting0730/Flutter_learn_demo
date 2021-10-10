@@ -11,6 +11,7 @@ class SecondController extends GetxController {
   @override
   Future<void> onInit() async {
     super.onInit();
+    print('我的二级页面加载');
     isLoading.toggle();
     DioUtil().get(servicePath['girlData']).then((value) {
       List list = value['data'];

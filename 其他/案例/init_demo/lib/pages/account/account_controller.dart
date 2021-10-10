@@ -8,4 +8,11 @@ class AccountController extends GetxController {
   void increaseCounter() {
     counter.value += 1;
   }
+
+  @override
+  void onInit() {
+    super.onInit();
+    // ignore: avoid_print
+    print('我的加载了');
+  }
 }
