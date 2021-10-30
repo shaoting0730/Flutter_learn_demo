@@ -5,14 +5,14 @@ import 'package:init_demo/pages/account/second/second_controller.dart';
 
 class SecondPage extends GetView<SecondController> {
   SecondController get sc => Get.put(SecondController());
-  final String name;
-  final int age;
-  final Function callBack;
+  final String? name;
+  final int? age;
+  final Function? callBack;
   const SecondPage({
     Key? key,
-    required this.name,
-    required this.age,
-    required this.callBack,
+    this.name,
+    this.age,
+    this.callBack,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class SecondPage extends GetView<SecondController> {
       appBar: AppBar(
         leading: InkWell(
           onTap: () {
-            callBack("回调的值");
+            callBack!("回调的值");
             Get.back();
           },
           child: const Icon(Icons.arrow_back_ios_new),
@@ -28,7 +28,7 @@ class SecondPage extends GetView<SecondController> {
         title: Row(
           children: [
             Text(
-              '参数--' + name + age.toString(),
+              '参数--',
             ),
             Obx(
               () => Text("结果 ${Get.put(SecondController()).counter}"),
