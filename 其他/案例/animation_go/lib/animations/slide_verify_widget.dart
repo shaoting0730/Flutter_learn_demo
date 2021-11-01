@@ -131,7 +131,7 @@ class SlideVerifyState extends State<SlideVerifyWidget>
             ),
             Center(
               child: Text(
-                verifySuccess ? "验证成功" : "请按住滑块，拖动到最右边",
+                verifySuccess ? "验证成功" : "               请按住滑块，拖动到最右边",
                 style: TextStyle(
                     color: verifySuccess ? Colors.white : Colors.black54,
                     fontSize: 14),
