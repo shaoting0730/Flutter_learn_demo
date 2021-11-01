@@ -1,3 +1,4 @@
+import 'package:animation_go/animations/count_down_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_go/animations/slide_verify_widget.dart';
 
@@ -20,18 +21,18 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 1, vsync: this);
+    _controller = TabController(length: 2, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('topBar'),
         bottom: TabBar(
           controller: _controller,
           tabs: [
             Tab(text: '滑动解锁'),
+            Tab(text: 'AnimatedSwitcher'),
           ],
         ),
       ),
@@ -45,6 +46,7 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
               ),
             ],
           ),
+          CountDownWidget(),
         ],
       ),
     );
