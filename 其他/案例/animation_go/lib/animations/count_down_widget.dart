@@ -16,14 +16,16 @@ class _CountDownWidgetState extends State<CountDownWidget> {
   _countDownAction() {
     // ... 获取验证码
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {
-        if (_count > 0) {
+      if (_count > 0) {
+        setState(() {
           _count--;
-        } else {
+        });
+      } else {
+        setState(() {
           _count = 30;
-          _timer.cancel();
-        }
-      });
+        });
+        _timer.cancel();
+      }
     });
   }
 
