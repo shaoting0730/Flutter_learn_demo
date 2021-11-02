@@ -1,4 +1,6 @@
 import 'package:animation_go/animations/count_down_widget.dart';
+import 'package:animation_go/animations/cu_lottie_widget.dart';
+import 'package:animation_go/animations/cu_svgaplayer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_go/animations/slide_verify_widget.dart';
 
@@ -21,7 +23,7 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 2, vsync: this);
+    _controller = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -33,6 +35,8 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
           tabs: [
             Tab(text: '滑动解锁'),
             Tab(text: 'AnimatedSwitcher'),
+            Tab(text: 'Lottie动画'),
+            Tab(text: 'SVGAPlayer动画'),
           ],
         ),
       ),
@@ -47,6 +51,8 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
             ],
           ),
           CountDownWidget(),
+          CuLottieWidget(),
+          CuSVGAPlayerWidget(),
         ],
       ),
     );
