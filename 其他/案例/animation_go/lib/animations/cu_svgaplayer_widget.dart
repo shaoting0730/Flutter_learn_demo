@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:svgaplayer_flutter/svgaplayer_flutter.dart';
 
 class CuSVGAPlayerWidget extends StatefulWidget {
-  const CuSVGAPlayerWidget({Key? key}) : super(key: key);
-
   @override
   _CuSVGAPlayerWidgetState createState() => _CuSVGAPlayerWidgetState();
 }
@@ -26,7 +24,8 @@ class _CuSVGAPlayerWidgetState extends State<CuSVGAPlayerWidget>
   }
 
   void loadAnimation() async {
-    final videoItem = await SVGAParser.shared.decodeFromAssets('./');
+    final videoItem = await SVGAParser.shared.decodeFromURL(
+        "https://cdn.jsdelivr.net/gh/svga/SVGA-Samples@master/EmptyState.svga");
     this.animationController.videoItem = videoItem;
     this
         .animationController
