@@ -82,9 +82,10 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ Flutter新锐专家之路：混合开发篇 ]( https://www.jianshu.com/p/d9b1290e9e28 )<br/>
 
 
-
 ## 热更新方案
  > [ flutter/issues上关于热更新方案的讨论 ](  https://github.com/flutter/flutter/issues/14330 )<br/>
+ > [ 混栈开发之Android端Flutter热更新 ](  https://github.com/magicbaby810/HotfixFlutter )<br/>
+ > [ chimera_flutter_code_push ](  https://github.com/Waytoon/chimera_flutter_code_push )<br/>
 
 
 ## 杂类
