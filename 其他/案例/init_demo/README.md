@@ -1,8 +1,6 @@
 # init_demo
 
-> [ https://ashamp.github.io/jsonToDartModel/ 支持空安全 ]( https://ashamp.github.io/jsonToDartModel/ )   <br/>
-
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/init_demo/result.gif) <br/>
+A new Flutter project.
 
 ## Getting Started
 
