@@ -30,6 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   lottie: 1.2.1
   svgaplayer_flutter: 2.1.2
+  mqtt_client: 9.6.2  # mqtt
+
 
 dev_dependencies:
   flutter_test:

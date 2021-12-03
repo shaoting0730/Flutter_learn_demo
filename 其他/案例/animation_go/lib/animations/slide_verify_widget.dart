@@ -15,13 +15,7 @@ class SlideVerifyWidget extends StatefulWidget {
 
   final VoidCallback verifySuccessListener;
 
-  const SlideVerifyWidget(
-      {this.backgroundColor = Colors.blueGrey,
-      this.slideColor = Colors.green,
-      this.borderColor = Colors.grey,
-      this.height = 44,
-      this.width = 240,
-      required this.verifySuccessListener});
+  const SlideVerifyWidget({this.backgroundColor = Colors.blueGrey, this.slideColor = Colors.green, this.borderColor = Colors.grey, this.height = 44, this.width = 240, required this.verifySuccessListener});
 
   @override
   State<StatefulWidget> createState() {
@@ -29,8 +23,7 @@ class SlideVerifyWidget extends StatefulWidget {
   }
 }
 
-class SlideVerifyState extends State<SlideVerifyWidget>
-    with TickerProviderStateMixin {
+class SlideVerifyState extends State<SlideVerifyWidget> with TickerProviderStateMixin {
   late double height;
   late double width;
 
@@ -119,31 +112,25 @@ class SlideVerifyState extends State<SlideVerifyWidget>
 
                 /// 当slider滑动到距左边只有两三像素距离时，已滑动背景会有一点点渲染出边框范围，
                 /// 因此当滑动距离小于1时，直接将宽度设置为0，解决滑动块返回左边时导致的绿色闪动，但如果是缓慢滑动到左边该问题仍没解决
-                width:
-                    sliderDistance < 1 ? 0 : sliderDistance + sliderWidth / 2,
+                width: sliderDistance < 1 ? 0 : sliderDistance + sliderWidth / 2,
                 decoration: BoxDecoration(
                     color: widget.slideColor,
 
                     /// 圆角实现
-                    borderRadius:
-                        BorderRadius.all(new Radius.circular(height / 2))),
+                    borderRadius: BorderRadius.all(new Radius.circular(height / 2))),
               ),
             ),
             Center(
               child: Text(
                 verifySuccess ? "验证成功" : "               请按住滑块，拖动到最右边",
-                style: TextStyle(
-                    color: verifySuccess ? Colors.white : Colors.black54,
-                    fontSize: 14),
+                style: TextStyle(color: verifySuccess ? Colors.white : Colors.black54, fontSize: 14),
               ),
             ),
             Positioned(
               top: 0,
 
               /// 此处将sliderDistance距离往左偏2是解决当滑动块滑动到最右边时遮挡外部边框
-              left: sliderDistance > sliderWidth
-                  ? sliderDistance - 2
-                  : sliderDistance,
+              left: sliderDistance > sliderWidth ? sliderDistance - 2 : sliderDistance,
               child: Container(
                 width: sliderWidth,
                 height: height - 2,
@@ -153,8 +140,7 @@ class SlideVerifyState extends State<SlideVerifyWidget>
                     border: Border.all(color: widget.borderColor),
 
                     /// 圆角实现
-                    borderRadius:
-                        BorderRadius.all(new Radius.circular(height))),
+                    borderRadius: BorderRadius.all(new Radius.circular(height))),
                 child: Icon(
                   Icons.garage_rounded,
                   size: 24,
@@ -169,10 +155,8 @@ class SlideVerifyState extends State<SlideVerifyWidget>
 
   /// 回弹动画
   void _initAnimation() {
-    _animationController = AnimationController(
-        duration: const Duration(milliseconds: 300), vsync: this);
-    _curve =
-        CurvedAnimation(parent: _animationController, curve: Curves.easeOut);
+    _animationController = AnimationController(duration: const Duration(milliseconds: 300), vsync: this);
+    _curve = CurvedAnimation(parent: _animationController, curve: Curves.easeOut);
     _curve.addListener(() {
       setState(() {
         sliderDistance = sliderDistance - sliderDistance * _curve.value;

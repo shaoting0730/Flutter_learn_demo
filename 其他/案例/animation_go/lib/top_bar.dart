@@ -4,6 +4,9 @@ import 'package:animation_go/animations/cu_svgaplayer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_go/animations/slide_verify_widget.dart';
 
+import 'animations/mqtt_widget.dart';
+import 'animations/power_steering_widget.dart';
+
 class Topbar extends StatefulWidget {
   const Topbar({Key? key}) : super(key: key);
 
@@ -23,7 +26,7 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 4, vsync: this);
+    _controller = TabController(length: 6, vsync: this);
   }
 
   @override
@@ -32,11 +35,14 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
       appBar: AppBar(
         bottom: TabBar(
           controller: _controller,
+          isScrollable: true,
           tabs: [
             Tab(text: '滑动解锁'),
             Tab(text: 'AnimatedSwitcher'),
             Tab(text: 'Lottie动画'),
             Tab(text: 'SVGAPlayer动画'),
+            Tab(text: 'MQTT通讯'),
+            Tab(text: '手柄控制'),
           ],
         ),
       ),
@@ -53,6 +59,8 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
           CountDownWidget(),
           CuLottieWidget(),
           CuSVGAPlayerWidget(),
+          MqttDemo(),
+          PowerSteeringDemo(),
         ],
       ),
     );
