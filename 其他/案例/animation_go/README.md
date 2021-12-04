@@ -21,6 +21,5 @@ A new Flutter project.
 
 > [ AnimatedSwitcher示例 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_go/lib/animations/count_down_widget.dart )   <br/>
 
-## 滑动解锁
 > [ mqtt示例 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_go/lib/mqtt) <br/>
 
