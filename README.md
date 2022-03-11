@@ -179,4 +179,4 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例24 PreferredSize 实现自定义tabbar](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/PreferredSize_demo) <br/>
 > [ 案例25 Listview 第一次加载时动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/listview_item_demo )  <br/>
 > [ 案例26 Lottie动画 SVGAPlayer动画 手柄控制 滑动解锁 AnimatedSwitcher示例 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_go )  <br/>
-
+> [ 案例27 跳转三方库导航 ](  )  <br/>
