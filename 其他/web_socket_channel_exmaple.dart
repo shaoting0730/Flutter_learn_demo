@@ -16,7 +16,6 @@ class SocketMessage {
 
   // 监听socket服务器的状态，并对 成功、异常、断开 进行处理
   void sendMessage() {
-    print('重连');
     channel.stream.listen(onData, onError: onError, onDone: onDone);
   }
 
