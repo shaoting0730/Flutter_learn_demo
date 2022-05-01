@@ -5,12 +5,12 @@ A new Flutter project.
 ## Getting Started
 
 # 自绘键盘1
-<div id='mark1'></div>
+<span id='mark1'></span>
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/result.gif) <br/>
 
 
 # 自绘键盘2
-<div id='mark2'></div>
+<span id='mark2'></span>
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/result.gif) <br/>
 
 
