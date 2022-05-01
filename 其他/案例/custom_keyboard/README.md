@@ -10,7 +10,7 @@ A new Flutter project.
 
 
 # 自绘键盘2
-<span id="mark1"></span>
+<span id="mark2"></span>
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/result.gif) <br/>
 
 
