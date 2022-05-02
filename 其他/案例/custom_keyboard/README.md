@@ -8,7 +8,7 @@ A new Flutter project.
 <img  src="https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/result.gif" height="500px">
 
 ##  <span id="mark2">自绘键盘2</span>
-<img  src="https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/result.gif" height="500px">
+<img  src="https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/result1.gif" height="500px">
 
 
 A few resources to get you started if this is your first Flutter project:
