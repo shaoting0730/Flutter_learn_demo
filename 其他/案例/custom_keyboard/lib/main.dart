@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'keyboard/view_keyboard.dart';
+import 'keyboard1/first_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,11 +34,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('自定义键盘'),
       ),
-      body: Center(
-          child: InkWell(
-        onTap: () => _showKeyboard(),
-        child: const Text("支付"),
-      )),
+      body: Column(
+        children: [
+          InkWell(
+            onTap: () => _showKeyboard(),
+            child: const Text("支付"),
+          ),
+          InkWell(
+            onTap: () => _showKeyboard1(),
+            child: const Text("自定义键盘1"),
+          ),
+        ],
+      ),
     );
   }
 
@@ -58,6 +66,21 @@ class _MyHomePageState extends State<MyHomePage> {
           },
           onResult: (data) {
             print(data);
+          },
+        );
+      },
+    );
+  }
+
+  _showKeyboard1() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (builder) {
+        return FirstlyWidget(
+          onResult: (e) {
+            print(e);
           },
         );
       },
