@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:init_demo1/widgets/empty_data.dart';
+import 'package:init_demo1/widgets/loading.dart';
+import 'package:init_demo1/widgets/no_network.dart';
 import 'two_page_controller.dart';
 
 class TwoPage extends GetView<TwoPageController> {
@@ -17,9 +20,9 @@ class TwoPage extends GetView<TwoPageController> {
       body: Container(
         child: controller.obx(
           (state) => ListView(),
-          onError: (error) => const Text('错误了'),
-          onEmpty: const Text('空数据'),
-          onLoading: const Text('loading'),
+          onError: (error) => const NoNetworkWidget(),
+          onEmpty: const EmptyDataWidget(),
+          onLoading: const LoadingWidget(),
         ),
       ),
     );

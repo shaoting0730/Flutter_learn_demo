@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:init_demo1/widgets/empty_data.dart';
+import 'package:init_demo1/widgets/loading.dart';
+import 'package:init_demo1/widgets/no_network.dart';
 import 'one_page_controller.dart';
 
 class OnePage extends GetView<OnePageController> {
@@ -17,13 +20,9 @@ class OnePage extends GetView<OnePageController> {
       body: Container(
         child: controller.obx(
           (state) => ListView(),
-          onError: (error) => const Text('错误了'),
-          onEmpty: const Text('空数据'),
-          onLoading: Container(
-            child: Center(
-              child: Text('网络正在加载中'),
-            ),
-          ),
+          onError: (error) => const NoNetworkWidget(),
+          onEmpty: const EmptyDataWidget(),
+          onLoading: const LoadingWidget(),
         ),
       ),
     );

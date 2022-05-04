@@ -6,11 +6,10 @@ class SplashPageController extends GetxController {
 
   @override
   void onReady() {
-    // code....
+    super.onReady();
 
-    Get.offAll(
+    Get.off(
       () => const DashboardWidget(),
     );
-    super.onReady();
   }
 }
