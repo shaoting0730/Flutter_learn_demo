@@ -5,8 +5,18 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('正在加载'),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            'images/widgets/loading.gif',
+            fit: BoxFit.contain,
+            width: 200,
+          ),
+          const Text('正在加载中'),
+        ],
+      ),
     );
   }
 }

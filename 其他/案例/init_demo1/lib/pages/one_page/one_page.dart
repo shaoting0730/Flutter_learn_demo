@@ -14,13 +14,20 @@ class OnePage extends GetView<OnePageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('demo演示'),
+        title: const Text('demo演示2'),
         centerTitle: true,
       ),
       body: Container(
         child: controller.obx(
-          (state) => ListView(),
-          onError: (error) => const NoNetworkWidget(),
+          (state) => ListView.builder(
+            itemCount: 2,
+            itemBuilder: (BuildContext context, int index) {
+              return Text('2ww');
+            },
+          ),
+          onError: (error) => NoNetworkWidget(
+            error: error!,
+          ),
           onEmpty: const EmptyDataWidget(),
           onLoading: const LoadingWidget(),
         ),

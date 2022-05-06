@@ -6,7 +6,7 @@ class EmptyDataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('空数据'),
+      child: Text('什么鸡毛都没有请求下来。。。'),
     );
   }
 }

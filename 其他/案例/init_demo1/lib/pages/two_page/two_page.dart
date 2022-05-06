@@ -20,7 +20,9 @@ class TwoPage extends GetView<TwoPageController> {
       body: Container(
         child: controller.obx(
           (state) => ListView(),
-          onError: (error) => const NoNetworkWidget(),
+          onError: (error) => NoNetworkWidget(
+            error: error!,
+          ),
           onEmpty: const EmptyDataWidget(),
           onLoading: const LoadingWidget(),
         ),
