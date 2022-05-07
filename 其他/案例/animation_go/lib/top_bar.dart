@@ -1,6 +1,7 @@
 import 'package:animation_go/animations/count_down_widget.dart';
 import 'package:animation_go/animations/cu_lottie_widget.dart';
 import 'package:animation_go/animations/cu_svgaplayer_widget.dart';
+import 'package:animation_go/animations/hero_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_go/animations/slide_verify_widget.dart';
 
@@ -26,7 +27,7 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 6, vsync: this);
+    _controller = TabController(length: 7, vsync: this);
   }
 
   @override
@@ -43,6 +44,7 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
             Tab(text: 'SVGAPlayer动画'),
             Tab(text: 'MQTT通讯'),
             Tab(text: '手柄控制'),
+            Tab(text: 'hero动画'),
           ],
         ),
       ),
@@ -61,6 +63,7 @@ class _TopbarState extends State<Topbar> with SingleTickerProviderStateMixin {
           CuSVGAPlayerWidget(),
           MqttDemo(),
           PowerSteeringDemo(),
+          HeroWidget(),
         ],
       ),
     );
