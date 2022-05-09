@@ -20,9 +20,9 @@ class OnePage extends GetView<OnePageController> {
       body: Container(
         child: controller.obx(
           (state) => ListView.builder(
-            itemCount: 2,
+            itemCount: sc.state!.length,
             itemBuilder: (BuildContext context, int index) {
-              return Text('2ww');
+              return Text(sc.state![2]!.title!);
             },
           ),
           onError: (error) => NoNetworkWidget(

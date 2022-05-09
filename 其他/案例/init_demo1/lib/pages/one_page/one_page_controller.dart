@@ -1,9 +1,8 @@
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/status/http_status.dart';
 import '../../service/CityProvider.dart';
 import 'one_data_model.dart';
 
-class OnePageController extends GetxController with StateMixin<List<OneDataModel>> {
+class OnePageController extends GetxController with StateMixin<List<OneDataModelData?>> {
   late final oneProvider = OneProvider();
 
   @override
@@ -12,7 +11,8 @@ class OnePageController extends GetxController with StateMixin<List<OneDataModel
     oneProvider.getCity().then((value) {
       print('有数据');
       if (value.statusCode == 200) {
-        change(value.body, status: RxStatus.success());
+        List<OneDataModelData?>? list = value.body!.data;
+        change(list, status: RxStatus.success());
         return;
       } else {
         change([], status: RxStatus.empty());
