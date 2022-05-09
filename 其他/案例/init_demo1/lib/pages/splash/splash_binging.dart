@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../../service/CityProvider.dart';
+import '../../service/ServiceProvider.dart';
 import '../dashboard/dashboard_controller.dart';
 import '../one_page/one_page_controller.dart';
 import '../two_page/two_page_controller.dart';

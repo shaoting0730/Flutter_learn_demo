@@ -4,11 +4,12 @@
 class OneDataModelData {
 /*
 {
-  "picUrl": "http://www.todayonhistory.com/uploadfile/2017/0511/20170511090235762.jpg",
-  "title": "原国务委员、国务院原副总理钱其琛病逝 享年90岁",
+  "picUrl": "ZZZZZZZ",
+  "title": "YYYYYYYYYY",
   "year": "2017",
   "month": 5,
-  "day": 9
+  "day": 9,
+  "details": "XXXXXXXX"
 }
 */
 
@@ -17,6 +18,7 @@ class OneDataModelData {
   String? year;
   int? month;
   int? day;
+  String? details;
 
   OneDataModelData({
     this.picUrl,
@@ -24,6 +26,7 @@ class OneDataModelData {
     this.year,
     this.month,
     this.day,
+    this.details,
   });
   OneDataModelData.fromJson(Map<String, dynamic> json) {
     picUrl = json['picUrl']?.toString();
@@ -31,6 +34,7 @@ class OneDataModelData {
     year = json['year']?.toString();
     month = json['month']?.toInt();
     day = json['day']?.toInt();
+    details = json['details']?.toString();
   }
   Map<String, dynamic> toJson() {
     final data = <String, dynamic>{};
@@ -39,6 +43,7 @@ class OneDataModelData {
     data['year'] = year;
     data['month'] = month;
     data['day'] = day;
+    data['details'] = details;
     return data;
   }
 }
@@ -50,11 +55,12 @@ class OneDataModel {
   "msg": "数据返回成功！",
   "data": [
     {
-      "picUrl": "http://www.todayonhistory.com/uploadfile/2017/0511/20170511090235762.jpg",
-      "title": "原国务委员、国务院原副总理钱其琛病逝 享年90岁",
+      "picUrl": "ZZZZZZZ",
+      "title": "YYYYYYYYYY",
       "year": "2017",
       "month": 5,
-      "day": 9
+      "day": 9,
+      "details": "XXXXXXXX"
     }
   ]
 }
