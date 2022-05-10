@@ -1,10 +1,16 @@
 import 'package:get/get.dart';
 
 import '../../service/ServiceProvider.dart';
+import '../../utils/main_store.dart';
 import '../one_page/one_data_model.dart';
 
-class TwoPageController extends GetxController with StateMixin<List<OneDataModelData?>> {
+class TwoPageController extends GetxController with StateMixin<List<OneDataModelResult?>> {
   late final serviceProvider = ServiceProvider();
+  MainStoreController get main => Get.put(MainStoreController());
+
+  addCountAction() {
+    main.count.value++;
+  }
 
   @override
   void onInit() {

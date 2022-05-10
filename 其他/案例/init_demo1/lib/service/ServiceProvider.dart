@@ -11,7 +11,7 @@ class ServiceProvider extends GetConnect {
     });
   }
 
-  Future<Response<OneDataModel>> getOneData() => get<OneDataModel>('https://www.mxnzp.com/api/history/today?type=1&app_id=iaurmulvtgtwreko&app_secret=clhxYnVpaUxuMUNOR3k3SzN6TmRNUT09', decoder: (obj) => OneDataModel.fromJson(obj));
+  Future<Response<OneDataModel>> getOneData() => get<OneDataModel>('https://nova.bitcambio.com.br/api/v3/public/getassets', decoder: (obj) => OneDataModel.fromJson(obj));
 
   Future<Response<OneDataModel>> postCity(body) => post<OneDataModel>('https://www.xxxx.com', body, decoder: (obj) => OneDataModel.fromJson(obj));
 }
