@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:init_demo1/pages/two_page/two_details_page/two_details_page.dart';
 
 import '../../service/ServiceProvider.dart';
 import '../../utils/main_store.dart';
@@ -10,6 +11,13 @@ class TwoPageController extends GetxController with StateMixin<List<OneDataModel
 
   addCountAction() {
     main.count.value++;
+  }
+
+  pushTwoDetails(int e) {
+    Get.toNamed(
+      "/dashboard/two/details",
+      arguments: {'id': 666, 'name': 'O(∩_∩)O哈哈~'},
+    );
   }
 
   @override

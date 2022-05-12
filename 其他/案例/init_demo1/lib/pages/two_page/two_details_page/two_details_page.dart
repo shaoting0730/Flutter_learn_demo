@@ -5,8 +5,8 @@ import 'package:init_demo1/widgets/empty_data.dart';
 import 'package:init_demo1/widgets/loading.dart';
 import 'package:init_demo1/widgets/no_network.dart';
 
-class TwoPage extends GetView<TwoDetailsPageController> {
-  const TwoPage({Key? key}) : super(key: key);
+class TwoDetailsPage extends GetView<TwoDetailsPageController> {
+  const TwoDetailsPage({Key? key}) : super(key: key);
   TwoDetailsPageController get sc => Get.put(TwoDetailsPageController());
 
   @override

@@ -1,10 +1,10 @@
 class AppRoutes {
-  static const String SPLASH = '/splash';
+  static const String SPLASH = '/';
 
   static const String DASHBOARD = '/dashboard';
 
-  static const String HOME = '/home';
+  static const String ONE = '/one';
 
-  static const String ACCOUNT = '/mine';
-  static const String SECOND = '/mine/second';
+  static const String TWO = '/two';
+  static const String TWODETAILS = '/details';
 }

@@ -47,6 +47,17 @@ class TwoPage extends GetView<TwoPageController> {
             ),
           ),
         ),
+        InkWell(
+          onTap: () => sc.pushTwoDetails(1),
+          child: Container(
+            width: 50,
+            height: 200,
+            color: Colors.cyan,
+            child: const Center(
+              child: Text('去详情'),
+            ),
+          ),
+        )
       ],
     );
   }
