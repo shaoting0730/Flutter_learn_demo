@@ -184,5 +184,6 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例26 Lottie动画 SVGAPlayer动画 手柄控制 滑动解锁 AnimatedSwitcher示例 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_go )  <br/>
 > [ 案例27 跳转三方库导航 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E8%B7%B3%E8%BD%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%BC%80%E5%A7%8B%E5%AF%BC%E8%88%AA.md )  <br/> 
 > [ 案例28 游戏手柄 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/game_contro) <br/>
-> [ 案例29 自绘键盘 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/#mark1) <br/>
+> [ 案例29 自绘键盘1 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/#mark1) <br/>
+> [ 案例29 自绘键盘2 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/#mark2) <br/>
 
