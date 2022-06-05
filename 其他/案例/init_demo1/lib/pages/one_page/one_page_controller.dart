@@ -1,7 +1,8 @@
-import 'package:get/get.dart';
+import 'package:init_demo1/utils/log_utils.dart';
+
 import '../../service/ServiceProvider.dart';
-import '../../utils/main_store.dart';
 import 'one_data_model.dart';
+import '../../utils/export_library.dart';
 
 class OnePageController extends GetxController with StateMixin<List<OneDataModelResult?>> {
   late final serviceProvider = ServiceProvider();
@@ -15,7 +16,7 @@ class OnePageController extends GetxController with StateMixin<List<OneDataModel
   void onInit() {
     super.onInit();
     serviceProvider.getOneData().then((value) {
-      print('有数据');
+      Log().logger.w('有数据');
       if (value.statusCode == 200 && value.body!.result != null) {
         List<OneDataModelResult?>? list = value.body!.result;
         change(list, status: RxStatus.success());

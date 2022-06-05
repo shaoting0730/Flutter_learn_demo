@@ -15,7 +15,20 @@ class TwoDetailsPage extends GetView<TwoDetailsPageController> {
       appBar: _appBarWidget(),
       body: Container(
         child: controller.obx(
-          (state) => ListView(),
+          (state) => ListView(
+            children: [
+              Text(sc.t_id.toString()),
+              Text(sc.t_name),
+              TextButton(
+                onPressed: sc.storeValue,
+                child: const Text('存值'),
+              ),
+              TextButton(
+                onPressed: sc.getValue,
+                child: const Text('取值'),
+              ),
+            ],
+          ),
           onError: (error) => NoNetworkWidget(
             error: error!,
           ),
