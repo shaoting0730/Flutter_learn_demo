@@ -1,5 +1,5 @@
-Future代表一次异步
-Steam代表多次异步
+Future代表一次异步 <br/>
+Steam代表多次异步   <br/>
 
 ```
   test() async {
@@ -36,13 +36,13 @@ Steam代表多次异步
   }
 
 ```
-大致可以得出：
- // Future  forEach (Iterable  elements, FutureOr  Function(T) action)
-Future.forEach后面可以跟普通list，Future的list,Stream的list，只需要后面可以遍历的即可。
- // Type: Future<List<Null>> Function(Iterable<Future<Null>>, {void Function(Null)? cleanUp, bool eagerError})
-Future.wait后只能跟Future的List。
-//  
- await for 只能跟Steam
+大致可以得出： <br/>
+ // Future  forEach (Iterable  elements, FutureOr  Function(T) action) <br/>
+Future.forEach后面可以跟普通list，Future的list,Stream的list，只需要后面可以遍历的即可。 <br/>
+ // Type: Future<List<Null>> Function(Iterable<Future<Null>>, {void Function(Null)? cleanUp, bool eagerError}) <br/>
+Future.wait后只能跟Future的List。 <br/>
+ //   <br/>
+ await for 只能跟Steam <br/>
 
 
 
