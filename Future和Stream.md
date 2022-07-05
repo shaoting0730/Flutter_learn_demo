@@ -1,6 +1,8 @@
 Future代表一次异步 <br/>
 Steam代表多次异步   <br/>
 
+Future.forEach 和  Future.wait 和   await for  <br/>
+
 ```
   test() async {
     Stream streamm = Stream.periodic(const Duration(microseconds: 3));
