@@ -20,7 +20,7 @@ active ：正在交互中，可以理解为正在返回数据中  <br/>
 done ：交互已经完成，可以理解为数据返回完成，此时如果是正确的返回则data就有数据了，如果是错误的error有错误信息返回  <br/>
 
 
-### FutureBuilder
+### FutureBuilder  和  StreamBuilder
 ```
        FutureBuilder(
           future: loadData(), // 读取网络数据，异步函数，返回一个future
