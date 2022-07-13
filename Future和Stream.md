@@ -56,7 +56,7 @@ done ：交互已经完成，可以理解为数据返回完成，此时如果是
         
         
         StreamBuilder(
-          stream: loadData(), // 传入一个Stream
+          stream: counter(), // 传入一个Stream
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             // 观察 connectionState 的状态
             switch (snapshot.connectionState) {
