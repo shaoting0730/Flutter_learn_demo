@@ -67,10 +67,10 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 >   [ Android双击物理键退出app 主体Theme学习 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/functional_module/lib/main.dart )    <br/>
 > [ 模糊效果:filter_widget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/filter_widget )<br/>
 > [ 轻提示 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/tool_tips )<br/>
-> [ 弹出框 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/alert_demo
- )<br/>
- > [ RxDart初识 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/RxDart%E5%88%9D%E5%A7%8B.md )<br/>
- > [ Stream RxDart学习 ](  https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/stream_demo )<br/>
+> [ 弹出框 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/alert_demo )<br/>
+> [ 保持状态 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/keep_alive_demo )<br/>
+> [ RxDart初识 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/RxDart%E5%88%9D%E5%A7%8B.md )<br/>
+> [ Stream RxDart学习 ](  https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/stream_demo )<br/>
 
 ## 混合开发
  > [ iOS原生中集成Flutter模块 ]( https://zhoushaoting.com/2019/05/29/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~iOS%E5%8E%9F%E7%94%9F%E5%B7%A5%E7%A8%8B%E4%B8%AD%E6%B7%BB%E5%8A%A0Flutter%E6%A8%A1%E5%9D%97/ )<br/>
