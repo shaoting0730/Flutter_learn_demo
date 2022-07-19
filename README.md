@@ -69,6 +69,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 轻提示 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/tool_tips )<br/>
 > [ 弹出框 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/alert_demo )<br/>
 > [ 保持状态 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/keep_alive_demo )<br/>
+> [ LayoutBuilder && OrientationBuilder ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/layoutbuild_demo )<br/>
 > [ 通知Notification ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/notification_demo )<br/>
 > [ RxDart初识 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/RxDart%E5%88%9D%E5%A7%8B.md )<br/>
 > [ Stream RxDart学习 ](  https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/stream_demo )<br/>
