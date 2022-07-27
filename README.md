@@ -21,7 +21,6 @@
 > [ textfield ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/textfield_demo  )   <br/>
 > [ form ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/form_demo  )   <br/>
 > [ image ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/image_demo  )   <br/>
-> [ ShaderMask ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/shader_mask_demo )   <br/>
 > [ switch checkbox ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/switch_checkbox_demo )<br/>
 > [ card ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/基础Widget/gradwidget_demo )<br/>
 > [ positionwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/positionwidget )<br/>
@@ -69,6 +68,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 模糊效果:filter_widget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/filter_widget )<br/>
 > [ 轻提示 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/tool_tips )<br/>
 > [ 弹出框 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/alert_demo )<br/>
+> [ ShaderMask ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/shader_mask_demo )   <br/>
 > [ 保持状态 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/keep_alive_demo )<br/>
 > [ LayoutBuilder && OrientationBuilder ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/layoutbuild_demo )<br/>
 > [ 通知Notification ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/notification_demo )<br/>
