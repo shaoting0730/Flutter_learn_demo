@@ -6,3 +6,6 @@
 直接不显示/显示其子组件，可以通过GlobalKey获取到其布局的尺寸大小，但其位置没了，不渲染.
 ### Visibility
 控制子组件是否可见，默认为显示。如果为false，代表其不可见，是真的不可见，无法使用GlobalKey获取其大小，布局和渲染都没有。
+
+
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/OOV%E4%B8%89%E7%BB%84%E4%BB%B6/OOV-result.jpg) <br/>
