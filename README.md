@@ -12,8 +12,14 @@
 > vim ~/.bash_profile
 > source ~/.bash_profile
 
+
 ## 开发过程中,使用到的棒棒哒の开发库
 > [ 列表 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E9%81%87%E5%88%B0%E7%9A%84%E5%A5%BD%E5%BA%93.md )   <br/>
+
+
+
+> [ 下载单个文件 ]( https://minhaskamal.github.io/DownGit/#/home )   <br/>
+
 
 ## 基础widget
 > [ button ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/button_demo )   <br/>
