@@ -12,13 +12,10 @@
 > vim ~/.bash_profile
 > source ~/.bash_profile
 
+> [ 下载单个文件 ]( https://minhaskamal.github.io/DownGit/#/home )   <br/>
 
 ## 开发过程中,使用到的棒棒哒の开发库
 > [ 列表 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E9%81%87%E5%88%B0%E7%9A%84%E5%A5%BD%E5%BA%93.md )   <br/>
-
-
-
-> [ 下载单个文件 ]( https://minhaskamal.github.io/DownGit/#/home )   <br/>
 
 
 ## 基础widget
