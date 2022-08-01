@@ -95,6 +95,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ 混栈开发之Android端Flutter热更新 ](  https://github.com/magicbaby810/HotfixFlutter )<br/>
  > [ chimera_flutter_code_push ](  https://github.com/ChimeraFlutter/Chimera-Flutter-Code-Push )<br/>
 
+## 性能优化
+ > [ 性能优化 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96 )<br/>
 
 ## 杂类
 > [ dart部分认知 ](  http://www.ptbird.cn/category/dart/ )<br/>
@@ -139,7 +141,6 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ setState原理分析 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/flutter-setState%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90.md )<br/>
  > [ 内存相关 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3.md )<br/>
  > [ DartVM相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/DartVM%E7%9B%B8%E5%85%B3.md )<br/>
- > [ 性能优化 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96 )<br/>
 
 
 ## state管理
