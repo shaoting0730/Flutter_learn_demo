@@ -145,8 +145,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 
 ## state管理
 > [ Flutter State Management状态管理全面分析 ]( https://www.jianshu.com/p/9334b8f68004 ) <br/> 
-> [ riverpod学习 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/riverpod_demo
-) <br/> 
+> [ riverpod学习 ]( https://zhoushaoting.com/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/ ) <br/> 
 > [ Flutter官方团队对getx这个插件的态度和看法？？？ ]( https://github.com/flutter/website/pull/4981 ) <br/> 
 > [ getx学习 ]( https://zhoushaoting.com/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/ ) <br/> 
 > [ getx学习 ]( https://segmentfault.com/a/1190000039139198 ) <br/> 
