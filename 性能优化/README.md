@@ -5,5 +5,6 @@
 3、因为根界面是常驻内存的，所以在此界面之上，因为竟可能减少一些消耗占用内存的现象，如监听。<br/>
 4、在使用了controller、动画、定时器、监听器的页面，当页面销毁时，一定会移除相应的事情，避免内存泄露，如 XXXX.cancel()。<br/>
 5、在使用CustomPainter绘制复杂UI的时候，可以在其外部包裹一个RepaintBoundary，避免同级的UI发生改变，造成CustomPainter重绘。如 [ RepaintBoundary示例 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/RepaintBoundary_demo )   <br/>
+6、[ 如何缩减接近 50% 的 Flutter 包体积 ]( https://mp.weixin.qq.com/s/Ls3cDcqjlyOX80PXUO0wRw  )    <br/>
 
 
