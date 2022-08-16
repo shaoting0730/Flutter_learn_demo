@@ -14,6 +14,11 @@
 
 > [ 下载单个文件 ]( https://minhaskamal.github.io/DownGit/#/home )   <br/>
 
+## 图书推荐
+> [ 京东：Flutter组件详解与实战 王浩然·著 ⭐️⭐️⭐️⭐️⭐️ ]( https://item.jd.com/13623408.html )   <br/>
+> [ 京东：Flutter内核源码剖析 赵裕·著 ⭐️⭐️⭐️ ]( https://item.jd.com/13048557.html )   <br/>
+
+
 ## 开发过程中,使用到的棒棒哒の开发库
 > [ 列表 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E9%81%87%E5%88%B0%E7%9A%84%E5%A5%BD%E5%BA%93.md )   <br/>
 
