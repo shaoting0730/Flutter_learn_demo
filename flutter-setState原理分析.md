@@ -1,5 +1,11 @@
 ##  flutter:setState原理分析
 
+```
+  static bool canUpdate(Widget oldWidget, Widget newWidget) {
+    return oldWidget.runtimeType == newWidget.runtimeType
+        && oldWidget.key == newWidget.key;
+  }
+```
 
 ![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/setState.png) <br/>
 # markNeedsBuild
