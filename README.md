@@ -111,6 +111,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 ## 渲染引擎
 > [ 深入理解Flutter的图形图像绘制原理——图形库skia剖析 ]( https://juejin.cn/post/6914188284126035981 )   <br/>
 > [ 深入解析Flutter下一代渲染引擎Impeller ]( https://blog.csdn.net/YZcoder/article/details/126501428 )   <br/>
+> [ Flutter 新一代图形渲染器 Impeller ]( https://mp.weixin.qq.com/s/PLvlSt3tlX6AjufDm0XVMA )   <br/>
+
 
 ## 杂类
 > [ dart部分认知 ](  http://www.ptbird.cn/category/dart/ )<br/>
