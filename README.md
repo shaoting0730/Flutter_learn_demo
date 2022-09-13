@@ -99,6 +99,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ flutter/issues上关于热更新方案的讨论 ](  https://github.com/flutter/flutter/issues/14330 )<br/>
  > [ 混栈开发之Android端Flutter热更新 ](  https://github.com/magicbaby810/HotfixFlutter )<br/>
  > [ chimera_flutter_code_push ](  https://github.com/ChimeraFlutter/Chimera-Flutter-Code-Push )<br/>
+ > [ fair ](  https://github.com/wuba/fair/blob/main/README-zh.md )<br/>
+
 
 ## 性能优化
  > [ 性能优化 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96 )<br/>
