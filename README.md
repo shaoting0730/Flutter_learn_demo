@@ -63,7 +63,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ container ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%AE%B9%E5%99%A8%E7%B1%BBWidget/container )<br/>
 
 ## 滚动widget
-> [ listview1 竖向 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo )<br/>
+> [ listview1 竖向 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo ) [ 解析 ]( https://www.jianshu.com/p/41764e5b3b58 ) <br/>
 > [ listview2 横向]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo2 )<br/>
 > [ listview3 动态数据]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/listview_demo3 )<br/>
 > [ gridview ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/gridview_demo )<br/>
@@ -71,7 +71,6 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ scroll ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scroll_widget )<br/>
 > [ scroll 滚动控制1 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo )<br/>
 > [ scroll 滚动控制2 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/scrollcontroller_demo1 )<br/>
-> [ scrollView ]( https://www.jianshu.com/p/41764e5b3b58 )<br/>
 
 ## 功能Widget
 >   [ Android双击物理键退出app 主体Theme学习 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/functional_module/lib/main.dart )    <br/>
