@@ -194,7 +194,7 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例3 图片增加](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case3) <br/>
 > [ 案例4 贝塞尔曲线 ](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case4) <br/>
 > [ 案例5 启动屏 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case5) <br/>
-> [ 案例6:左滑返回上一页 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case6/lib/right_back_demo.dart )    <br/>
+> [ 案例6 左滑返回上一页 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case6/lib/right_back_demo.dart )    <br/>
 > [ 案例7 Draggable学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case7) <br/>
 > [ 案例8 侧滑](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case8) <br/>
 > [ 案例9 Slivers全家桶学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case9) <br/>
