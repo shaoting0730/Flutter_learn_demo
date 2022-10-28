@@ -186,8 +186,9 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 
 
 ### 案例
-> [ 基本项目架子，基于flutter2.5.0 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/init_demo) <br/>
-> [ 基本项目架子，基于flutter2.10.4 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/init_demo1) <br/>
+> [ 基本项目架子，基于getx、flutter2.5.0 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/init_demo) <br/>
+> [ 基本项目架子，基于getx、flutter2.10.4 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/init_demo1) <br/>
+> [ 基本项目架子，基于riverpod、flutter3.3.4 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/riverpod_pro) <br/>
 > [ 案例1 选项卡 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case1) <br/>
 > [ 案例2 输入联想](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case2) <br/>
 > [ 案例3 图片增加](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case3) <br/>
