@@ -1,0 +1,17 @@
+{
+  "en": {
+    "title": "Localization Demo",
+    "homeTitle": "HOME",
+    "mineTitle": "MINE"
+  },
+  "zh": {
+    "title": "国际化案例",
+    "homeTitle": "首页",
+    "mineTitle": "我的"
+  },
+  "he": {
+    "title": "הדגמת לוקליזציה",
+    "homeTitle": "מְגֵרָה",
+    "mineTitle": "סגור מגירה"
+  }
+}
