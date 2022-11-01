@@ -28,5 +28,7 @@ class AppLocalizations {
 
   String? get homeTitle => _localizedStrings[locale.languageCode]!["homeTitle"];
 
+  String? get otherTitle => _localizedStrings[locale.languageCode]!["otherTitle"];
+
   String? get mineTitle => _localizedStrings[locale.languageCode]!["mineTitle"];
 }

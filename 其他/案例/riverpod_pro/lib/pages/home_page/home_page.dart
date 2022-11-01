@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
-import 'package:fruit/utils/export_library.dart';
-import 'package:fruit/pages/home_page/state/counter.dart';
-import 'package:fruit/widgets/empty_data_widget.dart';
-import 'package:fruit/widgets/error_widget.dart';
-import 'package:fruit/widgets/loading_widget.dart';
-import 'package:fruit/service/home_provider.dart';
+import 'package:riverpod_pro/utils/export_library.dart';
+import 'package:riverpod_pro/pages/home_page/state/counter.dart';
+import 'package:riverpod_pro/widgets/empty_data_widget.dart';
+import 'package:riverpod_pro/widgets/error_widget.dart';
+import 'package:riverpod_pro/widgets/loading_widget.dart';
+import 'package:riverpod_pro/service/home_provider.dart';
 
+import 'convenience_store_page.dart';
 import 'model/home_page_model.dart';
 
 class HomePage extends ConsumerWidget {
@@ -16,6 +17,15 @@ class HomePage extends ConsumerWidget {
     return getHomeData();
   });
 
+  push(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ConveniencePage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
@@ -23,6 +33,10 @@ class HomePage extends ConsumerWidget {
         title: Text(AppLocalizations.of(context).homeTitle!),
         centerTitle: true,
         actions: [
+          InkWell(
+            onTap: () => push(context),
+            child: Text('push push'),
+          ),
           _numWidget(ref),
         ],
       ),

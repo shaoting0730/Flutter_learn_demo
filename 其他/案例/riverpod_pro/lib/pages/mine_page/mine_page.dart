@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fruit/utils/export_library.dart';
-import 'package:fruit/pages/home_page/state/counter.dart';
-import 'package:fruit/pages/mine_page/state/color.dart';
+import 'package:riverpod_pro/utils/export_library.dart';
+import 'package:riverpod_pro/pages/home_page/state/counter.dart';
+import 'package:riverpod_pro/pages/mine_page/state/color.dart';
 
 class MinePage extends ConsumerWidget {
   MinePage({Key? key}) : super(key: key);
@@ -48,7 +48,7 @@ class MinePage extends ConsumerWidget {
             InkWell(
               onTap: () => onClick(),
               child: const Text('改变'),
-            )
+            ),
           ],
         ),
       ),

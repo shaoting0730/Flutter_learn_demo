@@ -1,5 +1,5 @@
-import 'package:fruit/service/service_method.dart';
-import 'package:fruit/service/service_url.dart';
+import 'package:riverpod_pro/service/service_method.dart';
+import 'package:riverpod_pro/service/service_url.dart';
 
 import '../pages/home_page/model/home_page_model.dart';
 

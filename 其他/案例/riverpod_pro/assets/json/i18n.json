@@ -2,16 +2,19 @@
   "en": {
     "title": "Localization Demo",
     "homeTitle": "HOME",
+    "otherTitle": "OTHER",
     "mineTitle": "MINE"
   },
   "zh": {
     "title": "国际化案例",
     "homeTitle": "首页",
+    "otherTitle": "其他",
     "mineTitle": "我的"
   },
   "he": {
     "title": "הדגמת לוקליזציה",
     "homeTitle": "מְגֵרָה",
+    "otherTitle": "לוקל",
     "mineTitle": "סגור מגירה"
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fruit/tabbar.dart';
-import 'package:fruit/utils/i18n/app_localization_delegate.dart';
-import 'package:fruit/utils/export_library.dart';
+import 'package:riverpod_pro/tabbar.dart';
+import 'package:riverpod_pro/utils/i18n/app_localization_delegate.dart';
+import 'package:riverpod_pro/utils/export_library.dart';
 
 void main() {
   runApp(

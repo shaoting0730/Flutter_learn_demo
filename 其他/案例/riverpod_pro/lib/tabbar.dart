@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fruit/pages/home_page/home_page.dart';
-import 'package:fruit/pages/mine_page/mine_page.dart';
-import 'package:fruit/widgets/jelly_button.dart';
-import 'package:fruit/utils/export_library.dart';
+import 'package:riverpod_pro/pages/home_page/home_page.dart';
+import 'package:riverpod_pro/pages/other_page/other_page.dart';
+import 'package:riverpod_pro/pages/mine_page/mine_page.dart';
+import 'package:riverpod_pro/widgets/jelly_button.dart';
+import 'package:riverpod_pro/utils/export_library.dart';
 
 class TabBarWidget extends StatefulWidget {
   const TabBarWidget({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class _TabBarWidgetState extends State<TabBarWidget> with AutomaticKeepAliveClie
   String _angleStr = '';
   final List<Widget> _list = [
     HomePage(),
+    OtherPage(),
     MinePage(),
   ];
 
@@ -59,6 +61,8 @@ class _TabBarWidgetState extends State<TabBarWidget> with AutomaticKeepAliveClie
             children: [
               // 首页
               _homePage(),
+              // 其他
+              _otherPage(),
               //  我的
               _minePage(),
             ],
@@ -101,6 +105,39 @@ class _TabBarWidgetState extends State<TabBarWidget> with AutomaticKeepAliveClie
     );
   }
 
+  /// 其他
+  _otherPage() {
+    return Expanded(
+      child: SizedBox(
+        height: 69,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            JellyButton(
+              onTap: () {
+                setState(
+                  () {
+                    _currenIndex = 1;
+                  },
+                );
+              },
+              checked: _currenIndex == 1 ? true : false,
+              size: const Size(40, 40),
+              unCheckedImgAsset: 'assets/images/tab/home.png',
+              checkedImgAsset: 'assets/images/tab/home_select.png',
+            ),
+            Text(
+              AppLocalizations.of(context).otherTitle!,
+              style: TextStyle(
+                color: _currenIndex == 1 ? Colors.red : Colors.black,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   /// 我的
   _minePage() {
     return Expanded(
@@ -115,11 +152,11 @@ class _TabBarWidgetState extends State<TabBarWidget> with AutomaticKeepAliveClie
                   onTap: () {
                     setState(
                       () {
-                        _currenIndex = 1;
+                        _currenIndex = 2;
                       },
                     );
                   },
-                  checked: _currenIndex == 1 ? true : false,
+                  checked: _currenIndex == 2 ? true : false,
                   size: const Size(40, 40),
                   unCheckedImgAsset: 'assets/images/tab/mine.png',
                   checkedImgAsset: 'assets/images/tab/mine_select.png',
@@ -127,7 +164,7 @@ class _TabBarWidgetState extends State<TabBarWidget> with AutomaticKeepAliveClie
                 Text(
                   AppLocalizations.of(context).mineTitle!,
                   style: TextStyle(
-                    color: _currenIndex == 1 ? Colors.red : Colors.black,
+                    color: _currenIndex == 2 ? Colors.red : Colors.black,
                   ),
                 ),
               ],

@@ -1,4 +1,4 @@
-import 'package:fruit/utils/export_library.dart';
+import 'package:riverpod_pro/utils/export_library.dart';
 
 class DioUtil {
   Dio dio = Dio();

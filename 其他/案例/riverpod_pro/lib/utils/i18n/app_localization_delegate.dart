@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit/utils/i18n/app_localizations.dart.dart';
+import 'package:riverpod_pro/utils/i18n/app_localizations.dart.dart';
 
 class APPLocalizationDelegate extends LocalizationsDelegate<AppLocalizations> {
   // 1.
