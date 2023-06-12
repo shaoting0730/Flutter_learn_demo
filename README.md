@@ -28,6 +28,7 @@
 > [ textfield ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/textfield_demo  )   <br/>
 > [ form ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/form_demo  )   <br/>
 > [ image ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/image_demo  )   <br/>
+> [ Flutter 图片加载流程 ]( https://juejin.cn/post/7029668872617721893 )   <br/>
 > [ switch checkbox ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/switch_checkbox_demo )<br/>
 > [ card ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/基础Widget/gradwidget_demo )<br/>
 > [ positionwidget ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/positionwidget )<br/>
