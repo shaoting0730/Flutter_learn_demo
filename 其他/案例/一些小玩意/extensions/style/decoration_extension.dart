@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:renlv_flutter/common/theme_provider.dart';
 
 
 class DecorationExtension extends BoxDecoration {
-  static Color get _borderColor => ThemeProvider.dividerColor;
 
   /// 添加默认边框线条
   DecorationExtension.allBorder({
@@ -17,7 +15,7 @@ class DecorationExtension extends BoxDecoration {
             borderRadius:
                 (radius > 0 ? BorderRadius.all(Radius.circular(radius)) : null),
             border: Border.all(
-                color: color ?? _borderColor,
+                color: color ?? Colors.red,
                 width: width,
                 style: BorderStyle.solid),
             boxShadow: shadow == null ? null : [shadow]);
@@ -31,7 +29,7 @@ class DecorationExtension extends BoxDecoration {
             color: backgroundColor,
             border: Border(
               top: BorderSide(
-                color: color ?? _borderColor,
+                color: color ?? Colors.red,
                 width: width,
                 style: BorderStyle.solid,
               ),
@@ -46,7 +44,7 @@ class DecorationExtension extends BoxDecoration {
             color: backgroundColor,
             border: Border(
               bottom: BorderSide(
-                color: color ?? _borderColor,
+                color: color ?? Colors.red,
                 width: width,
                 style: BorderStyle.solid,
               ),
@@ -61,7 +59,7 @@ class DecorationExtension extends BoxDecoration {
             color: backgroundColor,
             border: Border(
               left: BorderSide(
-                color: color ?? _borderColor,
+                color: color ?? Colors.red,
                 width: width,
                 style: BorderStyle.solid,
               ),
@@ -76,7 +74,7 @@ class DecorationExtension extends BoxDecoration {
             color: backgroundColor,
             border: Border(
               right: BorderSide(
-                color: color ?? _borderColor,
+                color: color ?? Colors.red,
                 width: width,
                 style: BorderStyle.solid,
               ),
@@ -91,7 +89,7 @@ class DecorationExtension extends BoxDecoration {
           color: backgroundColor,
           border: Border.symmetric(
             horizontal: BorderSide(
-              color: color ?? _borderColor,
+              color: color ?? Colors.red,
               width: width,
               style: BorderStyle.solid,
             ),

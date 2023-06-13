@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
-import 'package:renlv_flutter/utils/widget/no_ripple_scroll_behavior.dart';
+
+import '../../widget/no_ripple_scroll_behavior.dart';
 
 extension WidgetExtension on Widget {
   /// 设置边距
