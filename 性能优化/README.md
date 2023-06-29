@@ -8,6 +8,10 @@
 6、[ 如何缩减接近 50% 的 Flutter 包体积 ]( https://mp.weixin.qq.com/s/Ls3cDcqjlyOX80PXUO0wRw  )    <br/>
 7、当使用`ListView`等列表组件时，尽量使用`builder`的UI构建方式，这样才能采用重用机制，而不是一下子把所有子UI都加载进来；同时如果可以确定单个`item`的宽高的话，可以使用`cacheExtent`属性来固定宽高，这样也可以大幅度提高性能。
 8、如果开发中，需要返回一个空的widget，我们可以返回一个Container()或者SizedBox(),但是这样还是会渲染出来，可以采用 [ nil库 ]( https://github.com/letsar/nil  )，其源码大致
+
+<details>
+
+
 ```
 import 'package:flutter/widgets.dart';
 import 'package:flutter/foundation.dart';
@@ -48,3 +52,5 @@ class _NilElement extends Element {
 }
 ```
 这样既可以返回widget，又不会实际渲染出来了。
+
+</details>
