@@ -54,3 +54,45 @@ class _NilElement extends Element {
 这样既可以返回widget，又不会实际渲染出来了。
 
 </details>
+9、避免将一些耗时计算放在UI线程，我们可以把耗时计算放到Isolate去执行，使用compute
+<details>
+  import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  Future<dynamic> getData() {
+    // https://www.youtube.com/watch?v=5AxWC49ZMzs&ab_channel=Flutter
+    var data = compute(doSomeThing, '11111');
+    return data;
+  }
+
+  static dynamic doSomeThing(String str) {
+    // 耗时操作
+    print(str); // 11111
+    int result = int.parse(str) * 2;
+    return result;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: FutureBuilder(
+        future: getData(),
+        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+          return Container(
+            child: Text('${snapshot.data}'),
+          );
+        },
+      ),
+    );
+  }
+}
+
+</details>
