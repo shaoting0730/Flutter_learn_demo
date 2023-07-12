@@ -56,6 +56,7 @@ class _NilElement extends Element {
 </details>
 9、避免将一些耗时计算放在UI线程，我们可以把耗时计算放到Isolate去执行，使用compute
 <details>
+```
   import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -94,5 +95,7 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+```
 
 </details>
