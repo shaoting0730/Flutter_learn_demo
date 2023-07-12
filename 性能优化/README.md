@@ -11,8 +11,8 @@
 
 <details>
 
-
 ```
+
 import 'package:flutter/widgets.dart';
 import 'package:flutter/foundation.dart';
 
@@ -54,10 +54,14 @@ class _NilElement extends Element {
 这样既可以返回widget，又不会实际渲染出来了。
 
 </details>
+
 9、避免将一些耗时计算放在UI线程，我们可以把耗时计算放到Isolate去执行，使用compute
+
 <details>
+  
 ```
-  import 'package:flutter/foundation.dart';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
