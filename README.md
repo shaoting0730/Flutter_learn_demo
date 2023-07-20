@@ -119,6 +119,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  
  
 ## 渲染引擎 [ skia ]( https://github.com/google/skia ) [ impeller ]( https://github.com/flutter/engine/tree/main/impeller )   <br/>
+> [ 引擎初始化、启动流程都做了啥？2w 字源码解析 ]( https://juejin.cn/post/7010655914025811975 )   <br/>
 > [ 深入理解Flutter的图形图像绘制原理——图形库skia剖析 ]( https://juejin.cn/post/6914188284126035981 )   <br/>
 > [ 深入解析Flutter下一代渲染引擎Impeller ]( https://blog.csdn.net/YZcoder/article/details/126501428 )   <br/>
 > [ Flutter 新一代图形渲染器 Impeller ]( https://mp.weixin.qq.com/s/PLvlSt3tlX6AjufDm0XVMA )   <br/>
