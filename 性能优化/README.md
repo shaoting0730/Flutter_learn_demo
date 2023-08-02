@@ -103,3 +103,204 @@ class _HomeState extends State<Home> {
 ```
 
 </details>
+10、其实开发中，只要只要注意好`Flutter 高性能的关键就是 Element 的更新复用机制`就没有啥性能担忧。<br/>
+开始入口 <br/>
+<details>
+
+```
+
+import 'package:ceshi/one.dart';
+import 'package:ceshi/two.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home:  Two(), // One()
+    );
+  }
+}
+
+```
+
+</details>
+One这种<br/>
+<details>
+
+```
+import 'package:flutter/material.dart';
+
+class One extends StatefulWidget {
+  const One({Key? key}) : super(key: key);
+
+  @override
+  State<One> createState() => _OneState();
+}
+
+class _OneState extends State<One> {
+  int _counter = 0;
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: _incrementCounter,
+              child: Text('点击我 $_counter'),
+            ),
+            Container(
+              height: 200,
+            ),
+            ChildWidget(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// 1、输出会走
+// class ChildWidget extends StatefulWidget {
+//   const ChildWidget({Key? key}) : super(key: key);
+//
+//   @override
+//   State<ChildWidget> createState() => _ChildWidgetState();
+// }
+//
+// class _ChildWidgetState extends State<ChildWidget> {
+//   @override
+//   Widget build(BuildContext context) {
+//     print('走了吗？？？');
+//     return Text('........');
+//   }
+// }
+
+/// 2、输出也会走
+class ChildWidget extends StatelessWidget {
+  const ChildWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    print('走了吗？？？');
+    return Text('。。。。。。');
+  }
+}
+
+/// 优化方案： 可以把state 的_counter和点击组件Inkwell都拆出去，那么这个state的更改就只会更新他本身而已。
+```
+
+</details>
+Two这种<br/>
+<details>
+
+```
+
+import 'package:flutter/material.dart';
+
+class Two extends StatefulWidget {
+  const Two({Key? key}) : super(key: key);
+
+  @override
+  State<Two> createState() => _TwoState();
+}
+
+class _TwoState extends State<Two> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AddWidget(
+              twoCallBack: (int count) {
+                // print(count);
+              },
+            ),
+            Container(
+              height: 200,
+            ),
+            ChildWidget(),
+          ],
+        ),
+      ),
+    );
+    ;
+  }
+}
+
+/// 1、只在第一次初始化会走一次，之后不会走
+class ChildWidget extends StatefulWidget {
+  const ChildWidget({Key? key}) : super(key: key);
+
+  @override
+  State<ChildWidget> createState() => _ChildWidgetState();
+}
+
+class _ChildWidgetState extends State<ChildWidget> {
+  @override
+  Widget build(BuildContext context) {
+    print('走了吗？？？');
+    return Text('-------');
+  }
+}
+
+/// 1、只在第一次初始化会走一次，之后不会走
+// class ChildWidget extends StatelessWidget {
+//   const ChildWidget({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     print('走了吗？？？');
+//     return Text('-------');
+//   }
+// }
+
+/// 单独把state拆出来
+class AddWidget extends StatefulWidget {
+  final twoCallBack;
+  const AddWidget({Key? key, required this.twoCallBack}) : super(key: key);
+
+  @override
+  State<AddWidget> createState() => _AddWidgetState();
+}
+
+class _AddWidgetState extends State<AddWidget> {
+  int _counter = 0;
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+    widget.twoCallBack(_counter);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: _incrementCounter,
+      child: Text('点击我 $_counter'),
+    );
+  }
+}
+```
+
+</details>
