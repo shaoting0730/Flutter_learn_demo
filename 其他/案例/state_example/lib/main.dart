@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:state_example/change_notifier_example.dart';
 import 'package:state_example/custom_provider/ui/Logo.dart';
 import 'package:state_example/custom_provider/model/logo_model.dart';
 import 'package:state_example/custom_provider/model/change_notifier_provider.dart';
 import 'package:state_example/custom_provider/ui/control_panel.dart';
 import 'package:state_example/inherited_widget_example.dart';
 import 'package:state_example/value_notifier_example.dart';
+import 'package:state_example/change_notifier_example.dart';
 
 void main() {
   runApp(const MyApp());
 }
-//
+
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
 //   @override
@@ -21,12 +21,14 @@ void main() {
 //         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
 //         useMaterial3: true,
 //       ),
-//       home: const InheritedWidgetExample(),
+//       // home: const InheritedWidgetExample(),
+//       // home: const ChangeNotifierExample(),
+//       home: const ValueNotifierExample(),
 //     );
 //   }
 // }
 
-/*----------------------------------------------------------------------------------------*/
+/*-------------------------------------自定义provider---------------------------------------------------*/
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
