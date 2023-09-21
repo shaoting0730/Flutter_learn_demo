@@ -132,6 +132,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 ## 杂类
 > [ dart model 方案 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/JSON2DARTMODEL.md  )<br/>
 > [ dart部分认知 ](  http://www.ptbird.cn/category/dart/ )<br/>
+> 个人认为： Dart基本数据类型是值传递，对象类型是引用传递 ~~~大家众说纷纭 <br/>
 > [ 深入理解 Dart 空安全 ]( https://mp.weixin.qq.com/s?__biz=MzUyMjg5NTI3NQ%3D%3D&chksm=f9c5a3e0ceb22af6df941085ca63a0ef47cde933c0941a1476ba02db32bd1dcc61da550b11a3&idx=1&mid=2247485732&scene=21&sn=29d97abefd947748ee9df2c1f035cd4f#wechat_redirect ) <br/>
 >  [通知 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/notification/lib/main.dart )    <br/>
 >  [ 事件 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E4%BA%8B%E4%BB%B6%E4%B8%8E%E9%80%9A%E7%9F%A5/pointer/lib/main.dart )    <br/>
@@ -152,7 +153,6 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ tabBar3:类今日头条上方tabbar ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/TabBar/top_tabbars_demo )<br/>
 > [ 路由管理库fluro学习 ]( https://zhoushaoting.com/2019/03/30/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter%E8%B7%AF%E7%94%B1%E7%AE%A1%E7%90%86%E5%BA%93fluro%E5%AD%A6%E4%B9%A0/ ) <br/>
 > [ 路由过渡动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo )<br/>
-> 个人认为： Dart基本数据类型是值传递，对象类型是引用传递
 > [ InheritedWidget和ChangeNotifier相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/InheritedWidget%E7%9B%B8%E5%85%B3.md )<br/>
 > [ Stream相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/Stream%E7%9B%B8%E5%85%B3.md )<br/>
 > [ Stream和Future ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/Future%E5%92%8CStream.md )<br/>
