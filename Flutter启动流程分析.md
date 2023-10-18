@@ -10,5 +10,9 @@
 
 > [Flutter 启动流程]( https://www.jianshu.com/p/8b782b8da96e ) <br/>
 > [ Flutter启动流程源码分析 ](https://www.jianshu.com/p/21f8d239a375) <br/>
+> [ Flutter runApp -- WidgetsFlutterBinding ]( https://juejin.cn/post/7031196891358429220 )    <br/>
+有时候我们会在发现有的app 在在运行应用程序之前先与 Flutter Engine 进行通信，所以要先将WidgetsFlutterBinding.ensureInitialized()提前。<br/>
+
+
 
 
