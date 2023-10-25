@@ -169,10 +169,11 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ Flutter编译模式 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F.md )<br/>
 > [ Widget、Element、RenderObject三者之间的关系 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E4%B8%89%E6%A3%B5%E6%A0%91.md )<br/>
 > [ 理解BuildContext ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/BuildContext.md )<br/>
- > [ Flutter启动流程分析 ](https://github.com/pheromone/Flutter_learn_demo/blob/master/Flutter%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90.md)<br/>
- > [ setState原理分析 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/flutter-setState%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90.md )<br/>
- > [ 内存相关 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3.md )<br/>
- > [ DartVM相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/DartVM%E7%9B%B8%E5%85%B3.md )<br/>
+> [ Flutter启动流程分析 ](https://github.com/pheromone/Flutter_learn_demo/blob/master/Flutter%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90.md)<br/>
+> [ setState原理分析 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/flutter-setState%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90.md )<br/>
+> [ Dart中抽象类abstract、接口implements、混入Mixin ]( https://juejin.cn/post/6946158943240454181  )<br/>
+> [ 内存相关 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3.md )<br/>
+> [ DartVM相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/DartVM%E7%9B%B8%E5%85%B3.md )<br/>
 
 
 ## state管理
