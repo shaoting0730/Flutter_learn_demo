@@ -171,7 +171,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
 > [ 理解BuildContext ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/BuildContext.md )<br/>
 > [ Flutter启动流程分析 ](https://github.com/pheromone/Flutter_learn_demo/blob/master/Flutter%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E5%88%86%E6%9E%90.md)<br/>
 > [ setState原理分析 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/flutter-setState%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90.md )<br/>
-> [ Dart中抽象类abstract、接口implements、混入Mixin ]( https://juejin.cn/post/6946158943240454181  )<br/>
+> [ Dart中继承、混入、实现、抽象类 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%B7%B7%E5%85%A5%E3%80%81%E7%BB%A7%E6%89%BF%E3%80%81%E5%AE%9E%E7%8E%B0.md )<br/>
 > [ 内存相关 ](  https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3.md )<br/>
 > [ DartVM相关 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/DartVM%E7%9B%B8%E5%85%B3.md )<br/>
 
