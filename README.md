@@ -220,25 +220,26 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例11 CanVas学习:签名板]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/canvas_demo ) <br/>
 > [ 案例12 国际化方案]( https://zhoushaoting.com/2019/06/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%9B%BD%E9%99%85%E5%8C%96%E6%95%99%E7%A8%8B%E6%96%B9%E6%A1%88/ ) <br/>
 > [ 案例13 动画](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_demo) <br/>
-> [ 案例14 Flare学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/其他/案例/flare_learn) <br/>
-> [ 案例15 自定义Dialog和基本的组件封装](https://zhoushaoting.com/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/) <br/>
-> [ 案例16 UI根据角色判断(fish——redux数据流store分开,UI分开,逻辑分开) ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/diffrent_user_tab )<br/>
-> [ 案例17 自定义相机页面](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/camera_demo) <br/>
-> [ 案例18 自定义下拉框](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/drop_down_box_demo) <br/>
-> [ 案例19 性能优化点](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md ) <br/>
-> [ 案例20 全局倒计时 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/verification_code_page ) <br/>
-> [ 案例21 键盘相关：监听键盘弹出\缩回事件，点击空白缩回键盘、点击按钮弹出键盘](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/keyboard_tips) <br/>
-> [ 案例22 广告页面 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/ad_page) <br/>
-> [ 案例23 保存图片新版本 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/android_ios_saveimage
+> [ 案例14 自定义push动画]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/push%E5%8A%A8%E7%94%BB/push_animation_demo ) <br/>
+> [ 案例15 Flare学习](https://github.com/pheromone/Flutter_learn_demo/tree/master/其他/案例/flare_learn) <br/>
+> [ 案例16 自定义Dialog和基本的组件封装](https://zhoushaoting.com/2019/11/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89Dialog(%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85)/) <br/>
+> [ 案例17 UI根据角色判断(fish——redux数据流store分开,UI分开,逻辑分开) ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/diffrent_user_tab )<br/>
+> [ 案例18 自定义相机页面](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/camera_demo) <br/>
+> [ 案例19 自定义下拉框](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/drop_down_box_demo) <br/>
+> [ 案例20 性能优化点](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.md ) <br/>
+> [ 案例21 全局倒计时 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/verification_code_page ) <br/>
+> [ 案例22 键盘相关：监听键盘弹出\缩回事件，点击空白缩回键盘、点击按钮弹出键盘](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/keyboard_tips) <br/>
+> [ 案例23 广告页面 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/ad_page) <br/>
+> [ 案例24 保存图片新版本 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/android_ios_saveimage
 ) <br/>
-> [ 案例24 自定义tarbar ](https://zhoushaoting.com/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/) <br/>
-> [ 案例25 PreferredSize 实现自定义tabbar](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/PreferredSize_demo) <br/>
-> [ 案例26 Listview 第一次加载时动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/listview_item_demo )  <br/>
-> [ 案例27 Lottie动画 SVGAPlayer动画 手柄控制 滑动解锁 AnimatedSwitcher示例 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_go )  <br/>
-> [ 案例28 跳转三方库导航 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E8%B7%B3%E8%BD%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%BC%80%E5%A7%8B%E5%AF%BC%E8%88%AA.md )  <br/> 
-> [ 案例29 游戏手柄 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/game_contro) <br/>
-> [ 案例30 自绘键盘1 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/#mark1) <br/>
-> [ 案例31 自绘键盘2 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/#mark2) <br/>
-> [ 案例32 web放大镜 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/magnifier_demo) <br/>
-> [ 案例33 退至后台锁定界面 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/app_lifecycle ) <br/>
-> [ 案例34 自定义一个provider相关 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/state_example ) <br/>
+> [ 案例25 自定义tarbar ](https://zhoushaoting.com/2020/01/23/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E8%87%AA%E5%AE%9A%E4%B9%89tabbar%E6%A8%A1%E5%9D%97/) <br/>
+> [ 案例26 PreferredSize 实现自定义tabbar](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/PreferredSize_demo) <br/>
+> [ 案例27 Listview 第一次加载时动画 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/listview_item_demo )  <br/>
+> [ 案例28 Lottie动画 SVGAPlayer动画 手柄控制 滑动解锁 AnimatedSwitcher示例 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/animation_go )  <br/>
+> [ 案例29 跳转三方库导航 ]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E8%B7%B3%E8%BD%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%BC%80%E5%A7%8B%E5%AF%BC%E8%88%AA.md )  <br/> 
+> [ 案例30 游戏手柄 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/game_contro) <br/>
+> [ 案例31 自绘键盘1 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/#mark1) <br/>
+> [ 案例32 自绘键盘2 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/#mark2) <br/>
+> [ 案例34 web放大镜 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/magnifier_demo) <br/>
+> [ 案例35 退至后台锁定界面 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/app_lifecycle ) <br/>
+> [ 案例36 自定义一个provider相关 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/state_example ) <br/>
