@@ -6,4 +6,4 @@
    [ json_to_dart 未适配非空 ]( https://javiercbk.github.io/json_to_dart/ )   <br/>
    [ web生成（FlutterCandies团队）]( https://zmtzawqlp.gitee.io/jsontodartflutterweb/#/ )    <br/>
    [ web生成（ashamp） ]( https://ashamp.github.io/jsonToDartModel/ )    <br/>
-   [ web生成（quicktype）☆☆ ☆ ☆ ☆ 推荐这个 ]( https://app.quicktype.io/ )    <br/>
+   [ web生成（quicktype）⭐️⭐️⭐️⭐️⭐️  推荐这个 ]( https://app.quicktype.io/ )    <br/>
