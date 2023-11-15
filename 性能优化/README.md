@@ -305,3 +305,5 @@ class _AddWidgetState extends State<AddWidget> {
 ```
 
 </details>
+
+10、[ Flutter 小技巧之 MediaQuery 和 build 优化你不知道的秘密 ]( https://juejin.cn/post/7114098725600903175?searchId=20231103175904D4AC41C8C00863D4AA3C )
