@@ -244,4 +244,5 @@ https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/s
 > [ 案例32 自绘键盘2 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_keyboard/#mark2) <br/>
 > [ 案例34 web放大镜 ](https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/magnifier_demo) <br/>
 > [ 案例35 退至后台锁定界面 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/app_lifecycle ) <br/>
-> [ 案例36 自定义一个provider相关 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/state_example ) <br/>
+> [ 案例36 customSingleChildLayout 示例 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_single_child_layout_demo ) <br/>
+> [ 案例37 自定义一个provider相关 ]( https://github.com/pheromone/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/state_example ) <br/>
