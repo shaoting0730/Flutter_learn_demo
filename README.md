@@ -104,6 +104,7 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ flutter_boost教程 ]( https://www.jianshu.com/p/679a642ade52 )<br/>
  > [ flutter_boost源码浅析 ]( https://juejin.im/post/5e61b803f265da57127e526c )<br/>
  > [ 深入理解Flutter Platform Channel ]( https://zhuanlan.zhihu.com/p/43226013 )<br/>
+ > [ Flutter开发必须掌握的Channel通道以及不同的定义方式 ]( https://juejin.cn/post/7278684023757176895?utm_source=gold_browser_extension )<br/>
  > [ Flutter新锐专家之路：混合开发篇 ]( https://developer.aliyun.com/article/626069 )<br/>
 
 
