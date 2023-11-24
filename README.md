@@ -106,6 +106,8 @@ PaginatedDataTable Stepper ]( https://github.com/pheromone/Flutter_learn_demo/tr
  > [ 深入理解Flutter Platform Channel ]( https://zhuanlan.zhihu.com/p/43226013 )<br/>
  > [ Flutter开发必须掌握的Channel通道以及不同的定义方式 ]( https://juejin.cn/post/7278684023757176895?utm_source=gold_browser_extension )<br/>
  > [ Flutter新锐专家之路：混合开发篇 ]( https://developer.aliyun.com/article/626069 )<br/>
+ > [ 官方Demo ]( https://github.com/flutter/samples/blob/master_archived/platform_channels/README.md )<br/>
+
 
 
 ## 热更新方案
