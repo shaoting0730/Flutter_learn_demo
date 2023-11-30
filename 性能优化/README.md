@@ -1,3 +1,5 @@
+![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.png) <br/>
+
 1、项目中，可以只使用2X、3X的图，不使用1X的图。因为市面上，1X图的手机应该很少有了。或者干脆采用SVG图片。 <br/>
 市面上还在使用1X的设备： <br/>
 所有non-Retina mac电脑 |  苹果iPhone3g |  苹果iPhone3gs | 苹果iPad(第一代) | 苹果iPad2|  苹果iPad迷你（第一代）|  鸿基Iconia A500 |  三星Galaxy Tab 10.1 |  三星Galaxy S  <br/>
