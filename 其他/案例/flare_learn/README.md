@@ -1,8 +1,8 @@
 # flare_learn
 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/其他/案例/flare_learn/nima初始.gif) <br/>
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/其他/案例/flare_learn/nima初始.gif) <br/>
 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/其他/案例/flare_learn/flare初始.gif) <br/>
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/其他/案例/flare_learn/flare初始.gif) <br/>
 
 
 

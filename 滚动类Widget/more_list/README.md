@@ -1,6 +1,6 @@
 # more_list
 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/more_list/result.gif) <br/>
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/more_list/result.gif) <br/>
 
 ## Getting Started
 

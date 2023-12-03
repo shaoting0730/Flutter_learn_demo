@@ -1,6 +1,6 @@
 # shader_mask_demo
 
-![image]( https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/shader_mask_demo/result.png ) <br/>
+![image]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/shader_mask_demo/result.png ) <br/>
 
 ## Getting Started
 

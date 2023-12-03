@@ -1,5 +1,5 @@
 # tool_tips
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/tool_tips/result.png
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/tool_tips/result.png
 ) <br/>
 A new Flutter project.
 

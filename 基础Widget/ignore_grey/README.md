@@ -16,4 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/ignore_grey/result.gif) <br/>
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/ignore_grey/result.gif) <br/>

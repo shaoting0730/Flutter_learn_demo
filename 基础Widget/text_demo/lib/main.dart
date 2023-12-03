@@ -1,3 +1,11 @@
+/*
+ * @Author: zhoushaoting 510738319@qq.com
+ * @Date: 2019-01-15 12:55:14
+ * @LastEditors: zhoushaoting 510738319@qq.com
+ * @LastEditTime: 2023-12-03 14:23:52
+ * @FilePath: /undefined/Users/zhoushaoting/Desktop/GitHub/Flutter学习/基础Widget/text_demo/lib/main.dart
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -33,7 +41,7 @@ class MyApp extends StatelessWidget {
                   text:'网址:'
                 ),
                 TextSpan(
-                  text:'https://pheromone.github.io/',
+                  text:'https://shaoting0730.github.io/',
                   style:TextStyle(
                     color:Colors.blue
                   ),

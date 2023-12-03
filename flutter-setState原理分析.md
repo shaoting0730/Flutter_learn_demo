@@ -7,7 +7,7 @@
   }
 ```
 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/setState.png) <br/>
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/setState.png) <br/>
 # markNeedsBuild
 
 > [Flutter UI基础 - setState更新原理和流程]( https://blog.csdn.net/shanghaibao123/article/details/107495184 ) <br/>

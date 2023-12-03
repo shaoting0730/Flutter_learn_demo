@@ -8,7 +8,7 @@ This project is a starting point for a Flutter application.
 
 > [ 来自王叔 ]( https://stackoverflow.com/questions/71489547/how-to-zoom-an-image-without-the-size )   <br/>
 
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/magnifier_demo/result.gif) <br/>
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/magnifier_demo/result.gif) <br/>
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)

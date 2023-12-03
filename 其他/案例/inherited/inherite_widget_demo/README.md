@@ -3,7 +3,7 @@
 A new Flutter project.
 
 ## Getting Started
-![image](https://github.com/pheromone/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/inherite_widget_demo/result.gif) <br/>
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%9F%BA%E7%A1%80Widget/inherite_widget_demo/result.gif) <br/>
 
 
 A few resources to get you started if this is your first Flutter project:
