@@ -1,6 +1,6 @@
 # nested_scroll_view_demo
 
-A new Flutter project.
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E6%BB%9A%E5%8A%A8%E7%B1%BBWidget/nested_scroll_view_demo/result.gif) <br/>
 
 ## Getting Started
 
