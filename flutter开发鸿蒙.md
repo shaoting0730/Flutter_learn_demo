@@ -8,6 +8,8 @@
 > [ OpenHarmony 开发者论坛 ]( https://forums.openharmony.cn/ )   <br/>
 > [ 相关网站 ]( https://openharmony.gitee.com/openharmony )   <br/>
 > [ Candies organization ]( https://github.com/HarmonyCandies )   <br/>
+> [ 不吹不黑聊鸿蒙 ]( https://www.bilibili.com/video/BV18T4y1h7ch/?spm_id_from=333.999.0.0 )   <br/>
+
 
 
 
