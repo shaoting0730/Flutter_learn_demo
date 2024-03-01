@@ -185,7 +185,7 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 > [ 内存相关 ](  https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3.md )<br/>
 > [ DartVM相关 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/DartVM%E7%9B%B8%E5%85%B3.md )<br/>
 > [ restorationId 的使用 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/restoration_id_demo/lib/main.dart )<br/>
-> [ 使用flutter开发鸿蒙？ ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/flutter%E5%BC%80%E5%8F%91%E9%B8%BF%E8%92%99.md )<br/>
+> [ 使用flutter开发鸿蒙？ ]( https://gitee.com/openharmony-sig/flutter_flutter )<br/>
 
 
 ## state管理
