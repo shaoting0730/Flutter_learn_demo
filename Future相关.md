@@ -1,5 +1,9 @@
 ## Future相关
 
+Future 和 Stream 简单了说就是对 Zone 的封装使用。isolate是Dart对actor并发模式的实现。
+
+
+
 > [ Flutter 异步编程一（Future、async、await、completer） ](https://www.jianshu.com/p/b292ee9b08b6) <br/>
 
 > [ Flutter 异步编程二（isolate、compute） ]( https://www.jianshu.com/p/23167755ea51 ) <br/>
