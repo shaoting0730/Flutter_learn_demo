@@ -172,6 +172,7 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 > [ Flutter 事件循环 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.md )<br/>
 > [ Flutter异步编程之 Future/Isolate ]( https://www.jianshu.com/p/252fb36ed13d )<br/>
 > [ Key ]( https://juejin.cn/post/7050003302041255973 )<br/>
+> [ Flutter Keys：你的终极指南，让 widget 世界更快乐 ]( https://mp.weixin.qq.com/s/fymCUTyO-yMA2L-b67rjtg )<br/>
 > [ Key:demo ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/key )<br/>
 > [ Dart 健全的空安全 ]( https://mp.weixin.qq.com/s/zdlsdv8ymyQTHmf1iLCyWA )    <br/>
 > [ Flutter原理简解 ]( https://www.stephenw.cc/2018/05/14/flutter-principle/ )<br/>
