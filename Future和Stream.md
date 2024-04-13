@@ -1,6 +1,11 @@
 Future代表一次异步 <br/>
 Steam代表多次异步   <br/>
 
+Future 封装了  `监听` -  `通知`  <br/>
+Steam  封装了  `发布` -  `订阅` <br/>
+
+Steam代表多次异步   <br/>
+
 Future可以划分三种状态： <br/>
 1、未完成  <br/>
 2、完成，数据正常  <br/>
