@@ -1,17 +1,17 @@
 Future代表一次异步 <br/>
-Steam代表多次异步   <br/>
+Stream代表多次异步   <br/>
 
 Future 封装了  `监听` -  `通知`  <br/>
-Steam  封装了  `发布` -  `订阅` <br/>
+Stream  封装了  `发布` -  `订阅` <br/>
 
-Steam代表多次异步   <br/>
+Stream代表多次异步   <br/>
 
 Future可以划分三种状态： <br/>
 1、未完成  <br/>
 2、完成，数据正常  <br/>
 3、完成，数据不正常  <br/>
 
-Steam可以划分四种状态，其实也就是ConnectionState的四个枚举值： <br/>
+Stream可以划分四种状态，其实也就是ConnectionState的四个枚举值： <br/>
 1、none 没有数据流  <br/>
 2、waiting 等待数据流  <br/>
 3、active 数据流活跃  <br/>
@@ -132,7 +132,7 @@ Future.forEach后面可以跟普通list，Future的list,Stream的list，只需�
  // Type: Future<List<Null>> Function(Iterable<Future<Null>>, {void Function(Null)? cleanUp, bool eagerError}) <br/>
 Future.wait后只能跟Future的List。 <br/>
  //   <br/>
- await for 只能跟Steam <br/>
+ await for 只能跟Stream <br/>
 
 
 
