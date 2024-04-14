@@ -15,7 +15,7 @@ Stream可以划分四种状态，其实也就是ConnectionState的四个枚举�
 1、none 没有数据流  <br/>
 2、waiting 等待数据流  <br/>
 3、active 数据流活跃  <br/>
-3、done 数据流关闭  <br/>
+4、done 数据流关闭  <br/>
 
 
 ConnectionState是一个enum 类型的值  <br/>
