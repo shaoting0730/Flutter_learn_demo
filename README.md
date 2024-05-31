@@ -118,7 +118,6 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
  > [ chimera_flutter_code_push ](  https://github.com/ChimeraFlutter/Chimera-Flutter-Code-Push )<br/>
  > [ fair ](  https://github.com/wuba/fair/blob/main/README-zh.md )<br/>
  > [ 美团外卖Flutter动态化实践：但分析美团的APP，他们使用的仍然是RN的热更新 ](  https://mp.weixin.qq.com/s/wjEvtvexYytzSy5RwqGQyw )<br/>
- > [ AST树分析？ ](https://toutiao.io/posts/p77w8kw/preview) <br/>
  > [ 热更新？ ](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%85%B3%E4%BA%8E%E7%83%AD%E6%9B%B4%E6%96%B0.md) <br/>
  
 
@@ -179,6 +178,7 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 > [ Dart 健全的空安全 ]( https://mp.weixin.qq.com/s/zdlsdv8ymyQTHmf1iLCyWA )    <br/>
 > [ Flutter原理简解 ]( https://www.stephenw.cc/2018/05/14/flutter-principle/ )<br/>
 > [ Flutter启动系列之Dart虚拟机启动 ]( https://xiaozhuanlan.com/topic/7039642518 )<br/>
+ > [ AST树分析？ ](https://toutiao.io/posts/p77w8kw/preview) <br/>
 > [ 重写运算符 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E9%87%8D%E5%86%99%E8%BF%90%E7%AE%97%E7%AC%A6.md )<br/>
 > [ Flutter编译模式 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F.md )<br/>
 > [ Widget、Element、RenderObject三者之间的关系 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E4%B8%89%E6%A3%B5%E6%A0%91.md )<br/>
