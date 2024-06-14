@@ -51,7 +51,7 @@
 > [ IntrinsicHeight 和 IntrinsicWidth ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/intrinsic_height_demo )<br/>
 > [ OOV三组件 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/OOV%E4%B8%89%E7%BB%84%E4%BB%B6 )<br/>
 >  [ 切圆形图片的5个方法 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/border_radius_demo ) <br/>
->  [ Dart：var、final、const、late ]( https://blog.csdn.net/smileKH/article/details/129166883 )    <br/>
+>  [ Dart：var、final、const、late ]( https://blog.csdn.net/smileKH/article/details/129166883 ) [late、dynamic、var ](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/late%26dynamic%26var.jpg)    <br/>
 >  [ 使用自定义字体 安卓去除状态栏灰层 渐变色导航栏 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/custom_font_demo )    <br/>
 > [ Chip FilterChip ChioceChip ActionChip  Divider  DataTable
 PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%9F%BA%E7%A1%80Widget/mdc_demo )<br/>
