@@ -222,7 +222,7 @@ https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%9
 > [ 基本项目架子，基于getx、flutter2.5.0 ](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/init_demo) <br/>
 > [ 基本项目架子，基于getx、flutter2.10.4 ](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/init_demo1) <br/>
 > [ 基本项目架子，基于riverpod、flutter3.3.4 ](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/riverpod_pro) <br/>
-> [ 案例0 对Widget和BoxDecoration 进行扩展 ](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%8E%A9%E6%84%8F/extensions) <br/>
+> [ 案例0 对Widget和BoxDecoration 进行扩展 ](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%8E%A9%E6%84%8F/extensions) 和 [一些对现有组件的封装使用](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/%E4%B8%80%E4%BA%9B%E5%B0%8F%E7%8E%A9%E6%84%8F/widget)<br/>
 > [ 案例1 选项卡 ](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case1) <br/>
 > [ 案例2 输入联想](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case2) <br/>
 > [ 案例3 图片增加](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/case3) <br/>
