@@ -1,4 +1,10 @@
 # wrap_flow
+
+
+
+> [ Flutter 中 Wrap 的使用详解（含对比图） ]( https://juejin.cn/post/6971813403388018702 )   <br/>
+
+
 ![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%B8%83%E5%B1%80Widget/wrap_flow/%20result.png) <br/>
 
 A new Flutter project.
