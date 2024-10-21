@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui' as ui;
@@ -56,4 +57,3 @@ class _UnderlinePainter extends BoxPainter {
     }
   }
 }
-
