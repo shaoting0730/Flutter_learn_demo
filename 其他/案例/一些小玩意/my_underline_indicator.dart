@@ -57,3 +57,35 @@ class _UnderlinePainter extends BoxPainter {
     }
   }
 }
+
+/*
+
+基本使用
+
+indicator: UnderlineDecoration(
+  color: const Color.fromRGBO(255, 150, 46, 1),
+      length: 18.w,
+      thickness: 4.w,
+)
+
+使用本地图片
+                
+ //返回ui.Image
+ Future<ui.Image> getAssetImage(String asset,{width,height}) async {
+  ByteData data = await rootBundle.load(asset);
+  ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),targetWidth: width,targetHeight: height);
+  ui.FrameInfo fi = await codec.getNextFrame();
+  return fi.image;
+  }
+
+  ui.Image images = await getAssetImage('assets/icon/icon_tabs_indicator.webp',width: 12,height: 12); 
+
+  UnderlineDecoration(
+      color: Colors.white,
+      length: 10.w,
+      thickness: 4.w,
+      image: image
+),
+
+
+*/
