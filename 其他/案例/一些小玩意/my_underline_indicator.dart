@@ -68,8 +68,16 @@ indicator: UnderlineDecoration(
       thickness: 4.w,
 )
 
-使用本地图片
-                
+使用网络图片
+Future<ui.Image> getNetImage(String url,{width,height}) async {
+  ByteData data = await NetworkAssetBundle(Uri.parse(url)).load(url);
+  ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),targetWidth: width,targetHeight: height);
+  ui.FrameInfo fi = await codec.getNextFrame();
+  return fi.image;
+}
+
+
+使用本地图片        
  //返回ui.Image
  Future<ui.Image> getAssetImage(String asset,{width,height}) async {
   ByteData data = await rootBundle.load(asset);
