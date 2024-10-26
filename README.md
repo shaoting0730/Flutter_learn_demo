@@ -137,6 +137,7 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 > [ 深入理解Flutter的图形图像绘制原理——图形库skia剖析 ]( https://juejin.cn/post/6914188284126035981 )   <br/>
 > [ 深入解析Flutter下一代渲染引擎Impeller ]( https://blog.csdn.net/YZcoder/article/details/126501428 )   <br/>
 > [ Flutter 新一代图形渲染器 Impeller ]( https://mp.weixin.qq.com/s/PLvlSt3tlX6AjufDm0XVMA )   <br/>
+> [ 着色器预热 ]( https://juejin.cn/post/7385942645232828442?utm_source=gold_browser_extension )   <br/>
 
 
 ## 杂类
