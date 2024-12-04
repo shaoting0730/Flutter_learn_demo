@@ -196,7 +196,8 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 
 
 ## state管理
-> [ Flutter State Management状态管理全面分析 ]( https://www.jianshu.com/p/9334b8f68004 ) <br/> 
+> [ Flutter State Management状态管理全面分析 ]( https://www.jianshu.com/p/9334b8f68004 ) <br/>
+> [ Flutter 状态管理：源码探索与实战 ]( https://juejin.cn/book/7292478072568643584/section/7292474787618619432?utm_source=profile_book ) <br/> 
 > [ Flutter Riverpod 全面深入解析，为什么官方推荐它？ ]( https://juejin.cn/post/7063111063427874847 ) <br/> 
 > [ riverpod学习 ]( https://zhoushaoting.com/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/ ) <br/> 
 > [ Flutter官方团队对getx这个插件的态度和看法？？？ ]( https://github.com/flutter/website/pull/4981 ) <br/> 
