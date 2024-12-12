@@ -1,5 +1,5 @@
 <h1> RenderSliver和RenderBox异同 </h1>
-在 Flutter 中，`RenderSliver` 和 `RenderBox` 是两种不同的渲染对象，它们用于管理和布局不同类型的 UI 元素，分别适用于滚动视图和普通的非滚动视图。
+在 Flutter 中，` RenderSliver ` 和 ` RenderBox ` 是两种不同的渲染对象，它们用于管理和布局不同类型的 UI 元素，分别适用于滚动视图和普通的非滚动视图。
 
 以下是它们的区别和使用场景：
 
