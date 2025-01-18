@@ -60,6 +60,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String location = '';
 
   void _incrementCounter() {
     setState(() {
@@ -85,6 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
         return CityPickerModal(
             onResult: (CityResult e) {
               print('你最后选择的地址是${e.province}  ${e.city} ${e.area}  ');
+              setState(() {
+                location = '${e.province}  ${e.city} ${e.area}';
+              });
             },
             params: datas);
       },
@@ -140,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
             InkWell(
               onTap: () => _selectAddressPicker(),
               child: Text(
-                '弹出picker',
+                '弹出picker :$location',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
