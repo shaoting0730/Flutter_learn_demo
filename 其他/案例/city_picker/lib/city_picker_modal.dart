@@ -90,21 +90,27 @@ class _CityPickerModalState extends State<CityPickerModal> {
   void initState() {
     super.initState();
 
-    //初始化控制器
-    provinceScrollController = FixedExtentScrollController();
-    cityScrollController = FixedExtentScrollController();
-    areaScrollController = FixedExtentScrollController();
-
     //读取city.json数据
     datas = widget.params;
     setState(() {
       isShow = true;
     });
 
-    _initData();
-  }
+    //初始化控制器
+    // provinceScrollController = FixedExtentScrollController(initialItem: 10);
+    // cityScrollController = FixedExtentScrollController(initialItem: 0);
+    // areaScrollController = FixedExtentScrollController(initialItem: 7);
+    // setState(() {
+    //   provinceIndex = 10;
+    //   cityIndex = 0;
+    //   areaIndex = 7;
+    // });
 
-  _initData() {}
+    //初始化控制器
+    provinceScrollController = FixedExtentScrollController();
+    cityScrollController = FixedExtentScrollController();
+    areaScrollController = FixedExtentScrollController();
+  }
 
   @override
   Widget build(BuildContext context) {
