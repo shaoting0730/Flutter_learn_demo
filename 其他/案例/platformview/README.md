@@ -1,4 +1,5 @@
-`platform view` 就是 `AndroidView` 和 `UIKitView` 的总称.允许在flutter工程中嵌入iOS原生模块和Android原生模块
+`platform view` 就是 `AndroidView` 和 `UIKitView` 的总称.允许在flutter工程中嵌入iOS原生模块和Android原生模块 <br/>
+如果是外部需要打开app跳转界面需要使用scheme,如果是内部webView需要跳转某一个页面需要使用注入js.  <br/>
 
 
    [ demo文章 ]( https://zhoushaoting.com/2023/02/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~PlatformView%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/ )    <br/>
