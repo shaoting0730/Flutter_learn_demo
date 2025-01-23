@@ -269,3 +269,4 @@ https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%9
 > [ 案例39 自定义一个ListVist： Scrollable 和 Viewport组件的作用 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/custom_listview ) <br/>
 > [ 案例40 省市区联动picker ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/city_picker ) <br/>
 > [ 案例41 图片下拉放大 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/enlarge_img ) <br/>
+> [ 案例42 全局弹窗overlay ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/overlay_demo ) <br/>
