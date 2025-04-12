@@ -12,6 +12,7 @@
 > vim ~/.bash_profile 
 > source ~/.bash_profile
 
+> [ 下载单个文件 ]( https://minhaskamal.github.io/DownGit/#/home )   <br/>
 
 <!-- /lib/main.dart#L14-L21    -->
 
