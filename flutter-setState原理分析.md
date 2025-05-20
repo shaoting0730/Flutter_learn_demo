@@ -6,6 +6,7 @@
         && oldWidget.key == newWidget.key;
   }
 ```
+![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/runtimeType%26key.png) <br/>
 
 ![image](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/setState.png) <br/>
 # markNeedsBuild
