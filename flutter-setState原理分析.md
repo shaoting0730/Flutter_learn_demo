@@ -16,6 +16,7 @@
 > [Flutter中关于setState的理解(三)]( https://www.jianshu.com/p/24018d234210 ) <br/> 
 > [Flutter的setState更新原理和流程](https://zhuanlan.zhihu.com/p/271803637 ) <br/>
 > [ Flutter 必知必会系列 —— Element 更新实战 ]( https://juejin.cn/post/7058539230288412679 ) <br/>
+> [ 零、GSY历程-全面理解State与Provider ]( https://guoshuyu.cn/home/wx/Flutter-15.html ) <br/>
 
 
 
