@@ -1,3 +1,7 @@
+-   [英语](README.en.md)
+-   [简体中文](README.zh-CN.md)
+-   [繁体中文](README.zh-TW.md)
+
 > 打开模拟器  运行  1.cd 根目录  2.flutter run -d all 或者 flutter run  => ps:flutter packages get 获取三方库<br/>调试: r: 运行 R:重新运行 p:显示网格 大写P:显示性能 o:切换模拟器 s:保存截图  h:显示帮助信息 q:退出. 3.切换版本: flutter channels  && flutter channels XXX 之后 flutter upgrade即可 git checkout xxx . 打开dubug开启真热更新 You can dump the widget hierarchy of the app (debugDumpApp) by pressing "w".<br/>要倾倒应用程序的渲染树（DebugDumprendertree），请按“ T”。<br/>对于层（debugdumplaytree），请使用“ l”；用于可访问性<br/>（debugdumpsemantics），使用“ S”（用于遍历顺序）或“ U”（用于逆点击测试顺序）。<br/>要切换小部件Inspector（widgetsapp.showwidgetinspectoroverride），请按“ i”。<br/>要切换构造线的显示（DebugPaintSizeEnabled），请按“ P”。<br/>要模拟不同的操作系统（DefaultTargetPlatform），请按“ O”。<br/>要显示性能叠加（widgetsapp.showperformanceOverlay），请按“ P”。<br/>要保存屏幕截图以扑打。png，请按“ S”。<br/>要重复此帮助消息，请按“ H”。要分离，按“ D”；要退出，请按“ Q”。<br/>vim〜/.bash_profile 
 > 来源〜/.bash_profile
 
