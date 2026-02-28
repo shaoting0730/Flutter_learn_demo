@@ -1,0 +1,194 @@
+>  Flutter 是一个自绘 UI 框架，整体分为三层：Framework、Engine、Embedder。
+
+来自 Flutter 的架构：
+
+```
+Framework (Dart)
+    ↓
+Engine (C++)
+    ↓
+Embedder (Platform)
+```
+
+## 1️⃣ Framework（Dart 层）
+
+* Widget
+* Element
+* RenderObject
+* 动画
+* 手势系统
+* 状态管理
+
+核心特点：
+
+> UI = Widget 描述
+> Element = 管理实例
+> RenderObject = 负责布局和绘制
+
+## 2️⃣ Engine（C++ 层）
+
+Engine 负责：
+
+* Dart 运行时
+* 渲染管线
+* 线程管理
+* 平台通道
+
+渲染依赖：
+
+👉 [ Skia ]( https://github.com/google/skia ) 图形库  [ impeller ]( https://github.com/flutter/engine/tree/main/impeller ) 图形库
+
+Engine 是 Flutter 性能的核心。
+
+## 3️⃣ Embedder（平台层）
+
+Embedder 是平台适配层：
+
+* Android 使用 Surface
+* iOS 使用 UIView
+* 管理 OpenGL / Metal
+
+---
+
+# ✅ 第二层：三棵树机制（高频核心）
+
+Flutter 有三棵树：
+
+| 类型           | 作用      |
+| ------------ | ------- |
+| Widget Tree  | 配置      |
+| Element Tree | 实例管理    |
+| Render Tree  | 布局 & 绘制 |
+
+
+### 🔥 高分解释：
+
+Widget 是不可变的配置对象。
+Element 负责维护状态和生命周期。
+RenderObject 才是真正参与布局和绘制的对象。
+
+
+# ✅ 第三层：渲染流程（必须会）
+
+面试高频：
+
+> setState 之后发生了什么？
+
+标准回答结构：
+
+1. 调用 setState
+2. 标记 Element dirty
+3. 下一帧 build
+4. 生成新的 Widget
+5. diff（Widget.canUpdate）
+6. 更新 Element
+7. 触发布局
+8. 触发绘制
+9. 提交给 Engine
+10. Skia 渲染
+
+
+## Flutter 渲染管线
+
+```
+build
+ → layout
+ → paint
+ → compositing
+ → raster
+```
+
+线程模型：
+
+| 线程              | 作用      |
+| --------------- | ------- |
+| UI Thread       | Dart 执行 |
+| Raster Thread   | 光栅化     |
+| Platform Thread | 原生交互    |
+
+🔥 高级补充：
+
+> Flutter 是多线程模型，UI 和 Raster 分离，提高渲染效率。
+
+
+# ✅ 第四层：为什么 Flutter 性能高？
+
+核心原因：
+
+### 1️⃣ 自绘（不依赖原生控件）
+
+不像 React Native 依赖桥接。
+
+Flutter 直接用 Skia 绘制。
+
+
+### 2️⃣ AOT 编译
+
+* iOS 强制 AOT
+* Android Release 也是 AOT
+
+避免解释执行损耗。
+
+
+### 3️⃣ 无跨语言频繁桥接
+
+Platform Channel 是按需通信，不像 RN 大量桥接。
+
+
+# ✅ 第五层：高级问题（
+
+
+## 🎯 问：Flutter 为什么 build 可以频繁执行？
+
+因为：
+
+* Widget 是轻量级对象
+* 真正昂贵的是 layout 和 paint
+* build 只是描述 UI
+
+
+## 🎯 问：为什么要三棵树？
+
+因为：
+
+* Widget 负责配置（轻量）
+* Element 负责状态（可复用）
+* RenderObject 负责性能关键操作
+
+分层可以：
+
+✔ 降低 diff 成本
+✔ 提高复用率
+✔ 解耦职责
+
+
+## 🎯 问：Flutter 为什么不用虚拟 DOM？
+
+可以答：
+
+> Flutter 的 Widget 本身就类似虚拟 DOM，但它直接控制 RenderObject，比传统虚拟 DOM 少一层映射。
+
+
+# ✅ 第六层：真正高级加分（架构理解）
+
+### 🎯 Flutter 的性能瓶颈在哪里？
+
+* layout 过深
+* 重复 rebuild
+* 过度使用 opacity
+* 大量图片解码
+* 主线程阻塞
+
+### 🎯 isolate 和线程区别？
+
+* isolate 不是线程
+* 内存不共享
+* 消息传递
+* 避免锁
+
+
+# 🎯 最后一段：终极总结（高分压轴）
+
+> Flutter 的核心优势在于：自绘渲染 + AOT 编译 + 分层架构设计。
+> 三棵树模型保证了 UI 描述的灵活性，同时通过 Engine 层的多线程渲染实现高性能。
+> 它不是简单的跨平台框架，而是一个完整的 UI 操作系统级渲染方案。
