@@ -1,6 +1,7 @@
 ##  flutter:setState原理分析
 
 ```
+Flutter的diff算法
   static bool canUpdate(Widget oldWidget, Widget newWidget) {
     return oldWidget.runtimeType == newWidget.runtimeType
         && oldWidget.key == newWidget.key;
