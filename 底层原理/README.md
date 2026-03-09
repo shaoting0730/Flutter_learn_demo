@@ -187,8 +187,257 @@ Platform Channel 是按需通信，不像 RN 大量桥接。
 * 避免锁
 
 
-# 🎯 最后一段：终极总结（高分压轴）
+# Dart: 没有进程概念、也没有线程概念. Dart 只提供一种并发单位：Isolate。
 
-> Flutter 的核心优势在于：自绘渲染 + AOT 编译 + 分层架构设计。
-> 三棵树模型保证了 UI 描述的灵活性，同时通过 Engine 层的多线程渲染实现高性能。
-> 它不是简单的跨平台框架，而是一个完整的 UI 操作系统级渲染方案。
+# 1️⃣ Flutter 默认是单进程
+
+Flutter App 启动时，本质上是：
+
+```text
+Flutter App
+   ↓
+Android / iOS 进程
+```
+
+例如在 Android 上：
+
+```
+com.example.app
+```
+
+只有 **一个进程**。
+
+这个进程里运行：
+
+* Flutter Engine
+* Dart VM
+* UI
+
+---
+
+# 2️⃣ Flutter 内部是多线程
+
+Flutter Engine 里面其实有 **多个核心线程**：
+
+```text
+Flutter Engine
+ ├─ UI Thread
+ ├─ Raster Thread
+ ├─ Platform Thread
+ └─ IO Thread
+```
+
+详细作用：
+
+### ① UI Thread
+
+运行 **Dart代码**。
+
+例如：
+
+* Widget build
+* 状态更新
+* 业务逻辑
+
+---
+
+### ② Raster Thread
+
+负责 **GPU 渲染**。
+
+流程：
+
+```
+Widget
+ → RenderObject
+ → Layer
+ → GPU绘制
+```
+
+---
+
+### ③ Platform Thread
+
+负责 **系统交互**：
+
+* Android
+* iOS
+* 插件通信
+
+例如：
+
+* MethodChannel
+* 平台 API
+
+---
+
+### ④ IO Thread
+
+处理：
+
+* 图片加载
+* 文件读取
+* 网络 IO
+
+---
+
+# 3️⃣ Flutter 线程结构图
+
+完整结构：
+
+```text
+App Process
+   │
+   ├─ Platform Thread
+   │
+   ├─ UI Thread (Dart)
+   │
+   ├─ Raster Thread (GPU)
+   │
+   └─ IO Thread
+```
+
+所以 Flutter **天生就是多线程渲染架构**。
+
+---
+
+# 4️⃣ Flutter 还有一个特殊机制：Isolate
+
+Flutter（准确说是 Dart）并发不是线程，而是：
+
+**Isolate**
+
+相关语言是 Dart。
+
+特点：
+
+```
+Isolate ≈ 轻量级独立运行单元
+```
+
+特点：
+
+* 独立内存
+* 不共享数据
+* 通过 message 传递数据
+
+结构：
+
+```text
+Flutter Process
+   │
+   ├─ Main Isolate
+   │
+   └─ Worker Isolate
+```
+
+常见用途：
+
+* JSON解析
+* 大量计算
+* 图片处理
+
+例如：
+
+```dart
+compute(parseJson, data);
+```
+
+---
+
+# 5️⃣ Flutter 为什么不用多进程
+
+原因：
+
+### ① 内存成本高
+
+手机内存有限。
+
+多个进程：
+
+```
+每个进程
+= 独立 VM
+= 独立资源
+```
+
+很浪费。
+
+---
+
+### ② 通信复杂
+
+多进程需要：
+
+* IPC
+* Binder
+* Socket
+
+而 Flutter 设计目标是：
+
+```
+跨平台
+简单
+统一
+```
+
+---
+
+# 6️⃣ Flutter 和 Android 原生区别
+
+Android 原生：
+
+```
+1进程
++ 多线程
++ 可选多进程
+```
+
+Flutter：
+
+```
+1进程
++ Engine多线程
++ Dart Isolate
+```
+
+---
+
+# 7️⃣ 大厂 Flutter App 结构
+
+很多 App 实际是：
+
+```text
+Android App
+
+主进程
+ └─ Flutter Engine
+     ├─ UI Thread
+     ├─ Raster Thread
+     ├─ IO Thread
+     └─ Platform Thread
+```
+
+例如：
+
+* Alibaba
+* Xianyu
+* Google Ads
+
+Flutter 都是这种架构。
+
+---
+
+# 8️⃣ 一句话总结
+
+**Flutter 并发模型：**
+
+```
+单进程
++ Engine 多线程
++ Dart Isolate
+```
+
+---
+
+
