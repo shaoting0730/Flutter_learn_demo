@@ -490,5 +490,23 @@ Flutter 都是这种架构。
 
 ---
 
+```
+操作系统
+  │
+  └─ App进程
+        │
+        └─ Flutter Engine (C++)
+              │
+              ├─ UI Thread
+              ├─ Raster Thread
+              ├─ IO Thread
+              └─ Platform Thread
+                    │
+                    └─ Dart VM
+                          │
+                          └─ Isolate
+
+```
+
 
 
