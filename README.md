@@ -210,8 +210,8 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 > [ Flutter Riverpod 全面深入解析，为什么官方推荐它？ ]( https://juejin.cn/post/7063111063427874847 ) <br/> 
 > [ riverpod学习 ]( https://zhoushaoting.com/2022/08/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~riverpod%E5%BA%93%E5%AD%A6%E4%B9%A0/ ) <br/> 
 > [ Flutter官方团队对getx这个插件的态度和看法？？？ ]( https://github.com/flutter/website/pull/4981 ) <br/> 
-> [ getx学习 ]( https://zhoushaoting.com/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/ ) <br/> 
-> [ getx学习 ]( https://segmentfault.com/a/1190000039139198 ) <br/> 
+> [ getx学习 原作者删库了,谨慎使用 ]( https://zhoushaoting.com/2021/03/13/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~getx%E5%AD%A6%E4%B9%A0/ ) <br/> 
+> [ getx学习 原作者删库了,谨慎使用 ]( https://segmentfault.com/a/1190000039139198 ) <br/> 
 > [ scoped_model学习 ]( https://zhoushaoting.com/2019/02/16/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~scoped_model%E5%AD%A6%E4%B9%A0/ ) <br/> 
 > [ redux学习 ]( https://zhoushaoting.com/2019/02/17/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~redux%E5%AD%A6%E4%B9%A0/ ) <br/>
 > [ provide学习 ]( https://zhoushaoting.com/2019/03/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~provide%E5%AD%A6%E4%B9%A0/ ) <br/>
