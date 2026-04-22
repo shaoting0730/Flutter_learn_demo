@@ -44,7 +44,7 @@
 
 ## 热更新方案
 
-> [Flutter暂时放弃热更新的官方解释](https://github.com/flutter/flutter/issues/14330#issuecomment-485565194)<br/>[混栈开发之Android端Flutter热更新](https://github.com/magicbaby810/HotfixFlutter)<br/>[chimera_flutter_code_push](https://github.com/ChimeraFlutter/Chimera-Flutter-Code-Push)<br/>[公平的](https://github.com/wuba/fair/blob/main/README-zh.md)<br/>[美团外卖Flutter动态化实践：但分析美团的APP，他们使用的仍然是RN的热更新](https://mp.weixin.qq.com/s/wjEvtvexYytzSy5RwqGQyw)<br/>[热更新？](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%85%B3%E4%BA%8E%E7%83%AD%E6%9B%B4%E6%96%B0.md)<br/>
+> [Flutter暂时放弃热更新的官方解释](https://github.com/flutter/flutter/issues/14330#issuecomment-485565194)<br/>[混栈开发之Android端Flutter热更新](https://github.com/magicbaby810/HotfixFlutter)<br/>[chimera_flutter_code_push](https://github.com/ChimeraFlutter/Chimera-Flutter-Code-Push)<br/>[ fair ](https://github.com/wuba/fair/blob/main/README-zh.md)<br/>[美团外卖Flutter动态化实践：但分析美团的APP，他们使用的仍然是RN的热更新](https://mp.weixin.qq.com/s/wjEvtvexYytzSy5RwqGQyw)<br/>[热更新？](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%85%B3%E4%BA%8E%E7%83%AD%E6%9B%B4%E6%96%B0.md)<br/>
 
 ## 性能优化
 
