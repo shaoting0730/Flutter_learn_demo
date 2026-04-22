@@ -2,7 +2,7 @@
 -   [簡體中文](README.zh-CN.md)
 -   [繁體中文](README.zh-TW.md)
 
-> 開啟模擬器 執行 1.cd 根目錄 2.flutter run -d all 或 flutter run => ps:flutter packages get 取得三方函式庫<br/>調試: r: 運行 R:重新運行 p:顯示網格 大寫P:顯示性能 o:切換模擬器 s:保存截圖 h:顯示幫助信息 q:退出. 3.切換版本: flutter channels && flutter channels XXX 之後 flutter upgrade 能力更新即可 硬體更新by pressing "w".<br/>若要轉儲應用程式的渲染樹 (debugDumpRenderTree)，請按下「t」。<br/>對於層（debugDumpLayerTree），使用“L”；為了方便訪問<br/>(debugDumpSemantics)，使用「S」（遍歷順序）或「U」（逆命中測試順序）。<br/>若要切換小工具檢查器 (WidgetsApp.showWidgetInspectorOverride)，請按「i」。<br/>若要切換建構線的顯示（debugPaintSizeEnabled），請按“p”。<br/>若要模擬不同的作業系統（預設目標平台），請按“o”。<br/>若要顯示效能疊加層 (WidgetsApp.showPerformanceOverlay)，請按下「P」。<br/>若要將螢幕截圖儲存到 flutter.png，請按「s」。<br/>若要重複此說明訊息，請按“h”。若要分離，請按“d”；要退出，請按“q”。<br/>vim ~/.bash_profile
+> 開啟模擬器 執行 1.cd 根目錄 2.flutter run -d all 或 flutter run => ps:flutter packages get 取得三方函式庫<br/>調試: r: 運行 R:重新運行 p:顯示網格 大寫P:顯示性能 o:切換模擬器 s:保存截圖 h:顯示幫助信息 q:退出. 3.切換版本: flutter channels && flutter channels XXX 之後 flutter upgrade 能力更新即可 硬光更新by pressing "w".<br/>若要轉儲應用程式的渲染樹 (debugDumpRenderTree)，請按下「t」。<br/>對於層（debugDumpLayerTree），使用“L”；為了方便訪問<br/>(debugDumpSemantics)，使用「S」（遍歷順序）或「U」（逆命中測試順序）。<br/>若要切換小工具檢查器 (WidgetsApp.showWidgetInspectorOverride)，請按「i」。<br/>若要切換建構線的顯示（debugPaintSizeEnabled），請按“p”。<br/>若要模擬不同的作業系統（預設目標平台），請按“o”。<br/>若要顯示效能疊加層 (WidgetsApp.showPerformanceOverlay)，請按下「P」。<br/>若要將螢幕截圖儲存到 flutter.png，請按「s」。<br/>若要重複此說明訊息，請按“h”。若要分離，請按“d”；要退出，請按“q”。<br/>vim ~/.bash_profile
 > 來源~/.bash_profile
 
 > [下載單一文件](https://minhaskamal.github.io/DownGit/#/home)<br/>
