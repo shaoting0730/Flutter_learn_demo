@@ -132,6 +132,7 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 ## 性能优化
  > [ 生命周期 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md )<br/>
  > [ 性能优化 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96 )<br/>
+ > [ App安装包200MB被用户骂？3步把Flutter包体积砍到50MB，下载量翻倍 ]( https://mp.weixin.qq.com/s/qYK_MX9BpGd_Wrm-Q04AXw )<br/>
  
 
 ## 源码解读
