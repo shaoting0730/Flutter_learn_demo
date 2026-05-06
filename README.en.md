@@ -2,7 +2,7 @@
 -   [Simplified Chinese](README.zh-CN.md)
 -   [Traditional Chinese](README.zh-TW.md)
 
-> Open the simulator and run 1.cd root directory 2.flutter run -d all or flutter run => ps:flutter packages get to obtain the third-party library<br/>Debugging: r: Run R: Rerun p: Show grid Capital P: Show performance o: Switch simulator s: Save screenshot h: Show help information q: Exit. 3. Switch versions: flutter channels && flutter channels<br/>To dump the rendering tree of the app (debugDumpRenderTree), press "t".<br/>For layers (debugDumpLayerTree), use "L"; for accessibility<br/>(debugDumpSemantics), use "S" (for traversal order) or "U" (for inverse hit test order).<br/>To toggle the widget inspector (WidgetsApp.showWidgetInspectorOverride), press "i".<br/>To toggle the display of construction lines (debugPaintSizeEnabled), press "p".<br/>To simulate different operating systems, (defaultTargetPlatform), press "o".<br/>To display the performance overlay (WidgetsApp.showPerformanceOverlay), press "P".<br/>To save a screenshot to flutter.png, press "s".<br/>To repeat this help message, press "h". To detach, press "d"; to quit, press "q".<br/>vim ~/.bash_profile 
+> Open the simulator and run 1.cd root directory 2.flutter run -d all or flutter run => ps:flutter packages get to obtain the third-party library<br/>Debugging: r: Run R: Rerun p: Display grid Capital P: Display performance o: Switch emulator s: Save screenshot h: Display help message q: Exit. 3. Switch versions: flutter channels && flutter channels<br/>To dump the rendering tree of the app (debugDumpRenderTree), press "t".<br/>For layers (debugDumpLayerTree), use "L"; for accessibility<br/>(debugDumpSemantics), use "S" (for traversal order) or "U" (for inverse hit test order).<br/>To toggle the widget inspector (WidgetsApp.showWidgetInspectorOverride), press "i".<br/>To toggle the display of construction lines (debugPaintSizeEnabled), press "p".<br/>To simulate different operating systems, (defaultTargetPlatform), press "o".<br/>To display the performance overlay (WidgetsApp.showPerformanceOverlay), press "P".<br/>To save a screenshot to flutter.png, press "s".<br/>To repeat this help message, press "h". To detach, press "d"; to quit, press "q".<br/>vim ~/.bash_profile 
 > source ~/.bash_profile
 
 > [Download a single file](https://minhaskamal.github.io/DownGit/#/home)<br/>
@@ -48,13 +48,13 @@
 
 ## Performance optimization
 
-> [life cycle](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)<br/>[Performance optimization](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)<br/>
+> [life cycle](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)<br/>[Performance optimization](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)<br/>[Is the app installation package 200MB scolded by users? 3 steps to reduce the Flutter package size to 50MB and double the download volume](https://mp.weixin.qq.com/s/qYK_MX9BpGd_Wrm-Q04AXw)<br/>
 
 ## Source code interpretation
 
 > [Common component source code analysis-inheritance relationship related](https://zhoushaoting.com/2022/09/01/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%901/)<br/>
 
-## rendering engine[ skia ](https://github.com/google/skia)[impeller](https://github.com/flutter/engine/tree/main/impeller)<br/>
+## rendering engine[skiing](https://github.com/google/skia)[impeller](https://github.com/flutter/engine/tree/main/impeller)<br/>
 
 > [The difference between flutter's new engine impller and skia](https://juejin.cn/post/7217743118328692794)<br/>[What was done during the engine initialization and startup process? 2w word source code analysis](https://juejin.cn/post/7010655914025811975)<br/>[In-depth understanding of Flutter's graphics and image drawing principles - analysis of graphics library skia](https://juejin.cn/post/6914188284126035981)<br/>[An in-depth analysis of Flutter’s next-generation rendering engine Impeller](https://blog.csdn.net/YZcoder/article/details/126501428)<br/>[Flutter's new generation graphics renderer Impeller](https://mp.weixin.qq.com/s/PLvlSt3tlX6AjufDm0XVMA)<br/>[Shader warm-up](https://juejin.cn/post/7385942645232828442?utm_source=gold_browser_extension)<br/>
 
