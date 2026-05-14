@@ -97,6 +97,7 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 > [ 轻提示 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/tool_tips )<br/>
 > [ 弹出框 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/alert_demo )<br/>
 > [ ShaderMask ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/shader_mask_demo )   <br/>
+> [ IndexedStack ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/ChatGPT-Flutter%20IndexedStack%20%E6%87%92%E5%8A%A0%E8%BD%BD.md )   <br/>
 > [ 打破约束组件 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/%E6%89%93%E7%A0%B4%E7%BA%A6%E6%9D%9F )   <br/>
 > [ 保持状态 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/%E6%A1%88%E4%BE%8B/keep_alive_demo )<br/>
 > [ LayoutBuilder && OrientationBuilder ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%8A%9F%E8%83%BD%E7%B1%BBWidget/layoutbuild_demo )<br/>
