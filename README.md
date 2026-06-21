@@ -233,6 +233,7 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 > [ fish_redux Demo(含Tabbar、model、dio、基本传值、component、globalStore、adapter) ]( https://zhoushaoting.com/2020/04/11/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0/Flutter~fish_redux%E5%AD%A6%E4%B9%A0/) <br/>
 > [ fish_redux Demo1(无Tabbar最简单版本) ](
 https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E5%85%B6%E4%BB%96/state%E7%AE%A1%E7%90%86/fish_redux_demo1) <br/>
+> [ Flutter GenUI入门指南 ]( https://www.bilibili.com/video/BV1njwTzkEEk/?spm_id_from=333.1387.upload.video_card.click&vd_source=bc5bee468c2cbda6193e66c4288c8c7b ) <br/>
 
 
 ### 案例
