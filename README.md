@@ -30,6 +30,7 @@
 
 ## 开发过程中,使用到的棒棒哒の开发库和爬坑历程
 > [ 列表 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E9%81%87%E5%88%B0%E7%9A%84%E5%A5%BD%E5%BA%93.md )   <br/>
+> [ 其他 ]( https://github.com/shaoting0730/mobile-learn/tree/master/Flutter )   <br/>
 > [ 爬坑历程 ]( https://www.cnblogs.com/shaoting/p/10235652.html )   <br/>
 
 ## 基础widget
