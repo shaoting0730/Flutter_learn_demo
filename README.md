@@ -28,7 +28,7 @@
 > [ 张风捷特烈 的掘金课程 ⭐️⭐️⭐️⭐️⭐️ ]( https://juejin.cn/user/149189281194766/course )   <br/>
 > [ Flutter&Rust 应用开发 ⭐️⭐️⭐️⭐️⭐ ]( https://juejin.cn/column/7411457479572078643 )    <br/>
 
-## 开发过程中,使用到的棒棒哒の开发库和爬坑历程
+## 开发过程中,遇到到棒棒哒的开发库和爬坑历程
 > [ 列表 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E9%81%87%E5%88%B0%E7%9A%84%E5%A5%BD%E5%BA%93.md )   <br/>
 > [ 爬坑历程 ]( https://www.cnblogs.com/shaoting/p/10235652.html )   <br/>
 > [ 其他 ]( https://github.com/shaoting0730/mobile-learn/tree/master/Flutter )   <br/>
