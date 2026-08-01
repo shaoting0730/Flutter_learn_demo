@@ -1,5 +1,5 @@
 -   [English](README.en.md)
--   [简体中文](README.zh-CN.md)
+-   [Simplified Chinese](README.zh-CN.md)
 -   [Traditional Chinese](README.zh-TW.md)
 
 > Open the simulator and run 1.cd root directory 2.flutter run -d all or flutter run => ps:flutter packages get to obtain the third-party library<br/>Debugging: r: Run R: Rerun p: Show grid Capital P: Show performance o: Switch simulator s: Save screenshot h: Show help information q: Exit. 3. Switch versions: flutter channels && flutter channels<br/>To dump the rendering tree of the app (debugDumpRenderTree), press "t".<br/>For layers (debugDumpLayerTree), use "L"; for accessibility<br/>(debugDumpSemantics), use "S" (for traversal order) or "U" (for inverse hit test order).<br/>To toggle the widget inspector (WidgetsApp.showWidgetInspectorOverride), press "i".<br/>To toggle the display of construction lines (debugPaintSizeEnabled), press "p".<br/>To simulate different operating systems, (defaultTargetPlatform), press "o".<br/>To display the performance overlay (WidgetsApp.showPerformanceOverlay), press "P".<br/>To save a screenshot to flutter.png, press "s".<br/>To repeat this help message, press "h". To detach, press "d"; to quit, press "q".<br/>vim ~/.bash_profile 
@@ -11,9 +11,9 @@
 
 ## Book recommendations
 
-> [Jingdong: Detailed explanation and practical use of Flutter components by Wang Haoran ⭐️⭐️⭐️⭐️⭐️](https://item.jd.com/13623408.html)<br/>[Zhang Fengjie Telie’s Nuggets Course ⭐️⭐️⭐️⭐️⭐️](https://juejin.cn/user/149189281194766/course)<br/>[Flutter&Rust application development ⭐️⭐️⭐️⭐️⭐](https://juejin.cn/column/7411457479572078643)<br/>
+> [JD.com: Detailed explanation and practical use of Flutter components by Wang Haoran ⭐️⭐️⭐️⭐️⭐️](https://item.jd.com/13623408.html)<br/>[Zhang Fengjie Telie’s Nuggets Course ⭐️⭐️⭐️⭐️⭐️](https://juejin.cn/user/149189281194766/course)<br/>[Flutter&Rust application development ⭐️⭐️⭐️⭐️⭐](https://juejin.cn/column/7411457479572078643)<br/>
 
-## During the development process, I encountered a great development library and the process of climbing pits.
+## During the development process, I encountered great development libraries and pit climbing journeys.
 
 > [list](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E9%81%87%E5%88%B0%E7%9A%84%E5%A5%BD%E5%BA%93.md)<br/>[The journey of climbing the pit](https://www.cnblogs.com/shaoting/p/10235652.html)<br/>[other](https://github.com/shaoting0730/mobile-learn/tree/master/Flutter)<br/>
 
