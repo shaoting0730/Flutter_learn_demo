@@ -135,6 +135,8 @@ PaginatedDataTable Stepper ]( https://github.com/shaoting0730/Flutter_learn_demo
 ## 性能优化
  > [ 生命周期 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md )<br/>
  > [ 性能优化 ]( https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96 )<br/>
+ > [ 减少包体积 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%87%8F%E5%B0%91%E5%8C%85%E4%BD%93%E7%A7%AF.md )<br/>
+ > [ 检查内存泄露 ]( https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E6%A3%80%E6%B5%8B%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.md )<br/>
  
 
 ## 源码解读
