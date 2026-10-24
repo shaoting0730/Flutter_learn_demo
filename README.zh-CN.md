@@ -2,8 +2,7 @@
 -   [简体中文](README.zh-CN.md)
 -   [繁体中文](README.zh-TW.md)
 
-> 打开模拟器  运行  1.cd 根目录  2.flutter run -d all 或者 flutter run  => ps:flutter packages get 获取三方库<br/>调试: r: 运行 R:重新运行 p:显示网格 大写P:显示性能 o:切换模拟器 s:保存截图  h:显示帮助信息 q:退出. 3.切换版本: flutter channels  && flutter channels XXX 之后 flutter upgrade即可 git checkout xxx . 打开dubug开启真热更新 You can dump the widget hierarchy of the app (debugDumpApp) by pressing "w".<br/>要转储应用程序的渲染树 (debugDumpRenderTree)，请按“t”。<br/>对于层（debugDumpLayerTree），使用“L”；为了方便访问<br/>
-> (debugDumpSemantics), use "S" (for traversal order) or "U" (for inverse hit test order).  <br/>要切换小部件检查器 (WidgetsApp.showWidgetInspectorOverride)，请按“i”。<br/>要切换构造线的显示（debugPaintSizeEnabled），请按“p”。<br/>要模拟不同的操作系统（默认目标平台），请按“o”。<br/>要显示性能叠加层 (WidgetsApp.showPerformanceOverlay)，请按“P”。<br/>要将屏幕截图保存到 flutter.png，请按“s”。<br/>要重复此帮助消息，请按“h”。要分离，请按“d”；要退出，请按“q”。<br/>vim ~/.bash_profile 
+> 打开模拟器  运行  1.cd 根目录  2.flutter run -d all 或者 flutter run  => ps:flutter packages get 获取三方库<br/>调试: r: 运行 R:重新运行 p:显示网格 大写P:显示性能 o:切换模拟器 s:保存截图  h:显示帮助信息 q:退出. 3.切换版本: flutter channels  && flutter channels XXX 之后 flutter upgrade即可 git checkout xxx . 打开dubug开启真热更新 You can dump the widget hierarchy of the app (debugDumpApp) by pressing "w".<br/>要转储应用程序的渲染树 (debugDumpRenderTree)，请按“t”。<br/>对于层（debugDumpLayerTree），使用“L”；为了方便访问<br/>(debugDumpSemantics)，使用“S”（遍历顺序）或“U”（逆命中测试顺序）。<br/>要切换小部件检查器 (WidgetsApp.showWidgetInspectorOverride)，请按“i”。<br/>要切换构造线的显示（debugPaintSizeEnabled），请按“p”。<br/>要模拟不同的操作系统（默认目标平台），请按“o”。<br/>要显示性能叠加层 (WidgetsApp.showPerformanceOverlay)，请按“P”。<br/>要将屏幕截图保存到 flutter.png，请按“s”。<br/>要重复此帮助消息，请按“h”。要分离，请按“d”；要退出，请按“q”。<br/>vim ~/.bash_profile 
 > 源~/.bash_profile
 
 > [下载单个文件](https://minhaskamal.github.io/DownGit/#/home)<br/>
@@ -49,7 +48,7 @@
 
 ## 性能优化
 
-> [生命周期](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)<br/>[性能优化](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)<br/>
+> [生命周期](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md)<br/>[性能优化](https://github.com/shaoting0730/Flutter_learn_demo/tree/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)<br/>[减少包体积](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E5%87%8F%E5%B0%91%E5%8C%85%E4%BD%93%E7%A7%AF.md)<br/>[检查内存泄露](https://github.com/shaoting0730/Flutter_learn_demo/blob/master/%E6%A3%80%E6%B5%8B%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.md)<br/>
 
 ## 源码解读
 
